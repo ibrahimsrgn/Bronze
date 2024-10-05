@@ -1,0 +1,4 @@
+repository "Bronze@RoguelikePancarMotors@cloud"
+  path "/"
+    br "/main"
+    co "/main"
