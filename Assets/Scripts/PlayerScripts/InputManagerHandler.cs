@@ -28,4 +28,9 @@ public class InputManagerHandler : MonoBehaviour
     {
         _PlayerData.JumpInput = Value.isPressed;
     }
+
+    private void OnSprint(InputValue Value)
+    {
+        _PlayerData.SprintSpeedData = Value.isPressed ? _PlayerData.SprintSpeed : 1;
+    }
 }

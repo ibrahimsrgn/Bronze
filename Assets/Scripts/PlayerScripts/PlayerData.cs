@@ -12,6 +12,9 @@ public class PlayerData : InputManagerHandler
 
     [Header("Player Movement")]
     public float PlayerWalkSpeed;
+    public float SprintSpeed;
+    [HideInInspector]
+    public float SprintSpeedData;
 
     [Header("Camera Look")]
     public float MouseSensivity;
@@ -28,6 +31,7 @@ public class PlayerData : InputManagerHandler
 
     [HideInInspector]
     public Vector3 Velocity;
-    //[HideInInspector]
+    [HideInInspector]
     public bool JumpInput;
+
 }

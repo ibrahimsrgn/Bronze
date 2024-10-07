@@ -7,8 +7,8 @@ public class GravityAndJump : InputManagerHandler
     void Update()
     {
         ApplyGravity();
-        Jump();
         _CharacterController.Move(_PlayerData.Velocity * Time.deltaTime);
+        Jump();
     }
 
     private void ApplyGravity()
