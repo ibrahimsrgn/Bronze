@@ -12,6 +12,6 @@ public class PlayerMovement : InputManagerHandler
     private void CharacterMove()
     {
         _PlayerData.CurrentInput = transform.right * _PlayerData.MoveInput.x + transform.forward * _PlayerData.MoveInput.y;
-        _CharacterController.Move(_PlayerData.CurrentInput * _PlayerData.PlayerWalkSpeed * Time.deltaTime * _PlayerData.SprintSpeedData);
+        _CharacterController.Move(_PlayerData.CurrentInput * _PlayerData.PlayerWalkSpeed * Time.deltaTime * (_PlayerData.MoveInput.y > 0 ? _PlayerData.SprintSpeedData : 1));
     }
 }
