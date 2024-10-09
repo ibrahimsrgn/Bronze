@@ -101,6 +101,7 @@ MonoBehaviour:
   JumpHeight: 1
   Velocity: {x: 0, y: 0, z: 0}
   JumpInput: 0
+  MouseClickInput: 0
 --- !u!114 &8467959722540106553
 MonoBehaviour:
   m_ObjectHideFlags: 0

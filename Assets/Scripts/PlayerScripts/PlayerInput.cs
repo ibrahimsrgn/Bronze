@@ -62,6 +62,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""26d0feb7-8b34-47ec-a4b6-cecc8a1639c4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11a17931-9d9f-4b64-a7a1-1d6cfb82f70d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(pressPoint=1,behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Land_Jump = m_Land.FindAction("Jump", throwIfNotFound: true);
         m_Land_Sprint = m_Land.FindAction("Sprint", throwIfNotFound: true);
         m_Land_Look = m_Land.FindAction("Look", throwIfNotFound: true);
+        m_Land_Fire = m_Land.FindAction("Fire", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -234,6 +255,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Land_Jump;
     private readonly InputAction m_Land_Sprint;
     private readonly InputAction m_Land_Look;
+    private readonly InputAction m_Land_Fire;
     public struct LandActions
     {
         private @PlayerInput m_Wrapper;
@@ -242,6 +264,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Land_Jump;
         public InputAction @Sprint => m_Wrapper.m_Land_Sprint;
         public InputAction @Look => m_Wrapper.m_Land_Look;
+        public InputAction @Fire => m_Wrapper.m_Land_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Land; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -263,6 +286,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
         }
 
         private void UnregisterCallbacks(ILandActions instance)
@@ -279,6 +305,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
         }
 
         public void RemoveCallbacks(ILandActions instance)
@@ -302,5 +331,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }

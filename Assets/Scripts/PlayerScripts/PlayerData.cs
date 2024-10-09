@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerData : InputManagerHandler
+public class PlayerData : MonoBehaviour
 {
     [HideInInspector]
     public Vector2 MoveInput;
@@ -33,5 +33,8 @@ public class PlayerData : InputManagerHandler
     public Vector3 Velocity;
     [HideInInspector]
     public bool JumpInput;
+
+    [Header("Left&Right Mouse Button")]
+    public bool MouseClickInput;
 
 }

@@ -33,4 +33,9 @@ public class InputManagerHandler : MonoBehaviour
     {
         _PlayerData.SprintSpeedData = Value.isPressed ? _PlayerData.SprintSpeed : 1;
     }
+
+    private void OnFire(InputValue Value)
+    {
+        _PlayerData.MouseClickInput = Value.isPressed;
+    }
 }
