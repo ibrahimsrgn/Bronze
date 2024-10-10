@@ -1,4 +1,4 @@
-using Cinemachine.Utility;
+﻿using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,10 +51,13 @@ public class ZombieAi : MonoBehaviour
 
         if (!playerInSight && !playerInAttackRange)
             Patroling();
-        else if (playerInSight && !playerInAttackRange)
+        if (playerInSight && !playerInAttackRange)
             ChasePlayer();
-        else if (playerInSight && playerInAttackRange)
+        if (playerInSight && playerInAttackRange)
             AttackPlayer();
+        else
+            animator.SetBool("IsAttacking", false);
+
     }
     private void Patroling()
     {
@@ -77,7 +80,7 @@ public class ZombieAi : MonoBehaviour
         float randomX = Random.Range(-walkPointRange, walkPointRange);
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, groundLayer))
+        if (Physics.Raycast(walkPoint, -transform.up, 5f, groundLayer))
             walkPointSet = true;
 
     }
@@ -90,11 +93,21 @@ public class ZombieAi : MonoBehaviour
     }
     private void AttackPlayer()
     {
-        Debug.Log("Attacking The Player");
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
+        Vector3 playerPos = player.position;
+        playerPos.y = transform.position.y;
+        transform.LookAt(playerPos);
+
+
+        //oyuncu kaybolursa son lokasyonuna git
+        walkPoint = player.position;
+        walkPointSet = true;
+
+
         if (!alreadyAttacked)
         {
+            animator.SetBool("IsAttacking", true);
+        Debug.Log("Attacking The Player");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackRate);
         }
