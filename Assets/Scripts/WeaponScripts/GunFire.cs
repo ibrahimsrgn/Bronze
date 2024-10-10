@@ -12,7 +12,7 @@ public class GunFire : WeaponType
     private void Update()
     {
         ShootingDelay -= Time.deltaTime;
-        if (_PlayerData.MouseClickInput && ShootingDelay <= 0)
+        if (_PlayerData.MouseClickInput && ShootingDelay <= 0 && ReadyToShoot)
         {
             switch (_FireRate)
             {
@@ -26,21 +26,41 @@ public class GunFire : WeaponType
                     AutoShoot();
                     break;
             }
+            ShootingDelay = ShootingDelayData;
+        }
+        else if (!_PlayerData.MouseClickInput)
+        {
+            ReadyToShoot = true;
         }
     }
 
     private void SingleShoot()
     {
-        Transform Deneme = Instantiate(AmmoPrefab, AmmoExitLoc.transform.position, AmmoExitLoc.transform.localRotation, null);
+        Shoot();
+        ReadyToShoot = false;
     }
 
     private void BurstShoot()
     {
-        Debug.Log("TakTakTak");
+        if (BurstCount-- > 0)
+        {
+            Shoot();
+            BurstShoot();
+        }
+        else
+        {
+            ReadyToShoot = false;
+            BurstCount = BurstCountData;
+        }
     }
 
     private void AutoShoot()
     {
-        Debug.Log("Tatatatatata");
+        Shoot();
+    }
+
+    private void Shoot()
+    {
+        Transform Deneme = Instantiate(AmmoPrefab, AmmoExitLoc.transform.position, AmmoExitLoc.transform.localRotation, null);
     }
 }

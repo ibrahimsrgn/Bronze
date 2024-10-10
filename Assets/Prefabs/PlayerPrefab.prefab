@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1021797005738555285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -282,9 +282,10 @@ GameObject:
   - component: {fileID: 1377531532517586728}
   - component: {fileID: 322699874548224054}
   - component: {fileID: 265358980525915324}
-  m_Layer: 3
-  m_Name: Cube
-  m_TagString: Untagged
+  - component: {fileID: 8655455315255463165}
+  m_Layer: 7
+  m_Name: DummyGun
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +302,8 @@ Transform:
   m_LocalPosition: {x: 0.483, y: 0.618, z: 0.771}
   m_LocalScale: {x: 0.25739, y: 0.15319, z: 0.7984015}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2548471529374280616}
   m_Father: {fileID: 1801664063627316302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1377531532517586728
@@ -375,6 +377,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8655455315255463165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644372294872027370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b9f278cef8cf24dbaa31513e2007f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _FireRate: 1
+  BurstCount: 3
+  ShootingDelay: 1
+  ReadyToShoot: 1
+  _PlayerData: {fileID: 0}
+  ShootingDelayData: 1
+  AmmoExitLoc: {fileID: 2548471529374280616}
+  AmmoPrefab: {fileID: 4521007908090829906, guid: cde6a5a452bbbbb499d5b7ea239b9774, type: 3}
 --- !u!1 &7453488795788157247
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +603,37 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!1 &7601489146298727139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2548471529374280616}
+  m_Layer: 7
+  m_Name: AmmoExit
+  m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2548471529374280616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601489146298727139}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.52300036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5355375745742079500}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7725857010366807156
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +661,7 @@ Transform:
   m_GameObject: {fileID: 7725857010366807156}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
