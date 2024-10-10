@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class GunFire : WeaponType
 {
-    [Header("Prefabs")]
-    [SerializeField] private Transform AmmoExitLoc;
-    [SerializeField] private Transform AmmoPrefab;
-
     private void Update()
     {
         RateOfFire -= Time.deltaTime;
@@ -17,13 +13,13 @@ public class GunFire : WeaponType
             switch (_FireMode)
             {
                 case FireMode.Single:
-                    SingleShoot();
+                    _Shooting.SingleShoot();
                     break;
                 case FireMode.Burst:
-                    BurstShoot();
+                    _Shooting.BurstShoot();
                     break;
                 case FireMode.Auto:
-                    AutoShoot();
+                    _Shooting.AutoShoot();
                     break;
             }
             RateOfFire = RateOfFireData;
@@ -32,35 +28,5 @@ public class GunFire : WeaponType
         {
             ReadyToShoot = true;
         }
-    }
-
-    private void SingleShoot()
-    {
-        Shoot();
-        ReadyToShoot = false;
-    }
-
-    private void BurstShoot()
-    {
-        if (BurstCount-- > 0)
-        {
-            Invoke("Shoot", 1f);
-            BurstShoot();
-        }
-        else
-        {
-            ReadyToShoot = false;
-            BurstCount = BurstCountData;
-        }
-    }
-
-    private void AutoShoot()
-    {
-        Shoot();
-    }
-
-    private void Shoot()
-    {
-        Transform Deneme = Instantiate(AmmoPrefab, AmmoExitLoc.transform.position, AmmoExitLoc.transform.localRotation, null);
     }
 }
