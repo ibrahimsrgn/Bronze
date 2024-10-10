@@ -11,22 +11,22 @@ public class GunFire : WeaponType
 
     private void Update()
     {
-        ShootingDelay -= Time.deltaTime;
-        if (_PlayerData.MouseClickInput && ShootingDelay <= 0 && ReadyToShoot)
+        RateOfFire -= Time.deltaTime;
+        if (_PlayerData.MouseClickInput && RateOfFire <= 0 && ReadyToShoot)
         {
-            switch (_FireRate)
+            switch (_FireMode)
             {
-                case FireRate.Single:
+                case FireMode.Single:
                     SingleShoot();
                     break;
-                case FireRate.Burst:
+                case FireMode.Burst:
                     BurstShoot();
                     break;
-                case FireRate.Auto:
+                case FireMode.Auto:
                     AutoShoot();
                     break;
             }
-            ShootingDelay = ShootingDelayData;
+            RateOfFire = RateOfFireData;
         }
         else if (!_PlayerData.MouseClickInput)
         {
@@ -44,7 +44,7 @@ public class GunFire : WeaponType
     {
         if (BurstCount-- > 0)
         {
-            Shoot();
+            Invoke("Shoot", 1f);
             BurstShoot();
         }
         else

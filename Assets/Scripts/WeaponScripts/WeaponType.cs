@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class WeaponType : MonoBehaviour
 {
-    public FireRate _FireRate;
+    public FireMode _FireMode;
     public int BurstCount;
-    public float ShootingDelay;
+    public float BurstModeDelay;
+    public float RateOfFire;
 
     public bool ReadyToShoot = true;
     [HideInInspector]
     public PlayerData _PlayerData;
     [HideInInspector]
-    public float ShootingDelayData;
+    public float RateOfFireData;
     [HideInInspector]
     public int BurstCountData;
 
     private void Awake()
     {
         _PlayerData = FindObjectOfType<PlayerData>();
-        ShootingDelayData = ShootingDelay;
+        RateOfFireData = RateOfFire;
         BurstCountData = BurstCount;
     }
-    public enum FireRate
+    public enum FireMode
     {
         Single,
         Burst,
