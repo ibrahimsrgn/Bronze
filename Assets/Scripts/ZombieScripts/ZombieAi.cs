@@ -22,7 +22,7 @@ public class ZombieAi : MonoBehaviour
     [SerializeField] private float sightRange, attackRange;
     [SerializeField] private float sightAreaAngle;
     private bool playerInSight, playerInAttackRange;
-
+    public bool isDying;
     [SerializeField] private Animator animator;
 
     private void Awake()
@@ -31,8 +31,16 @@ public class ZombieAi : MonoBehaviour
     }
     private void Update()
     {
-        CheckState();
-        Animate();
+        if(isDying)
+        {
+            animator.SetBool("IsDying", true);
+        }
+        else
+        {
+            CheckState();
+            Animate();
+        }
+        
     }
     private void Animate()
     {
@@ -48,7 +56,7 @@ public class ZombieAi : MonoBehaviour
         }
         else playerInSight = false;
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
-
+        
         if (!playerInSight && !playerInAttackRange)
             Patroling();
         if (playerInSight && !playerInAttackRange)
