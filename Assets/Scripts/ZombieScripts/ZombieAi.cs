@@ -16,6 +16,7 @@ public class ZombieAi : MonoBehaviour
     private bool walkPointSet;
     [SerializeField] private float walkPointRange;
 
+    [SerializeField] private int attackDamage;
     [SerializeField] private float attackRate;
     private bool alreadyAttacked;
 
@@ -119,6 +120,14 @@ public class ZombieAi : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackRate);
         }
+    }
+    /// <summary>
+    /// Saldırı animasyonu ile tetikleniyor
+    /// Animasyonda saldırının tam temas etme kısmını bekliyor
+    /// </summary>
+    private void Attack()
+    {
+        player.gameObject.GetComponent<HealthManager>().TakeDamage(attackDamage);
     }
     private void ResetAttack()
     {

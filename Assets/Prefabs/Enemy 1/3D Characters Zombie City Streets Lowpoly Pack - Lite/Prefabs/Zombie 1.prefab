@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833f50fee4e79ed4d94c597cd74353ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  currentHealth: 0
   maxHealth: 500
 --- !u!195 &3084441780533831977
 NavMeshAgent:
@@ -1516,10 +1516,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   walkPointRange: 15
+  attackDamage: 50
   attackRate: 1
   sightRange: 20
   attackRange: 2
   sightAreaAngle: 100
+  isDying: 0
   animator: {fileID: 127867265787259768}
 --- !u!1 &6906493944559020957
 GameObject:

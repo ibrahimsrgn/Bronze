@@ -1,33 +1,34 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private int health;
+    [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth;
 
 
     private void Start()
     {
-        health = maxHealth;
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health < 0)
+        currentHealth -= damage;
+        if (currentHealth < 0)
         {
             Die();
         }
     }
     private void Die()
     {
-        //D��man �lme animasyonu veya yok olma
+        //Düþman ölme animasyonu veya yok olma
         if (TryGetComponent<ZombieAi>(out ZombieAi zombieAi))
         {
             zombieAi.isDying = true;
         }
+        //Player için farklı bir animasyon yapılabilir
         Destroy(gameObject,5);
     }
 

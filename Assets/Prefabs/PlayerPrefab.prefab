@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4854438574973108060}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7489592170491384539}
   - component: {fileID: 1538062016867953453}
   - component: {fileID: 4141301464444153603}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: DummyGun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 2533452966973902179}
   - component: {fileID: 4639437619064171958}
   - component: {fileID: 8050631029928150597}
+  - component: {fileID: 1465126746136196672}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -517,6 +518,20 @@ MonoBehaviour:
   m_DefaultActionMap: Land
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1465126746136196672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918116591671992514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f50fee4e79ed4d94c597cd74353ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 500
 --- !u!1 &5806235954031868335
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 675779141363951636}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: AmmoExit
   m_TagString: Weapon
   m_Icon: {fileID: 0}
