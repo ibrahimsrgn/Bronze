@@ -24,8 +24,12 @@ public class WeaponType : MonoBehaviour
     public WeaponShooting _Shooting;
     [HideInInspector]
     public bool BurstCoroutineOn;
+    [HideInInspector]
+    public BulletScript _BulletScript;
+
     private void Awake()
     {
+        _BulletScript = FindAnyObjectByType<BulletScript>();
         _Shooting = FindObjectOfType<WeaponShooting>();
         _PlayerData = FindObjectOfType<PlayerData>();
         RateOfFireData = RateOfFire;

@@ -5,18 +5,22 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     private WeaponType weaponType;
+    Ray Ray;
     private void Awake()
     {
         weaponType = GetComponent<WeaponType>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        Ray Ray = new Ray(weaponType.AmmoExitLoc.position, weaponType.AmmoExitLoc.TransformDirection(Vector3.forward));
-        RaycastHit Hit;
+        Ray = new Ray(weaponType.AmmoExitLoc.position, weaponType.AmmoExitLoc.TransformDirection(Vector3.forward));
+    }
 
-        if (Physics.Raycast(Ray, out Hit, 100))
+    public void RayShoot()
+    {
+        if (Physics.Raycast(Ray, out RaycastHit Hit))
         {
-            Debug.DrawRay(Ray.origin, Ray.direction * Hit.distance, Color.yellow);
+            Debug.DrawRay(Ray.origin, Hit.distance * Ray.direction, Color.yellow);
+            Instantiate(weaponType.AmmoPrefab, Hit.point, weaponType.AmmoExitLoc.rotation, null);
         }
     }
 }

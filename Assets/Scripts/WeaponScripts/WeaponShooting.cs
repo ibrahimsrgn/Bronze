@@ -40,6 +40,7 @@ public class WeaponShooting : MonoBehaviour
 
     public void Shoot()
     {
-        Transform Deneme = Instantiate(weaponType.AmmoPrefab, weaponType.AmmoExitLoc.transform.position, weaponType.AmmoExitLoc.transform.localRotation, null);
+        weaponType._BulletScript.RayShoot();
+        //Transform Deneme = Instantiate(weaponType.AmmoPrefab, weaponType.AmmoExitLoc.transform.position, weaponType.AmmoExitLoc.transform.localRotation, null);
     }
 }
