@@ -184,8 +184,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Zombie Attack
-  m_Speed: 1
+  m_Name: Zombie Attack With Event
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5364380609149276959}
@@ -199,7 +199,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: fc80e22111227ed418eaca6fddf768b4, type: 3}
+  m_Motion: {fileID: 7400000, guid: 7eea5bf7c5a252a49b5b1c067c12cfb4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
