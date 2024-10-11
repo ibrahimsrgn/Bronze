@@ -16,7 +16,7 @@ public class GunFire : WeaponType
                     _Shooting.SingleShoot();
                     break;
                 case FireMode.Burst:
-                    _Shooting.BurstShoot();
+                    StartCoroutine(_Shooting.BurstShoot());
                     break;
                 case FireMode.Auto:
                     _Shooting.AutoShoot();
@@ -24,7 +24,7 @@ public class GunFire : WeaponType
             }
             RateOfFire = RateOfFireData;
         }
-        else if (!_PlayerData.MouseClickInput)
+        else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
         {
             ReadyToShoot = true;
         }

@@ -17,17 +17,19 @@ public class WeaponShooting : MonoBehaviour
         weaponType.ReadyToShoot = false;
     }
 
-    public void BurstShoot()
+    public IEnumerator BurstShoot()
     {
-        if (weaponType.BurstCount-- > 0)
+        weaponType.ReadyToShoot = false;
+        weaponType.BurstCoroutineOn = true;
+        for (int i = 0; i < weaponType.BurstCountData; i++)
         {
-            Invoke("Shoot", 1f);
-            BurstShoot();
-        }
-        else
-        {
-            weaponType.ReadyToShoot = false;
-            weaponType.BurstCount = weaponType.BurstCountData;
+            Shoot();
+            yield return new WaitForSeconds(weaponType.BurstModeDelay);
+            if (i + 1 == weaponType.BurstCountData)
+            {
+                weaponType.ReadyToShoot = true;
+                weaponType.BurstCoroutineOn = false;
+            }
         }
     }
 

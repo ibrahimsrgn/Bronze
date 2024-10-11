@@ -22,7 +22,8 @@ public class WeaponType : MonoBehaviour
     public int BurstCountData;
     [HideInInspector]
     public WeaponShooting _Shooting;
-
+    //[HideInInspector]
+    public bool BurstCoroutineOn;
     private void Awake()
     {
         _Shooting = FindObjectOfType<WeaponShooting>();
