@@ -26,6 +26,8 @@ public class ZombieAi : MonoBehaviour
     public bool isDying;
     [SerializeField] private Animator animator;
 
+
+ 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -49,25 +51,29 @@ public class ZombieAi : MonoBehaviour
     }
     private void CheckState()
     {
+        //Oyuncu görüş alanında mı?
         if (Physics.CheckSphere(transform.position, sightRange, playerLayer))
         {
-            float angleToPlayer = Vector3.Angle(transform.position, player.position);
+            Vector3 dirToPlayer=(player.position-transform.position).normalized;
+            float angleToPlayer = Vector3.Angle(transform.forward, dirToPlayer);
             if (angleToPlayer < sightAreaAngle / 2)
                 playerInSight = true;
         }
         else playerInSight = false;
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
         
-        if (!playerInSight && !playerInAttackRange)
+        if (!playerInSight && !playerInAttackRange&& !alreadyAttacked)
             Patroling();
-        if (playerInSight && !playerInAttackRange)
+        if (playerInSight && !playerInAttackRange && !alreadyAttacked)
             ChasePlayer();
         if (playerInSight && playerInAttackRange)
             AttackPlayer();
         else
             animator.SetBool("IsAttacking", false);
 
+   
     }
+
     private void Patroling()
     {
         if (!walkPointSet) SearchForWalkPoint();
@@ -127,6 +133,7 @@ public class ZombieAi : MonoBehaviour
     /// </summary>
     private void Attack()
     {
+        if(Vector3.Distance(transform.position,player.position)<2f)
         player.gameObject.GetComponent<HealthManager>().TakeDamage(attackDamage);
     }
     private void ResetAttack()
