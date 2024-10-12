@@ -17,6 +17,8 @@ public class PlayerData : MonoBehaviour
     public float SprintSpeedData;
 
     [Header("Camera Look")]
+    [HideInInspector]
+    public Ray Ray;
     public float MouseSensivity;
     public Transform Camera;
 

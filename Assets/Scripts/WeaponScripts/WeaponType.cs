@@ -8,10 +8,15 @@ public class WeaponType : MonoBehaviour
     public int BurstCount;
     public float BurstModeDelay;
     public float RateOfFire;
+    public float BulletVelocity;
+    public int BulletDamage;
+    public LayerMask mask;
 
     [Header("Prefabs")]
     [SerializeField] public Transform AmmoExitLoc;
-    [SerializeField] public Transform AmmoPrefab;
+    [SerializeField] public ParticleSystem MuzzleFlash;
+    [SerializeField] public ParticleSystem BulletImpact;
+    [SerializeField] public TrailRenderer BulletTrail;
 
     public bool ReadyToShoot = true;
     [HideInInspector]

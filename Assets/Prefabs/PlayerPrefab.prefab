@@ -158,8 +158,15 @@ MonoBehaviour:
   BurstCount: 3
   BurstModeDelay: 0.3
   RateOfFire: 0.1
+  BulletVelocity: 500
+  BulletDamage: 10
+  mask:
+    serializedVersion: 2
+    m_Bits: 247
   AmmoExitLoc: {fileID: 675779141363951636}
-  AmmoPrefab: {fileID: 4521007908090829906, guid: cde6a5a452bbbbb499d5b7ea239b9774, type: 3}
+  MuzzleFlash: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+  BulletImpact: {fileID: 1456516873995807607, guid: 325daf2d73e27944f87f3946ff86cbea, type: 3}
+  BulletTrail: {fileID: 4809486089463462804, guid: c563fab89cae77542945c2af72d9638f, type: 3}
   ReadyToShoot: 1
   _PlayerData: {fileID: 0}
   RateOfFireData: 0
@@ -331,6 +338,7 @@ GameObject:
   - component: {fileID: 4639437619064171958}
   - component: {fileID: 8050631029928150597}
   - component: {fileID: 1465126746136196672}
+  - component: {fileID: 2512156666800136754}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -532,6 +540,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 500
+--- !u!114 &2512156666800136754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918116591671992514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57909ac163b56144bdd03135e755d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5806235954031868335
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +630,7 @@ GameObject:
   - component: {fileID: 8566011394617193029}
   m_Layer: 3
   m_Name: Main_CameraPlayer
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
