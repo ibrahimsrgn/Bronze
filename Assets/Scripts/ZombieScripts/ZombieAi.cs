@@ -26,6 +26,9 @@ public class ZombieAi : MonoBehaviour
     public bool isDying;
     [SerializeField] private Animator animator;
 
+    private float waitTimerMax = 1f;
+    private float waitTimer = 0;
+
 
  
     private void Awake()
@@ -38,10 +41,14 @@ public class ZombieAi : MonoBehaviour
         {
             animator.SetBool("IsDying", true);
         }
-        else
+        else if(waitTimer<=0)
         {
             CheckState();
             Animate();
+        }
+        else
+        {
+            waitTimer -= Time.deltaTime;
         }
         
     }
@@ -108,6 +115,7 @@ public class ZombieAi : MonoBehaviour
     }
     private void AttackPlayer()
     {
+        waitTimer = waitTimerMax;
         agent.SetDestination(transform.position);
         Vector3 playerPos = player.position;
         playerPos.y = transform.position.y;
