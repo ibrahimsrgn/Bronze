@@ -438,8 +438,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
-      propertyPath: BulletVelocity
-      value: 500
+      propertyPath: _FireMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
+      propertyPath: RateOfFire
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
+      propertyPath: BurstModeDelay
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

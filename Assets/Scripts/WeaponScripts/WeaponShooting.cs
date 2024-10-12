@@ -27,7 +27,6 @@ public class WeaponShooting : MonoBehaviour
             yield return new WaitForSeconds(weaponType.BurstModeDelay);
             if (i + 1 == weaponType.BurstCountData)
             {
-                weaponType.ReadyToShoot = true;
                 weaponType.BurstCoroutineOn = false;
             }
         }

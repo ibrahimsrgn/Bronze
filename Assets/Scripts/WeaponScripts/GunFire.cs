@@ -26,6 +26,7 @@ public class GunFire : WeaponType
         }
         else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
         {
+            Debug.Log("1");
             ReadyToShoot = true;
         }
     }
