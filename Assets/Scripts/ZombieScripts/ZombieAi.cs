@@ -39,6 +39,7 @@ public class ZombieAi : MonoBehaviour
     {
         if(isDying)
         {
+            agent.enabled = false;
             animator.SetBool("IsDying", true);
         }
         else if(waitTimer<=0)

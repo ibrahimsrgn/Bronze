@@ -60,8 +60,7 @@ public class BulletScript : MonoBehaviour
 
     private void GiveDamageToEnemy()
     {
-        HealthManager Deneme = Hit.collider.GetComponent<HealthManager>();
-        if (Deneme != null )
+        if (Hit.collider.TryGetComponent<HealthManager>(out HealthManager Deneme))
         {
             Deneme.TakeDamage(weaponType.BulletDamage);
         }

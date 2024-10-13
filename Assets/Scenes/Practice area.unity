@@ -439,11 +439,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
       propertyPath: _FireMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
       propertyPath: RateOfFire
-      value: 0.5
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
+      propertyPath: BulletDamage
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7489592170491384539, guid: bbd35a6c4454a3d4e9782833dba6c403, type: 3}
       propertyPath: BurstModeDelay
@@ -1095,6 +1099,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1457741973}
+    - target: {fileID: 5700937771529453350, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6279823610682781954, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.682
