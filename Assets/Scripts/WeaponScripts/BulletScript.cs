@@ -11,22 +11,28 @@ public class BulletScript : MonoBehaviour
     private RaycastHit Hit;
     private Vector3 TargetPoint;
     private Vector3 StartPosition;
+    private Ray Ray;
 
     private void Awake()
     {
         weaponType = GetComponent<WeaponType>();
     }
 
+    private void Update()
+    {
+        Ray = new Ray(weaponType.AmmoExitLoc.position, weaponType.AmmoExitLoc.TransformDirection(Vector3.forward));
+    }
+
     public void RayShoot()
     {
         weaponType.MuzzleFlash.Play();
-        if (Physics.Raycast(weaponType._PlayerData.Ray, out Hit, Mathf.Infinity, weaponType.mask))
+        if (Physics.Raycast(Ray, out Hit, Mathf.Infinity, weaponType.mask))
         {
             TargetPoint = Hit.point;
         }
         else
         {
-            TargetPoint = weaponType._PlayerData.Ray.GetPoint(1000);
+            TargetPoint = Ray.GetPoint(1000);
         }
 
         TrailRenderer Trail = Instantiate(weaponType.BulletTrail, weaponType.AmmoExitLoc.position, Quaternion.identity);
