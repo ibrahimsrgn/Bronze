@@ -30,7 +30,6 @@ public class HealthManager : MonoBehaviour
             zombieAi.isDying = true;
         }
         //Player için farklı bir animasyon yapılabilir
-        Destroy(gameObject,5);
     }
 
 }

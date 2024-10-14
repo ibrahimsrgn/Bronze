@@ -559,6 +559,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 500
+--- !u!1 &319945094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+  m_PrefabInstance: {fileID: 974187045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &319945096 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 3084441780533831977, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+  m_PrefabInstance: {fileID: 974187045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &319945100 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 127867265787259768, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+  m_PrefabInstance: {fileID: 974187045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &319945101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6279823610682781954, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+  m_PrefabInstance: {fileID: 974187045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &319945102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319945094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe72339972bfeb489abea17907f67d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 319945100}
+  ragdollRoot: {fileID: 319945101}
+  agent: {fileID: 319945096}
+  startRagdoll: 0
 --- !u!1 &355037875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1236,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 3030775897956380181}
+    - target: {fileID: 3624992688930709829, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+      propertyPath: ragdollEnabler
+      value: 
+      objectReference: {fileID: 319945102}
     - target: {fileID: 5700937771529453350, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
       propertyPath: maxHealth
       value: 500
@@ -1250,12 +1290,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 319945102}
   m_SourcePrefab: {fileID: 100100000, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
 --- !u!1 &1119390227
 GameObject:
