@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5121022067632818128}
   - component: {fileID: 8545662289409870166}
   - component: {fileID: 95460111362260426}
+  - component: {fileID: -8916268371959482734}
   m_Layer: 0
   m_Name: BulletImpact
   m_TagString: Untagged
@@ -44,7 +45,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1.25
-  stopAction: 2
+  stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -288,8 +289,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.15
-      minScalar: 0
+      scalar: 0.3
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4901,6 +4902,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-8916268371959482734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783669702020852693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996d3f5b9bf4b2f42bb8f4bc28522059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8781957447444599401
 GameObject:
   m_ObjectHideFlags: 0
