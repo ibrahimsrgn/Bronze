@@ -14,6 +14,7 @@ public class WeaponType : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] public Transform AmmoExitLoc;
+    [SerializeField] public Light MuzzleLight;
     [SerializeField] public ParticleSystem MuzzleFlash;
     [SerializeField] public ParticleSystem BulletImpact;
     [SerializeField] public TrailRenderer BulletTrail;

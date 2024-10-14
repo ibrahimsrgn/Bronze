@@ -25,7 +25,6 @@ public class BulletScript : MonoBehaviour
 
     public void RayShoot()
     {
-        weaponType.MuzzleFlash.Play();
         if (Physics.Raycast(Ray, out Hit, Mathf.Infinity, weaponType.mask))
         {
             TargetPoint = Hit.point;
@@ -41,6 +40,7 @@ public class BulletScript : MonoBehaviour
 
     private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 HitLocation)
     {
+        MuzzleEffect();
         StartPosition = trail.transform.position;
 
         float distance = Vector3.Distance(StartPosition, HitLocation);
@@ -57,7 +57,7 @@ public class BulletScript : MonoBehaviour
         }
 
         trail.transform.position = HitLocation;
-        Instantiate(weaponType.BulletImpact, HitLocation, Quaternion.LookRotation(HitLocation));
+        Instantiate(weaponType.BulletImpact, HitLocation, Quaternion.Inverse(weaponType.AmmoExitLoc.rotation));
 
         GiveDamageToEnemy();
 
@@ -70,5 +70,18 @@ public class BulletScript : MonoBehaviour
         {
             Deneme.TakeDamage(weaponType.BulletDamage);
         }
+    }
+
+    private void MuzzleEffect()
+    {
+        weaponType.MuzzleFlash.Emit(100);
+        weaponType.MuzzleLight.enabled = true;
+        StartCoroutine(KillMuzzleLight());
+    }
+
+    public IEnumerator KillMuzzleLight()
+    {
+        yield return new WaitForSeconds(0.1f);
+        weaponType.MuzzleLight.enabled = false;
     }
 }
