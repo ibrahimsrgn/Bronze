@@ -26,11 +26,15 @@ public class ZombieAi : MonoBehaviour
     public bool isDying;
     [SerializeField] private Animator animator;
 
+    [SerializeField] private RagdollEnabler ragdollEnabler;
+
+    //Wait for attack ends
     private float waitTimerMax = 1f;
     private float waitTimer = 0;
+    float fadeOutTimer = 1;
 
 
- 
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -39,8 +43,14 @@ public class ZombieAi : MonoBehaviour
     {
         if(isDying)
         {
-            agent.enabled = false;
-            animator.SetBool("IsDying", true);
+            //agent.enabled = false;
+
+            //Düşman ölünce collideri kalıyor mermiler içinden geçmesi gerekebilir
+            //GetComponent<CapsuleCollider>().enabled = false;
+            //animator.SetBool("IsDying", true);
+            ragdollEnabler.EnableRagdoll();
+            StartCoroutine(FadeOutCorpse());
+
         }
         else if(waitTimer<=0)
         {
@@ -56,6 +66,17 @@ public class ZombieAi : MonoBehaviour
     private void Animate()
     {
         animator.SetFloat("MoveSpeed", agent.velocity.magnitude);
+    }
+    private IEnumerator FadeOutCorpse()
+    {
+        yield return new WaitForSeconds(fadeOutTimer);
+        ragdollEnabler.DisableAllRigidbody();
+        while (fadeOutTimer > 0)
+        {
+            transform.position += Vector3.down * Time.deltaTime;
+            fadeOutTimer -= Time.deltaTime;
+        }
+
     }
     private void CheckState()
     {

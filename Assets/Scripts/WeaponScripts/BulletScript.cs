@@ -42,7 +42,7 @@ public class BulletScript : MonoBehaviour
     {
         MuzzleEffect();
         StartPosition = trail.transform.position;
-
+        Vector3 dirToEnemy = (HitLocation - StartPosition).normalized;
         float distance = Vector3.Distance(StartPosition, HitLocation);
         float travelTime = distance / weaponType.BulletVelocity;
         float elapsedTime = 0f;
@@ -59,16 +59,20 @@ public class BulletScript : MonoBehaviour
         trail.transform.position = HitLocation;
         Instantiate(weaponType.BulletImpact, HitLocation, Quaternion.Inverse(weaponType.AmmoExitLoc.rotation));
 
-        GiveDamageToEnemy();
+        GiveDamageToEnemy(dirToEnemy);
 
         Destroy(trail.gameObject, trail.time);
     }
 
-    private void GiveDamageToEnemy()
+    private void GiveDamageToEnemy(Vector3 dirToEnemy)
     {
         if (Hit.collider.TryGetComponent<HealthManager>(out HealthManager Deneme))
         {
             Deneme.TakeDamage(weaponType.BulletDamage);
+            if (Hit.collider.TryGetComponent<Rigidbody>(out Rigidbody hitBody))
+            {
+                hitBody.AddForce(dirToEnemy * weaponType.BulletDamage, ForceMode.Impulse);
+            }
         }
     }
 
