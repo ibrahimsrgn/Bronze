@@ -66,9 +66,9 @@ public class BulletScript : MonoBehaviour
 
     private void GiveDamageToEnemy(Vector3 dirToEnemy)
     {
-        HealthManager Deneme = Hit.collider.gameObject.GetComponentInParent<HealthManager>();
         if (Hit.collider != null)
         {
+            HealthManager Deneme = Hit.collider.gameObject.GetComponentInParent<HealthManager>();
             if (Deneme != null)
             {
                 Deneme.TakeDamage(weaponType.BulletDamage);
@@ -82,7 +82,7 @@ public class BulletScript : MonoBehaviour
 
     private void MuzzleEffect()
     {
-        weaponType.MuzzleFlash.Emit(100);
+        weaponType.MuzzleFlash.Emit(50);
         weaponType.MuzzleLight.enabled = true;
         StartCoroutine(KillMuzzleLight());
     }

@@ -26,7 +26,7 @@ public class ZombieAi : MonoBehaviour
     public bool isDying;
     [SerializeField] private Animator animator;
 
-    [SerializeField] private RagdollEnabler ragdollEnabler;
+    [SerializeField] public RagdollEnabler ragdollEnabler;
 
     //Wait for attack ends
     private float waitTimerMax = 1f;
@@ -41,18 +41,7 @@ public class ZombieAi : MonoBehaviour
     }
     private void Update()
     {
-        if(isDying)
-        {
-            //agent.enabled = false;
-
-            //Düşman ölünce collideri kalıyor mermiler içinden geçmesi gerekebilir
-            //GetComponent<CapsuleCollider>().enabled = false;
-            //animator.SetBool("IsDying", true);
-            ragdollEnabler.EnableRagdoll();
-            StartCoroutine(FadeOutCorpse());
-
-        }
-        else if(waitTimer<=0)
+        if (waitTimer <= 0)
         {
             CheckState();
             Animate();
@@ -61,7 +50,7 @@ public class ZombieAi : MonoBehaviour
         {
             waitTimer -= Time.deltaTime;
         }
-        
+
     }
     private void Animate()
     {
@@ -83,15 +72,15 @@ public class ZombieAi : MonoBehaviour
         //Oyuncu görüş alanında mı?
         if (Physics.CheckSphere(transform.position, sightRange, playerLayer))
         {
-            Vector3 dirToPlayer=(player.position-transform.position).normalized;
+            Vector3 dirToPlayer = (player.position - transform.position).normalized;
             float angleToPlayer = Vector3.Angle(transform.forward, dirToPlayer);
             if (angleToPlayer < sightAreaAngle / 2)
                 playerInSight = true;
         }
         else playerInSight = false;
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
-        
-        if (!playerInSight && !playerInAttackRange&& !alreadyAttacked)
+
+        if (!playerInSight && !playerInAttackRange && !alreadyAttacked)
             Patroling();
         if (playerInSight && !playerInAttackRange && !alreadyAttacked)
             ChasePlayer();
@@ -99,8 +88,6 @@ public class ZombieAi : MonoBehaviour
             AttackPlayer();
         else
             animator.SetBool("IsAttacking", false);
-
-   
     }
 
     private void Patroling()
@@ -131,7 +118,7 @@ public class ZombieAi : MonoBehaviour
     private void ChasePlayer()
     {
         Debug.Log("Chasing The Player");
-        
+
         agent.SetDestination(player.position);
 
     }
@@ -152,7 +139,7 @@ public class ZombieAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             animator.SetBool("IsAttacking", true);
-        Debug.Log("Attacking The Player");
+            Debug.Log("Attacking The Player");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackRate);
         }
@@ -163,8 +150,8 @@ public class ZombieAi : MonoBehaviour
     /// </summary>
     private void Attack()
     {
-        if(Vector3.Distance(transform.position,player.position)<2f)
-        player.gameObject.GetComponent<HealthManager>().TakeDamage(attackDamage);
+        if (Vector3.Distance(transform.position, player.position) < 2f)
+            player.gameObject.GetComponent<HealthManager>().TakeDamage(attackDamage);
     }
     private void ResetAttack()
     {

@@ -7,9 +7,9 @@ using UnityEngine.AI;
 
 public class RagdollEnabler : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
     [SerializeField] private Transform ragdollRoot;
-    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] public NavMeshAgent agent;
     [SerializeField] private bool startRagdoll = false;
 
     private Rigidbody[] rigidbodies;
@@ -33,9 +33,6 @@ public class RagdollEnabler : MonoBehaviour
     }
     public void EnableRagdoll()
     {
-        animator.enabled = false;
-        agent.enabled = false;
-
         foreach(CharacterJoint characterJoint in characterJoints)
         {
             characterJoint.enableCollision = true;
