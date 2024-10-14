@@ -66,12 +66,16 @@ public class BulletScript : MonoBehaviour
 
     private void GiveDamageToEnemy(Vector3 dirToEnemy)
     {
-        if (Hit.collider.TryGetComponent<HealthManager>(out HealthManager Deneme))
+        HealthManager Deneme = Hit.collider.gameObject.GetComponentInParent<HealthManager>();
+        if (Hit.collider != null)
         {
-            Deneme.TakeDamage(weaponType.BulletDamage);
-            if (Hit.collider.TryGetComponent<Rigidbody>(out Rigidbody hitBody))
+            if (Deneme != null)
             {
-                hitBody.AddForce(dirToEnemy * weaponType.BulletDamage, ForceMode.Impulse);
+                Deneme.TakeDamage(weaponType.BulletDamage);
+                if (Hit.collider.TryGetComponent<Rigidbody>(out Rigidbody hitBody))
+                {
+                    hitBody.AddForce(dirToEnemy * weaponType.BulletDamage, ForceMode.Impulse);
+                }
             }
         }
     }

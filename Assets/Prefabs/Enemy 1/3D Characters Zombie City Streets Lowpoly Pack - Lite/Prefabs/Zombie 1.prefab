@@ -2101,7 +2101,6 @@ GameObject:
   - component: {fileID: 6279823610682781954}
   - component: {fileID: 127867265787259768}
   - component: {fileID: 7374976568953559191}
-  - component: {fileID: 2556347736427020138}
   - component: {fileID: 5700937771529453350}
   - component: {fileID: 3084441780533831977}
   - component: {fileID: 3624992688930709829}
@@ -2177,29 +2176,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!136 &2556347736427020138
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6660184903045082040}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.16209519
-  m_Height: 2.1523452
-  m_Direction: 1
-  m_Center: {x: 0.018178582, y: 0.98340845, z: 0}
 --- !u!114 &5700937771529453350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,6 +2240,7 @@ MonoBehaviour:
   sightAreaAngle: 100
   isDying: 0
   animator: {fileID: 127867265787259768}
+  ragdollEnabler: {fileID: 0}
 --- !u!1 &6906493944559020957
 GameObject:
   m_ObjectHideFlags: 0
