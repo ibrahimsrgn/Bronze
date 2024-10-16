@@ -79,7 +79,8 @@ public class ZombieMovement : MonoBehaviour
     private void DoIdleMovement()
     {
         Vector3 direction = (target.position - transform.position).normalized;
-        if (Vector3.Distance(transform.position, target.position) <= lineOfSightDistance && Vector3.Dot(transform.forward, direction) >= Mathf.Cos(fieldOfView))
+        float fovRadians = Mathf.Cos(fieldOfView * Mathf.Deg2Rad);
+        if (Vector3.Distance(transform.position, target.position) <= lineOfSightDistance && Vector3.Dot(transform.forward, direction) >= fovRadians)
         {
             Debug.Log("Target Found");
             GetAggressive();
