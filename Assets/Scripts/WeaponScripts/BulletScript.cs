@@ -57,7 +57,7 @@ public class BulletScript : MonoBehaviour
         }
 
         trail.transform.position = HitLocation;
-        Instantiate(weaponType.BulletImpact, HitLocation, Quaternion.Inverse(weaponType.AmmoExitLoc.rotation));
+        Instantiate(weaponType.BulletImpact, HitLocation, Quaternion.Inverse(weaponType.AmmoExitLoc.rotation), Hit.transform.parent);
 
         GiveDamageToEnemy(dirToEnemy);
 

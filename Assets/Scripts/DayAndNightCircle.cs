@@ -14,7 +14,7 @@ public class DayAndNightCircle : MonoBehaviour
     [SerializeField] private Gradient ColorDaylight;
     [SerializeField] private Gradient ColorSunset;
     [SerializeField] private Gradient ColorNight;
-    [SerializeField] private Light Light;
+    [SerializeField] private Light Sun;
 
     public Transform DayNightCircle;
     public float Minute;
@@ -45,7 +45,7 @@ public class DayAndNightCircle : MonoBehaviour
         }
         AngleManager = ((Hours - 6) * 15f) + (Minute * 0.25f) + (0.0041666666666667f * Second);
         DayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, AngleManager / 4, 0).eulerAngles;
-        //Debug.Log($"{Hours}, {Minute}, {Second} ---- {DayNightCircle.transform.eulerAngles.x}");
+        Debug.Log($"{Hours}, {Minute}, {Second} ---- {DayNightCircle.transform.eulerAngles.x}");
     }
 
     private void OnHoursChange(int hours)
@@ -83,7 +83,7 @@ public class DayAndNightCircle : MonoBehaviour
     {
         for (float i = 0; i < time; i += Time.deltaTime)
         {
-            Light.color = LightGradient.Evaluate(i / time);
+            Sun.color = LightGradient.Evaluate(i / time);
             yield return null;
         }
     }
