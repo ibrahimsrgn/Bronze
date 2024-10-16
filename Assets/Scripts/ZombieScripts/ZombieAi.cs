@@ -47,8 +47,7 @@ public class ZombieAi : MonoBehaviour
     }
     private void Update()
     {
-        if (waitTimer <= 0)
-        {
+
             switch (state)
             {
                 case State.IdleAndPatrol:
@@ -66,11 +65,6 @@ public class ZombieAi : MonoBehaviour
                 case State.Dead: break;
             }
             Animate();
-        }
-        else
-        {
-            waitTimer -= Time.deltaTime;
-        }
 
     }
     private void Animate()
