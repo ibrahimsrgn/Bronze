@@ -60,7 +60,8 @@ public class ZombieAi : MonoBehaviour
                     IsPlayerAttackRange();
                     break;
                 case State.Attacking:
-                    Attack();
+                    AttackPlayer();
+                    IsPlayerAttackRange();
                     break;
                 case State.Dead: break;
             }
@@ -96,8 +97,8 @@ public class ZombieAi : MonoBehaviour
     private void IsPlayerAttackRange()
     {
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
-        state = State.Attacking;
-       //state= playerInAttackRange ? State.Attacking : State.Chasing;
+       state= playerInAttackRange ? State.Attacking : State.Chasing;
+        animator.SetBool("IsAttacking", playerInAttackRange);
     }
     private void CheckState()
     {

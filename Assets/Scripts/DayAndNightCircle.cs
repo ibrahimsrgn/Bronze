@@ -45,7 +45,7 @@ public class DayAndNightCircle : MonoBehaviour
         }
         AngleManager = ((Hours - 6) * 15f) + (Minute * 0.25f) + (0.0041666666666667f * Second);
         DayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, AngleManager / 4, 0).eulerAngles;
-        Debug.Log($"{Hours}, {Minute}, {Second} ---- {DayNightCircle.transform.eulerAngles.x}");
+        //Debug.Log($"{Hours}, {Minute}, {Second} ---- {DayNightCircle.transform.eulerAngles.x}");
     }
 
     private void OnHoursChange(int hours)
