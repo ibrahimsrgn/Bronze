@@ -94,7 +94,6 @@ public class ZombieAi : MonoBehaviour
     {
         if (!walkPointSet) SearchForWalkPoint();
         if (walkPointSet) agent.SetDestination(walkPoint);
-        Debug.Log("Patrolling");
         float distanceToWalkPoint = Vector3.Distance(transform.position, walkPoint);
         //Walk point reached
         if (distanceToWalkPoint < 1f) Invoke(nameof(ResetWalkPoint), 5);
@@ -105,7 +104,6 @@ public class ZombieAi : MonoBehaviour
     }
     private void SearchForWalkPoint()
     {
-        Debug.Log("Looking For Walk Point");
 
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -117,7 +115,6 @@ public class ZombieAi : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        Debug.Log("Chasing The Player");
 
         agent.SetDestination(player.position);
 
@@ -139,7 +136,6 @@ public class ZombieAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             animator.SetBool("IsAttacking", true);
-            Debug.Log("Attacking The Player");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackRate);
         }
