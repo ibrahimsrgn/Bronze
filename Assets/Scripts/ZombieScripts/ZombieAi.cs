@@ -32,8 +32,14 @@ public class ZombieAi : MonoBehaviour
     private float waitTimerMax = 1f;
     private float waitTimer = 0;
     float fadeOutTimer = 1;
-
-
+    private State state;
+    private enum State
+    {
+        IdleAndPatrol,
+        Chasing,
+        Attacking,
+        Dead
+    }
 
     private void Awake()
     {
@@ -43,7 +49,21 @@ public class ZombieAi : MonoBehaviour
     {
         if (waitTimer <= 0)
         {
-            CheckState();
+            switch (state)
+            {
+                case State.IdleAndPatrol:
+                    Patroling();
+                    IsPlayerInSight();
+                    break;
+                case State.Chasing:
+                    ChasePlayer();
+                    IsPlayerAttackRange();
+                    break;
+                case State.Attacking:
+                    Attack();
+                    break;
+                case State.Dead: break;
+            }
             Animate();
         }
         else
@@ -67,34 +87,35 @@ public class ZombieAi : MonoBehaviour
         }
 
     }
+    private void IsPlayerInSight()
+    {
+        //Oyuncu görüş alanındamı?
+        playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer) && Vector3.Angle(transform.forward, (player.position - transform.position).normalized) < sightAreaAngle / 2;
+        state = State.Chasing;
+    }
+    private void IsPlayerAttackRange()
+    {
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
+        state = State.Attacking;
+       //state= playerInAttackRange ? State.Attacking : State.Chasing;
+    }
     private void CheckState()
     {
-        //Oyuncu görüş alanında mı?
-        if (Physics.CheckSphere(transform.position, sightRange, playerLayer))
-        {
-            Vector3 dirToPlayer = (player.position - transform.position).normalized;
-            float angleToPlayer = Vector3.Angle(transform.forward, dirToPlayer);
-            if (angleToPlayer < sightAreaAngle / 2)
-                playerInSight = true;
-        }
-        else playerInSight = false;
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
-
         if (!playerInSight && !playerInAttackRange && !alreadyAttacked)
-            Patroling();
+            state = State.IdleAndPatrol;
         if (playerInSight && !playerInAttackRange && !alreadyAttacked)
-            ChasePlayer();
+            state = State.Chasing;
         if (playerInSight && playerInAttackRange)
-            AttackPlayer();
+            state = State.Attacking;
         else
             animator.SetBool("IsAttacking", false);
     }
 
     private void Patroling()
     {
+        Debug.Log("Patroling");
         if (!walkPointSet) SearchForWalkPoint();
         if (walkPointSet) agent.SetDestination(walkPoint);
-        Debug.Log("Patrolling");
         float distanceToWalkPoint = Vector3.Distance(transform.position, walkPoint);
         //Walk point reached
         if (distanceToWalkPoint < 1f) Invoke(nameof(ResetWalkPoint), 5);
@@ -105,7 +126,6 @@ public class ZombieAi : MonoBehaviour
     }
     private void SearchForWalkPoint()
     {
-        Debug.Log("Looking For Walk Point");
 
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -117,13 +137,14 @@ public class ZombieAi : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        Debug.Log("Chasing The Player");
 
+        Debug.Log("Chasing");
         agent.SetDestination(player.position);
 
     }
     private void AttackPlayer()
     {
+        Debug.Log("Attacking");
         waitTimer = waitTimerMax;
         agent.SetDestination(transform.position);
         Vector3 playerPos = player.position;
@@ -139,7 +160,6 @@ public class ZombieAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             animator.SetBool("IsAttacking", true);
-            Debug.Log("Attacking The Player");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackRate);
         }
