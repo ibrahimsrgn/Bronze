@@ -75,8 +75,16 @@ public class DayAndNightCircle : MonoBehaviour
 
     private IEnumerator SkyBoxLerp(Texture2D a, Texture2D b, float time)
     {
+        RenderSettings.skybox.SetTexture("_Texture1", a);
+        RenderSettings.skybox.SetTexture("_Texture2", b);
+        RenderSettings.skybox.SetFloat("_Blend", 0);
+        for (float i = 0; i < time; i += Time.deltaTime)
+        {
+            RenderSettings.skybox.SetFloat("_Blend", i / time);
 
-        yield return null;
+            yield return null;
+        }
+        RenderSettings.skybox.SetTexture("_Texture1", b);
     }
 
     private IEnumerator SunColorLerp(Gradient LightGradient, float time)
@@ -84,6 +92,7 @@ public class DayAndNightCircle : MonoBehaviour
         for (float i = 0; i < time; i += Time.deltaTime)
         {
             Sun.color = LightGradient.Evaluate(i / time);
+            RenderSettings.fogColor = Sun.color;
             yield return null;
         }
     }
