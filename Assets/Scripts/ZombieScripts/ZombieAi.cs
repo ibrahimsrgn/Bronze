@@ -151,12 +151,11 @@ public class ZombieAi : MonoBehaviour
         walkPoint = player.position;
         walkPointSet = true;
 
-
         if (!alreadyAttacked)
         {
             animator.SetBool("IsAttacking", true);
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), attackRate);
+            //Invoke(nameof(ResetAttack), attackRate);
         }
     }
     /// <summary>
@@ -167,9 +166,11 @@ public class ZombieAi : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.position) < 2f)
             player.gameObject.GetComponent<HealthManager>().TakeDamage(attackDamage);
+
     }
     private void ResetAttack()
     {
+        Debug.Log("1");
         alreadyAttacked = false;
     }
     private void OnDrawGizmos()
