@@ -28,12 +28,14 @@ public class ZombieAi : MonoBehaviour
 
     [SerializeField] public RagdollEnabler ragdollEnabler;
 
+    public ZombieSpawner zombieSpawner;
+
     //Wait for attack ends
     private float waitTimerMax = 1f;
     private float waitTimer = 0;
     float fadeOutTimer = 1;
-    private State state;
-    private enum State
+    public State state;
+    public enum State
     {
         IdleAndPatrol,
         Chasing,
@@ -44,27 +46,52 @@ public class ZombieAi : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        ragdollEnabler = GetComponent<RagdollEnabler>();
+    }
+
+    private void Start()
+    {
+        //Checks if its on navmesh
+        if (!agent.isOnNavMesh)
+        {
+            zombieSpawner.zombieCount--;
+            Destroy(gameObject);
+        }
     }
     private void Update()
     {
-
-            switch (state)
-            {
-                case State.IdleAndPatrol:
-                    Patroling();
-                    IsPlayerInSight();
-                    break;
-                case State.Chasing:
+        switch (state)
+        {
+            case State.IdleAndPatrol:
+                Patroling();
+                IsPlayerInSight();
+                break;
+            case State.Chasing:
+                if (IsPlayerAttackRange())
+                {
+                    state = State.Attacking;
+                }
+                else
+                {
                     ChasePlayer();
-                    IsPlayerAttackRange();
-                    break;
-                case State.Attacking:
+                }
+                break;
+            case State.Attacking:
+                if (IsPlayerAttackRange())
+                {
                     AttackPlayer();
-                    IsPlayerAttackRange();
-                    break;
-                case State.Dead: break;
-            }
-            Animate();
+                }
+                else
+                {
+                    state = alreadyAttacked ? State.Attacking : State.Chasing;
+
+                }
+                break;
+            case State.Dead:
+                Dead();
+                break;
+        }
+        Animate();
 
     }
     private void Animate()
@@ -86,29 +113,30 @@ public class ZombieAi : MonoBehaviour
     {
         //Oyuncu görüş alanındamı?
         playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer) && Vector3.Angle(transform.forward, (player.position - transform.position).normalized) < sightAreaAngle / 2;
-        state = State.Chasing;
+        if (playerInSight)
+        {
+            state = State.Chasing;
+        }
     }
-    private void IsPlayerAttackRange()
+    private bool IsPlayerAttackRange()
     {
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
-       state= playerInAttackRange ? State.Attacking : State.Chasing;
-        animator.SetBool("IsAttacking", playerInAttackRange);
+        state = playerInAttackRange ? State.Attacking : State.Chasing;
+        return playerInAttackRange;
     }
-    private void CheckState()
+    private void Dead()
     {
-        if (!playerInSight && !playerInAttackRange && !alreadyAttacked)
-            state = State.IdleAndPatrol;
-        if (playerInSight && !playerInAttackRange && !alreadyAttacked)
-            state = State.Chasing;
-        if (playerInSight && playerInAttackRange)
-            state = State.Attacking;
-        else
-            animator.SetBool("IsAttacking", false);
+        zombieSpawner.zombieCount--;
+        ragdollEnabler.animator.enabled = false;
+        ragdollEnabler.agent.enabled = false;
+        ragdollEnabler.EnableRagdoll();
+        enabled = false;
+
     }
 
     private void Patroling()
     {
-        Debug.Log("Patroling");
+        //Debug.Log("Patroling");
         if (!walkPointSet) SearchForWalkPoint();
         if (walkPointSet) agent.SetDestination(walkPoint);
         float distanceToWalkPoint = Vector3.Distance(transform.position, walkPoint);
@@ -133,13 +161,13 @@ public class ZombieAi : MonoBehaviour
     private void ChasePlayer()
     {
 
-        Debug.Log("Chasing");
+        //Debug.Log("Chasing");
         agent.SetDestination(player.position);
 
     }
     private void AttackPlayer()
     {
-        Debug.Log("Attacking");
+        // Debug.Log("Attacking");
         waitTimer = waitTimerMax;
         agent.SetDestination(transform.position);
         Vector3 playerPos = player.position;
@@ -168,10 +196,11 @@ public class ZombieAi : MonoBehaviour
             player.gameObject.GetComponent<HealthManager>().TakeDamage(attackDamage);
 
     }
+    //Animasyon ile tetikleniyor
     private void ResetAttack()
     {
-        Debug.Log("1");
         alreadyAttacked = false;
+        animator.SetBool("IsAttacking", false);
     }
     private void OnDrawGizmos()
     {

@@ -26,10 +26,7 @@ public class HealthManager : MonoBehaviour
     }
     private void Die()
     {
-        zombieAi.ragdollEnabler.animator.enabled = false;
-        zombieAi.ragdollEnabler.agent.enabled = false;
-        zombieAi.ragdollEnabler.EnableRagdoll();
-        zombieAi.enabled = false;
+        zombieAi.state = ZombieAi.State.Dead;
         /*/Düþman ölme animasyonu veya yok olma
         if (TryGetComponent<ZombieAi>(out ZombieAi zombieAi))
         {

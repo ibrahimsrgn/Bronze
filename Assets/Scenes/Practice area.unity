@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5440153}
   - component: {fileID: 5440152}
+  - component: {fileID: 5440154}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -327,6 +328,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5440154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8110e21e6280237478c264ebac83db8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3030775897956380181}
+  spawnRangeFromPlayer: 15
+  spawnInterval: 1
+  canSpawn: 1
+  zombies:
+  - zombiePrefab: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
+      type: 3}
+    spawnLuck: 50
+  - zombiePrefab: {fileID: 6660184903045082040, guid: bfacff9af732e4b4db59328f39ffa99e,
+      type: 3}
+    spawnLuck: 10
+  maxZombieCount: 2
+  zombieCount: 0
 --- !u!1 &13122170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1368,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 113225391}
   ragdollEnabler: {fileID: 113225386}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &113225388
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2550,6 +2578,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 168965517}
   ragdollEnabler: {fileID: 168965512}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &168965514
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7174,6 +7204,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 536781683}
   ragdollEnabler: {fileID: 536781678}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &536781680
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13998,42 +14030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 3030775897956380181}
-    - target: {fileID: 3624992688930709829, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: attackDamage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624992688930709829, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: ragdollEnabler
-      value: 
-      objectReference: {fileID: 997463433}
-    - target: {fileID: 3624992688930709829, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 63
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624992688930709829, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: playerLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 5700937771529453350, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5700937771529453350, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: currentHealth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5700937771529453350, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: ragdollEnabler
-      value: 
-      objectReference: {fileID: 997463433}
+      objectReference: {fileID: 4854438574755689108}
     - target: {fileID: 6279823610682781954, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14092,21 +14089,12 @@ PrefabInstance:
     - target: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 997463433}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970a0e0414fa8be4695cbe8c3d95afd7, type: 3}
 --- !u!1 &974910160
 GameObject:
@@ -14490,46 +14478,6 @@ Transform:
   - {fileID: 1682700802}
   m_Father: {fileID: 720737608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &997463425 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 974187045}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &997463427 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 3084441780533831977, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 974187045}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &997463431 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 127867265787259768, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 974187045}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &997463432 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6279823610682781954, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 974187045}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &997463433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997463425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe72339972bfeb489abea17907f67d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 997463431}
-  ragdollRoot: {fileID: 997463432}
-  agent: {fileID: 997463427}
-  startRagdoll: 0
 --- !u!1 &997787210
 GameObject:
   m_ObjectHideFlags: 0
@@ -16893,6 +16841,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 1128300581}
   ragdollEnabler: {fileID: 1128300576}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &1128300578
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19636,6 +19586,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 1313323909}
   ragdollEnabler: {fileID: 1313323904}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &1313323906
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -24318,6 +24270,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 1635099360}
   ragdollEnabler: {fileID: 1635099355}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &1635099357
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -25249,6 +25203,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 1725448849}
   ragdollEnabler: {fileID: 1725448844}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &1725448846
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -27266,6 +27222,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 1877529532}
   ragdollEnabler: {fileID: 1877529527}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &1877529529
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28931,6 +28889,8 @@ MonoBehaviour:
   isDying: 0
   animator: {fileID: 1993545198}
   ragdollEnabler: {fileID: 1993545193}
+  zombieSpawner: {fileID: 0}
+  state: 0
 --- !u!195 &1993545195
 NavMeshAgent:
   m_ObjectHideFlags: 0
