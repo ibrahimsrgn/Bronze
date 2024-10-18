@@ -88,7 +88,6 @@ public class ZombieAi : MonoBehaviour
                 }
                 break;
             case State.Dead:
-                Dead();
                 break;
         }
         Animate();
@@ -124,14 +123,9 @@ public class ZombieAi : MonoBehaviour
         state = playerInAttackRange ? State.Attacking : State.Chasing;
         return playerInAttackRange;
     }
-    private void Dead()
+    public void Dead()
     {
         zombieSpawner.zombieCount--;
-        ragdollEnabler.animator.enabled = false;
-        ragdollEnabler.agent.enabled = false;
-        ragdollEnabler.EnableRagdoll();
-        enabled = false;
-
     }
 
     private void Patroling()

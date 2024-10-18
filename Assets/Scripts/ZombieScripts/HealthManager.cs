@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth;
     private ZombieAi zombieAi;
+    bool isDead = false;
 
 
     private void Start()
@@ -26,7 +27,15 @@ public class HealthManager : MonoBehaviour
     }
     private void Die()
     {
-        zombieAi.state = ZombieAi.State.Dead;
+        if(!isDead)
+        {
+            zombieAi.Dead();
+            zombieAi.state = ZombieAi.State.Dead;
+            zombieAi.ragdollEnabler.animator.enabled = false;
+            zombieAi.ragdollEnabler.agent.enabled = false;
+            zombieAi.ragdollEnabler.EnableRagdoll();
+            isDead = true;
+        }
         /*/Düþman ölme animasyonu veya yok olma
         if (TryGetComponent<ZombieAi>(out ZombieAi zombieAi))
         {
