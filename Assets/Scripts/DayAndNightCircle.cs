@@ -5,18 +5,12 @@ using UnityEngine.Rendering;
 
 public class DayAndNightCircle : MonoBehaviour
 {
-    [SerializeField] private Texture2D Sunrise;
-    [SerializeField] private Texture2D Daylight;
-    [SerializeField] private Texture2D Sunset;
-    [SerializeField] private Texture2D Night;
-
-    [SerializeField] private Gradient ColorSunrise;
-    [SerializeField] private Gradient ColorDaylight;
-    [SerializeField] private Gradient ColorSunset;
-    [SerializeField] private Gradient ColorNight;
     [SerializeField] private Light Sun;
+    [SerializeField] private Light Moon;
 
-    public Transform DayNightCircle;
+
+    public Transform SunDayNightCircle;
+    public Transform MoonDayNightCircle;
     public float Minute;
     public int Hours;
     [Header("Day & Night Circle Per min")]
@@ -44,56 +38,23 @@ public class DayAndNightCircle : MonoBehaviour
             }
         }
         AngleManager = ((Hours - 6) * 15f) + (Minute * 0.25f) + (0.0041666666666667f * Second);
-        DayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, AngleManager / 4, 0).eulerAngles;
-        //Debug.Log($"{Hours}, {Minute}, {Second} ---- {DayNightCircle.transform.eulerAngles.x}");
+        MoonDayNightCircle.transform.eulerAngles = Quaternion.Euler(180 + AngleManager, 0, 0).eulerAngles;
+        SunDayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, AngleManager / 4, 0).eulerAngles;
+        //Debug.Log($"{Hours}, {Minute}, {Second} ---- {SunDayNightCircle.transform.eulerAngles.x}");
     }
 
     private void OnHoursChange(int hours)
     {
         if (hours == 6)
         {
-            StartCoroutine(SkyBoxLerp(Night, Sunrise, 10));
-            StartCoroutine(SunColorLerp(ColorSunrise, 10));
+            Moon.shadows = LightShadows.None;
+            Sun.shadows = LightShadows.Soft;
+            
         }
-        else if (hours == 8)
+        if (hours == 18)
         {
-            StartCoroutine(SkyBoxLerp(Sunrise, Daylight, 10));
-            StartCoroutine(SunColorLerp(ColorDaylight, 10));
-        }
-        else if (hours == 18)
-        {
-            StartCoroutine(SkyBoxLerp(Daylight, Sunset, 10));
-            StartCoroutine(SunColorLerp(ColorSunset, 10));
-
-        }
-        else if (hours == 22)
-        {
-            StartCoroutine(SkyBoxLerp(Sunset, Night, 10));
-            StartCoroutine(SunColorLerp(ColorNight, 10));
-        }
-    }
-
-    private IEnumerator SkyBoxLerp(Texture2D a, Texture2D b, float time)
-    {
-        RenderSettings.skybox.SetTexture("_Texture1", a);
-        RenderSettings.skybox.SetTexture("_Texture2", b);
-        RenderSettings.skybox.SetFloat("_Blend", 0);
-        for (float i = 0; i < time; i += Time.deltaTime)
-        {
-            RenderSettings.skybox.SetFloat("_Blend", i / time);
-
-            yield return null;
-        }
-        RenderSettings.skybox.SetTexture("_Texture1", b);
-    }
-
-    private IEnumerator SunColorLerp(Gradient LightGradient, float time)
-    {
-        for (float i = 0; i < time; i += Time.deltaTime)
-        {
-            Sun.color = LightGradient.Evaluate(i / time);
-            RenderSettings.fogColor = Sun.color;
-            yield return null;
+            Sun.shadows = LightShadows.None;
+            Moon.shadows = LightShadows.Soft;
         }
     }
 }

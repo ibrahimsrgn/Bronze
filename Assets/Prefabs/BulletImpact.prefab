@@ -289,7 +289,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
+      scalar: 0.1
       minScalar: 0.05
       maxCurve:
         serializedVersion: 2
@@ -554,8 +554,8 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.7453293
-      minScalar: -1.7453293
+      scalar: 0
+      minScalar: -0.2617994
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4846,10 +4846,13 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1c68c048883aa04e98206611bbd70f7, type: 2}
+  - {fileID: 2100000, guid: 325f0dfd5550040428087f6ad13e14d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9758,10 +9761,13 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7a8ad10c976a30848b75c4ba8d61ce62, type: 2}
+  - {fileID: 2100000, guid: df96f9f07312e76449088b55e62ab5d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
