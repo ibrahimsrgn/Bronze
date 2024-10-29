@@ -35,9 +35,9 @@ public class WeaponType : MonoBehaviour
 
     private void Awake()
     {
-        _BulletScript = FindAnyObjectByType<BulletScript>();
-        _Shooting = FindObjectOfType<WeaponShooting>();
-        _PlayerData = FindObjectOfType<PlayerData>();
+        _BulletScript = FindFirstObjectByType<BulletScript>();
+        _Shooting = FindFirstObjectByType<WeaponShooting>();
+        _PlayerData = FindFirstObjectByType<PlayerData>();
         RateOfFireData = RateOfFire;
         BurstCountData = BurstCount;
     }

@@ -39,4 +39,9 @@ public class PlayerData : MonoBehaviour
     [Header("Left&Right Mouse Button")]
     public bool MouseClickInput;
 
+    [Header("Animator Component")]
+    public Animator Animator;
+    public float SmoothSpeed;
+    [HideInInspector]
+    public Vector2 SmoothInput;
 }

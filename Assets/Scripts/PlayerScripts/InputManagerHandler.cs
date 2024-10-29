@@ -26,6 +26,7 @@ public class InputManagerHandler : MonoBehaviour
 
     private void OnJump(InputValue Value)
     {
+        _PlayerData.Animator.SetBool("Jump", Value.isPressed);
         _PlayerData.JumpInput = Value.isPressed;
     }
 
