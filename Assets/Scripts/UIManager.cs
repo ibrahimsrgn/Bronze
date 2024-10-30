@@ -25,8 +25,8 @@ public class UIManager : MonoBehaviour
     }
     public void HideInventory()
     {
-
-    Inventory.SetActive(false);
+        active=false;
+    Inventory.SetActive(active);
         Cursor.lockState = CursorLockMode.Locked;
     }
 }

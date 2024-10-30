@@ -8,6 +8,15 @@ public class DemoInventorysys : MonoBehaviour
     public void SpawnItem(int id)
     {
 
-        InventoryManager.AddItem(ItemSOs[id]);
+        bool result = InventoryManager.AddItem(ItemSOs[id]);
+        if (result)
+        {
+            Debug.Log("item added");
+
+        }
+        else
+        {
+            Debug.Log("item not added");
+        }
     }
 }
