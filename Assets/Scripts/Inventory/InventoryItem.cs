@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler,ISelectHandler
 {
     [Header("UI")]
     public Image image;
@@ -40,5 +40,25 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget=true;
         transform.SetParent(parentAfterDrag);
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        InventorySlot selectedSlot=GetComponentInParent<InventorySlot>();
+        selectedSlot.Selected();
+        int slotIndex = -1;
+        for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
+        {
+            if (InventoryManager.instance.inventorySlots[i] == selectedSlot)
+            {
+                slotIndex = i;
+                break;
+            }
+        }
+
+        if (slotIndex != -1)
+        {
+            InventoryManager.instance.ChangeSelectedSlot(slotIndex);
+        }
     }
 }

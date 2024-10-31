@@ -1,44 +1,77 @@
 using UnityEngine;
+using UnityEngine.SubsystemsImplementation;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance;
     public int maxStackedItems = 4;
-    public InventorySlot[] InventorySlots;
+    public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
 
-    public int selectedSlot=-1;
-    private void Start()
+    public int selectedSlot = -1;
+    private void Awake()
     {
-        ChangeSelectedSlot(0);
+        instance = this;
     }
     private void Update()
     {
-        if(Input.inputString!=null)
+        if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if(isNumber&&number>0&&number<9)
+            if (isNumber && number > 0 && number < 9)
             {
                 ChangeSelectedSlot(number - 1);
-
             }
         }
-    }
-    private void ChangeSelectedSlot(int newValue)
-    {
-        if(selectedSlot>=0)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            InventorySlots[selectedSlot].DeSelected();
+            ReceiveSelectedItemInfo();
         }
-        InventorySlots[newValue].Selected();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            UseSelectedItem();
+        }
+    }
+    public void ReceiveSelectedItemInfo()
+    {
+        ItemSO receivedItem = GetSelectedItem(false);
+        if (receivedItem != null)
+        {
+            Debug.Log("Received item" + receivedItem.name);
+        }
+        else
+        {
+            Debug.Log("No item received");
+        }
+    }
+    public void UseSelectedItem()
+    {
+        ItemSO receivedItem = GetSelectedItem(true);
+        if (receivedItem != null)
+        {
+            Debug.Log("Used item" + receivedItem.name);
+        }
+        else
+        {
+            Debug.Log("No item used");
+        }
+    }
+    public void ChangeSelectedSlot(int newValue)
+    {
+        if (selectedSlot >= 0)
+        {
+            inventorySlots[selectedSlot].DeSelected();
+        }
+        inventorySlots[newValue].Selected();
         selectedSlot = newValue;
     }
     public bool AddItem(ItemSO item)
     {
         //Searching for same stackable item
-        foreach (InventorySlot slot in InventorySlots)
+        foreach (InventorySlot slot in inventorySlots)
         {
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot !=null && itemInSlot.item==item&& itemInSlot.count< maxStackedItems&&itemInSlot.item.stackable)
+            if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < maxStackedItems && itemInSlot.item.stackable)
             {
                 itemInSlot.count++;
                 itemInSlot.RefreshCount();
@@ -46,12 +79,12 @@ public class InventoryManager : MonoBehaviour
             }
         }
         //Searching for empty slot
-        foreach (InventorySlot slot in InventorySlots)
+        foreach (InventorySlot slot in inventorySlots)
         {
-            InventoryItem itemInSlot =slot.GetComponentInChildren<InventoryItem>();
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                SpawnNewItem(item,slot);
+                SpawnNewItem(item, slot);
                 return true;
             }
         }
@@ -60,8 +93,31 @@ public class InventoryManager : MonoBehaviour
     private void SpawnNewItem(ItemSO item, InventorySlot slot)
     {
 
-        GameObject newItem =Instantiate(inventoryItemPrefab,slot.transform);
-        InventoryItem inventoryItem=newItem.GetComponent<InventoryItem>();
+        GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
+        InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+    }
+    public ItemSO GetSelectedItem(bool use)
+    {
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if (itemInSlot != null)
+        {
+            ItemSO item = itemInSlot.item;
+            if (use == true)
+            {
+                itemInSlot.count--;
+                if(itemInSlot.count <= 0)
+                {
+                    Destroy(itemInSlot.gameObject);
+                }
+                else
+                {
+                    itemInSlot.RefreshCount();
+                }
+            }
+            return item;
+        }
+        return null;
     }
 }
