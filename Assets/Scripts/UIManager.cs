@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
         {
             active = !active;
             Inventory.SetActive(active);
-            if (active)
+            if (!active)
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
