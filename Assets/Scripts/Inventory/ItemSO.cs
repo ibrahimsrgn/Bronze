@@ -12,6 +12,7 @@ public class ItemSO : ScriptableObject{
     public Vector2Int range = new Vector2Int(5, 4);
     [Header("Only UI")]
     public bool stackable = true;
+    public bool usable = true;
     [Header("Both")]
     public Sprite image;
 

@@ -23,39 +23,12 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number - 1);
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ReceiveSelectedItemInfo();
-        }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            UseSelectedItem();
+            GetSelectedItem();
         }
     }
-    public void ReceiveSelectedItemInfo()
-    {
-        ItemSO receivedItem = GetSelectedItem(false);
-        if (receivedItem != null)
-        {
-            Debug.Log("Received item" + receivedItem.name);
-        }
-        else
-        {
-            Debug.Log("No item received");
-        }
-    }
-    public void UseSelectedItem()
-    {
-        ItemSO receivedItem = GetSelectedItem(true);
-        if (receivedItem != null)
-        {
-            Debug.Log("Used item" + receivedItem.name);
-        }
-        else
-        {
-            Debug.Log("No item used");
-        }
-    }
+
     public void ChangeSelectedSlot(int newValue)
     {
         if (selectedSlot >= 0)
@@ -97,14 +70,14 @@ public class InventoryManager : MonoBehaviour
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
     }
-    public ItemSO GetSelectedItem(bool use)
+    public ItemSO GetSelectedItem()
     {
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
         {
             ItemSO item = itemInSlot.item;
-            if (use == true)
+            if (item.usable == true)
             {
                 itemInSlot.count--;
                 if(itemInSlot.count <= 0)
