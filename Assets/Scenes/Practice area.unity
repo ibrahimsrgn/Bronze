@@ -249,7 +249,6 @@ MonoBehaviour:
   Inventory: {fileID: 459452528}
   healthMain: {fileID: 1995893143}
   healthFollower: {fileID: 1462323766}
-  maxHealth: 0
 --- !u!114 &5440156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,6 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &113225390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2078,6 +2078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 500
+  isPlayer: 0
 --- !u!1 &127368254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,6 +2983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &168965516
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8744,6 +8746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &536781682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20248,6 +20251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &1128300580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23833,6 +23837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &1313323908
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26364,7 +26369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -713.0237, y: -418.0247}
+  m_AnchoredPosition: {x: -689, y: -358}
   m_SizeDelta: {x: 336.72797, y: -57.021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1462323766
@@ -26380,7 +26385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.27634388, b: 0.27634388, a: 1}
+  m_Color: {r: 0.6415094, g: 0.31034595, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -29300,6 +29305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &1635099359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30899,6 +30905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &1725448848
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31556,9 +31563,9 @@ RectTransform:
   - {fileID: 2100015156}
   m_Father: {fileID: 948950034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1736541421
@@ -33501,6 +33508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &1877529531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35683,6 +35691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   maxHealth: 5
+  isPlayer: 0
 --- !u!54 &1993545197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35784,7 +35793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -713.0237, y: -418.0247}
+  m_AnchoredPosition: {x: -689, y: -358}
   m_SizeDelta: {x: 336.72797, y: -57.021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995893143
@@ -38079,7 +38088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -713.02374, y: -418.0247}
+  m_AnchoredPosition: {x: -689.00006, y: -358}
   m_SizeDelta: {x: 436.728, y: 42.979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100015157
@@ -38963,6 +38972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 500
+  isPlayer: 1
 --- !u!114 &1626735944328342682
 MonoBehaviour:
   m_ObjectHideFlags: 3
