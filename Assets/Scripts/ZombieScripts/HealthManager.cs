@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private int currentHealth;
-    [SerializeField] private int maxHealth;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth;
     private ZombieAi zombieAi;
     bool isDead = false;
+    [SerializeField] private bool isPlayer = false;
 
 
     private void Start()
@@ -24,10 +25,14 @@ public class HealthManager : MonoBehaviour
         {
             Die();
         }
+        if (isPlayer)
+        {
+            UIManager.instance.UpdateHealth(currentHealth / maxHealth);
+        }
     }
     private void Die()
     {
-        if(!isDead)
+        if (!isDead)
         {
             zombieAi.Dead();
             zombieAi.state = ZombieAi.State.Dead;
