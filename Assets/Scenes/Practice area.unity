@@ -224,7 +224,7 @@ MonoBehaviour:
   player: {fileID: 3030775897956380181}
   spawnRangeFromPlayer: 15
   spawnInterval: 1
-  canSpawn: 1
+  canSpawn: 0
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
       type: 3}
@@ -39008,7 +39008,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6713936440831153818, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!114 &1465126746216119176
@@ -39357,7 +39357,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6087463911500160288, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!1 &2954933413435714343
@@ -39531,7 +39531,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4627193334333013973, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!1 &4918116591627791626
@@ -40218,7 +40218,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1826491611564190594, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!33 &7824454800204269348

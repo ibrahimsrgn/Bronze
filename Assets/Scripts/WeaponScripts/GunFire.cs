@@ -7,26 +7,30 @@ public class GunFire : WeaponType
 {
     private void Update()
     {
-        RateOfFire -= Time.deltaTime;
-        if (_PlayerData.MouseClickInput && RateOfFire <= 0 && ReadyToShoot)
+        if (transform.parent != null && transform.parent.gameObject.layer == 6)
         {
-            switch (_FireMode)
+            _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
+            RateOfFire -= Time.deltaTime;
+            if (_PlayerData.MouseClickInput && RateOfFire <= 0 && ReadyToShoot)
             {
-                case FireMode.Single:
-                    _Shooting.SingleShoot();
-                    break;
-                case FireMode.Burst:
-                    StartCoroutine(_Shooting.BurstShoot());
-                    break;
-                case FireMode.Auto:
-                    _Shooting.AutoShoot();
-                    break;
+                switch (_FireMode)
+                {
+                    case FireMode.Single:
+                        _Shooting.SingleShoot();
+                        break;
+                    case FireMode.Burst:
+                        StartCoroutine(_Shooting.BurstShoot());
+                        break;
+                    case FireMode.Auto:
+                        _Shooting.AutoShoot();
+                        break;
+                }
+                RateOfFire = RateOfFireData;
             }
-            RateOfFire = RateOfFireData;
-        }
-        else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
-        {
-            ReadyToShoot = true;
+            else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
+            {
+                ReadyToShoot = true;
+            }
         }
     }
 }

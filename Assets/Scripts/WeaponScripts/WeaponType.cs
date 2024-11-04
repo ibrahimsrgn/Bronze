@@ -32,6 +32,8 @@ public class WeaponType : MonoBehaviour
     public bool BurstCoroutineOn;
     [HideInInspector]
     public BulletScript _BulletScript;
+    [HideInInspector]
+    public Ray _Ray;
 
     private void Awake()
     {
