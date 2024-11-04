@@ -40,7 +40,6 @@ public class PlayerData : MonoBehaviour
     public bool MouseClickInput;
 
     [Header("Animator Component")]
-    public Animator Animator;
     public float SmoothSpeed;
     [HideInInspector]
     public Vector2 SmoothInput;

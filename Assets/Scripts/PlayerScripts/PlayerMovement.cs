@@ -20,7 +20,5 @@ public class PlayerMovement : InputManagerHandler
     {
         float targetSpeed = _PlayerData.SprintSpeedData > 1 ? 2f : 1f;
         _PlayerData.SmoothInput = Vector2.Lerp(_PlayerData.SmoothInput, _PlayerData.MoveInput * targetSpeed, _PlayerData.SmoothSpeed * Time.deltaTime);
-        _PlayerData.Animator.SetFloat("Horizontal", _PlayerData.SmoothInput.x);
-        _PlayerData.Animator.SetFloat("Vertical", _PlayerData.SmoothInput.y);
     }
 }
