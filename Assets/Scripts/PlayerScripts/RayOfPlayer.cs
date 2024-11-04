@@ -18,7 +18,7 @@ public class RayOfPlayer : MonoBehaviour
         if (Physics.Raycast(playerData.Ray, out RaycastHit hitInfo, 2f))
         {
             Debug.DrawRay(playerData.Ray.origin, hitInfo.distance * playerData.Ray.direction, Color.yellow);
-            hitInfo.transform.SendMessage("OnRayHit", hitInfo, SendMessageOptions.DontRequireReceiver);
+            hitInfo.transform.SendMessage("OnRayHit", playerData, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

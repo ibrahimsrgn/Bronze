@@ -43,4 +43,13 @@ public class PlayerData : MonoBehaviour
     public float SmoothSpeed;
     [HideInInspector]
     public Vector2 SmoothInput;
+
+    [Header("ItemInteraction")]
+    public ItemDropScript _ItemDropScript;
+    public Transform ItemOnHand;
+    public Transform WeaponLoc;
+    [HideInInspector]
+    public bool OnDrop;
+    [HideInInspector]
+    public bool OnCollect;
 }

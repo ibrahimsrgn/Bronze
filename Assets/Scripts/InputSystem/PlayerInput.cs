@@ -182,6 +182,54 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ItemActions"",
+            ""id"": ""58c80d73-075f-431b-897a-c6f1fe7208b1"",
+            ""actions"": [
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""1513e840-9637-432d-8c68-8b358588ba26"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Collect"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b3432c4-51e8-47da-bb76-56bb0bc92764"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3c471036-3af0-406f-8c65-94bb8ae02ad3"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d825e779-96c3-4578-9a8e-58616346ebdc"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Collect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -195,12 +243,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Weapon
         m_Weapon = asset.FindActionMap("Weapon", throwIfNotFound: true);
         m_Weapon_Fire = m_Weapon.FindAction("Fire", throwIfNotFound: true);
+        // ItemActions
+        m_ItemActions = asset.FindActionMap("ItemActions", throwIfNotFound: true);
+        m_ItemActions_Drop = m_ItemActions.FindAction("Drop", throwIfNotFound: true);
+        m_ItemActions_Collect = m_ItemActions.FindAction("Collect", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
     {
         UnityEngine.Debug.Assert(!m_Land.enabled, "This will cause a leak and performance issues, PlayerInput.Land.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Weapon.enabled, "This will cause a leak and performance issues, PlayerInput.Weapon.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_ItemActions.enabled, "This will cause a leak and performance issues, PlayerInput.ItemActions.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -374,6 +427,60 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
     }
     public WeaponActions @Weapon => new WeaponActions(this);
+
+    // ItemActions
+    private readonly InputActionMap m_ItemActions;
+    private List<IItemActionsActions> m_ItemActionsActionsCallbackInterfaces = new List<IItemActionsActions>();
+    private readonly InputAction m_ItemActions_Drop;
+    private readonly InputAction m_ItemActions_Collect;
+    public struct ItemActionsActions
+    {
+        private @PlayerInput m_Wrapper;
+        public ItemActionsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Drop => m_Wrapper.m_ItemActions_Drop;
+        public InputAction @Collect => m_Wrapper.m_ItemActions_Collect;
+        public InputActionMap Get() { return m_Wrapper.m_ItemActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ItemActionsActions set) { return set.Get(); }
+        public void AddCallbacks(IItemActionsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ItemActionsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ItemActionsActionsCallbackInterfaces.Add(instance);
+            @Drop.started += instance.OnDrop;
+            @Drop.performed += instance.OnDrop;
+            @Drop.canceled += instance.OnDrop;
+            @Collect.started += instance.OnCollect;
+            @Collect.performed += instance.OnCollect;
+            @Collect.canceled += instance.OnCollect;
+        }
+
+        private void UnregisterCallbacks(IItemActionsActions instance)
+        {
+            @Drop.started -= instance.OnDrop;
+            @Drop.performed -= instance.OnDrop;
+            @Drop.canceled -= instance.OnDrop;
+            @Collect.started -= instance.OnCollect;
+            @Collect.performed -= instance.OnCollect;
+            @Collect.canceled -= instance.OnCollect;
+        }
+
+        public void RemoveCallbacks(IItemActionsActions instance)
+        {
+            if (m_Wrapper.m_ItemActionsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IItemActionsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ItemActionsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ItemActionsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ItemActionsActions @ItemActions => new ItemActionsActions(this);
     public interface ILandActions
     {
         void OnWasd(InputAction.CallbackContext context);
@@ -384,5 +491,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IWeaponActions
     {
         void OnFire(InputAction.CallbackContext context);
+    }
+    public interface IItemActionsActions
+    {
+        void OnDrop(InputAction.CallbackContext context);
+        void OnCollect(InputAction.CallbackContext context);
     }
 }

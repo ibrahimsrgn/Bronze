@@ -38,4 +38,15 @@ public class InputManagerHandler : MonoBehaviour
     {
         _PlayerData.MouseClickInput = Value.isPressed;
     }
+
+    private void OnDrop(InputValue Value)
+    {
+        _PlayerData.OnDrop = Value.isPressed;
+        _PlayerData._ItemDropScript.DropItem(Value.isPressed);
+    }
+
+    private void OnCollect(InputValue Value)
+    {
+        _PlayerData.OnCollect = Value.isPressed;
+    }
 }

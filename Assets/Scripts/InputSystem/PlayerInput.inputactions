@@ -160,6 +160,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "ItemActions",
+            "id": "58c80d73-075f-431b-897a-c6f1fe7208b1",
+            "actions": [
+                {
+                    "name": "Drop",
+                    "type": "Button",
+                    "id": "1513e840-9637-432d-8c68-8b358588ba26",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Collect",
+                    "type": "Button",
+                    "id": "1b3432c4-51e8-47da-bb76-56bb0bc92764",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3c471036-3af0-406f-8c65-94bb8ae02ad3",
+                    "path": "<Keyboard>/g",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d825e779-96c3-4578-9a8e-58616346ebdc",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Collect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

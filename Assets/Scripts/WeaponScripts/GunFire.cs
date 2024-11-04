@@ -7,7 +7,7 @@ public class GunFire : WeaponType
 {
     private void Update()
     {
-        if (transform.parent != null && transform.parent.gameObject.layer == 6)
+        if (transform.parent != null && transform.parent.parent.gameObject.layer == 6)
         {
             _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
             RateOfFire -= Time.deltaTime;
