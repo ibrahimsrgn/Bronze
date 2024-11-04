@@ -32,7 +32,7 @@ public class HealthManager : MonoBehaviour
     }
     private void Die()
     {
-        if (!isDead)
+        if (!isDead&&!isPlayer)
         {
             zombieAi.Dead();
             zombieAi.state = ZombieAi.State.Dead;
@@ -40,6 +40,10 @@ public class HealthManager : MonoBehaviour
             zombieAi.ragdollEnabler.agent.enabled = false;
             zombieAi.ragdollEnabler.EnableRagdoll();
             isDead = true;
+        }
+        if (isPlayer)
+        {
+            UIManager.instance.UpdateHealth(0);
         }
         /*/Düþman ölme animasyonu veya yok olma
         if (TryGetComponent<ZombieAi>(out ZombieAi zombieAi))
