@@ -24,6 +24,7 @@ namespace InfimaGames.LowPolyShooterPack
         [Tooltip("Amount of shots this weapon can shoot in a minute. It determines how fast the weapon shoots.")]
         [SerializeField] 
         private int roundsPerMinutes = 200;
+        [SerializeField] private int damage;
 
         [Tooltip("Mask of things recognized when firing.")]
         [SerializeField]
@@ -234,6 +235,7 @@ namespace InfimaGames.LowPolyShooterPack
             //Spawn projectile from the projectile spawn point.
             GameObject projectile = Instantiate(prefabProjectile, muzzleSocket.position, rotation);
             //Add velocity to the projectile.
+            projectile.GetComponent<Projectile>().damage = damage;
             projectile.GetComponent<Rigidbody>().linearVelocity = projectile.transform.forward * projectileImpulse;   
         }
 

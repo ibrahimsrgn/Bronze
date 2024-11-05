@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Projectile : MonoBehaviour {
 
+	[HideInInspector] public int damage;
 	[Range(5, 100)]
 	[Tooltip("After how long time should the bullet prefab be destroyed?")]
 	public float destroyAfter;
@@ -22,8 +23,13 @@ public class Projectile : MonoBehaviour {
 	public Transform [] dirtImpactPrefabs;
 	public Transform []	concreteImpactPrefabs;
 
+
+	private Vector3 startPos;
+	private Vector3 targetPos;
+
 	private void Start ()
 	{
+		startPos = transform.position;
 		//Grab the game mode service, we need it to access the player character!
 		var gameModeService = ServiceLocator.Current.Get<IGameModeService>();
 		//Ignore the main player character's collision. A little hacky, but it should work.
@@ -139,6 +145,21 @@ public class Projectile : MonoBehaviour {
 			//Destroy bullet object
 			Destroy(gameObject);
 		}
+		if (collision.transform.CompareTag("Enemy"))
+		{
+			Debug.Log(1);
+			targetPos = transform.position;
+			Vector3 dir = (targetPos - startPos).normalized;
+            HealthManager zombie = collision.gameObject.GetComponentInParent<HealthManager>();
+            if (zombie != null)
+            {
+                zombie.TakeDamage(damage);
+                if (collision.gameObject.TryGetComponent<Rigidbody>(out Rigidbody hitBody))
+                {
+                    hitBody.AddForce(dir * damage, ForceMode.Impulse);
+                }
+            }
+        }
 	}
 
 	private IEnumerator DestroyTimer () 
