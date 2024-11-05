@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class ItemDropScript : MonoBehaviour
 {
+    [SerializeField] private int angle;
+    [SerializeField] private int angleZ;
+
+
     PlayerData playerData;
     private void Start()
     {
@@ -14,7 +18,7 @@ public class ItemDropScript : MonoBehaviour
         {
             playerData.ItemOnHand.transform.SetParent(null);
             playerData.ItemOnHand.transform.AddComponent<Rigidbody>();
-            playerData.ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(Vector3.forward * 25);
+            playerData.ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);
             playerData.ItemOnHand = null;
         }
     }

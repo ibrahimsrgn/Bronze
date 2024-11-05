@@ -9808,6 +9808,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2487812134731465132, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: RateOfFire
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932760230590068008, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: angle
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932760230590068008, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: angleZ
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932760230590068008, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: throwDistanceModifier
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 3436180130984384241, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
         type: 3}
       propertyPath: m_LocalPosition.x

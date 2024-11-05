@@ -37,6 +37,7 @@ public class InputManagerHandler : MonoBehaviour
     private void OnFire(InputValue Value)
     {
         _PlayerData.MouseClickInput = Value.isPressed;
+
     }
 
     private void OnDrop(InputValue Value)
