@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : InputManagerHandler
 {
+    
+    [SerializeField] private Animator animator;
     void Update()
     {
         MovementAnimations();
@@ -14,11 +16,14 @@ public class PlayerMovement : InputManagerHandler
     {
         _PlayerData.CurrentInput = transform.right * _PlayerData.MoveInput.x + transform.forward * _PlayerData.MoveInput.y;
         _CharacterController.Move(_PlayerData.CurrentInput * _PlayerData.PlayerWalkSpeed * Time.deltaTime * (_PlayerData.MoveInput.y > 0 ? _PlayerData.SprintSpeedData : 1));
+
     }
 
     private void MovementAnimations()
     {
         float targetSpeed = _PlayerData.SprintSpeedData > 1 ? 2f : 1f;
         _PlayerData.SmoothInput = Vector2.Lerp(_PlayerData.SmoothInput, _PlayerData.MoveInput * targetSpeed, _PlayerData.SmoothSpeed * Time.deltaTime);
+        animator.SetFloat("X", _PlayerData.MoveInput.x);
+        animator.SetFloat("Y", _PlayerData.MoveInput.y);
     }
 }
