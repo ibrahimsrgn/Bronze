@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 263519988300601031}
   - component: {fileID: 6814932798359847342}
   - component: {fileID: 2648032041497636898}
-  - component: {fileID: 7028593601251266954}
   m_Layer: 6
   m_Name: SM_Trigger_Hook_For_Police_Gun
   m_TagString: Weapon
@@ -87,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7028593601251266954
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862035097056966060}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4627193334333013973, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!1 &2624577652854644439
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +429,6 @@ GameObject:
   - component: {fileID: 2487812134731465132}
   - component: {fileID: 7018385475900304780}
   - component: {fileID: 5946149927303139847}
-  - component: {fileID: 371764447697987823}
   - component: {fileID: 5829735683212545990}
   m_Layer: 6
   m_Name: SM_Police_Gun
@@ -592,28 +568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dda36f776cbbd4c90b6c27045c32a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &371764447697987823
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3294216952213606136}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6713936440831153818, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!114 &5829735683212545990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de74c32ace7a7d408a933e0c0f9cccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
 --- !u!1 &3965448170091143943
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +592,6 @@ GameObject:
   - component: {fileID: 4179422203033145696}
   - component: {fileID: 6162278811523553026}
   - component: {fileID: 3976051892339974517}
-  - component: {fileID: 4069543543280075584}
   m_Layer: 6
   m_Name: SM_Bolt_For_Police_Gun
   m_TagString: Weapon
@@ -713,28 +667,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4069543543280075584
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3965448170091143943}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6087463911500160288, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!1 &3999709233998445416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1065,6 @@ GameObject:
   - component: {fileID: 7432219306421401651}
   - component: {fileID: 1157102894736490104}
   - component: {fileID: 206970331625628579}
-  - component: {fileID: 7001031304557093187}
   m_Layer: 6
   m_Name: SM_Trigger_For_Police_Gun
   m_TagString: Weapon
@@ -1209,28 +1140,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7001031304557093187
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6265703666276645355}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1826491611564190594, guid: d53d2a82048aaa54f90c2d1991983bf3, type: 3}
 --- !u!1 &6732712691487467713
 GameObject:
   m_ObjectHideFlags: 0

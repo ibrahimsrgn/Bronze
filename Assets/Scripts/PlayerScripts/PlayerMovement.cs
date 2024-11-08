@@ -23,7 +23,7 @@ public class PlayerMovement : InputManagerHandler
     {
         float targetSpeed = _PlayerData.SprintSpeedData > 1 ? 2f : 1f;
         _PlayerData.SmoothInput = Vector2.Lerp(_PlayerData.SmoothInput, _PlayerData.MoveInput * targetSpeed, _PlayerData.SmoothSpeed * Time.deltaTime);
-        animator.SetFloat("X", _PlayerData.MoveInput.x);
-        animator.SetFloat("Y", _PlayerData.MoveInput.y);
+        animator.SetFloat("X", _PlayerData.SmoothInput.x);
+        animator.SetFloat("Y", _PlayerData.SmoothInput.y);
     }
 }
