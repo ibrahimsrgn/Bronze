@@ -16,6 +16,7 @@ public class ItemDropScript : MonoBehaviour
     {
         if (Value && playerData.ItemOnHand != null)
         {
+            playerData.ItemOnHand.gameObject.GetComponent<WeaponInteraction>().enabled = enabled;
             playerData.ItemOnHand.transform.SetParent(null);
             playerData.ItemOnHand.transform.AddComponent<Rigidbody>();
             playerData.ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);

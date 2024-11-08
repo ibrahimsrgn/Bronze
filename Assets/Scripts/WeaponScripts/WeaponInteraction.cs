@@ -5,6 +5,14 @@ public class WeaponInteraction : MonoBehaviour
     public PlayerData playerData;
     private bool GUIActivater;
     private Rigidbody rb;
+
+    private void Awake()
+    {
+        if (transform.parent != null)
+        {
+            this.enabled = false;
+        }
+    }
     public void OnRayHit(PlayerData playerData)
     {
         if (playerData != null)
@@ -13,11 +21,13 @@ public class WeaponInteraction : MonoBehaviour
             GUIActivater = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
+                
                 Destroy(rb);
                 transform.position = playerData.WeaponLoc.transform.position;
                 transform.rotation = playerData.WeaponLoc.transform.rotation;
                 transform.SetParent(playerData.WeaponLoc.transform);
                 playerData.ItemOnHand = transform;
+                this.enabled = false;
             }
         }
     }

@@ -218,6 +218,7 @@ MonoBehaviour:
   Inventory: {fileID: 459452528}
   healthMain: {fileID: 1995893143}
   healthFollower: {fileID: 1462323766}
+  UIList: []
 --- !u!114 &5440156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,15 +668,15 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 5440155}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HideInventory
-        m_Mode: 1
+        m_MethodName: UIListManager
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 459452528}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1599,7 +1600,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 7.8285003, z: 7.8285003}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1199165375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10124,6 +10125,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1530232386758607874, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2065432680905044912, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
         type: 3}
       propertyPath: m_Layer
@@ -10359,6 +10365,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5142171325024273545, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5465040702074266785, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
         type: 3}
       propertyPath: m_Layer
@@ -10513,6 +10524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166572727006380373, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8251574991351353148, guid: 1fd8a416ae796de4fbb9684ed551dfb9,
         type: 3}
