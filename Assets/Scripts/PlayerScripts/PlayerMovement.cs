@@ -6,7 +6,7 @@ public class PlayerMovement : InputManagerHandler
 {
     
     [SerializeField] private Animator animator;
-    void Update()
+    void LateUpdate()
     {
         MovementAnimations();
         CharacterMove();

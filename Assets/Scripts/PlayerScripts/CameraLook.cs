@@ -10,7 +10,7 @@ public class CameraLook : InputManagerHandler
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         LookAround();
     }
