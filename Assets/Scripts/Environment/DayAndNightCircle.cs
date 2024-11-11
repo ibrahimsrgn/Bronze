@@ -19,6 +19,13 @@ public class DayAndNightCircle : MonoBehaviour
     private float Second;
     private float AngleManager;
 
+    private void Awake()
+    {
+        if (Hours >= 6 && Hours <= 18)
+            OnHoursChange(6);
+        else
+            OnHoursChange(18);
+    }
     private void Update()
     {
         Second += Time.deltaTime * (1440 / HoursMultiplier);

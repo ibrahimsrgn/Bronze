@@ -159,7 +159,7 @@ MonoBehaviour:
   MoonDayNightCircle: {fileID: 544200366}
   Minute: 59
   Hours: 12
-  HoursMultiplier: 1440
+  HoursMultiplier: 14
 --- !u!4 &5440153
 Transform:
   m_ObjectHideFlags: 0
@@ -2020,13 +2020,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365621113}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 154354151}
-  m_Father: {fileID: 948802560683729071}
+  m_Father: {fileID: 438969767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &365621115
 MonoBehaviour:
@@ -2428,6 +2428,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 947307365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &438969766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438969767}
+  m_Layer: 6
+  m_Name: "R\u0130gLayers"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438969767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438969766}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 598380892}
+  - {fileID: 874152793}
+  - {fileID: 1038227727}
+  - {fileID: 365621114}
+  m_Father: {fileID: 948802560683729071}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &441965090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5020504109307293834, guid: 19eadcf8fbed56b4da77ca94c1b4145f,
@@ -3384,7 +3419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598380891}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3392,7 +3427,7 @@ Transform:
   - {fileID: 1543024906}
   - {fileID: 89852206}
   - {fileID: 394173836}
-  m_Father: {fileID: 948802560683729071}
+  m_Father: {fileID: 438969767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &598380893
 MonoBehaviour:
@@ -4560,7 +4595,7 @@ Transform:
   m_Children:
   - {fileID: 595410103}
   - {fileID: 54903994}
-  m_Father: {fileID: 948802560683729071}
+  m_Father: {fileID: 438969767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &874152794
 MonoBehaviour:
@@ -5313,13 +5348,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038227726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 16788383}
-  m_Father: {fileID: 948802560683729071}
+  m_Father: {fileID: 438969767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1038227728
 MonoBehaviour:
@@ -6125,7 +6160,7 @@ Transform:
   m_GameObject: {fileID: 1168747707}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.02, z: 0.63}
+  m_LocalPosition: {x: 0.193, y: -0.02, z: 0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12453,10 +12488,7 @@ Transform:
   m_Children:
   - {fileID: 4912080196351363687}
   - {fileID: 3977479628049247035}
-  - {fileID: 598380892}
-  - {fileID: 874152793}
-  - {fileID: 1038227727}
-  - {fileID: 365621114}
+  - {fileID: 438969767}
   - {fileID: 6061927598746393627}
   m_Father: {fileID: 2217074062621590586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32567,10 +32599,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 1897809445689772348}
-  m_UpdateMethod: 0
-  m_BlendUpdateMethod: 0
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
