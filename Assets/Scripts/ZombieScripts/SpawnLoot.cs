@@ -6,7 +6,7 @@ public class SpawnLoot : MonoBehaviour
     public GameObject SpawnLootBox()
     {
         GameObject loot= Instantiate(lootBox,InventoryManager.instance.LootParent);
-        UIManager.instance.UIListManager(loot);
+        loot.gameObject.SetActive(false);
         return loot;
     }
 }

@@ -44,7 +44,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealth(float healthBarFillAmaount)
     {
-        Debug.Log(healthBarFillAmaount);
         healthMain.fillAmount =healthBarFillAmaount;
         healthLerpValue = 0;
     }

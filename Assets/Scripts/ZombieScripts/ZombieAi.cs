@@ -131,6 +131,7 @@ public class ZombieAi : MonoBehaviour
     {
         loot = spawnLoot.SpawnLootBox();
         zombieSpawner.zombieCount--;
+        // GetComponent<Rigidbody>().useGravity = false;
     }
 
     private void Patroling()
@@ -215,12 +216,14 @@ public class ZombieAi : MonoBehaviour
 
     public void OnRayHit(PlayerData playerData)
     {
+        if (state != State.Dead) return;
+        Debug.Log("1");
         if (playerData != null)
         {
             GUIActivater = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                loot.gameObject.SetActive(true);
+                UIManager.instance.UIListManager(loot);
             }
         }
     }
@@ -229,7 +232,7 @@ public class ZombieAi : MonoBehaviour
     {
         if (GUIActivater)
         {
-            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 155, 60), "Press 'E' to collect gun");
+            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 155, 60), "Press 'E' to loot body");
         }
     }
     private void OnMouseExit()

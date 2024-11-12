@@ -131,6 +131,11 @@ public class PlayerData : MonoBehaviour
         {
             Debug.DrawRay(Ray.origin, hitInfo.distance * Ray.direction, Color.yellow);
             hitInfo.transform.SendMessage("OnRayHit", this, SendMessageOptions.DontRequireReceiver);
+            ZombieAi zombi = hitInfo.transform.GetComponentInParent<ZombieAi>();
+            if(zombi != null)
+            {
+                zombi.OnRayHit(this);
+            }
         }
     }
     #endregion
