@@ -13436,9 +13436,9 @@ MonoBehaviour:
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
-    m_MinValue: -90
-    m_MaxValue: 90
-    m_Wrap: 0
+    m_MinValue: -180
+    m_MaxValue: 180
+    m_Wrap: 1
     m_Recentering:
       m_enabled: 0
       m_WaitTime: 1
@@ -14282,7 +14282,6 @@ MonoBehaviour:
   SprintSpeedData: 1
   MouseSensivity: 50
   _Camera: {fileID: 2646187282031984842}
-  virtualCamera: {fileID: 3304515186646949024}
   Gravity: -9.81
   JumpHeight: 1
   MouseClickInput: 0
@@ -14294,6 +14293,7 @@ MonoBehaviour:
   _CharacterController: {fileID: 4098235283952937750}
   angle: 150
   angleZ: 250
+  cinemachineBrain: {fileID: 8555658603674275653}
 --- !u!1 &4691715435963719332
 GameObject:
   m_ObjectHideFlags: 0
@@ -19897,7 +19897,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
   m_Controller: {fileID: 9100000, guid: 0e378adacad40f44292939d4e0783037, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -20668,7 +20668,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 1897809445689772348}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 3
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
