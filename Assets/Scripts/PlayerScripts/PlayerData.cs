@@ -167,6 +167,11 @@ public class PlayerData : MonoBehaviour
     {
         _OnCollect = Value.isPressed;
     }
+
+    private void InstaTransfer(InputValue value)
+    {
+        
+    }
     #endregion
 
     #region CameraLook

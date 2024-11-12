@@ -204,6 +204,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InstaTransfer"",
+                    ""type"": ""Button"",
+                    ""id"": ""50947039-ba1b-48b4-9b99-11ec1edb13d6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -228,6 +237,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Collect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db499fcb-bd17-4854-b572-560746f18534"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InstaTransfer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c9d3992-0130-41c4-b9c9-9c1beeaa67b2"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InstaTransfer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -247,6 +278,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_ItemActions = asset.FindActionMap("ItemActions", throwIfNotFound: true);
         m_ItemActions_Drop = m_ItemActions.FindAction("Drop", throwIfNotFound: true);
         m_ItemActions_Collect = m_ItemActions.FindAction("Collect", throwIfNotFound: true);
+        m_ItemActions_InstaTransfer = m_ItemActions.FindAction("InstaTransfer", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -433,12 +465,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private List<IItemActionsActions> m_ItemActionsActionsCallbackInterfaces = new List<IItemActionsActions>();
     private readonly InputAction m_ItemActions_Drop;
     private readonly InputAction m_ItemActions_Collect;
+    private readonly InputAction m_ItemActions_InstaTransfer;
     public struct ItemActionsActions
     {
         private @PlayerInput m_Wrapper;
         public ItemActionsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Drop => m_Wrapper.m_ItemActions_Drop;
         public InputAction @Collect => m_Wrapper.m_ItemActions_Collect;
+        public InputAction @InstaTransfer => m_Wrapper.m_ItemActions_InstaTransfer;
         public InputActionMap Get() { return m_Wrapper.m_ItemActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -454,6 +488,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Collect.started += instance.OnCollect;
             @Collect.performed += instance.OnCollect;
             @Collect.canceled += instance.OnCollect;
+            @InstaTransfer.started += instance.OnInstaTransfer;
+            @InstaTransfer.performed += instance.OnInstaTransfer;
+            @InstaTransfer.canceled += instance.OnInstaTransfer;
         }
 
         private void UnregisterCallbacks(IItemActionsActions instance)
@@ -464,6 +501,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Collect.started -= instance.OnCollect;
             @Collect.performed -= instance.OnCollect;
             @Collect.canceled -= instance.OnCollect;
+            @InstaTransfer.started -= instance.OnInstaTransfer;
+            @InstaTransfer.performed -= instance.OnInstaTransfer;
+            @InstaTransfer.canceled -= instance.OnInstaTransfer;
         }
 
         public void RemoveCallbacks(IItemActionsActions instance)
@@ -496,5 +536,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     {
         void OnDrop(InputAction.CallbackContext context);
         void OnCollect(InputAction.CallbackContext context);
+        void OnInstaTransfer(InputAction.CallbackContext context);
     }
 }

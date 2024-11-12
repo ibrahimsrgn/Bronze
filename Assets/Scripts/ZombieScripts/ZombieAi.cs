@@ -28,6 +28,10 @@ public class ZombieAi : MonoBehaviour
 
     [SerializeField] public RagdollEnabler ragdollEnabler;
 
+    [SerializeField] private SpawnLoot spawnLoot;
+    private GameObject loot;
+    private bool GUIActivater = false;
+
     public ZombieSpawner zombieSpawner;
 
     //Wait for attack ends
@@ -125,6 +129,7 @@ public class ZombieAi : MonoBehaviour
     }
     public void Dead()
     {
+        loot = spawnLoot.SpawnLootBox();
         zombieSpawner.zombieCount--;
     }
 
@@ -202,5 +207,33 @@ public class ZombieAi : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+    private void OnDestroy()
+    {
+        Destroy(loot);
+    }
+
+    public void OnRayHit(PlayerData playerData)
+    {
+        if (playerData != null)
+        {
+            GUIActivater = true;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                loot.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    void OnGUI()
+    {
+        if (GUIActivater)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 155, 60), "Press 'E' to collect gun");
+        }
+    }
+    private void OnMouseExit()
+    {
+        GUIActivater = false;
     }
 }

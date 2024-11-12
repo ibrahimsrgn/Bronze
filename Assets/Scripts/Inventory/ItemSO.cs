@@ -20,14 +20,10 @@ public class ItemSO : ScriptableObject{
 public enum ItemType
 {
     HealingItem,
-    Food,
-    Quest,
-    Ammo,
     Weapon
 }
 public enum ActionType
 {
     Heal,
-    Fire,
     Swing
 }

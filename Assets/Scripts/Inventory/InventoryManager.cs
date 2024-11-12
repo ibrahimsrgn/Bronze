@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
     public int maxStackedItems = 4;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+    public Transform LootParent;
 
     public int selectedSlot = -1;
     private void Awake()
@@ -65,7 +66,7 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
-    private void SpawnNewItem(ItemSO item, InventorySlot slot)
+    public void SpawnNewItem(ItemSO item, InventorySlot slot)
     {
 
         GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
