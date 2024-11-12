@@ -12476,7 +12476,6 @@ GameObject:
   - component: {fileID: 948802560683729071}
   - component: {fileID: 6614378495109053141}
   - component: {fileID: 1761986447}
-  - component: {fileID: 6614378495109053142}
   m_Layer: 6
   m_Name: Rio
   m_TagString: Untagged
@@ -14109,7 +14108,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.19
+  m_Radius: 0.3
   m_SlopeLimit: 55
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -19907,87 +19906,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6614378495109053142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459651155920206357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1
-  tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 6220817043511569933}
-  - {fileID: 8027917177466469188}
-  - {fileID: 4127895168038914082}
-  - {fileID: 7286628194618424619}
-  - {fileID: 9192334357608569222}
-  - {fileID: 391770733720021351}
-  - {fileID: 4072074867651141836}
-  - {fileID: 5776876743231398711}
-  - {fileID: 3797969450485715971}
-  - {fileID: 2113700038445397378}
-  - {fileID: 3023400885935994537}
-  - {fileID: 6793588595770888411}
-  - {fileID: 592000708145507119}
-  - {fileID: 3384821971009196573}
-  - {fileID: 7218629959057169369}
-  - {fileID: 7706168765078728272}
-  - {fileID: 6103453863889814961}
-  - {fileID: 6846323601762083744}
-  - {fileID: 5658039361249384676}
-  - {fileID: 3547868258695000256}
-  - {fileID: 1914108909209113420}
-  - {fileID: 5052297704594849139}
-  - {fileID: 7402843069717352775}
-  - {fileID: 472887158}
-  - {fileID: 3258541901308864745}
-  - {fileID: 6267899311779171383}
-  - {fileID: 4214230259028419974}
-  - {fileID: 3483298763279588103}
-  - {fileID: 3254729760840177216}
-  - {fileID: 6839829430860167346}
-  - {fileID: 2516232326717638609}
-  - {fileID: 6968866529034068097}
-  - {fileID: 3080267405989214688}
-  - {fileID: 6098437128454003784}
-  - {fileID: 5158714351584163649}
-  - {fileID: 4410446619666419013}
-  - {fileID: 8546763369693709637}
-  - {fileID: 1129588843710395628}
-  - {fileID: 5168632024271882428}
-  - {fileID: 6032868849391031589}
-  - {fileID: 2944304485918513590}
-  - {fileID: 636380544584803302}
-  - {fileID: 2290037317000154002}
-  - {fileID: 5307861498057492878}
-  - {fileID: 9169997442745317476}
-  - {fileID: 186413567}
-  - {fileID: 5091268134258810955}
-  - {fileID: 8849257390962858523}
-  - {fileID: 7543076860054465135}
-  - {fileID: 5295627858080343776}
-  - {fileID: 7706245725215583432}
-  - {fileID: 3460299860096278308}
-  - {fileID: 2256730532582688322}
-  - {fileID: 3635534808415982289}
-  - {fileID: 2668846829229088110}
-  - {fileID: 5164383570961064851}
-  - {fileID: 1211928190916621558}
-  - {fileID: 5259460110104992651}
-  - {fileID: 7134734270201375970}
-  - {fileID: 4972033698532359802}
-  - {fileID: 2575371591728104549}
-  - {fileID: 8285040006579269964}
 --- !u!199 &6636742235156977579
 ParticleSystemRenderer:
   serializedVersion: 6
