@@ -273,7 +273,7 @@ MonoBehaviour:
   - {fileID: 1722160731}
   inventoryItemPrefab: {fileID: 8986438110227849417, guid: 9b767a97b444b404893e01ea45f4ed9b,
     type: 3}
-  LootParent: {fileID: 0}
+  LootParent: {fileID: 1730962548}
   selectedSlot: -1
 --- !u!114 &5440157
 MonoBehaviour:
