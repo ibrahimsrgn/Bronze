@@ -22,8 +22,6 @@ public class PlayerData : MonoBehaviour
     private Ray Ray;
     public float MouseSensivity;
     public Transform _Camera;
-    public CinemachineVirtualCamera virtualCamera;
-    private CinemachinePOV pov;
     private Vector2 MouseInput;
     private float MouseX, MouseY, xRotation;
 
@@ -53,12 +51,16 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private int angleZ;
     #endregion
 
-    private void Start()
+    public CinemachineBrain cinemachineBrain;
+    private void FixedUpdate()
     {
-        pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        cinemachineBrain.ManualUpdate();
+        MovementAnimations();
     }
+
     void Update()
     {
+        
         MovementGravityFunctions();
         RayOfPlayer();
         LookAround();
@@ -71,7 +73,6 @@ public class PlayerData : MonoBehaviour
         ApplyGravity();
         Jump();
         CharacterMove();
-        MovementAnimations();
         _CharacterController.Move(Velocity * Time.deltaTime);
     }
     private void CharacterMove()
@@ -192,22 +193,7 @@ public class PlayerData : MonoBehaviour
     #region CameraLook
     private void LookAround()
     {
-        if (pov.m_HorizontalAxis.Value <= pov.m_HorizontalAxis.m_MinValue + 20)
-        {
-            Debug.Log("Yatay eksende minimum sýnýra ulaþýldý.");
-            RotateCharacter();
-        }
-        else if (pov.m_HorizontalAxis.Value >= pov.m_HorizontalAxis.m_MaxValue - 20)
-        {
-            Debug.Log("Yatay eksende maksimum sýnýra ulaþýldý.");
-            RotateCharacter();
-        }
-    }
-
-    private void RotateCharacter()
-    {
-        virtualCamera.transform.rotation = Quaternion.Euler(new Vector3(0, 100, 0));
-        float TargetLocation = Mathf.LerpAngle(transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, 5f * Time.deltaTime);
+        float TargetLocation = Mathf.LerpAngle(transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, 0.1f);
         transform.eulerAngles = Quaternion.Euler(transform.eulerAngles.x, TargetLocation, transform.eulerAngles.z).eulerAngles;
     }
     #endregion
