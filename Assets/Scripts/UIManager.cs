@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance {  get; private set; }
+    public static UIManager instance { get; private set; }
 
     [SerializeField] private GameObject Inventory;
     [Header("Health")]
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealth(float healthBarFillAmaount)
     {
-        healthMain.fillAmount =healthBarFillAmaount;
+        healthMain.fillAmount = healthBarFillAmaount;
         healthLerpValue = 0;
     }
     /// <summary>
@@ -61,6 +61,9 @@ public class UIManager : MonoBehaviour
 
     public void UIListManager(GameObject CurrentUI)
     {
+        //To Do
+        //Lootbox açýlýnca envanterde açýlsýn 
+        //Envanter açýkken tab a basýlýrsa herþey kapansýn
         CurrentUI.SetActive(!CurrentUI.gameObject.activeInHierarchy);
         if (CurrentUI.gameObject.activeInHierarchy)
         {
@@ -69,6 +72,10 @@ public class UIManager : MonoBehaviour
         else
         {
             UIList.Remove(CurrentUI);
+        }
+        if (!UIList.Contains(Inventory))
+        {
+            UIListManager(Inventory);
         }
     }
     private void CloseCurrentUI()

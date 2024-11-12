@@ -9,6 +9,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Image image;
     public TextMeshProUGUI countText;
 
+    [SerializeField]private Canvas canvas;
+
     [HideInInspector] public ItemSO item;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
@@ -29,7 +31,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(GameObject.Find("Canvas").transform);
         
     }
     public void OnDrag(PointerEventData eventData)
