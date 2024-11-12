@@ -1,6 +1,9 @@
+using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
@@ -19,6 +22,8 @@ public class PlayerData : MonoBehaviour
     private Ray Ray;
     public float MouseSensivity;
     public Transform _Camera;
+    public CinemachineVirtualCamera virtualCamera;
+    private CinemachinePOV pov;
     private Vector2 MouseInput;
     private float MouseX, MouseY, xRotation;
 
@@ -34,6 +39,7 @@ public class PlayerData : MonoBehaviour
     [Header("Animator Component")]
     [SerializeField] private Animator animator;
     [SerializeField] private float SmoothSpeed;
+    [SerializeField] private RigBuilder _RigBuilder;
     private Vector2 SmoothInput;
 
     [Header("ItemInteraction")]
@@ -47,6 +53,10 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private int angleZ;
     #endregion
 
+    private void Start()
+    {
+        pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();
+    }
     void Update()
     {
         MovementGravityFunctions();
@@ -68,14 +78,6 @@ public class PlayerData : MonoBehaviour
     {
         CurrentInput = transform.right * MoveInput.x + transform.forward * MoveInput.y;
         _CharacterController.Move(CurrentInput * PlayerWalkSpeed * Time.deltaTime * (MoveInput.y > 0 ? SprintSpeedData : 1));
-    }
-
-    private void MovementAnimations()
-    {
-        float targetSpeed = SprintSpeedData > 1 ? 2f : 1f;
-        SmoothInput = Vector2.Lerp(SmoothInput, MoveInput * targetSpeed, SmoothSpeed * Time.deltaTime);
-        animator.SetFloat("X", SmoothInput.x);
-        animator.SetFloat("Y", SmoothInput.y);
     }
 
     private void ApplyGravity()
@@ -100,6 +102,24 @@ public class PlayerData : MonoBehaviour
     }
     #endregion
 
+    #region Animations
+    private void MovementAnimations()
+    {
+        foreach (var layer in _RigBuilder.layers)
+        {
+            if (layer.rig != null && layer.rig.name == "RigLayer-HandRig")
+            {
+                layer.active = ItemOnHand;
+                break;
+            }
+        }
+        animator.SetBool("ItemOnHand", ItemOnHand);
+        float targetSpeed = SprintSpeedData > 1 ? 2f : 1f;
+        SmoothInput = Vector2.Lerp(SmoothInput, MoveInput * targetSpeed, SmoothSpeed * Time.deltaTime);
+        animator.SetFloat("X", SmoothInput.x);
+        animator.SetFloat("Y", SmoothInput.y);
+    }
+    #endregion
 
     #region RayOfPlayerFunction
 
@@ -177,9 +197,23 @@ public class PlayerData : MonoBehaviour
     #region CameraLook
     private void LookAround()
     {
-        Vector3 currentRotation = transform.eulerAngles;
-        currentRotation.y = _Camera.eulerAngles.y;
-        transform.eulerAngles = currentRotation;
+        if (pov.m_HorizontalAxis.Value <= pov.m_HorizontalAxis.m_MinValue + 20)
+        {
+            Debug.Log("Yatay eksende minimum sýnýra ulaþýldý.");
+            RotateCharacter();
+        }
+        else if (pov.m_HorizontalAxis.Value >= pov.m_HorizontalAxis.m_MaxValue - 20)
+        {
+            Debug.Log("Yatay eksende maksimum sýnýra ulaþýldý.");
+            RotateCharacter();
+        }
+    }
+
+    private void RotateCharacter()
+    {
+        virtualCamera.transform.rotation = Quaternion.Euler(new Vector3(0, 100, 0));
+        float TargetLocation = Mathf.LerpAngle(transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, 5f * Time.deltaTime);
+        transform.eulerAngles = Quaternion.Euler(transform.eulerAngles.x, TargetLocation, transform.eulerAngles.z).eulerAngles;
     }
     #endregion
 }
