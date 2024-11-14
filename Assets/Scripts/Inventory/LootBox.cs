@@ -1,4 +1,5 @@
 using NUnit.Framework.Internal;
+using System.Linq;
 using UnityEngine;
 
 public class LootBox : MonoBehaviour
@@ -29,7 +30,7 @@ public class LootBox : MonoBehaviour
     {
         //Toplam item sayýsýna göre olacak
         //Her itemin kendine göre þans deðeri olmasý lazým
-        int randomitem=Random.Range(0, 2);
+        int randomitem=Random.Range(0, ItemPool.instance.items.Length);
         InventoryManager.instance.SpawnNewItem(ItemPool.instance.items[randomitem].itemSO, inventorySlot);
     }
 }

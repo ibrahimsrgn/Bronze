@@ -45,7 +45,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("1");
 
         InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
         selectedSlot.Selected();
