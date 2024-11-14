@@ -1,7 +1,7 @@
-using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
@@ -20,8 +20,12 @@ public class PlayerData : MonoBehaviour
 
     [Header("Camera Look")]
     private Ray Ray;
+    
+    public CinemachineCamera MainCam;
+    public CinemachineCamera SecondCam;
     public float MouseSensivity;
     public Transform _Camera;
+    private bool OnAimBool;
     private Vector2 MouseInput;
     private float MouseX, MouseY, xRotation;
 
@@ -51,16 +55,16 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private int angleZ;
     #endregion
 
-    public CinemachineBrain cinemachineBrain;
-    private void FixedUpdate()
+    public GameObject deneme;
+
+    private void LateUpdate()
     {
-        cinemachineBrain.ManualUpdate();
+        WeaponAim(OnAimBool);
         MovementAnimations();
     }
 
     void Update()
     {
-        
         MovementGravityFunctions();
         RayOfPlayer();
         LookAround();
@@ -133,7 +137,7 @@ public class PlayerData : MonoBehaviour
             Debug.DrawRay(Ray.origin, hitInfo.distance * Ray.direction, Color.yellow);
             hitInfo.transform.SendMessage("OnRayHit", this, SendMessageOptions.DontRequireReceiver);
             ZombieAi zombi = hitInfo.transform.GetComponentInParent<ZombieAi>();
-            if(zombi != null)
+            if (zombi != null)
             {
                 zombi.OnRayHit(this);
             }
@@ -194,9 +198,14 @@ public class PlayerData : MonoBehaviour
         _OnCollect = Value.isPressed;
     }
 
+    private void OnAim(InputValue Value)
+    {
+        OnAimBool = Value.isPressed;
+    }
+
     private void InstaTransfer(InputValue value)
     {
-        
+
     }
     #endregion
 
@@ -206,5 +215,35 @@ public class PlayerData : MonoBehaviour
         float TargetLocation = Mathf.LerpAngle(transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, 0.1f);
         transform.eulerAngles = Quaternion.Euler(transform.eulerAngles.x, TargetLocation, transform.eulerAngles.z).eulerAngles;
     }
+
+    private void WeaponAim(bool Aiming)
+    {
+        if (Aiming)
+        {
+            CameraLocStabilizer(SecondCam, MainCam);
+        }
+        else
+        {
+            CameraLocStabilizer(MainCam, SecondCam);
+        }
+    }
+
+    void CameraLocStabilizer(CinemachineCamera fromCamera, CinemachineCamera toCamera)
+    {
+        toCamera.transform.position = fromCamera.transform.position;
+        toCamera.transform.rotation = fromCamera.transform.rotation;
+        toCamera.enabled = false;
+        fromCamera.enabled = true;
+        //toCamera.ForceCameraPosition(fromCamera.transform.position, toCamera.transform.rotation);
+        // deðiþecek
+        CameraSwitch(toCamera, fromCamera);
+    }
+
+    private void CameraSwitch(CinemachineCamera fromCamera, CinemachineCamera toCamera)
+    {
+        fromCamera.Priority = 10;
+        toCamera.Priority = 11;
+    }
+
     #endregion
 }
