@@ -17,14 +17,16 @@ public class PlayerData : MonoBehaviour
     public float PlayerWalkSpeed;
     public float SprintSpeed;
     public float SprintSpeedData;
+    [HideInInspector]
+    public bool MouseClickInput;
 
     [Header("Camera Look")]
+    [SerializeField] private float MouseSensivity;
+    [SerializeField] private Transform CamPosRef1;
+    [SerializeField] private Transform CamPosRef2;
+    [SerializeField] private Transform MainCamPos;
+    [SerializeField] private float CamPosSmoothSpeed;
     private Ray Ray;
-    
-    public CinemachineCamera MainCam;
-    public CinemachineCamera SecondCam;
-    public float MouseSensivity;
-    public Transform _Camera;
     private bool OnAimBool;
     private Vector2 MouseInput;
     private float MouseX, MouseY, xRotation;
@@ -35,8 +37,6 @@ public class PlayerData : MonoBehaviour
     private Vector3 Velocity;
     private bool JumpInput;
 
-    [Header("Left&Right Mouse Button")]
-    public bool MouseClickInput;
 
     [Header("Animator Component")]
     [SerializeField] private Animator animator;
@@ -55,7 +55,8 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private int angleZ;
     #endregion
 
-    public GameObject deneme;
+    
+
 
     private void LateUpdate()
     {
@@ -220,29 +221,19 @@ public class PlayerData : MonoBehaviour
     {
         if (Aiming)
         {
-            CameraLocStabilizer(SecondCam, MainCam);
+            CameraLocStabilizer(CamPosRef2, CamPosSmoothSpeed);
         }
         else
         {
-            CameraLocStabilizer(MainCam, SecondCam);
+            CameraLocStabilizer(CamPosRef1, CamPosSmoothSpeed / 2);
         }
     }
 
-    void CameraLocStabilizer(CinemachineCamera fromCamera, CinemachineCamera toCamera)
+    void CameraLocStabilizer(Transform toCamera, float CamPosSpeedFixer)
     {
-        toCamera.transform.position = fromCamera.transform.position;
-        toCamera.transform.rotation = fromCamera.transform.rotation;
-        toCamera.enabled = false;
-        fromCamera.enabled = true;
-        //toCamera.ForceCameraPosition(fromCamera.transform.position, toCamera.transform.rotation);
-        // deðiþecek
-        CameraSwitch(toCamera, fromCamera);
-    }
+        Vector3 desiredPosition = toCamera.position;
 
-    private void CameraSwitch(CinemachineCamera fromCamera, CinemachineCamera toCamera)
-    {
-        fromCamera.Priority = 10;
-        toCamera.Priority = 11;
+        MainCamPos.position = Vector3.Lerp(MainCamPos.position, desiredPosition, CamPosSpeedFixer * Time.deltaTime);
     }
 
     #endregion
