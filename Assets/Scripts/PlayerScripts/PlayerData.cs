@@ -181,7 +181,10 @@ public class PlayerData : MonoBehaviour
 
     private void OnSprint(InputValue Value)
     {
-        SprintSpeedData = Value.isPressed ? SprintSpeed : 1;
+        if (OnAimBool)
+        {
+            SprintSpeedData = Value.isPressed ? SprintSpeed : 1;
+        }
     }
 
     private void OnFire(InputValue Value)
