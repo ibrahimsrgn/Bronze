@@ -62,13 +62,14 @@ public class PlayerData : MonoBehaviour
     {
         WeaponAim(OnAimBool);
         MovementAnimations();
+        MovementGravityFunctions();
+        RayOfPlayer();
+        LookAround();
     }
 
     void Update()
     {
-        MovementGravityFunctions();
-        RayOfPlayer();
-        LookAround();
+        
     }
 
     #region Movement & Gravity Functions
