@@ -193,7 +193,7 @@ MonoBehaviour:
   player: {fileID: 2217074062621590586}
   spawnRangeFromPlayer: 15
   spawnInterval: 1
-  canSpawn: 0
+  canSpawn: 1
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
       type: 3}
@@ -289,13 +289,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 0
-    name: Axe
+    name: Apple
     description: 
-    itemSO: {fileID: 11400000, guid: 0dbfb0f17bae5ca439e49d28efabaf63, type: 2}
+    itemSO: {fileID: 11400000, guid: d7b308a01675f3b47934280e08f85d61, type: 2}
   - id: 1
-    name: Potion
+    name: Banana
     description: 
-    itemSO: {fileID: 11400000, guid: 301700ccc28d53e40a20050ea992f0f7, type: 2}
+    itemSO: {fileID: 11400000, guid: 696623495c713364290abb04d8fbd6e8, type: 2}
+  - id: 2
+    name: Carrot
+    description: 
+    itemSO: {fileID: 11400000, guid: d28beea165523014bb8a3d89e14a24c4, type: 2}
+  - id: 3
+    name: Cheese
+    description: 
+    itemSO: {fileID: 11400000, guid: 3f9ca2886a0a79d48aae395669797ec3, type: 2}
+  - id: 4
+    name: Cherry
+    description: 
+    itemSO: {fileID: 11400000, guid: 0912860a8e927b944b7d9a5fea6a3971, type: 2}
+  - id: 5
+    name: Cucumber
+    description: 
+    itemSO: {fileID: 11400000, guid: 3ab648c0d9764ea49bf8a160c35e50f1, type: 2}
+  - id: 6
+    name: Flask02
+    description: 
+    itemSO: {fileID: 11400000, guid: 5fe8a2b5b0160ea488f5b05445fb7d75, type: 2}
+  - id: 7
+    name: Frenc Fries
+    description: 
+    itemSO: {fileID: 11400000, guid: 884cbba63b53f8d4291858766c67cb24, type: 2}
+  - id: 8
+    name: Milk
+    description: 
+    itemSO: {fileID: 11400000, guid: 60b36a19c07e46741934971bbc505169, type: 2}
+  - id: 9
+    name: Pevko Beer
+    description: 
+    itemSO: {fileID: 11400000, guid: 797c2fe6184ad314d97f69b71306c005, type: 2}
+  - id: 10
+    name: Sausages
+    description: 
+    itemSO: {fileID: 11400000, guid: 0efb8c03aefcf0b418ec050fa9b87e47, type: 2}
+  - id: 11
+    name: Shawarma
+    description: 
+    itemSO: {fileID: 11400000, guid: 1019c22242fd07248a9ac1abbce1a4c7, type: 2}
+  - id: 12
+    name: Water
+    description: 
+    itemSO: {fileID: 11400000, guid: 0faa94b49baff5346af5c79a1277a4e9, type: 2}
 --- !u!1 &16788382
 GameObject:
   m_ObjectHideFlags: 0

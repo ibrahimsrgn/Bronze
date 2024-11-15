@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de7ad44c55f914c419f04f801aaeddbf, type: 3}
-  m_Name: Healing Potion
+  m_Name: Milk
   m_EditorClassIdentifier: 
   type: 0
-  action: 0
   range: {x: 5, y: 4}
   stackable: 1
-  image: {fileID: 21300000, guid: 6640b580b0c7e48458b9db87e378d8bd, type: 3}
+  usable: 1
+  maxStackableCount: 9
+  objPrefab: {fileID: 4144528811339228312, guid: 178d985fd88377840a4587013e75e577,
+    type: 3}
+  image: {fileID: 21300000, guid: 01e843245f1fc0d4a826171b4f026976, type: 3}
