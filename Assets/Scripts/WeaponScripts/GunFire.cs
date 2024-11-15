@@ -3,8 +3,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunFire : WeaponType
+public class GunFire : MonoBehaviour
 {
+    #region Variables
+    private bool GUIActivater;
+    private Rigidbody RigidBody;
+    public PlayerData _PlayerData;
+
+    public FireMode _FireMode;
+    public int BurstCount;
+    public float BurstModeDelay;
+    public float RateOfFire;
+    public float BulletVelocity;
+    public int BulletDamage;
+    public LayerMask mask;
+
+    [Header("Prefabs")]
+    [SerializeField] public Transform AmmoExitLoc;
+    [SerializeField] public Light MuzzleLight;
+    [SerializeField] public ParticleSystem MuzzleFlash;
+    [SerializeField] public ParticleSystem BulletImpact;
+    [SerializeField] public TrailRenderer BulletTrail;
+
+    public bool ReadyToShoot = true;
+    [HideInInspector]
+    public float RateOfFireData;
+    [HideInInspector]
+    public int BurstCountData;
+    [HideInInspector]
+    public bool BurstCoroutineOn;
+    [HideInInspector]
+    public Ray _Ray;
+
+    private RaycastHit Hit;
+    private Vector3 TargetPoint;
+    private Vector3 StartPosition;
+
+    public enum FireMode
+    {
+        Single,
+        Burst,
+        Auto
+    }
+
+    #endregion
+
+    #region Update Methods
+    private void Awake()
+    {
+        RateOfFireData = RateOfFire;
+        BurstCountData = BurstCount;
+        _PlayerData = FindFirstObjectByType<PlayerData>();
+    }
+
     private void Update()
     {
         if (transform.parent != null && transform.parent.parent.gameObject.layer == 6)
@@ -16,13 +67,13 @@ public class GunFire : WeaponType
                 switch (_FireMode)
                 {
                     case FireMode.Single:
-                        _Shooting.SingleShoot();
+                        SingleShoot();
                         break;
                     case FireMode.Burst:
-                        StartCoroutine(_Shooting.BurstShoot());
+                        StartCoroutine(BurstShoot());
                         break;
                     case FireMode.Auto:
-                        _Shooting.AutoShoot();
+                        Shoot();
                         break;
                 }
                 RateOfFire = RateOfFireData;
@@ -33,4 +84,140 @@ public class GunFire : WeaponType
             }
         }
     }
+    #endregion
+
+    #region BulletScript
+    public void RayShoot()
+    {
+        if (Physics.Raycast(_Ray, out Hit, Mathf.Infinity, mask))
+        {
+            TargetPoint = Hit.point;
+        }
+        else
+        {
+            TargetPoint = _Ray.GetPoint(1000);
+        }
+
+        TrailRenderer Trail = Instantiate(BulletTrail, AmmoExitLoc.position, Quaternion.identity);
+        StartCoroutine(SpawnTrail(Trail, TargetPoint));
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 HitLocation)
+    {
+        MuzzleEffect();
+        StartPosition = trail.transform.position;
+        Vector3 dirToEnemy = (HitLocation - StartPosition).normalized;
+        float distance = Vector3.Distance(StartPosition, HitLocation);
+        float travelTime = distance / BulletVelocity;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < travelTime)
+        {
+            float progress = elapsedTime / travelTime;
+            trail.transform.position = Vector3.Lerp(StartPosition, HitLocation, progress);
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        trail.transform.position = HitLocation;
+        if (Hit.transform != null)
+        {
+            Instantiate(BulletImpact, HitLocation, Quaternion.Inverse(AmmoExitLoc.rotation), Hit.transform.parent);
+        }
+
+        GiveDamageToEnemy(dirToEnemy);
+
+        Destroy(trail.gameObject, trail.time);
+    }
+
+    private void GiveDamageToEnemy(Vector3 dirToEnemy)
+    {
+        if (Hit.collider != null)
+        {
+            HealthManager Deneme = Hit.collider.gameObject.GetComponentInParent<HealthManager>();
+            if (Deneme != null)
+            {
+                Deneme.TakeDamage(BulletDamage);
+                if (Hit.collider.TryGetComponent<Rigidbody>(out Rigidbody hitBody))
+                {
+                    hitBody.AddForce(dirToEnemy * BulletDamage, ForceMode.Impulse);
+                }
+            }
+        }
+    }
+
+    private void MuzzleEffect()
+    {
+        MuzzleFlash.Emit(50);
+        MuzzleLight.enabled = true;
+        StartCoroutine(KillMuzzleLight());
+    }
+
+    public IEnumerator KillMuzzleLight()
+    {
+        yield return new WaitForSeconds(0.1f);
+        MuzzleLight.enabled = false;
+    }
+    #endregion
+
+    #region WeaponShooting
+    public void SingleShoot()
+    {
+        Shoot();
+        ReadyToShoot = false;
+    }
+
+    public IEnumerator BurstShoot()
+    {
+        ReadyToShoot = false;
+        BurstCoroutineOn = true;
+        for (int i = 0; i < BurstCountData; i++)
+        {
+            Shoot();
+            yield return new WaitForSeconds(BurstModeDelay);
+            if (i + 1 == BurstCountData)
+            {
+                BurstCoroutineOn = false;
+            }
+        }
+    }
+
+    public void Shoot()
+    {
+        RayShoot();
+    }
+    #endregion
+
+    #region Weapon Interaction
+    public void OnRayHit(PlayerData playerData)
+    {
+        if (playerData != null && transform.parent == null)
+        {
+            RigidBody = GetComponent<Rigidbody>();
+            GUIActivater = true;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                Destroy(RigidBody);
+                transform.position = playerData.WeaponLoc.transform.position;
+                transform.rotation = playerData.WeaponLoc.transform.rotation;
+                transform.SetParent(playerData.WeaponLoc.transform);
+                playerData.ItemOnHand = transform;
+            }
+        }
+    }
+
+    void OnGUI()
+    {
+        if (GUIActivater)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 155, 60), "Press 'E' to collect gun");
+        }
+    }
+    private void OnMouseExit()
+    {
+        GUIActivater = false;
+    }
+    #endregion
 }

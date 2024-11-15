@@ -153,7 +153,7 @@ public class PlayerData : MonoBehaviour
     {
         if (Value && ItemOnHand != null)
         {
-            ItemOnHand.gameObject.GetComponent<WeaponInteraction>().enabled = enabled;
+            ItemOnHand.gameObject.GetComponent<GunFire>().enabled = enabled;
             ItemOnHand.transform.SetParent(null);
             ItemOnHand.gameObject.AddComponent<Rigidbody>();
             ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);
@@ -181,10 +181,12 @@ public class PlayerData : MonoBehaviour
 
     private void OnSprint(InputValue Value)
     {
-        if (OnAimBool)
+        if (!OnAimBool && Value.isPressed)
         {
-            SprintSpeedData = Value.isPressed ? SprintSpeed : 1;
+            SprintSpeedData = SprintSpeed;
         }
+        else
+            SprintSpeedData = 1;
     }
 
     private void OnFire(InputValue Value)
@@ -223,7 +225,7 @@ public class PlayerData : MonoBehaviour
 
     private void WeaponAim(bool Aiming)
     {
-        if (Aiming)
+        if (Aiming && ItemOnHand != null)
         {
             CameraLocStabilizer(CamPosRef2, CamPosSmoothSpeed);
         }

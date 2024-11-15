@@ -10577,9 +10577,6 @@ GameObject:
   - component: {fileID: 8343972829848551563}
   - component: {fileID: 2480816994823501434}
   - component: {fileID: 1109533178380709560}
-  - component: {fileID: 5514078435552215704}
-  - component: {fileID: 9180401620736376083}
-  - component: {fileID: 9008537154119966930}
   - component: {fileID: 1876324682}
   - component: {fileID: 1876324683}
   m_Layer: 6
@@ -11045,6 +11042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9f278cef8cf24dbaa31513e2007f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PlayerData: {fileID: 0}
   _FireMode: 0
   BurstCount: 3
   BurstModeDelay: 0.1
@@ -11062,12 +11060,9 @@ MonoBehaviour:
   BulletTrail: {fileID: 4809486089463462804, guid: c563fab89cae77542945c2af72d9638f,
     type: 3}
   ReadyToShoot: 1
-  _PlayerData: {fileID: 0}
   RateOfFireData: 0
   BurstCountData: 0
-  _Shooting: {fileID: 0}
   BurstCoroutineOn: 0
-  _BulletScript: {fileID: 0}
 --- !u!4 &1129588843710395628
 Transform:
   m_ObjectHideFlags: 0
@@ -17649,18 +17644,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5514078435552215704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23865612253274604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66cd34d424cb8d04cbb9636bb50b2205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5658039361249384676
 Transform:
   m_ObjectHideFlags: 0
@@ -19003,19 +18986,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &9008537154119966930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23865612253274604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de74c32ace7a7d408a933e0c0f9cccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 0}
 --- !u!1 &9054828836193931906
 GameObject:
   m_ObjectHideFlags: 0
@@ -19100,18 +19070,6 @@ Transform:
   - {fileID: 5091268134258810955}
   m_Father: {fileID: 2290037317000154002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9180401620736376083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23865612253274604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1dda36f776cbbd4c90b6c27045c32a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &9192334357608569222
 Transform:
   m_ObjectHideFlags: 0
