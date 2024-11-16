@@ -56,7 +56,7 @@ public class GunFire : MonoBehaviour
         _PlayerData = FindFirstObjectByType<PlayerData>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (transform.parent != null && transform.parent.name == "WeaponLoc")
         {
@@ -200,16 +200,17 @@ public class GunFire : MonoBehaviour
             {
 
                 Destroy(RigidBody);
+                transform.SetParent(playerData.WeaponLoc.transform);
+                playerData.ItemOnHand = transform;
+
+                playerData.LeftHandLayer.data.target = LeftHandRigRef;
+                playerData.RightHandLayer.data.target = RightHandRigRef;
+
                 transform.position = playerData.WeaponLoc.transform.position;
                 transform.rotation = playerData.WeaponLoc.transform.rotation;
 
-                playerData.LeftHandRigData = LeftHandRigRef;
-                playerData.RightHandRigData = RightHandRigRef;
-
                 playerData.CamPosRef2 = AimCamLocRef;
-
-                transform.SetParent(playerData.WeaponLoc.transform);
-                playerData.ItemOnHand = transform;
+                playerData._RigBuilder.Build();
             }
         }
     }

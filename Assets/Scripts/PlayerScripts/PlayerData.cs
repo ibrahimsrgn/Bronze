@@ -41,7 +41,7 @@ public class PlayerData : MonoBehaviour
     [Header("Animator Component")]
     [SerializeField] private Animator animator;
     [SerializeField] private float SmoothSpeed;
-    [SerializeField] private RigBuilder _RigBuilder;
+    [SerializeField] public RigBuilder _RigBuilder;
     private Vector2 SmoothInput;
 
     [Header("ItemInteraction")]
@@ -52,8 +52,6 @@ public class PlayerData : MonoBehaviour
     private bool _OnCollect;
 
     [Header("Rig Layer References")]
-    public Transform LeftHandRigData;
-    public Transform RightHandRigData;
     public TwoBoneIKConstraint LeftHandLayer;
     public TwoBoneIKConstraint RightHandLayer;
 
@@ -62,10 +60,16 @@ public class PlayerData : MonoBehaviour
 
     #endregion
 
+    //-------------------------------------------------------------------
 
+    #region Update Methods
     private void Awake()
     {
-        ItemOnHand = WeaponLoc.GetChild(0);
+        if (WeaponLoc.childCount <= 0)
+            ItemOnHand = null;
+        else
+            ItemOnHand = WeaponLoc.GetChild(0);
+        LayerMaskUpdater();
     }
 
     private void LateUpdate()
@@ -76,7 +80,9 @@ public class PlayerData : MonoBehaviour
         RayOfPlayer();
         LookAround();
     }
+    #endregion
 
+    //-------------------------------------------------------------------
 
     #region Movement & Gravity Functions
 
@@ -115,8 +121,20 @@ public class PlayerData : MonoBehaviour
     }
     #endregion
 
+    //-------------------------------------------------------------------
+
     #region Animations
     private void MovementAnimations()
+    {
+        LayerMaskUpdater();
+        animator.SetBool("ItemOnHand", ItemOnHand);
+        float targetSpeed = SprintSpeedData > 1 ? 2f : 1f;
+        SmoothInput = Vector2.Lerp(SmoothInput, MoveInput * targetSpeed, SmoothSpeed * Time.deltaTime);
+        animator.SetFloat("X", SmoothInput.x);
+        animator.SetFloat("Y", SmoothInput.y);
+    }
+
+    private void LayerMaskUpdater()
     {
         foreach (var layer in _RigBuilder.layers)
         {
@@ -126,13 +144,10 @@ public class PlayerData : MonoBehaviour
                 break;
             }
         }
-        animator.SetBool("ItemOnHand", ItemOnHand);
-        float targetSpeed = SprintSpeedData > 1 ? 2f : 1f;
-        SmoothInput = Vector2.Lerp(SmoothInput, MoveInput * targetSpeed, SmoothSpeed * Time.deltaTime);
-        animator.SetFloat("X", SmoothInput.x);
-        animator.SetFloat("Y", SmoothInput.y);
     }
     #endregion
+
+    //-------------------------------------------------------------------
 
     #region RayOfPlayerFunction
 
@@ -153,12 +168,15 @@ public class PlayerData : MonoBehaviour
     }
     #endregion
 
+    //-------------------------------------------------------------------
 
     #region ItemDropScript
     public void DropItem(bool Value)
     {
         if (Value && ItemOnHand != null)
         {
+            LeftHandLayer.data.target = null;
+            RightHandLayer.data.target = null;
             ItemOnHand.gameObject.GetComponent<GunFire>().enabled = enabled;
             ItemOnHand.transform.SetParent(null);
             ItemOnHand.gameObject.AddComponent<Rigidbody>();
@@ -168,6 +186,7 @@ public class PlayerData : MonoBehaviour
     }
     #endregion
 
+    //-------------------------------------------------------------------
 
     #region InputManagerHandler
     private void OnWasd(InputValue Value)
@@ -221,6 +240,8 @@ public class PlayerData : MonoBehaviour
 
     }
     #endregion
+
+    //-------------------------------------------------------------------
 
     #region CameraLook
     private void LookAround()
