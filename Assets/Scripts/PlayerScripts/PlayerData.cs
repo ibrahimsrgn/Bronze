@@ -23,7 +23,7 @@ public class PlayerData : MonoBehaviour
     [Header("Camera Look")]
     [SerializeField] private float MouseSensivity;
     [SerializeField] private Transform CamPosRef1;
-    [SerializeField] private Transform CamPosRef2;
+    [SerializeField] public Transform CamPosRef2;
     [SerializeField] private Transform MainCamPos;
     [SerializeField] private float CamPosSmoothSpeed;
     private Ray Ray;
@@ -51,12 +51,22 @@ public class PlayerData : MonoBehaviour
     private bool _OnDrop;
     private bool _OnCollect;
 
+    [Header("Rig Layer References")]
+    public Transform LeftHandRigData;
+    public Transform RightHandRigData;
+    public TwoBoneIKConstraint LeftHandLayer;
+    public TwoBoneIKConstraint RightHandLayer;
+
     [SerializeField] private int angle;
     [SerializeField] private int angleZ;
+
     #endregion
 
-    
 
+    private void Awake()
+    {
+        ItemOnHand = WeaponLoc.GetChild(0);
+    }
 
     private void LateUpdate()
     {
@@ -67,10 +77,6 @@ public class PlayerData : MonoBehaviour
         LookAround();
     }
 
-    void Update()
-    {
-        
-    }
 
     #region Movement & Gravity Functions
 

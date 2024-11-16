@@ -8,33 +8,33 @@ public class GunFire : MonoBehaviour
     #region Variables
     private bool GUIActivater;
     private Rigidbody RigidBody;
-    public PlayerData _PlayerData;
+    private PlayerData _PlayerData;
 
-    public FireMode _FireMode;
-    public int BurstCount;
-    public float BurstModeDelay;
-    public float RateOfFire;
-    public float BulletVelocity;
-    public int BulletDamage;
-    public LayerMask mask;
+    [SerializeField] private FireMode _FireMode;
+    [SerializeField] private int BurstCount;
+    [SerializeField] private float BurstModeDelay;
+    [SerializeField] private float RateOfFire;
+    [SerializeField] private float BulletVelocity;
+    [SerializeField] private int BulletDamage;
+    [SerializeField] private LayerMask mask;
 
     [Header("Prefabs")]
-    [SerializeField] public Transform AmmoExitLoc;
-    [SerializeField] public Light MuzzleLight;
-    [SerializeField] public ParticleSystem MuzzleFlash;
-    [SerializeField] public ParticleSystem BulletImpact;
-    [SerializeField] public TrailRenderer BulletTrail;
+    [SerializeField] private Transform AmmoExitLoc;
+    [SerializeField] private Light MuzzleLight;
+    [SerializeField] private ParticleSystem MuzzleFlash;
+    [SerializeField] private ParticleSystem BulletImpact;
+    [SerializeField] private TrailRenderer BulletTrail;
 
-    public bool ReadyToShoot = true;
-    [HideInInspector]
-    public float RateOfFireData;
-    [HideInInspector]
-    public int BurstCountData;
-    [HideInInspector]
-    public bool BurstCoroutineOn;
-    [HideInInspector]
-    public Ray _Ray;
+    [Header("Referances")]
+    [SerializeField] private Transform RightHandRigRef;
+    [SerializeField] private Transform LeftHandRigRef;
+    [SerializeField] private Transform AimCamLocRef;
 
+    private bool ReadyToShoot = true;
+    private float RateOfFireData;
+    private int BurstCountData;
+    private bool BurstCoroutineOn;
+    private Ray _Ray;
     private RaycastHit Hit;
     private Vector3 TargetPoint;
     private Vector3 StartPosition;
@@ -58,7 +58,7 @@ public class GunFire : MonoBehaviour
 
     private void Update()
     {
-        if (transform.parent != null && transform.parent.parent.gameObject.layer == 6)
+        if (transform.parent != null && transform.parent.name == "WeaponLoc")
         {
             _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
             RateOfFire -= Time.deltaTime;
@@ -192,7 +192,7 @@ public class GunFire : MonoBehaviour
     #region Weapon Interaction
     public void OnRayHit(PlayerData playerData)
     {
-        if (playerData != null && transform.parent == null)
+        if (playerData != null && transform.parent == null && playerData.ItemOnHand == null)
         {
             RigidBody = GetComponent<Rigidbody>();
             GUIActivater = true;
@@ -202,6 +202,12 @@ public class GunFire : MonoBehaviour
                 Destroy(RigidBody);
                 transform.position = playerData.WeaponLoc.transform.position;
                 transform.rotation = playerData.WeaponLoc.transform.rotation;
+
+                playerData.LeftHandRigData = LeftHandRigRef;
+                playerData.RightHandRigData = RightHandRigRef;
+
+                playerData.CamPosRef2 = AimCamLocRef;
+
                 transform.SetParent(playerData.WeaponLoc.transform);
                 playerData.ItemOnHand = transform;
             }
