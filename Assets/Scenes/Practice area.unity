@@ -193,7 +193,7 @@ MonoBehaviour:
   player: {fileID: 2217074062621590586}
   spawnRangeFromPlayer: 15
   spawnInterval: 1
-  canSpawn: 0
+  canSpawn: 1
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
       type: 3}
