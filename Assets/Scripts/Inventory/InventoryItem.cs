@@ -1,24 +1,24 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerDownHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerClickHandler
 {
     [Header("UI")]
     public Image image;
     public TextMeshProUGUI countText;
 
-    [SerializeField]private Canvas canvas;
+    [SerializeField] private Canvas canvas;
 
     [HideInInspector] public ItemSO item;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
- 
+
     public void InitialiseItem(ItemSO newItem)
     {
-        item= newItem;
-        image.sprite=newItem.image;
+        item = newItem;
+        image.sprite = newItem.image;
         RefreshCount();
     }
     public void RefreshCount()
@@ -32,7 +32,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(GameObject.Find("Canvas").transform);
-        
+
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -40,13 +40,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget=true;
+        image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
     }
     public void OnPointerDown(PointerEventData eventData)
     {
 
-        InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
+       /* InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
         selectedSlot.Selected();
         int slotIndex = -1;
         for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
@@ -61,6 +61,36 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (slotIndex != -1)
         {
             InventoryManager.instance.ChangeSelectedSlot(slotIndex);
+        }*/
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //sol click ile yapılacaklar
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+
+            InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
+            selectedSlot.Selected();
+            int slotIndex = -1;
+            for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
+            {
+                if (InventoryManager.instance.inventorySlots[i] == selectedSlot)
+                {
+                    slotIndex = i;
+                    break;
+                }
+            }
+
+            if (slotIndex != -1)
+            {
+                InventoryManager.instance.ChangeSelectedSlot(slotIndex);
+            }
+        }
+        //sağ click ile yapılacaklar
+        if(eventData.button == PointerEventData.InputButton.Right)
+        {
+
         }
     }
 }
