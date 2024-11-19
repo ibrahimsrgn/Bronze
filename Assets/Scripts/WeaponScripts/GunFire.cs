@@ -1,3 +1,4 @@
+using InfimaGames.LowPolyShooterPack;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +30,9 @@ public class GunFire : MonoBehaviour
     [SerializeField] private Transform RightHandRigRef;
     [SerializeField] private Transform LeftHandRigRef;
     [SerializeField] private Transform AimCamLocRef;
+    [SerializeField] private Animator Animator;
 
+    public AudioSource deneme;
     private bool ReadyToShoot = true;
     private float RateOfFireData;
     private int BurstCountData;
@@ -64,6 +67,8 @@ public class GunFire : MonoBehaviour
             RateOfFire -= Time.deltaTime;
             if (_PlayerData.MouseClickInput && RateOfFire <= 0 && ReadyToShoot)
             {
+                Animator.SetBool("Shooting", true);
+                deneme.Play();
                 switch (_FireMode)
                 {
                     case FireMode.Single:
@@ -81,6 +86,7 @@ public class GunFire : MonoBehaviour
             else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
             {
                 ReadyToShoot = true;
+                Animator.SetBool("Shooting", false);
             }
         }
     }
@@ -110,7 +116,6 @@ public class GunFire : MonoBehaviour
         float distance = Vector3.Distance(StartPosition, HitLocation);
         float travelTime = distance / BulletVelocity;
         float elapsedTime = 0f;
-
         while (elapsedTime < travelTime)
         {
             float progress = elapsedTime / travelTime;

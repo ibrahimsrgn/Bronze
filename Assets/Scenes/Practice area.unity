@@ -16258,6 +16258,8 @@ MonoBehaviour:
   RightHandRigRef: {fileID: 490299933}
   LeftHandRigRef: {fileID: 1349491153}
   AimCamLocRef: {fileID: 1952641672}
+  Animator: {fileID: 0}
+  deneme: {fileID: 0}
 --- !u!4 &1129588843710395628
 Transform:
   m_ObjectHideFlags: 0
@@ -16933,6 +16935,8 @@ GameObject:
   - component: {fileID: 4510776964520257924}
   - component: {fileID: 4510776964520257925}
   - component: {fileID: 4510776964520257926}
+  - component: {fileID: 4510776964520257927}
+  - component: {fileID: 4510776964520257928}
   m_Layer: 0
   m_Name: SM_Hunting_Pistol
   m_TagString: Untagged
@@ -17781,7 +17785,7 @@ MonoBehaviour:
   _FireMode: 0
   BurstCount: 3
   BurstModeDelay: 0.1
-  RateOfFire: 0.1
+  RateOfFire: 0.7
   BulletVelocity: 500
   BulletDamage: 30
   mask:
@@ -17797,6 +17801,8 @@ MonoBehaviour:
   RightHandRigRef: {fileID: 26828108}
   LeftHandRigRef: {fileID: 110586041}
   AimCamLocRef: {fileID: 1500719071}
+  Animator: {fileID: 4510776964520257927}
+  deneme: {fileID: 4510776964520257928}
 --- !u!65 &4510776964520257926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17818,6 +17824,125 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.30046856, y: 0.16524754, z: 0.037627514}
   m_Center: {x: 0.086121604, y: 0.03841407, z: 0.0013615552}
+--- !u!95 &4510776964520257927
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2709341443609135185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31ee276c90815114f8510c8696845d61, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &4510776964520257928
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2709341443609135185}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7227f158680360440915f3264c6b6537, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7227f158680360440915f3264c6b6537, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4524624349167617224
 GameObject:
   m_ObjectHideFlags: 0
@@ -23372,6 +23497,8 @@ MonoBehaviour:
   RightHandRigRef: {fileID: 0}
   LeftHandRigRef: {fileID: 0}
   AimCamLocRef: {fileID: 0}
+  Animator: {fileID: 0}
+  deneme: {fileID: 0}
 --- !u!4 &6098437128454003784
 Transform:
   m_ObjectHideFlags: 0
@@ -24122,7 +24249,7 @@ MonoBehaviour:
   TiltAxis:
     Value: 0
     Center: 0
-    Range: {x: -70, y: 70}
+    Range: {x: -90, y: 90}
     Wrap: 0
     Recentering:
       Enabled: 0
