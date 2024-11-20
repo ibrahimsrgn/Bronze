@@ -32,7 +32,7 @@ public class GunFire : MonoBehaviour
     [SerializeField] private Transform AimCamLocRef;
     [SerializeField] private Animator Animator;
 
-    public AudioSource deneme;
+    public AudioSource Shooting_Sound;
     private bool ReadyToShoot = true;
     private float RateOfFireData;
     private int BurstCountData;
@@ -71,8 +71,7 @@ public class GunFire : MonoBehaviour
             RateOfFire -= Time.deltaTime;
             if (_PlayerData.MouseClickInput && RateOfFire <= 0 && ReadyToShoot)
             {
-                Animator.SetBool("Shooting", true);
-                deneme.Play();
+                Shooting_Sound.Play();
                 switch (_FireMode)
                 {
                     case FireMode.Single:
@@ -90,13 +89,9 @@ public class GunFire : MonoBehaviour
             else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
             {
                 ReadyToShoot = true;
-                Animator.SetBool("Shooting", false);
             }
             if (Input.GetKeyDown(KeyCode.K))
-                Animator.SetBool("Reload", true);
-            else if (Input.GetKeyUp(KeyCode.L))
-                Animator.SetBool("Reload", false);
-
+                Animator.SetTrigger("Reload");
         }
     }
     #endregion
@@ -199,6 +194,7 @@ public class GunFire : MonoBehaviour
 
     public void Shoot()
     {
+        Animator.SetTrigger("Shooting");
         RayShoot();
     }
     #endregion
