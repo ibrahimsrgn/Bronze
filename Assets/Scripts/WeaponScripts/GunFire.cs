@@ -54,6 +54,10 @@ public class GunFire : MonoBehaviour
     #region Update Methods
     private void Awake()
     {
+        if (transform.parent == null)
+        {
+            Animator.enabled = false;
+        }
         RateOfFireData = RateOfFire;
         BurstCountData = BurstCount;
         _PlayerData = FindFirstObjectByType<PlayerData>();
@@ -88,6 +92,11 @@ public class GunFire : MonoBehaviour
                 ReadyToShoot = true;
                 Animator.SetBool("Shooting", false);
             }
+            if (Input.GetKeyDown(KeyCode.K))
+                Animator.SetBool("Reload", true);
+            else if (Input.GetKeyUp(KeyCode.L))
+                Animator.SetBool("Reload", false);
+
         }
     }
     #endregion
@@ -215,6 +224,7 @@ public class GunFire : MonoBehaviour
                 transform.rotation = playerData.WeaponLoc.transform.rotation;
 
                 playerData.CamPosRef2 = AimCamLocRef;
+                Animator.enabled = true;
                 playerData._RigBuilder.Build();
             }
         }
