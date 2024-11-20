@@ -175,6 +175,7 @@ public class PlayerData : MonoBehaviour
     {
         if (Value && ItemOnHand != null)
         {
+            ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
             LeftHandLayer.data.target = null;
             RightHandLayer.data.target = null;
             ItemOnHand.gameObject.GetComponent<GunFire>().enabled = enabled;
