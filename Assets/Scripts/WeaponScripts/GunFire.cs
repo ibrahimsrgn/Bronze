@@ -14,7 +14,7 @@ public class GunFire : MonoBehaviour
     [SerializeField] private FireMode _FireMode;
     [SerializeField] private int BurstCount;
     [SerializeField] private float BurstModeDelay;
-    [SerializeField] private float RateOfFire;
+    [SerializeField] private float RPM;
     [SerializeField] private float BulletVelocity;
     [SerializeField] private int BulletDamage;
     [SerializeField] private LayerMask mask;
@@ -35,7 +35,7 @@ public class GunFire : MonoBehaviour
 
     public AudioSource Shooting_Sound;
     private bool ReadyToShoot = true;
-    private float RateOfFireData;
+    private float RPMData;
     private int BurstCountData;
     private bool BurstCoroutineOn;
     private Ray _Ray;
@@ -43,6 +43,7 @@ public class GunFire : MonoBehaviour
     private Vector3 TargetPoint;
     private Vector3 StartPosition;
 
+    public Recoil Recoil_Script;
     public enum FireMode
     {
         Single,
@@ -55,11 +56,13 @@ public class GunFire : MonoBehaviour
     #region Update Methods
     private void Awake()
     {
+        Recoil_Script = FindFirstObjectByType<Recoil>();
         if (transform.parent == null)
         {
             Animator.enabled = false;
         }
-        RateOfFireData = RateOfFire;
+        RPMData = 60 / RPM;
+        RPM = RPMData;
         BurstCountData = BurstCount;
         _PlayerData = FindFirstObjectByType<PlayerData>();
     }
@@ -69,8 +72,8 @@ public class GunFire : MonoBehaviour
         if (transform.parent != null && transform.parent.name == "WeaponLoc")
         {
             _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
-            RateOfFire -= Time.deltaTime;
-            if (_PlayerData.MouseClickInput && RateOfFire <= 0 && ReadyToShoot)
+            RPM -= Time.deltaTime;
+            if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot)
             {
                 Shooting_Sound.Play();
                 switch (_FireMode)
@@ -82,10 +85,10 @@ public class GunFire : MonoBehaviour
                         StartCoroutine(BurstShoot());
                         break;
                     case FireMode.Auto:
-                        Shoot();
+                        RayShoot();
                         break;
                 }
-                RateOfFire = RateOfFireData;
+                RPM = RPMData;
             }
             else if (!_PlayerData.MouseClickInput && !BurstCoroutineOn)
             {
@@ -108,6 +111,8 @@ public class GunFire : MonoBehaviour
         {
             TargetPoint = _Ray.GetPoint(1000);
         }
+
+        Recoil_Script.RecoilFire();
 
         TrailRenderer Trail = Instantiate(BulletTrail, AmmoExitLoc.position, Quaternion.identity);
         StartCoroutine(SpawnTrail(Trail, TargetPoint));
@@ -174,7 +179,7 @@ public class GunFire : MonoBehaviour
     #region WeaponShooting
     public void SingleShoot()
     {
-        Shoot();
+        RayShoot();
         ReadyToShoot = false;
     }
 
@@ -184,19 +189,13 @@ public class GunFire : MonoBehaviour
         BurstCoroutineOn = true;
         for (int i = 0; i < BurstCountData; i++)
         {
-            Shoot();
+            RayShoot();
             yield return new WaitForSeconds(BurstModeDelay);
             if (i + 1 == BurstCountData)
             {
                 BurstCoroutineOn = false;
             }
         }
-    }
-
-    public void Shoot()
-    {
-        Animator.SetTrigger("Shooting");
-        RayShoot();
     }
     #endregion
 
