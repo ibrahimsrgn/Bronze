@@ -25,6 +25,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private Transform CamPosRef1;
     [SerializeField] public Transform CamPosRef2;
     [SerializeField] private Transform MainCamPos;
+    [SerializeField] public Transform WeaponPosRot;
     [SerializeField] private float CamPosSmoothSpeed;
     private Ray Ray;
     private bool OnAimBool;

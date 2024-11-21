@@ -30,6 +30,7 @@ public class GunFire : MonoBehaviour
     [SerializeField] private Transform RightHandRigRef;
     [SerializeField] private Transform LeftHandRigRef;
     [SerializeField] private Transform AimCamLocRef;
+    [SerializeField] private Transform WeaponLocRef;
     [SerializeField] private Animator Animator;
 
     public AudioSource Shooting_Sound;
@@ -218,6 +219,8 @@ public class GunFire : MonoBehaviour
 
                 transform.position = playerData.WeaponLoc.transform.position;
                 transform.rotation = playerData.WeaponLoc.transform.rotation;
+
+                playerData.WeaponPosRot.position = WeaponLocRef.position;
 
                 playerData.CamPosRef2 = AimCamLocRef;
                 Animator.enabled = true;
