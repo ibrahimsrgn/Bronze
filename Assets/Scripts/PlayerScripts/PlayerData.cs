@@ -44,6 +44,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private float SmoothSpeed;
     [SerializeField] public RigBuilder _RigBuilder;
     private Vector2 SmoothInput;
+    public bool OnReloadBool;
 
     [Header("ItemInteraction")]
     public Transform ItemOnHand;
@@ -235,6 +236,11 @@ public class PlayerData : MonoBehaviour
     private void OnAim(InputValue Value)
     {
         OnAimBool = Value.isPressed;
+    }
+
+    private void OnReload(InputValue Value)
+    {
+        OnReloadBool = Value.isPressed;
     }
 
     private void InstaTransfer(InputValue value)

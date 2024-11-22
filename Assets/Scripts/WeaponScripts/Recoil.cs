@@ -15,10 +15,10 @@ public class Recoil : MonoBehaviour
     {
     }
 
-    void Update()
+    void FixedUpdate()
     {
         targetRotation = Vector3.Lerp(targetRotation, target.position, returnSpeed * Time.deltaTime);
-        currentRotation = Vector3.Slerp(currentRotation, targetRotation, snappiness * Time.fixedDeltaTime);
+        currentRotation = Vector3.Slerp(currentRotation, targetRotation, snappiness * Time.deltaTime);
         transform.position = targetRotation;
     }
 

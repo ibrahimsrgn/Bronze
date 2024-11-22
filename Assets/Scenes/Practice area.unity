@@ -4714,6 +4714,11 @@ PrefabInstance:
       propertyPath: _FireMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6572571742684827001, guid: cc13683c27d98f04fa33d3e1d11fa486,
+        type: 3}
+      propertyPath: MagazineCap
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7249932446002296136, guid: cc13683c27d98f04fa33d3e1d11fa486,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11221,6 +11226,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 55
+  MagazineCap: 0
   AmmoExitLoc: {fileID: 5067516968976403268}
   MuzzleLight: {fileID: 5272783611168837163}
   MuzzleFlash: {fileID: 5071151022027029076}
@@ -11234,7 +11240,6 @@ MonoBehaviour:
   WeaponLocRef: {fileID: 0}
   Animator: {fileID: 0}
   Shooting_Sound: {fileID: 0}
-  Recoil_Script: {fileID: 0}
 --- !u!4 &1129588843710395628
 Transform:
   m_ObjectHideFlags: 0
@@ -12558,6 +12563,7 @@ MonoBehaviour:
   animator: {fileID: 6614378495109053141}
   SmoothSpeed: 3
   _RigBuilder: {fileID: 1761986447}
+  OnReloadBool: 0
   ItemOnHand: {fileID: 0}
   WeaponLoc: {fileID: 6061927598746393627}
   _CharacterController: {fileID: 4098235283952937750}
@@ -18750,6 +18756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: RPM
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846194942414846730, guid: 082610f57f8a3804db2b787f980d392f,
+        type: 3}
+      propertyPath: MagazineCap
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6846194942414846730, guid: 082610f57f8a3804db2b787f980d392f,
         type: 3}

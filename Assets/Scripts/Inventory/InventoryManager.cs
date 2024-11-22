@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number - 1);
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             GetSelectedItem();
         }

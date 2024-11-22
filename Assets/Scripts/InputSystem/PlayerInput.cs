@@ -176,6 +176,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""d68e209c-08bc-486e-a27c-708d5b2a1d5e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -198,6 +207,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05795f0d-a0a9-449b-8570-2578978576a8"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -295,6 +315,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Weapon = asset.FindActionMap("Weapon", throwIfNotFound: true);
         m_Weapon_Fire = m_Weapon.FindAction("Fire", throwIfNotFound: true);
         m_Weapon_Aim = m_Weapon.FindAction("Aim", throwIfNotFound: true);
+        m_Weapon_Reload = m_Weapon.FindAction("Reload", throwIfNotFound: true);
         // ItemActions
         m_ItemActions = asset.FindActionMap("ItemActions", throwIfNotFound: true);
         m_ItemActions_Drop = m_ItemActions.FindAction("Drop", throwIfNotFound: true);
@@ -440,12 +461,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private List<IWeaponActions> m_WeaponActionsCallbackInterfaces = new List<IWeaponActions>();
     private readonly InputAction m_Weapon_Fire;
     private readonly InputAction m_Weapon_Aim;
+    private readonly InputAction m_Weapon_Reload;
     public struct WeaponActions
     {
         private @PlayerInput m_Wrapper;
         public WeaponActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Fire => m_Wrapper.m_Weapon_Fire;
         public InputAction @Aim => m_Wrapper.m_Weapon_Aim;
+        public InputAction @Reload => m_Wrapper.m_Weapon_Reload;
         public InputActionMap Get() { return m_Wrapper.m_Weapon; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -461,6 +484,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Aim.started += instance.OnAim;
             @Aim.performed += instance.OnAim;
             @Aim.canceled += instance.OnAim;
+            @Reload.started += instance.OnReload;
+            @Reload.performed += instance.OnReload;
+            @Reload.canceled += instance.OnReload;
         }
 
         private void UnregisterCallbacks(IWeaponActions instance)
@@ -471,6 +497,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Aim.started -= instance.OnAim;
             @Aim.performed -= instance.OnAim;
             @Aim.canceled -= instance.OnAim;
+            @Reload.started -= instance.OnReload;
+            @Reload.performed -= instance.OnReload;
+            @Reload.canceled -= instance.OnReload;
         }
 
         public void RemoveCallbacks(IWeaponActions instance)
@@ -561,6 +590,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     {
         void OnFire(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
     public interface IItemActionsActions
     {

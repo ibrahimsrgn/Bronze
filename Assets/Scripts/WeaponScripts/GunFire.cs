@@ -7,10 +7,12 @@ using UnityEngine;
 public class GunFire : MonoBehaviour
 {
     #region Variables
+
     private bool GUIActivater;
     private Rigidbody RigidBody;
     private PlayerData _PlayerData;
 
+    [Header("Weapon Stats")]
     [SerializeField] private FireMode _FireMode;
     [SerializeField] private int BurstCount;
     [SerializeField] private float BurstModeDelay;
@@ -18,6 +20,8 @@ public class GunFire : MonoBehaviour
     [SerializeField] private float BulletVelocity;
     [SerializeField] private int BulletDamage;
     [SerializeField] private LayerMask mask;
+    [SerializeField] private int MagazineCap;
+    private int CurrentAmmoCount;
 
     [Header("Prefabs")]
     [SerializeField] private Transform AmmoExitLoc;
@@ -42,8 +46,9 @@ public class GunFire : MonoBehaviour
     private RaycastHit Hit;
     private Vector3 TargetPoint;
     private Vector3 StartPosition;
+    private Recoil Recoil_Script;
 
-    public Recoil Recoil_Script;
+
     public enum FireMode
     {
         Single,
@@ -53,7 +58,10 @@ public class GunFire : MonoBehaviour
 
     #endregion
 
+    //-------------------------------------------------------------------
+
     #region Update Methods
+
     private void Awake()
     {
         Recoil_Script = FindFirstObjectByType<Recoil>();
@@ -71,9 +79,10 @@ public class GunFire : MonoBehaviour
     {
         if (transform.parent != null && transform.parent.name == "WeaponLoc")
         {
+            Debug.Log(MagazineCap + " / " + CurrentAmmoCount);
             _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
             RPM -= Time.deltaTime;
-            if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot)
+            if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot && CurrentAmmoCount > 0)
             {
                 Shooting_Sound.Play();
                 switch (_FireMode)
@@ -94,13 +103,20 @@ public class GunFire : MonoBehaviour
             {
                 ReadyToShoot = true;
             }
-            if (Input.GetKeyDown(KeyCode.K))
-                Animator.SetTrigger("Reload");
+
+            if (_PlayerData.OnReloadBool && CurrentAmmoCount < MagazineCap)
+            {
+                ReadyToShoot = false;
+                Reload();
+            }
         }
     }
     #endregion
 
+    //-------------------------------------------------------------------
+
     #region BulletScript
+
     public void RayShoot()
     {
         if (Physics.Raycast(_Ray, out Hit, Mathf.Infinity, mask))
@@ -113,7 +129,7 @@ public class GunFire : MonoBehaviour
         }
 
         Recoil_Script.RecoilFire();
-
+        CurrentAmmoCount--;
         TrailRenderer Trail = Instantiate(BulletTrail, AmmoExitLoc.position, Quaternion.identity);
         StartCoroutine(SpawnTrail(Trail, TargetPoint));
     }
@@ -176,7 +192,10 @@ public class GunFire : MonoBehaviour
     }
     #endregion
 
+    //-------------------------------------------------------------------
+
     #region WeaponShooting
+
     public void SingleShoot()
     {
         RayShoot();
@@ -198,6 +217,8 @@ public class GunFire : MonoBehaviour
         }
     }
     #endregion
+
+    //-------------------------------------------------------------------
 
     #region Weapon Interaction
     public void OnRayHit(PlayerData playerData)
@@ -238,6 +259,17 @@ public class GunFire : MonoBehaviour
     private void OnMouseExit()
     {
         GUIActivater = false;
+    }
+    #endregion
+
+    //-------------------------------------------------------------------
+    #region Reload
+
+    public void Reload()
+    {
+        Animator.SetTrigger("Reload");
+        CurrentAmmoCount = MagazineCap;
+        ReadyToShoot = true;
     }
     #endregion
 }
