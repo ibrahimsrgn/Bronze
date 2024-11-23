@@ -3008,6 +3008,74 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1745910402}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &529564779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2543738
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.190221
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866644358728104249, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847776533483756480, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_Name
+      value: Benelli M4 Super 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb584f4f0f008be419e9c768c3baf461, type: 3}
 --- !u!224 &536066524 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
@@ -4119,6 +4187,64 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1802048501}
   m_SourcePrefab: {fileID: 100100000, guid: cdeddc5831754e54ca488764d3d6b553, type: 3}
+--- !u!1001 &745983325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2543738
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.190221
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224275875004402, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336230337650881159, guid: b72dd084c98c5fd429b7b483f40d0b7c,
+        type: 3}
+      propertyPath: m_Name
+      value: Vector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b72dd084c98c5fd429b7b483f40d0b7c, type: 3}
 --- !u!1 &785411604
 GameObject:
   m_ObjectHideFlags: 0
@@ -6153,6 +6279,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2814231585020525529, guid: 41e70b07269a0a34da6602d73186cfe1,
+        type: 3}
+      propertyPath: m_Name
+      value: LefttHandGrip-AK47
+      objectReference: {fileID: 0}
     - target: {fileID: 4542583140976149628, guid: 41e70b07269a0a34da6602d73186cfe1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6207,6 +6338,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ak47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411154498509295921, guid: 41e70b07269a0a34da6602d73186cfe1,
+        type: 3}
+      propertyPath: m_Name
+      value: RightHandGrip-AK47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677712490608803632, guid: 41e70b07269a0a34da6602d73186cfe1,
+        type: 3}
+      propertyPath: m_Name
+      value: AimCamLoc-AK47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19383,3 +19524,5 @@ SceneRoots:
   - {fileID: 1587111095}
   - {fileID: 1244137357}
   - {fileID: 1221997220}
+  - {fileID: 745983325}
+  - {fileID: 529564779}
