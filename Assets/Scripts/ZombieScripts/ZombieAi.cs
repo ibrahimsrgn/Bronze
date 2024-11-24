@@ -100,17 +100,6 @@ public class ZombieAi : MonoBehaviour
     {
         animator.SetFloat("MoveSpeed", agent.velocity.magnitude);
     }
-    private IEnumerator FadeOutCorpse()
-    {
-        yield return new WaitForSeconds(fadeOutTimer);
-        ragdollEnabler.DisableAllRigidbody();
-        while (fadeOutTimer > 0)
-        {
-            transform.position += Vector3.down * Time.deltaTime;
-            fadeOutTimer -= Time.deltaTime;
-        }
-
-    }
     private void IsPlayerInSight()
     {
         //Oyuncu görüş alanındamı?
