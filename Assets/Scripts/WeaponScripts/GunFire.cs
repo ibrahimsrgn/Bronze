@@ -271,5 +271,8 @@ public class GunFire : MonoBehaviour
         CurrentAmmoCount = MagazineCap;
         ReadyToShoot = true;
     }
+    //Shotgun için animasyonun 40. karesine atýlacak event ile +1 ammo yapýlacak
+    //Oyuncu bozmadýðý sürece +1 ammodan sonra 10 kare geri sarýlacak animasyon ve mermiyi koyduðu yerde yine +1 ammo olacak 
+    //Tamamý dolana kadar animasyon tekrar edecek
     #endregion
 }

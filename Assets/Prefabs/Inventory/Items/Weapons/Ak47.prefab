@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4648930380056131839}
   m_Layer: 6
-  m_Name: LefttHandGrip-Deagle
+  m_Name: LefttHandGrip-AK47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,7 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8774538099256850350}
   m_Layer: 6
-  m_Name: RightHandGrip-Deagle
+  m_Name: RightHandGrip-AK47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5607,7 +5607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7164933895639208290}
   m_Layer: 0
-  m_Name: AimCamLoc-Deagle
+  m_Name: AimCamLoc-AK47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
