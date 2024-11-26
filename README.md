@@ -9,6 +9,8 @@ Welcome to the **Zombie Survival Game**, a demo project aiming to deliver a real
 - **Realistic Weapon Mechanics**:
   - Natural weapon recoil for a more immersive experience.
   - Realistic aiming system, with bullets firing from the weapon's muzzle rather than the center of the screen.
+  - **Aiming and Scoping**: Players can aim down sights for better accuracy.
+  - **Magazine Reloading**: Realistic magazine reloading system, requiring players to change the magazine when it's empty.
 - **Inventory System**:
   - Visual-only inventory: Items can be displayed and moved within the inventory, but they currently cannot be interacted with or used during gameplay.
   - Item interactions are limited to weapons placed by the developers in the scene, which players can pick up and equip.
