@@ -5,7 +5,7 @@ Welcome to the **Zombie Survival Game**, a demo project aiming to deliver a real
 
 ### Current Features
 
-- **Basic Zombie AI**: Zombies will chase and attack the player upon detection.
+- **Basic Zombie AI**: Zombies will chase and attack the player upon detection, also can spawn in certain areas.
 - **Realistic Weapon Mechanics**:
   - Natural weapon recoil for a more immersive experience.
   - Realistic aiming system, with bullets firing from the weapon's muzzle rather than the center of the screen.
