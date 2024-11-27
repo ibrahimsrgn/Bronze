@@ -2109,7 +2109,7 @@ GameObject:
   - component: {fileID: 1743167547296232869}
   - component: {fileID: 4092622330389098468}
   m_Layer: 0
-  m_Name: Zombie 1
+  m_Name: Zombie 3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,6 +2238,7 @@ MonoBehaviour:
   animator: {fileID: 127867265787259768}
   ragdollRoot: {fileID: 6279823610682781954}
   agent: {fileID: 3084441780533831977}
+  startRagdoll: 0
 --- !u!114 &4092622330389098468
 MonoBehaviour:
   m_ObjectHideFlags: 0

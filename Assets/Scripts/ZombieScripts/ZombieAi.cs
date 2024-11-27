@@ -119,7 +119,6 @@ public class ZombieAi : MonoBehaviour
     {
         loot = spawnLoot.SpawnLootBox();
         zombieSpawner.zombieCount--;
-        // GetComponent<Rigidbody>().useGravity = false;
     }
 
     private void Patroling()

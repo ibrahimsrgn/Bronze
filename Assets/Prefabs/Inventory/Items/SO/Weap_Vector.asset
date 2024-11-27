@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de7ad44c55f914c419f04f801aaeddbf, type: 3}
-  m_Name: Weap_M4
+  m_Name: Weap_Vector
   m_EditorClassIdentifier: 
   type: 1
   range: {x: 5, y: 4}
   stackable: 0
   usable: 0
   maxStackableCount: 0
-  objPrefab: {fileID: 9093570870410691905, guid: d23eb26f3c8a6054bacd5912e9ee12cf,
+  objPrefab: {fileID: 6336230337650881159, guid: b72dd084c98c5fd429b7b483f40d0b7c,
     type: 3}
-  image: {fileID: 21300000, guid: 32b5ed8f24a5d8146b76bc08deb1c174, type: 3}
+  image: {fileID: 21300000, guid: 4f491141e343c234bab85bb5ba270450, type: 3}

@@ -10,7 +10,6 @@ public class RagdollEnabler : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] private Transform ragdollRoot;
     [SerializeField] public NavMeshAgent agent;
-    [SerializeField] private bool startRagdoll = false;
 
     private Rigidbody[] rigidbodies;
     private CharacterJoint[] characterJoints;
@@ -22,14 +21,9 @@ public class RagdollEnabler : MonoBehaviour
     }
     private void Start()
     {
-        if(startRagdoll)
-        {
-            EnableRagdoll();
-        }
-        else
-        {
+       
             EnableAnimator();
-        }
+        
     }
     public void EnableRagdoll()
     {
@@ -41,7 +35,8 @@ public class RagdollEnabler : MonoBehaviour
         {
             rigidbody.detectCollisions = true;
             rigidbody.useGravity = true;
-            rigidbody.isKinematic = false;
+            //rigidbody.isKinematic = false;
+
         }
     }
     public void DisableAllRigidbody()
