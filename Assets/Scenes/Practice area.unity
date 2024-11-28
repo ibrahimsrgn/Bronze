@@ -197,10 +197,7 @@ MonoBehaviour:
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
       type: 3}
-    spawnLuck: 50
-  - zombiePrefab: {fileID: 6660184903045082040, guid: bfacff9af732e4b4db59328f39ffa99e,
-      type: 3}
-    spawnLuck: 10
+    spawnLuck: 1
   maxZombieCount: 2
   zombieCount: 0
 --- !u!114 &5440155

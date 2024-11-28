@@ -114,3 +114,11 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277409
+  packageName: 3D Characters Zombie City Streets Lowpoly Pack - Lite
+  packageVersion: 
+  assetPath: Assets/Prefabs/Enemy 1/3D Characters Zombie City Streets Lowpoly Pack
+    - Lite/Models/Characters_Zombie_SuitMan_1.fbx
+  uploadId: 0

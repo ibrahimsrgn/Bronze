@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c7cf44c0f2d58254cb790539b4a0466a
-DefaultImporter:
+guid: 09ba4f5365568cb4287f6d3e2bfe19e9
+PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
@@ -9,7 +9,7 @@ AssetOrigin:
   serializedVersion: 1
   productId: 277409
   packageName: 3D Characters Zombie City Streets Lowpoly Pack - Lite
-  packageVersion: 
+  packageVersion: 1.01
   assetPath: Assets/Prefabs/Enemy 1/3D Characters Zombie City Streets Lowpoly Pack
-    - Lite/Scenes/Scene 5.0 1.unity
-  uploadId: 0
+    - Lite/Prefabs/(P) Characters_Zombie_SuitMan_1.prefab
+  uploadId: 707786

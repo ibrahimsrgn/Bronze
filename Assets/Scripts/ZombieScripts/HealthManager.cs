@@ -36,8 +36,8 @@ public class HealthManager : MonoBehaviour
         {
             zombieAi.Dead();
             zombieAi.state = ZombieAi.State.Dead;
-            zombieAi.ragdollEnabler.animator.enabled = false;
-            zombieAi.ragdollEnabler.agent.enabled = false;
+           // zombieAi.ragdollEnabler.animator.enabled = false;
+           // zombieAi.ragdollEnabler.agent.enabled = false;
             zombieAi.ragdollEnabler.EnableRagdoll();
             isDead = true;
         }
