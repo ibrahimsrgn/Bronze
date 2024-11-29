@@ -35,8 +35,6 @@ public class RagdollEnabler : MonoBehaviour
     }
     public void EnableRagdoll()
     {
-        animator.enabled = false;
-        agent.enabled = false;
         foreach (CharacterJoint characterJoint in characterJoints)
         {
             characterJoint.enableCollision = false;

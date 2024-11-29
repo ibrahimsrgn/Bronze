@@ -148,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5440151}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b356dfe06b7bf27488b12048c0c22460, type: 3}
   m_Name: 
@@ -337,6 +337,30 @@ MonoBehaviour:
     name: Water
     description: 
     itemSO: {fileID: 11400000, guid: 0faa94b49baff5346af5c79a1277a4e9, type: 2}
+  - id: 13
+    name: AK47
+    description: 
+    itemSO: {fileID: 11400000, guid: 81fb5ebcd527a6f4dae92ea3b1cda410, type: 2}
+  - id: 14
+    name: Benelli M4 Super 90
+    description: 
+    itemSO: {fileID: 11400000, guid: f156f8b27436fa5488c02bb70b0eceb2, type: 2}
+  - id: 15
+    name: Deagle
+    description: 
+    itemSO: {fileID: 11400000, guid: de1bd212e91b0de41b288ded0356d56d, type: 2}
+  - id: 16
+    name: M4
+    description: 
+    itemSO: {fileID: 11400000, guid: 5ae35983eeb1c1c468e13b43a22654a0, type: 2}
+  - id: 17
+    name: Scar-F
+    description: 
+    itemSO: {fileID: 11400000, guid: 60c223c7e9adcfd4da5d0dafbad56f4a, type: 2}
+  - id: 18
+    name: Vector
+    description: 
+    itemSO: {fileID: 11400000, guid: 172c3ba51c06fb142b6a2bd2e8f0e8c3, type: 2}
 --- !u!1 &16788382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset9_4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdeddc5831754e54ca488764d3d6b553,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1131,6 +1160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cea538ba324939d44b3a8f5e6f596720,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1370,7 +1404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &178734487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3080,6 +3114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Benelli M4 Super 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3847776533483756480, guid: fb584f4f0f008be419e9c768c3baf461,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6543187675522766709, guid: fb584f4f0f008be419e9c768c3baf461,
         type: 3}
       propertyPath: RPM
@@ -3137,7 +3176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &544200366
 Transform:
   m_ObjectHideFlags: 0
@@ -3784,6 +3823,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset9_3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdeddc5831754e54ca488764d3d6b553,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3990,6 +4034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset9_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cea538ba324939d44b3a8f5e6f596720,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4135,6 +4184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset9_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdeddc5831754e54ca488764d3d6b553,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4284,6 +4338,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset9_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdeddc5831754e54ca488764d3d6b553,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4396,6 +4455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vector
       objectReference: {fileID: 0}
+    - target: {fileID: 6336230337650881159, guid: b72dd084c98c5fd429b7b483f40d0b7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6939217189769760550, guid: b72dd084c98c5fd429b7b483f40d0b7c,
         type: 3}
       propertyPath: RPM
@@ -4448,7 +4512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &785411605
 Transform:
   m_ObjectHideFlags: 0
@@ -6541,6 +6605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ak47
       objectReference: {fileID: 0}
+    - target: {fileID: 7078350813080637889, guid: 41e70b07269a0a34da6602d73186cfe1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8029,6 +8098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6ec01a04f975804e800263046a4264c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8115,6 +8189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Deagle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909168733693985638, guid: fb4402164804ee54fb43c796f723b920,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6155719087167868605, guid: fb4402164804ee54fb43c796f723b920,
         type: 3}
@@ -8336,6 +8415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2ca0e5a9892b14d4da6c4b92a25e3bb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9700,6 +9784,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset8_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2ca0e5a9892b14d4da6c4b92a25e3bb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10902,6 +10991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BuildingPreset7_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6ec01a04f975804e800263046a4264c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11664,6 +11758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9f278cef8cf24dbaa31513e2007f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   _FireMode: 0
   BurstCount: 3
   BurstModeDelay: 0.1
@@ -11977,6 +12072,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scar-F
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367335300332428410, guid: fe70e777b68a45a43be72eb6f6d9263d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2641422826600704435, guid: fe70e777b68a45a43be72eb6f6d9263d,
         type: 3}

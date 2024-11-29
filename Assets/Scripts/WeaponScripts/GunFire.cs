@@ -7,7 +7,7 @@ using UnityEngine;
 public class GunFire : MonoBehaviour
 {
     #region Variables
-
+    public int id;
     private bool GUIActivater;
     private Rigidbody RigidBody;
     private PlayerData _PlayerData;
@@ -229,9 +229,10 @@ public class GunFire : MonoBehaviour
             GUIActivater = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-
-                Destroy(RigidBody);
-                transform.SetParent(playerData.WeaponLoc.transform);
+                InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO);
+                Destroy(gameObject);
+               // Destroy(RigidBody);
+              /*  transform.SetParent(playerData.WeaponLoc.transform);
                 playerData.ItemOnHand = transform;
 
                 playerData.LeftHandLayer.data.target = LeftHandRigRef;
@@ -244,7 +245,7 @@ public class GunFire : MonoBehaviour
 
                 playerData.CamPosRef2 = AimCamLocRef;
                 Animator.enabled = true;
-                playerData._RigBuilder.Build();
+                playerData._RigBuilder.Build();*/
             }
         }
     }
