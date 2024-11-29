@@ -1,4 +1,4 @@
-using System.Net;
+﻿using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SubsystemsImplementation;
@@ -24,6 +24,7 @@ public class InventoryManager : MonoBehaviour
             if (isNumber && number > 0 && number < 9)
             {
                 ChangeSelectedSlot(number - 1);
+                EquipToHand();
             }
         }
         if (Input.GetKeyDown(KeyCode.T))
@@ -31,7 +32,10 @@ public class InventoryManager : MonoBehaviour
             GetSelectedItem();
         }
     }
+    public void EquipToHand()
+    {
 
+    }
     public void ChangeSelectedSlot(int newValue)
     {
         if (selectedSlot >= 0)
@@ -51,6 +55,25 @@ public class InventoryManager : MonoBehaviour
             {
                 itemInSlot.count++;
                 itemInSlot.RefreshCount();
+                //Eğer silah ise instantiate edilip ele alıancak
+               /* if (itemInSlot.item.type == ItemType.Weapon)
+                {
+                  GameObject weapon=  Instantiate(itemInSlot.item.objPrefab);
+                   weapon.transform.SetParent(playerData.WeaponLoc.transform);
+                    playerData.ItemOnHand = transform;
+
+                    playerData.LeftHandLayer.data.target = LeftHandRigRef;
+                    playerData.RightHandLayer.data.target = RightHandRigRef;
+
+                    transform.position = playerData.WeaponLoc.transform.position;
+                    transform.rotation = playerData.WeaponLoc.transform.rotation;
+
+                    playerData.WeaponPosRot.position = WeaponLocRef.position;
+
+                    playerData.CamPosRef2 = AimCamLocRef;
+                    Animator.enabled = true;
+                    playerData._RigBuilder.Build();
+                }*/
                 return true;
             }
         }
@@ -83,7 +106,7 @@ public class InventoryManager : MonoBehaviour
             if (item.usable == true)
             {
                 itemInSlot.count--;
-                if(itemInSlot.count <= 0)
+                if (itemInSlot.count <= 0)
                 {
                     Destroy(itemInSlot.gameObject);
                 }

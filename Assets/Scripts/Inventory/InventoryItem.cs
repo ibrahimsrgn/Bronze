@@ -8,6 +8,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [Header("UI")]
     public Image image;
     public TextMeshProUGUI countText;
+    public GameObject prefab;
 
     [SerializeField] private Canvas canvas;
 

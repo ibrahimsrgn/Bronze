@@ -229,10 +229,10 @@ public class GunFire : MonoBehaviour
             GUIActivater = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO);
-                Destroy(gameObject);
-               // Destroy(RigidBody);
-              /*  transform.SetParent(playerData.WeaponLoc.transform);
+                 InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO);
+                //Destroy(gameObject);
+                Destroy(RigidBody);
+                transform.SetParent(playerData.WeaponLoc.transform);
                 playerData.ItemOnHand = transform;
 
                 playerData.LeftHandLayer.data.target = LeftHandRigRef;
@@ -245,7 +245,8 @@ public class GunFire : MonoBehaviour
 
                 playerData.CamPosRef2 = AimCamLocRef;
                 Animator.enabled = true;
-                playerData._RigBuilder.Build();*/
+                playerData._RigBuilder.Build();
+                gameObject.SetActive(false);
             }
         }
     }
