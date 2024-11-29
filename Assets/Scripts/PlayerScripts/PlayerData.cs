@@ -10,6 +10,7 @@ using UnityEngine.Rendering;
 public class PlayerData : MonoBehaviour
 {
     #region Variables
+    public static PlayerData Instance;
     private Vector2 MoveInput;
     private Vector3 CurrentInput;
 
@@ -67,6 +68,7 @@ public class PlayerData : MonoBehaviour
     #region Update Methods
     private void Awake()
     {
+        Instance = this;
         if (WeaponLoc.childCount <= 0)
             ItemOnHand = null;
         else

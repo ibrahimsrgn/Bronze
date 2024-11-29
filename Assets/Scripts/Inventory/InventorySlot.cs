@@ -1,3 +1,4 @@
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,6 +11,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public void Selected()
     {
         image.color = selectedColor;
+
+            InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+            inventoryItem?.prefab.SetActive(true);
+        
     }
     public void DeSelected()
     {

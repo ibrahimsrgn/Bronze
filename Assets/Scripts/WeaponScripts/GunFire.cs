@@ -31,10 +31,10 @@ public class GunFire : MonoBehaviour
     [SerializeField] private TrailRenderer BulletTrail;
 
     [Header("Referances")]
-    [SerializeField] private Transform RightHandRigRef;
-    [SerializeField] private Transform LeftHandRigRef;
-    [SerializeField] private Transform AimCamLocRef;
-    [SerializeField] private Transform WeaponLocRef;
+    [SerializeField] public Transform RightHandRigRef;
+    [SerializeField] public Transform LeftHandRigRef;
+    [SerializeField] public Transform AimCamLocRef;
+    [SerializeField] public Transform WeaponLocRef;
     [SerializeField] private Animator Animator;
 
     public AudioSource Shooting_Sound;

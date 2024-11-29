@@ -41,8 +41,11 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot >= 0)
         {
             inventorySlots[selectedSlot].DeSelected();
+           
         }
         inventorySlots[newValue].Selected();
+
+
         selectedSlot = newValue;
     }
     public bool AddItem(ItemSO item)
@@ -55,25 +58,27 @@ public class InventoryManager : MonoBehaviour
             {
                 itemInSlot.count++;
                 itemInSlot.RefreshCount();
-                //Eğer silah ise instantiate edilip ele alıancak
-               /* if (itemInSlot.item.type == ItemType.Weapon)
+                //Eğer alınan item silah ise spawnlayıp deactive yapıyor
+                if (itemInSlot.item.type == ItemType.Weapon)
                 {
                   GameObject weapon=  Instantiate(itemInSlot.item.objPrefab);
-                   weapon.transform.SetParent(playerData.WeaponLoc.transform);
-                    playerData.ItemOnHand = transform;
+                   weapon.transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
+                   PlayerData.Instance.ItemOnHand = weapon.transform;
 
-                    playerData.LeftHandLayer.data.target = LeftHandRigRef;
-                    playerData.RightHandLayer.data.target = RightHandRigRef;
+                   GunFire gunFire= weapon.GetComponent<GunFire>();
+                    PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
+                    PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
 
-                    transform.position = playerData.WeaponLoc.transform.position;
-                    transform.rotation = playerData.WeaponLoc.transform.rotation;
+                    transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+                    transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
 
-                    playerData.WeaponPosRot.position = WeaponLocRef.position;
+                    PlayerData.Instance.WeaponPosRot.position = gunFire.WeaponLocRef.position;
 
-                    playerData.CamPosRef2 = AimCamLocRef;
-                    Animator.enabled = true;
-                    playerData._RigBuilder.Build();
-                }*/
+                    PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
+                    weapon.GetComponent<Animator>().enabled = true;
+                    PlayerData.Instance._RigBuilder.Build();
+                    itemInSlot.prefab= weapon;
+                }
                 return true;
             }
         }
