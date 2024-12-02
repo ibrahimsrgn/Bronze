@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
 
         selectedSlot = newValue;
     }
-    public bool AddItem(ItemSO item)
+    public bool AddItem(ItemSO item,out GameObject gameObject)
     {
         //Searching for same stackable item
         foreach (InventorySlot slot in inventorySlots)
@@ -58,27 +58,7 @@ public class InventoryManager : MonoBehaviour
             {
                 itemInSlot.count++;
                 itemInSlot.RefreshCount();
-                //Eğer alınan item silah ise spawnlayıp deactive yapıyor
-                if (itemInSlot.item.type == ItemType.Weapon)
-                {
-                  GameObject weapon=  Instantiate(itemInSlot.item.objPrefab);
-                   weapon.transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
-                   PlayerData.Instance.ItemOnHand = weapon.transform;
-
-                   GunFire gunFire= weapon.GetComponent<GunFire>();
-                    PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
-                    PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
-
-                    transform.position = PlayerData.Instance.WeaponLoc.transform.position;
-                    transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
-
-                    PlayerData.Instance.WeaponPosRot.position = gunFire.WeaponLocRef.position;
-
-                    PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
-                    weapon.GetComponent<Animator>().enabled = true;
-                    PlayerData.Instance._RigBuilder.Build();
-                    itemInSlot.prefab= weapon;
-                }
+                gameObject = null;
                 return true;
             }
         }
@@ -88,18 +68,21 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                SpawnNewItem(item, slot);
+                gameObject=SpawnNewItem(item, slot);
+                
                 return true;
             }
         }
+        gameObject=null;
         return false;
     }
-    public void SpawnNewItem(ItemSO item, InventorySlot slot)
+    public GameObject SpawnNewItem(ItemSO item, InventorySlot slot)
     {
 
         GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+        return newItem;
     }
     public ItemSO GetSelectedItem()
     {

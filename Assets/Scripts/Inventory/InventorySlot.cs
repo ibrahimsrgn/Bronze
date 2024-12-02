@@ -13,12 +13,14 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         image.color = selectedColor;
 
             InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-            inventoryItem?.gameObject.SetActive(true);
+            inventoryItem?.prefab.gameObject.SetActive(true);
         
     }
     public void DeSelected()
     {
         image.color = deSelectedColor;
+        InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+        inventoryItem?.prefab.gameObject.SetActive(false);
     }
     public void OnDrop(PointerEventData eventData)
     {

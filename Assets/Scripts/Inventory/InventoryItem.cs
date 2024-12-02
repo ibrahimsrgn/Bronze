@@ -12,7 +12,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [SerializeField] private Canvas canvas;
 
-    [HideInInspector] public ItemSO item;
+    public ItemSO item;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
 
@@ -20,6 +20,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         item = newItem;
         image.sprite = newItem.image;
+        prefab = newItem.objPrefab;
         RefreshCount();
     }
     public void RefreshCount()
