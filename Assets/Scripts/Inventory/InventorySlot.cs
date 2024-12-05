@@ -1,4 +1,4 @@
-using Unity.Collections.LowLevel.Unsafe;
+﻿using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,9 +12,28 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         image.color = selectedColor;
 
+        //Seçili slotda kuşanılabilicek item varsa kuşan
             InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-            inventoryItem?.prefab.gameObject.SetActive(true);
-        
+        if(inventoryItem != null)
+        {
+            PlayerData.Instance.ItemOnHand = inventoryItem.prefab.transform;
+            inventoryItem.prefab.gameObject.SetActive(true);
+            GunFire gunFire= inventoryItem.prefab.GetComponent<GunFire>();
+            PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
+            PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
+            inventoryItem.prefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+            inventoryItem.prefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
+            PlayerData.Instance.WeaponPosRot.position =gunFire.WeaponLocRef.position;
+
+            PlayerData.Instance.CamPosRef2 =gunFire.AimCamLocRef;
+            gunFire.Animator.enabled = true;
+            PlayerData.Instance._RigBuilder.Build();
+
+        }
+        else
+        {
+            PlayerData.Instance.UnEquipItem();
+        }
     }
     public void DeSelected()
     {

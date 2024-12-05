@@ -24,7 +24,6 @@ public class InventoryManager : MonoBehaviour
             if (isNumber && number > 0 && number < 9)
             {
                 ChangeSelectedSlot(number - 1);
-                EquipToHand();
             }
         }
         if (Input.GetKeyDown(KeyCode.T))
@@ -32,10 +31,7 @@ public class InventoryManager : MonoBehaviour
             GetSelectedItem();
         }
     }
-    public void EquipToHand()
-    {
 
-    }
     public void ChangeSelectedSlot(int newValue)
     {
         if (selectedSlot >= 0)

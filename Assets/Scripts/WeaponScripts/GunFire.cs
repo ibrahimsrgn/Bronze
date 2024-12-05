@@ -35,7 +35,7 @@ public class GunFire : MonoBehaviour
     [SerializeField] public Transform LeftHandRigRef;
     [SerializeField] public Transform AimCamLocRef;
     [SerializeField] public Transform WeaponLocRef;
-    [SerializeField] private Animator Animator;
+    [SerializeField] public Animator Animator;
 
     public AudioSource Shooting_Sound;
     private bool ReadyToShoot = true;
@@ -223,30 +223,29 @@ public class GunFire : MonoBehaviour
     #region Weapon Interaction
     public void OnRayHit(PlayerData playerData)
     {
-        if (playerData != null && transform.parent == null && playerData.ItemOnHand == null)
+        if (playerData != null && transform.parent == null)
         {
             RigidBody = GetComponent<Rigidbody>();
             GUIActivater = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
                  InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO,out GameObject addedItem);
-                Debug.Log(addedItem?.GetComponent<InventoryItem>().item.type);
                 Debug.Log(addedItem);
                 Destroy(RigidBody);
                 transform.SetParent(playerData.WeaponLoc.transform);
-                playerData.ItemOnHand = transform;
+                //playerData.ItemOnHand = transform;
 
-                playerData.LeftHandLayer.data.target = LeftHandRigRef;
-                playerData.RightHandLayer.data.target = RightHandRigRef;
+                //playerData.LeftHandLayer.data.target = LeftHandRigRef;
+                //playerData.RightHandLayer.data.target = RightHandRigRef;
 
-                transform.position = playerData.WeaponLoc.transform.position;
-                transform.rotation = playerData.WeaponLoc.transform.rotation;
+                //transform.position = playerData.WeaponLoc.transform.position;
+                //transform.rotation = playerData.WeaponLoc.transform.rotation;
 
-                playerData.WeaponPosRot.position = WeaponLocRef.position;
+                //playerData.WeaponPosRot.position = WeaponLocRef.position;
 
-                playerData.CamPosRef2 = AimCamLocRef;
-                Animator.enabled = true;
-                playerData._RigBuilder.Build();
+                //playerData.CamPosRef2 = AimCamLocRef;
+                //Animator.enabled = true;
+                //playerData._RigBuilder.Build();
                 addedItem.GetComponent<InventoryItem>().item.objPrefab = gameObject;
                 gameObject.SetActive(false);
             }

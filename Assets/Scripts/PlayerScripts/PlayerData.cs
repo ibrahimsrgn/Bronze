@@ -189,6 +189,13 @@ public class PlayerData : MonoBehaviour
             ItemOnHand = null;
         }
     }
+    public void UnEquipItem()
+    {
+        ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
+        LeftHandLayer.data.target = null;
+        RightHandLayer.data.target = null;
+        ItemOnHand = null;
+    }
     #endregion
 
     //-------------------------------------------------------------------
