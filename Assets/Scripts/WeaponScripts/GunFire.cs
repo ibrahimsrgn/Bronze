@@ -233,6 +233,8 @@ public class GunFire : MonoBehaviour
                 Debug.Log(addedItem);
                 Destroy(RigidBody);
                 transform.SetParent(playerData.WeaponLoc.transform);
+                addedItem.GetComponent<InventoryItem>().item.objPrefab = gameObject;
+                gameObject.SetActive(false);
                 //playerData.ItemOnHand = transform;
 
                 //playerData.LeftHandLayer.data.target = LeftHandRigRef;
@@ -246,8 +248,7 @@ public class GunFire : MonoBehaviour
                 //playerData.CamPosRef2 = AimCamLocRef;
                 //Animator.enabled = true;
                 //playerData._RigBuilder.Build();
-                addedItem.GetComponent<InventoryItem>().item.objPrefab = gameObject;
-                gameObject.SetActive(false);
+
             }
         }
     }
