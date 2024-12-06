@@ -13,19 +13,18 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         image.color = selectedColor;
 
         //Seçili slotda kuşanılabilicek item varsa kuşan
-            InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-        if(inventoryItem != null)
+        InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+        if (inventoryItem != null)
         {
             PlayerData.Instance.ItemOnHand = inventoryItem.prefab.transform;
             inventoryItem.prefab.gameObject.SetActive(true);
-            GunFire gunFire= inventoryItem.prefab.GetComponent<GunFire>();
+            GunFire gunFire = inventoryItem.prefab.GetComponent<GunFire>();
             PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
             PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
             inventoryItem.prefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
             inventoryItem.prefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
-            PlayerData.Instance.WeaponPosRot.position =gunFire.WeaponLocRef.position;
-
-            PlayerData.Instance.CamPosRef2 =gunFire.AimCamLocRef;
+            PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
+            PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
             gunFire.Animator.enabled = true;
             PlayerData.Instance._RigBuilder.Build();
 
@@ -54,23 +53,23 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             Debug.Log(comingItem.item.name);
             InventoryItem itemInSlot = gameObject.gameObject.GetComponentInChildren<InventoryItem>();
             Debug.Log(itemInSlot.item.name);
-            if (itemInSlot!=null&&comingItem.item == itemInSlot.item && comingItem.count < comingItem.item.maxStackableCount && comingItem.item.stackable)
+            if (itemInSlot != null && comingItem.item == itemInSlot.item && comingItem.count < comingItem.item.maxStackableCount && comingItem.item.stackable)
             {
-                int totalCount=itemInSlot.count += comingItem.count;
+                int totalCount = itemInSlot.count += comingItem.count;
                 if (totalCount <= itemInSlot.item.maxStackableCount)
                 {
-                    itemInSlot.count=totalCount;
+                    itemInSlot.count = totalCount;
                     Destroy(comingItem.gameObject);
                 }
                 else
                 {
-                    itemInSlot.count=comingItem.item.maxStackableCount; 
-                    comingItem.count=totalCount-comingItem.item.maxStackableCount;
+                    itemInSlot.count = comingItem.item.maxStackableCount;
+                    comingItem.count = totalCount - comingItem.item.maxStackableCount;
                 }
                 itemInSlot.RefreshCount();
                 comingItem.RefreshCount();
             }
         }
-        
+
     }
 }
