@@ -17,5 +17,6 @@ MonoBehaviour:
   stackable: 0
   usable: 0
   maxStackableCount: 0
-  objPrefab: {fileID: 0}
+  objPrefab: {fileID: 7078350813080637889, guid: 41e70b07269a0a34da6602d73186cfe1,
+    type: 3}
   image: {fileID: 21300000, guid: a849d9d01be2077408ccb9985c229307, type: 3}

@@ -69,7 +69,8 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                gameObject=SpawnNewItem(item, slot);
+                GameObject obj = SpawnNewItem(item, slot);
+                gameObject = obj.GetComponent<ItemSO>().objPrefab;
                 
                 return true;
             }
