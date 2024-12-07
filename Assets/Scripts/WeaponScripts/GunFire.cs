@@ -82,7 +82,7 @@ public class GunFire : MonoBehaviour
             Debug.Log(MagazineCap + " / " + CurrentAmmoCount);
             _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
             RPM -= Time.deltaTime;
-            if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot && CurrentAmmoCount > 0)
+            if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot && CurrentAmmoCount > 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.ReloadAnimation"))
             {
                 Shooting_Sound.Play();
                 switch (_FireMode)
