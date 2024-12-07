@@ -34,15 +34,20 @@ public class InventoryManager : MonoBehaviour
 
     public void ChangeSelectedSlot(int newValue)
     {
-        if (selectedSlot >= 0)
+        Debug.Log(newValue + " ----- " + selectedSlot);
+        if (newValue != selectedSlot)
         {
-            inventorySlots[selectedSlot].DeSelected();
-           
+            inventorySlots[newValue].Selected();
+            selectedSlot = newValue;
+            if (selectedSlot >= 0)
+            {
+                inventorySlots[selectedSlot].DeSelected();
+            }
         }
-        inventorySlots[newValue].Selected();
-
-
-        selectedSlot = newValue;
+        else
+        {
+            Debug.Log("lalalalala");
+        }
     }
     public bool AddItem(ItemSO item,out GameObject gameObject)
     {

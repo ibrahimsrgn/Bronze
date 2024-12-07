@@ -31,7 +31,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
         else
         {
-            PlayerData.Instance.UnEquipItem();
+            if (PlayerData.Instance.ItemOnHand != null)
+            {
+                PlayerData.Instance.UnEquipItem();
+            }
         }
     }
     public void DeSelected()
