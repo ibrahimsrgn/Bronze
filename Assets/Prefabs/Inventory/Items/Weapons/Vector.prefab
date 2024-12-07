@@ -5465,7 +5465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 16
-  _FireMode: 0
+  _FireMode: 2
   BurstCount: 0
   BurstModeDelay: 0
   RPM: 930
@@ -5595,7 +5595,7 @@ Animator:
   m_GameObject: {fileID: 6336230337650881159}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e11c0905d7d81314b91c63b04f106c18, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
