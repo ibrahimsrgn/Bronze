@@ -8,15 +8,13 @@ public class WeaponSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log("Fire in the hole");
-        int randomWeapon = Random.Range(12, 17);
+            int randomWeapon = Random.Range(12, 17);
             GameObject weapon;
-        InventoryManager.instance.AddItem(ItemPool.instance.items[randomWeapon].itemSO,out GameObject addedWeapon);
-           weapon= Instantiate(addedWeapon.GetComponent<InventoryItem>().prefab);
+            InventoryManager.instance.AddItem(ItemPool.instance.items[randomWeapon].itemSO, out GameObject addedWeapon);
+            weapon = Instantiate(addedWeapon.GetComponent<InventoryItem>().prefab);
             weapon.transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
             weapon.SetActive(false);
             addedWeapon.GetComponent<InventoryItem>().prefab = weapon;
-            Debug.Log("Fire in the Air");
         }
     }
 }

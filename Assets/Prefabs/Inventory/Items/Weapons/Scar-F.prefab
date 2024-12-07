@@ -148,7 +148,7 @@ MonoBehaviour:
   AimCamLocRef: {fileID: 3402010480287951839}
   WeaponLocRef: {fileID: 5871457125177627153}
   Animator: {fileID: 3110076908262223586}
-  Shooting_Sound: {fileID: 0}
+  Shooting_Sound: {fileID: 6572115315706665963}
 --- !u!65 &2581401282979368816
 BoxCollider:
   m_ObjectHideFlags: 0

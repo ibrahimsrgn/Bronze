@@ -36,7 +36,6 @@ public class ZombieAi : MonoBehaviour
     //Wait for attack ends
     private float waitTimerMax = 1f;
     private float waitTimer = 0;
-    float fadeOutTimer = 1;
     public State state;
     public enum State
     {

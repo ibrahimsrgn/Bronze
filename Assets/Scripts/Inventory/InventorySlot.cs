@@ -17,7 +17,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         if (inventoryItem != null)
         {
             PlayerData.Instance.ItemOnHand = inventoryItem.prefab.transform;
-            inventoryItem.prefab.gameObject.SetActive(true);
             GunFire gunFire = inventoryItem.prefab.GetComponent<GunFire>();
             PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
             PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
@@ -26,6 +25,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             PlayerData.Instance.WeaponPosRot.position = gunFire.WeaponLocRef.position;
             PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
             gunFire.Animator.enabled = true;
+            inventoryItem.prefab.SetActive(true);
             PlayerData.Instance._RigBuilder.Build();
 
         }

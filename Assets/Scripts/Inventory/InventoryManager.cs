@@ -37,11 +37,12 @@ public class InventoryManager : MonoBehaviour
         if (newValue != selectedSlot)
         {
             inventorySlots[newValue].Selected();
-            selectedSlot = newValue;
+            Debug.Log(selectedSlot);
             if (selectedSlot >= 0)
             {
                 inventorySlots[selectedSlot].DeSelected();
             }
+            selectedSlot = newValue;
         }
 
     }
@@ -65,8 +66,8 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                gameObject= SpawnNewItem(item, slot);
-               // gameObject = item.objPrefab;
+                gameObject = SpawnNewItem(item, slot);
+                // gameObject = item.objPrefab;
 
                 return true;
             }

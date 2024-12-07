@@ -5179,7 +5179,7 @@ MonoBehaviour:
   _FireMode: 0
   BurstCount: 3
   BurstModeDelay: 0.1
-  RPM: 0.5
+  RPM: 120
   BulletVelocity: 500
   BulletDamage: 30
   mask:
