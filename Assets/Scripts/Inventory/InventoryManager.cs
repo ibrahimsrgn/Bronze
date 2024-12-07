@@ -95,6 +95,7 @@ public class InventoryManager : MonoBehaviour
                 itemInSlot.count--;
                 if (itemInSlot.count <= 0)
                 {
+                    Destroy(itemInSlot.prefab);
                     Destroy(itemInSlot.gameObject);
                 }
                 else

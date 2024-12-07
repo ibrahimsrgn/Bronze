@@ -1,4 +1,6 @@
-﻿using Unity.Collections.LowLevel.Unsafe;
+﻿using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.Cinemachine;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -18,6 +20,12 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             PlayerData.Instance.ItemOnHand = inventoryItem.prefab.transform;
             GunFire gunFire = inventoryItem.prefab.GetComponent<GunFire>();
+            if (gunFire == null)
+            {
+                inventoryItem.prefab.transform.position= PlayerData.Instance.WeaponLoc.transform.position;
+                inventoryItem.prefab.SetActive(true);
+                return;
+            }
             PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
             PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
             inventoryItem.prefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;

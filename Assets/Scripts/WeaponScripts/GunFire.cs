@@ -129,6 +129,7 @@ public class GunFire : MonoBehaviour
         }
 
         Recoil_Script.RecoilFire();
+        Animator.SetTrigger("Shooting");
         CurrentAmmoCount--;
         TrailRenderer Trail = Instantiate(BulletTrail, AmmoExitLoc.position, Quaternion.identity);
         StartCoroutine(SpawnTrail(Trail, TargetPoint));
