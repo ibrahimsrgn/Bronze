@@ -34,7 +34,6 @@ public class InventoryManager : MonoBehaviour
 
     public void ChangeSelectedSlot(int newValue)
     {
-        Debug.Log(newValue + " ----- " + selectedSlot);
         if (newValue != selectedSlot)
         {
             inventorySlots[newValue].Selected();
@@ -44,12 +43,9 @@ public class InventoryManager : MonoBehaviour
                 inventorySlots[selectedSlot].DeSelected();
             }
         }
-        else
-        {
-            Debug.Log("lalalalala");
-        }
+
     }
-    public bool AddItem(ItemSO item,out GameObject gameObject)
+    public bool AddItem(ItemSO item, out GameObject gameObject)
     {
         //Searching for same stackable item
         foreach (InventorySlot slot in inventorySlots)
@@ -69,13 +65,13 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                GameObject obj = SpawnNewItem(item, slot);
-                gameObject = obj.GetComponent<ItemSO>().objPrefab;
-                
+                gameObject= SpawnNewItem(item, slot);
+               // gameObject = item.objPrefab;
+
                 return true;
             }
         }
-        gameObject=null;
+        gameObject = null;
         return false;
     }
     public GameObject SpawnNewItem(ItemSO item, InventorySlot slot)
