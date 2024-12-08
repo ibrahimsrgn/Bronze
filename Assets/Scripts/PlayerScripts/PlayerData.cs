@@ -179,14 +179,28 @@ public class PlayerData : MonoBehaviour
     {
         if (Value && ItemOnHand != null)
         {
+            if(ItemOnHand.GetComponent<GunFire>() != null)
+            {
             ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
-            LeftHandLayer.data.target = null;
-            RightHandLayer.data.target = null;
             ItemOnHand.gameObject.GetComponent<GunFire>().enabled = enabled;
-            ItemOnHand.transform.SetParent(null);
-            ItemOnHand.gameObject.AddComponent<Rigidbody>();
-            ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);
-            ItemOnHand = null;
+            }
+            if (ItemOnHand.TryGetComponent<ItemInteraction>(out ItemInteraction itemInteraction) && InventoryManager.instance.GetSelectedItemCount()>1)
+            {
+                GameObject droppedItem = Instantiate(ItemOnHand.gameObject,ItemOnHand);
+                droppedItem.transform.SetParent(null);
+                droppedItem.gameObject.AddComponent<Rigidbody>();
+                droppedItem.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);
+            }
+            else
+            {
+                LeftHandLayer.data.target = null;
+                RightHandLayer.data.target = null;
+                ItemOnHand.transform.SetParent(null);
+                ItemOnHand.gameObject.AddComponent<Rigidbody>();
+                ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);
+                ItemOnHand = null;
+            }
+            InventoryManager.instance.DropSelectedItem();
         }
     }
     public void UnEquipItem()

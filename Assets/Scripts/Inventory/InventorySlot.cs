@@ -20,6 +20,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             PlayerData.Instance.ItemOnHand = inventoryItem.prefab.transform;
             GunFire gunFire = inventoryItem.prefab.GetComponent<GunFire>();
+            //Nesne Silah değil ise
             if (gunFire == null)
             {
                 inventoryItem.prefab.transform.position= PlayerData.Instance.WeaponLoc.transform.position;
@@ -50,6 +51,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         image.color = deSelectedColor;
         InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
         inventoryItem?.prefab.gameObject.SetActive(false);
+    }
+    public void DeSelectWithOutSettingInActive()
+    {
+        image.color = deSelectedColor;
     }
     public void OnDrop(PointerEventData eventData)
     {

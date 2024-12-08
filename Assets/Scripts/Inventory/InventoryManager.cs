@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SubsystemsImplementation;
@@ -26,7 +27,7 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number - 1);
             }
         }
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             GetSelectedItem();
         }
@@ -37,7 +38,6 @@ public class InventoryManager : MonoBehaviour
         if (newValue != selectedSlot)
         {
             inventorySlots[newValue].Selected();
-            Debug.Log(selectedSlot);
             if (selectedSlot >= 0)
             {
                 inventorySlots[selectedSlot].DeSelected();
@@ -85,6 +85,7 @@ public class InventoryManager : MonoBehaviour
     }
     public ItemSO GetSelectedItem()
     {
+        if (selectedSlot == -1) return null;
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
@@ -97,6 +98,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     Destroy(itemInSlot.prefab);
                     Destroy(itemInSlot.gameObject);
+                    DeSelectAllSlots();
                 }
                 else
                 {
@@ -107,4 +109,38 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
+    public int GetSelectedItemCount()
+    {
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        return itemInSlot.count;
+    }
+    public ItemSO DropSelectedItem()
+    {
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if (itemInSlot != null)
+        {
+            ItemSO item = itemInSlot.item;
+            itemInSlot.count--;
+            if (itemInSlot.count <= 0)
+            {
+                Destroy(itemInSlot.gameObject);
+                InventoryManager.instance.DeSelectAllSlots();
+            }
+            else
+            {
+                itemInSlot.RefreshCount();
+            }
+            return item;
+        }
+        return null;
+    }
+    public void DeSelectAllSlots()
+    {
+        inventorySlots[selectedSlot].DeSelectWithOutSettingInActive();
+        selectedSlot = -1;
+    }
+
 }
+

@@ -231,8 +231,9 @@ public class GunFire : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                  InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO,out GameObject addedItem);
-                addedItem = gameObject;
+                addedItem.GetComponent<InventoryItem>().prefab = gameObject;
                 Debug.Log(addedItem);
+
                 Destroy(RigidBody);
                 transform.SetParent(playerData.WeaponLoc.transform);
                 gameObject.SetActive(false);

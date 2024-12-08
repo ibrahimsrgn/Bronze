@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1937073658139402920}
   - component: {fileID: 8915752018719267714}
   - component: {fileID: 4161255761226418860}
-  - component: {fileID: 7530937966715696503}
   m_Layer: 0
   m_Name: SM_Fire_Mode_Switch_For_Tactical_Submachine_Gun
   m_TagString: Untagged
@@ -87,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7530937966715696503
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2760566470062147539}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7188034154796737390, guid: 2e2554fd8da24b841a454dbcf6135dc5, type: 3}
 --- !u!1 &3273086889206803556
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,7 +5230,6 @@ GameObject:
   - component: {fileID: 2808774525594518362}
   - component: {fileID: 6118018530552809283}
   - component: {fileID: 3097912708186724775}
-  - component: {fileID: 4370530486280279834}
   m_Layer: 0
   m_Name: SM_Trigger_Hook_For_Tactical_Submachine_Gun
   m_TagString: Untagged
@@ -5329,28 +5305,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4370530486280279834
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4969610378977093249}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7590065184366879072, guid: 2e2554fd8da24b841a454dbcf6135dc5, type: 3}
 --- !u!1 &6336230337650881159
 GameObject:
   m_ObjectHideFlags: 0
@@ -5661,7 +5615,6 @@ GameObject:
   - component: {fileID: 8342216820536213053}
   - component: {fileID: 8294610630055193184}
   - component: {fileID: 363598280224664767}
-  - component: {fileID: 987652106411339495}
   m_Layer: 0
   m_Name: SM_Fuse_For_Tactical_Submachine_Gun
   m_TagString: Untagged
@@ -5737,28 +5690,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &987652106411339495
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6660684608215254999}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8877428359182876279, guid: 2e2554fd8da24b841a454dbcf6135dc5, type: 3}
 --- !u!1 &7038871021815803596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,7 +5796,6 @@ GameObject:
   - component: {fileID: 3815057863990130665}
   - component: {fileID: 8817674755103402162}
   - component: {fileID: 8710569288314476055}
-  - component: {fileID: 8276235876924863999}
   m_Layer: 0
   m_Name: SM_Magazine_Tactical_Submachine_Gun(Clone)
   m_TagString: Untagged
@@ -5941,28 +5871,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8276235876924863999
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187663217871102770}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3909354291124993796, guid: 4c5746a85c61af64f982c32bb7696b6b, type: 3}
 --- !u!1 &9193270373037755371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5974,7 +5882,6 @@ GameObject:
   - component: {fileID: 1609115549882960234}
   - component: {fileID: 7377935694482008280}
   - component: {fileID: 2770219905649823342}
-  - component: {fileID: 5398234773561589953}
   m_Layer: 0
   m_Name: SM_Trigger_For_Tactical_Submachine_Gun
   m_TagString: Untagged
@@ -6050,28 +5957,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5398234773561589953
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9193270373037755371}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3745321930579755478, guid: 2e2554fd8da24b841a454dbcf6135dc5, type: 3}
 --- !u!1001 &8647894886431368123
 PrefabInstance:
   m_ObjectHideFlags: 0
