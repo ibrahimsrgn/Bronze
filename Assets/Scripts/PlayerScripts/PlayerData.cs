@@ -20,6 +20,7 @@ public class PlayerData : MonoBehaviour
     public float SprintSpeedData;
     [HideInInspector]
     public bool MouseClickInput;
+    public bool _OnCrouch;
 
     [Header("Camera Look")]
     [SerializeField] private float MouseSensivity;
@@ -41,7 +42,7 @@ public class PlayerData : MonoBehaviour
 
 
     [Header("Animator Component")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator Animator;
     [SerializeField] private float SmoothSpeed;
     [SerializeField] public RigBuilder _RigBuilder;
     private Vector2 SmoothInput;
@@ -131,11 +132,11 @@ public class PlayerData : MonoBehaviour
     private void MovementAnimations()
     {
         LayerMaskUpdater();
-        animator.SetBool("ItemOnHand", ItemOnHand);
+        Animator.SetBool("ItemOnHand", ItemOnHand);
         float targetSpeed = SprintSpeedData > 1 ? 2f : 1f;
         SmoothInput = Vector2.Lerp(SmoothInput, MoveInput * targetSpeed, SmoothSpeed * Time.deltaTime);
-        animator.SetFloat("X", SmoothInput.x);
-        animator.SetFloat("Y", SmoothInput.y);
+        Animator.SetFloat("X", SmoothInput.x);
+        Animator.SetFloat("Y", SmoothInput.y);
     }
 
     private void LayerMaskUpdater()
@@ -232,7 +233,7 @@ public class PlayerData : MonoBehaviour
 
     private void OnSprint(InputValue Value)
     {
-        if (!OnAimBool && Value.isPressed)
+        if (!OnAimBool && Value.isPressed && !_OnCrouch)
         {
             SprintSpeedData = SprintSpeed;
         }
@@ -264,6 +265,12 @@ public class PlayerData : MonoBehaviour
     private void OnReload(InputValue Value)
     {
         OnReloadBool = Value.isPressed;
+    }
+
+    private void OnCrouch(InputValue Value)
+    {
+        _OnCrouch = Value.isPressed;
+        Animator.SetBool("Crouch", Value.isPressed);
     }
 
     private void InstaTransfer(InputValue value)

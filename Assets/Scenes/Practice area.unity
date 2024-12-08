@@ -12582,6 +12582,7 @@ MonoBehaviour:
   SprintSpeed: 2.5
   SprintSpeedData: 1
   MouseClickInput: 0
+  _OnCrouch: 0
   MouseSensivity: 50
   CamPosRef1: {fileID: 4581624065973108607}
   CamPosRef2: {fileID: 1757059367}
@@ -12590,7 +12591,7 @@ MonoBehaviour:
   CamPosSmoothSpeed: 25
   Gravity: -9.81
   JumpHeight: 1
-  animator: {fileID: 6614378495109053141}
+  Animator: {fileID: 6614378495109053141}
   SmoothSpeed: 3
   _RigBuilder: {fileID: 1761986447}
   OnReloadBool: 0
