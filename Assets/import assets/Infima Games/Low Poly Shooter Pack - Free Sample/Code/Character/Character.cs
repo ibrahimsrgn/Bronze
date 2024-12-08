@@ -262,7 +262,7 @@ namespace InfimaGames.LowPolyShooterPack
 		#region METHODS
 
 		/// <summary>
-		/// Updates all the animator properties for this frame.
+		/// Updates all the Animator properties for this frame.
 		/// </summary>
 		private void UpdateAnimator()
 		{
