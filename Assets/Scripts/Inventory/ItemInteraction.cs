@@ -9,13 +9,22 @@ public class ItemInteraction : MonoBehaviour
         GUIActivater = true;
         if (Input.GetKeyDown(KeyCode.E))
         {
-            InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO, out GameObject addedItem);
-            addedItem.GetComponent<InventoryItem>().prefab = gameObject;
-            Debug.Log(addedItem);
-
-            Destroy(gameObject.GetComponent<Rigidbody>());
-            transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
-            gameObject.SetActive(false);
+            bool itemAdded = InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO, out GameObject addedItem);
+            if (addedItem != null)
+            {
+                addedItem.GetComponent<InventoryItem>().prefab = gameObject;
+                Destroy(gameObject.GetComponent<Rigidbody>());
+                transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
+                gameObject.SetActive(false);
+            }
+            if (itemAdded&&addedItem==null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Item could not added");
+            }
         }
     }
     void OnGUI()
