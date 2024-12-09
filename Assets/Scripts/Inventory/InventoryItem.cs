@@ -9,18 +9,20 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Image image;
     public TextMeshProUGUI countText;
     public GameObject prefab;
-
+    public string description;
     [SerializeField] private Canvas canvas;
 
     public ItemSO item;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
 
+
     public void InitialiseItem(ItemSO newItem)
     {
         item = newItem;
         image.sprite = newItem.image;
         prefab = newItem.objPrefab;
+        description = newItem.description;
         RefreshCount();
     }
     public void RefreshCount()
@@ -73,7 +75,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
 
             InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
-            selectedSlot.Selected();
             int slotIndex = -1;
             for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
             {
@@ -87,12 +88,48 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             if (slotIndex != -1)
             {
                 InventoryManager.instance.ChangeSelectedSlot(slotIndex);
+                selectedSlot.Selected();
             }
         }
         //sağ click ile yapılacaklar
         if(eventData.button == PointerEventData.InputButton.Right)
         {
-
+            SetButtonsListeners();
+            
         }
+    }
+    private void SetButtonsListeners()
+    {
+        InventoryManager.instance.rightClickMenu.gameObject.SetActive(true);
+        RightClickMenu rightClickMenu = InventoryManager.instance.rightClickMenu.GetComponent<RightClickMenu>();
+        rightClickMenu.inspect.onClick.RemoveAllListeners();
+        rightClickMenu.inspect.onClick.AddListener(() =>
+        {
+            InventoryManager.instance.rightClickMenu.SetActive(false);
+            InventoryManager.instance.inspectMenu.SetActive(true);
+            SetInspectMenuVariables();
+        });
+
+
+
+
+        rightClickMenu.use.onClick.RemoveAllListeners();
+        rightClickMenu.use.onClick.AddListener(() =>
+        {
+            //Hatalı
+            InventoryManager.instance.UseSelectedItem(GetComponentInParent<InventorySlot>());
+        });
+        rightClickMenu.drop.onClick.RemoveAllListeners();
+        rightClickMenu.drop.onClick.AddListener(() =>
+        {
+            //Hatalı
+            InventoryManager.instance.DropSelectedItem(GetComponentInParent<InventorySlot>());
+        });
+    }
+    public void SetInspectMenuVariables()
+    {
+        InspectMenu inspectMenu = InventoryManager.instance.inspectMenu.GetComponent<InspectMenu>();
+        inspectMenu.itemDescription.text = description;
+        inspectMenu.itemImg.sprite = image.sprite;
     }
 }
