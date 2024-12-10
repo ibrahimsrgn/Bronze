@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6572131179299928376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponLocRef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 355171515772097484}
   - component: {fileID: 1354208831455025538}
   - component: {fileID: 3747428092681407489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Trigger_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2893019412877810853}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RightHandGrip-Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 5655316091524111530}
   - component: {fileID: 1824070225506111507}
   - component: {fileID: 4539819824680306773}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,7 +4990,7 @@ GameObject:
   - component: {fileID: 7428633333349776911}
   - component: {fileID: 6057458186711428491}
   - component: {fileID: 6704893630638169235}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Trigger_Hook_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5080,7 +5080,7 @@ GameObject:
   - component: {fileID: 6091289053260473839}
   - component: {fileID: 5335411894820704579}
   - component: {fileID: 3598022142293563996}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5351,7 +5351,7 @@ GameObject:
   - component: {fileID: 3379344539449453233}
   - component: {fileID: 5498776702013267141}
   - component: {fileID: 6263358713623006238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_MagazineFor_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5437,7 +5437,7 @@ GameObject:
   - component: {fileID: 1344693692961486826}
   - component: {fileID: 6192492127629651102}
   - component: {fileID: 4416756848300808855}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MuzzleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5675,7 +5675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630498048764821087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AimCamLoc-Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5708,7 +5708,7 @@ GameObject:
   - component: {fileID: 4445855093268813131}
   - component: {fileID: 631979893014100967}
   - component: {fileID: 8007370595242486212}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Fuse_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5794,7 +5794,7 @@ GameObject:
   - component: {fileID: 5174821242444463388}
   - component: {fileID: 2829037250427874031}
   - component: {fileID: 3661365768360486748}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Bolt_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5880,7 +5880,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6853174229802316756}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: LefttHandGrip-Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5911,7 +5911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8627074135973990231}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: AmmoExit
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5947,6 +5947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Sleeve_9_ONE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599132698061272023, guid: 03ec513850a21234f98b7c61d8ce2448,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5542667598951513499, guid: 03ec513850a21234f98b7c61d8ce2448,
         type: 3}

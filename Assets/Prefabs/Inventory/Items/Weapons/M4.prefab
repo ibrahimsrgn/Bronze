@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9169992942023595576}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: LefttHandGrip-M4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3627973381465454296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AimCamLoc-M4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 6151995616044419042}
   - component: {fileID: 5238692911667845019}
   - component: {fileID: 5790999123969337211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Magazine_For_Assault_Rifle_5,56(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 4930517441926353833}
   - component: {fileID: 128588961497769215}
   - component: {fileID: 1002888049618750801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Lid_Gate_For_Assault_Rifle_5,56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7060447095079908136}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RightHandGrip-M4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129080337413378980}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: AmmoExit(Clone)
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 6415738200881988944}
   - component: {fileID: 6200360653142634280}
   - component: {fileID: 5964303598573140616}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5187,7 +5187,7 @@ GameObject:
   - component: {fileID: 6399518366466610323}
   - component: {fileID: 1790578992267148790}
   - component: {fileID: 7923647285730476568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Fuse_For_Assault_Rifle_5,56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5296,7 +5296,7 @@ GameObject:
   - component: {fileID: 4116107789527613742}
   - component: {fileID: 7583862581005624402}
   - component: {fileID: 6717958043148262343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Gate_For_Assault_Rifle_5,56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5405,7 +5405,7 @@ GameObject:
   - component: {fileID: 5610368019745901180}
   - component: {fileID: 5076809287416293169}
   - component: {fileID: 3860755004995743132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Trigger_Guard_For_Assault_Rifle_5,56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5511,7 +5511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804831513258951617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponLocRef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5544,7 +5544,7 @@ GameObject:
   - component: {fileID: 4772519095161736033}
   - component: {fileID: 7497418348343195567}
   - component: {fileID: 5834755886074349485}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MuzzleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5789,7 +5789,7 @@ GameObject:
   - component: {fileID: 5213211400742101599}
   - component: {fileID: 946120696578977260}
   - component: {fileID: 7987831123147666994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

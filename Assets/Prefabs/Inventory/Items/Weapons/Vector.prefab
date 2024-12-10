@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1937073658139402920}
   - component: {fileID: 8915752018719267714}
   - component: {fileID: 4161255761226418860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Fire_Mode_Switch_For_Tactical_Submachine_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4576357017378079561}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponLocRef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6247590146031048312}
   - component: {fileID: 5422625625016064391}
   - component: {fileID: 6397433035689846916}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MuzzleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 6607231457996713626}
   - component: {fileID: 861334547509884871}
   - component: {fileID: 5633940973276293846}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5197,7 +5197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8129587904674249208}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RightHandGrip-AK47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5230,7 +5230,7 @@ GameObject:
   - component: {fileID: 2808774525594518362}
   - component: {fileID: 6118018530552809283}
   - component: {fileID: 3097912708186724775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Trigger_Hook_For_Tactical_Submachine_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5321,7 +5321,7 @@ GameObject:
   - component: {fileID: 8727548639750938821}
   - component: {fileID: 3175289312832842357}
   - component: {fileID: 8053411964698482253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5615,7 +5615,7 @@ GameObject:
   - component: {fileID: 8342216820536213053}
   - component: {fileID: 8294610630055193184}
   - component: {fileID: 363598280224664767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Fuse_For_Tactical_Submachine_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5699,7 +5699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1284221968994494884}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: AmmoExit
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -5732,7 +5732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2958718179113345570}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: LefttHandGrip-AK47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5763,7 +5763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5727789171754074520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AimCamLoc-AK47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5796,7 +5796,7 @@ GameObject:
   - component: {fileID: 3815057863990130665}
   - component: {fileID: 8817674755103402162}
   - component: {fileID: 8710569288314476055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Magazine_Tactical_Submachine_Gun(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5882,7 +5882,7 @@ GameObject:
   - component: {fileID: 1609115549882960234}
   - component: {fileID: 7377935694482008280}
   - component: {fileID: 2770219905649823342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Trigger_For_Tactical_Submachine_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5969,6 +5969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Sleeve_9_ONE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599132698061272023, guid: 03ec513850a21234f98b7c61d8ce2448,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5542667598951513499, guid: 03ec513850a21234f98b7c61d8ce2448,
         type: 3}
