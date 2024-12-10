@@ -18,22 +18,22 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
         if (inventoryItem != null)
         {
-            PlayerData.Instance.ItemOnHand = inventoryItem.prefab.transform;
-            GunFire gunFire = inventoryItem.prefab.GetComponent<GunFire>();
+            PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
+            GunFire gunFire = inventoryItem.itemPrefab.GetComponent<GunFire>();
             //Nesne Silah değil ise
             if (gunFire == null)
             {
-                inventoryItem.prefab.transform.position= PlayerData.Instance.WeaponLoc.transform.position;
-                inventoryItem.prefab.SetActive(true);
+                inventoryItem.itemPrefab.transform.position= PlayerData.Instance.WeaponLoc.transform.position;
+                inventoryItem.itemPrefab.SetActive(true);
                 return;
             }
             PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
             PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
-            inventoryItem.prefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
-            inventoryItem.prefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
+            inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+            inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
             PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
             gunFire.Animator.enabled = true;
-            inventoryItem.prefab.SetActive(true);
+            inventoryItem.itemPrefab.SetActive(true);
             PlayerData.Instance._RigBuilder.Build();
             PlayerData.Instance.WeaponPosRot.position = Vector3.zero;
             PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
@@ -50,7 +50,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         image.color = deSelectedColor;
         InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-        inventoryItem?.prefab.gameObject.SetActive(false);
+        inventoryItem?.itemPrefab.gameObject.SetActive(false);
     }
     public void DeSelectWithOutSettingInActive()
     {

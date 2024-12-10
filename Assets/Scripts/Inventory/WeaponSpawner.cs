@@ -13,11 +13,11 @@ public class WeaponSpawner : MonoBehaviour
             int randomWeapon = Random.Range(random1, random2);
             GameObject weapon;
             InventoryManager.instance.AddItem(ItemPool.instance.items[randomWeapon].itemSO, out GameObject addedWeapon);
-                weapon = Instantiate(addedWeapon.GetComponent<InventoryItem>().prefab);
+                weapon = Instantiate(addedWeapon.GetComponent<InventoryItem>().itemPrefab);
                 weapon.transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
             Destroy(weapon.GetComponent<Rigidbody>());
                 weapon.SetActive(false);
-                addedWeapon.GetComponent<InventoryItem>().prefab = weapon;
+                addedWeapon.GetComponent<InventoryItem>().itemPrefab = weapon;
         }
     }
 }

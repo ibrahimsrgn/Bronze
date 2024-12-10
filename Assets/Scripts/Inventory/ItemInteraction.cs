@@ -12,7 +12,7 @@ public class ItemInteraction : MonoBehaviour
             bool itemAdded = InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO, out GameObject addedItem);
             if (addedItem != null)
             {
-                addedItem.GetComponent<InventoryItem>().prefab = gameObject;
+                addedItem.GetComponent<InventoryItem>().itemPrefab = gameObject;
                 Destroy(gameObject.GetComponent<Rigidbody>());
                 transform.SetParent(PlayerData.Instance.WeaponLoc.transform);
                 gameObject.SetActive(false);

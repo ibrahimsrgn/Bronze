@@ -98,7 +98,7 @@ public class InventoryManager : MonoBehaviour
                 itemInSlot.count--;
                 if (itemInSlot.count <= 0)
                 {
-                    Destroy(itemInSlot.prefab);
+                    Destroy(itemInSlot.itemPrefab);
                     Destroy(itemInSlot.gameObject);
                     DeSelectAllSlots();
                 }
@@ -122,7 +122,7 @@ public class InventoryManager : MonoBehaviour
                 itemInSlot.count--;
                 if (itemInSlot.count <= 0)
                 {
-                    Destroy(itemInSlot.prefab);
+                    Destroy(itemInSlot.itemPrefab);
                     Destroy(itemInSlot.gameObject);
                     DeSelectAllSlots();
                 }
@@ -183,6 +183,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void DeSelectAllSlots()
     {
+        if (selectedSlot == -1) return;
         inventorySlots[selectedSlot].DeSelectWithOutSettingInActive();
         selectedSlot = -1;
     }

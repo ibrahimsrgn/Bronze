@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,12 +9,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [Header("UI")]
     public Image image;
     public TextMeshProUGUI countText;
-    public GameObject prefab;
+    public GameObject itemPrefab;
     public string description;
     [SerializeField] private Canvas canvas;
 
     public ItemSO item;
-    [HideInInspector] public int count = 1;
+     public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
 
 
@@ -21,7 +22,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         item = newItem;
         image.sprite = newItem.image;
-        prefab = newItem.objPrefab;
+        itemPrefab = newItem.objPrefab;
         description = newItem.description;
         RefreshCount();
     }
@@ -94,8 +95,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         //sağ click ile yapılacaklar
         if(eventData.button == PointerEventData.InputButton.Right)
         {
+            InventoryManager.instance.rightClickMenu.transform.position = Input.mousePosition; 
             SetButtonsListeners();
-            
         }
     }
     private void SetButtonsListeners()
@@ -109,21 +110,48 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             InventoryManager.instance.inspectMenu.SetActive(true);
             SetInspectMenuVariables();
         });
-
-
-
-
         rightClickMenu.use.onClick.RemoveAllListeners();
         rightClickMenu.use.onClick.AddListener(() =>
         {
-            //Hatalı
             InventoryManager.instance.UseSelectedItem(GetComponentInParent<InventorySlot>());
         });
         rightClickMenu.drop.onClick.RemoveAllListeners();
         rightClickMenu.drop.onClick.AddListener(() =>
         {
-            //Hatalı
+            InventoryManager.instance.rightClickMenu.SetActive(false);
+            if (itemPrefab == null) return;
             InventoryManager.instance.DropSelectedItem(GetComponentInParent<InventorySlot>());
+            if (count >=1)
+            {
+                Debug.Log("1");
+                GameObject droppedItem = Instantiate(itemPrefab, PlayerData.Instance.ItemOnHand);
+                droppedItem.SetActive(true);
+                droppedItem.transform.SetParent(null);
+                droppedItem.gameObject.AddComponent<Rigidbody>();
+                droppedItem.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
+                return;
+            }
+            else if (itemPrefab==PlayerData.Instance.ItemOnHand)
+            {
+                Debug.Log("2");
+                PlayerData.Instance.LeftHandLayer.data.target = null;
+                PlayerData.Instance.RightHandLayer.data.target = null;
+                PlayerData.Instance.ItemOnHand.transform.SetParent(null);
+                PlayerData.Instance.ItemOnHand.gameObject.AddComponent<Rigidbody>();
+                PlayerData.Instance.ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
+                PlayerData.Instance.ItemOnHand = null;
+                return;
+            }
+            else
+            {
+                Debug.Log("3");
+                itemPrefab.SetActive(true);
+                itemPrefab.transform.SetParent(null);
+                itemPrefab.gameObject.AddComponent<Rigidbody>();
+                itemPrefab.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
+                itemPrefab = null;
+                return;
+            }
         });
     }
     public void SetInspectMenuVariables()
