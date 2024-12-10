@@ -15,6 +15,7 @@ public class ItemSO : ScriptableObject{
     public bool stackable = true;
     public bool usable = true;
     public int maxStackableCount;
+    public string description;
 
     [Header("Both")]
     public GameObject objPrefab;

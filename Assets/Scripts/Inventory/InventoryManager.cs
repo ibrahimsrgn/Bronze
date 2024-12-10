@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public Transform LootParent;
+    public GameObject inspectMenu;
+    public GameObject rightClickMenu;
 
     public int selectedSlot = -1;
     private void Awake()
@@ -29,7 +31,7 @@ public class InventoryManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GetSelectedItem();
+            UseSelectedItem();
         }
     }
 
@@ -83,10 +85,34 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitialiseItem(item);
         return newItem;
     }
-    public ItemSO GetSelectedItem()
+    public ItemSO UseSelectedItem()
     {
         if (selectedSlot == -1) return null;
         InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if (itemInSlot != null)
+        {
+            ItemSO item = itemInSlot.item;
+            if (item.usable == true)
+            {
+                itemInSlot.count--;
+                if (itemInSlot.count <= 0)
+                {
+                    Destroy(itemInSlot.prefab);
+                    Destroy(itemInSlot.gameObject);
+                    DeSelectAllSlots();
+                }
+                else
+                {
+                    itemInSlot.RefreshCount();
+                }
+            }
+            return item;
+        }
+        return null;
+    }
+    public ItemSO UseSelectedItem(InventorySlot slot)
+    {
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
         {
@@ -135,12 +161,30 @@ public class InventoryManager : MonoBehaviour
             return item;
         }
         return null;
+    }public ItemSO DropSelectedItem(InventorySlot slot)
+    {
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if (itemInSlot != null)
+        {
+            ItemSO item = itemInSlot.item;
+            itemInSlot.count--;
+            if (itemInSlot.count <= 0)
+            {
+                Destroy(itemInSlot.gameObject);
+                InventoryManager.instance.DeSelectAllSlots();
+            }
+            else
+            {
+                itemInSlot.RefreshCount();
+            }
+            return item;
+        }
+        return null;
     }
     public void DeSelectAllSlots()
     {
         inventorySlots[selectedSlot].DeSelectWithOutSettingInActive();
         selectedSlot = -1;
     }
-
 }
 
