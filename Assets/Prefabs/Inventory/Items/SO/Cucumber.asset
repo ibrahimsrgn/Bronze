@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: Tuzlumu tuzsuzmu yersiniz
   objPrefab: {fileID: 7037576775977184677, guid: 97a6528ae58d5034cb3abd3964b45cf8,
     type: 3}
   image: {fileID: 21300000, guid: 7b6777f70ea6e2140b90f5808aa4417e, type: 3}

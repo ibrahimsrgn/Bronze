@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2653836519192712222}
   - component: {fileID: -986207702210723292}
   - component: {fileID: -3420679763106897708}
+  - component: {fileID: 1059531369184044611}
   m_Layer: 0
   m_Name: SM_Buckwheat
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+--- !u!114 &1059531369184044611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599492644339414475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

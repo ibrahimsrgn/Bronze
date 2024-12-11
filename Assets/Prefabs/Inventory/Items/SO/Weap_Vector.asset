@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 0
   usable: 0
   maxStackableCount: 0
+  description: Harika dev fav.
   objPrefab: {fileID: 6336230337650881159, guid: b72dd084c98c5fd429b7b483f40d0b7c,
     type: 3}
   image: {fileID: 21300000, guid: 4f491141e343c234bab85bb5ba270450, type: 3}

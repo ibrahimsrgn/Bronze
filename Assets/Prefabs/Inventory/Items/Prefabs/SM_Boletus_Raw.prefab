@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2150132863449931709}
   - component: {fileID: 4126536954384568227}
   - component: {fileID: -6523715043887029871}
+  - component: {fileID: -6648122459650405320}
   m_Layer: 0
   m_Name: SM_Boletus_Raw
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+--- !u!114 &-6648122459650405320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492636196627562088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

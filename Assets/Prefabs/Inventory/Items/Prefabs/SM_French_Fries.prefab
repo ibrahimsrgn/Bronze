@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3237581940639407677}
   - component: {fileID: 9125354623904006316}
   - component: {fileID: -1243465832152113232}
+  - component: {fileID: 2704356554885601058}
   m_Layer: 0
   m_Name: SM_French_Fries
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 7
+--- !u!114 &2704356554885601058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030387342646165480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

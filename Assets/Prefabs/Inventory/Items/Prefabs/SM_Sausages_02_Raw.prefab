@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2204966113315094751}
   - component: {fileID: 6690730836864455964}
   - component: {fileID: 2606461081884951126}
+  - component: {fileID: -2300085713242701551}
   m_Layer: 0
   m_Name: SM_Sausages_02_Raw
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
+--- !u!114 &-2300085713242701551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403459810319933706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

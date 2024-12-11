@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 0
   usable: 0
   maxStackableCount: 0
+  description: "\u0130yidir g\xFCzeldir ama bir M4 de\u011Fil"
   objPrefab: {fileID: 1367335300332428410, guid: fe70e777b68a45a43be72eb6f6d9263d,
     type: 3}
-  image: {fileID: 21300000, guid: 4f491141e343c234bab85bb5ba270450, type: 3}
+  image: {fileID: 21300000, guid: fd54ebd85a468cf42b0108748c7034ba, type: 3}

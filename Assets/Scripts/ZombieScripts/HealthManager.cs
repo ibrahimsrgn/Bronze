@@ -30,6 +30,22 @@ public class HealthManager : MonoBehaviour
             UIManager.instance.UpdateHealth(currentHealth / maxHealth);
         }
     }
+    public void GetHeal(int healAmount)
+    {
+        if (currentHealth + healAmount >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += healAmount;
+        }
+        if (isPlayer)
+        {
+            UIManager.instance.UpdateHealth(currentHealth / maxHealth);
+        }
+
+    }
     private void Die()
     {
         if (!isDead&&!isPlayer)

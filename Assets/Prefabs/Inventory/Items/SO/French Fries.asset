@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: "Pattes k\u0131zartmas\u0131"
   objPrefab: {fileID: 4030387342646165480, guid: 1d6b5c2e928f56f41a745ec9b5256251,
     type: 3}
   image: {fileID: 21300000, guid: 17356af6210ad7344be5cc758630fb97, type: 3}

@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: "Bir ezine de\u011Fil tabi"
   objPrefab: {fileID: 2583843675727375291, guid: 9eaac7a16a8ee244b94f9763f6945249,
     type: 3}
   image: {fileID: 21300000, guid: 273863f3492a72e4895b8091a472fb58, type: 3}

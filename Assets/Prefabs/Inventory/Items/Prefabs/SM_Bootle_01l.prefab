@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4549891008964685383}
   - component: {fileID: 4889301330931094705}
   - component: {fileID: -5082327793289338385}
+  - component: {fileID: 242463141562466601}
   m_Layer: 0
   m_Name: SM_Bootle_01l
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 9
+--- !u!114 &242463141562466601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604357891162558354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

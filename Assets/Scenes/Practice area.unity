@@ -193,13 +193,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2217074062621590586}
   spawnRangeFromPlayer: 15
-  spawnInterval: 1
-  canSpawn: 0
+  spawnInterval: 5
+  canSpawn: 1
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 970a0e0414fa8be4695cbe8c3d95afd7,
       type: 3}
     spawnLuck: 1
-  maxZombieCount: 2
+  maxZombieCount: 15
   zombieCount: 0
 --- !u!114 &5440155
 MonoBehaviour:
@@ -703,7 +703,7 @@ RectTransform:
   m_GameObject: {fileID: 64445284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 821612802}
@@ -13527,6 +13527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36527c2ec07c2904c891f0db93b49599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthManager: {fileID: 2477824923596005545}
   PlayerWalkSpeed: 3
   SprintSpeed: 2.5
   SprintSpeedData: 1

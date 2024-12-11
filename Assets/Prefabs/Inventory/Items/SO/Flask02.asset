@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: "Dolu matara i\xE7inde mataray\u0131da yiyorsunuz"
   objPrefab: {fileID: 4421981031043792512, guid: 127113343556e1d48b2fb8d8c10bf4bf,
     type: 3}
   image: {fileID: 21300000, guid: c89b20724a25a714bacfecb37779626c, type: 3}

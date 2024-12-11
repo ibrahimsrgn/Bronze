@@ -31,7 +31,8 @@ public class InventoryManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            UseSelectedItem();
+            InventorySlot slot = inventorySlots[selectedSlot];
+            slot.GetComponentInChildren<InventoryItem>().UseItem();
         }
     }
 

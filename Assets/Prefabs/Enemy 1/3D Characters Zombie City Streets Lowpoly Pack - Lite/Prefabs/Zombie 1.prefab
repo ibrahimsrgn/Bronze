@@ -2211,11 +2211,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  walkPointRange: 0
-  attackDamage: 0
+  walkPointRange: 5
+  attackDamage: 5
   attackRate: 1
   sightRange: 20
-  attackRange: 2
+  attackRange: 1.5
   sightAreaAngle: 100
   isDying: 0
   animator: {fileID: 127867265787259768}

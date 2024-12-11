@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4437932450131767829}
   - component: {fileID: 1646182968487328789}
   - component: {fileID: -1420463060276712481}
+  - component: {fileID: 5001340823998569456}
   m_Layer: 0
   m_Name: SM_Banana_Raw
   m_TagString: Untagged
@@ -150,3 +151,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+--- !u!114 &5001340823998569456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629848305394186725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

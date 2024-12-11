@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: 'Kiraz '
   objPrefab: {fileID: 7173102905140248997, guid: 919c482996839174abc6478994615941,
     type: 3}
   image: {fileID: 21300000, guid: 14470902b2282b04e85fc167040f0984, type: 3}

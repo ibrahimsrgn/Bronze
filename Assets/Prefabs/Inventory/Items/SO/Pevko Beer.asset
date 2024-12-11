@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: "Tarkovcu karde\u015Flere selam"
   objPrefab: {fileID: 2604357891162558354, guid: 27475a15b6d19b240afaf8478aac2e51,
     type: 3}
   image: {fileID: 21300000, guid: 04b6acf4090e6114c97e0575c6a55554, type: 3}

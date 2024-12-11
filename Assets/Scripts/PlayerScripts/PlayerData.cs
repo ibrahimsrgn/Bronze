@@ -13,6 +13,7 @@ public class PlayerData : MonoBehaviour
     public static PlayerData Instance;
     private Vector2 MoveInput;
     private Vector3 CurrentInput;
+    public HealthManager healthManager;
 
     [Header("Player Movement")]
     public float PlayerWalkSpeed;

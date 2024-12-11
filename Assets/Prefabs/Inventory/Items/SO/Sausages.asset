@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: Seversin
   objPrefab: {fileID: 403459810319933706, guid: aafdd4e71adb1de4b8ecb8dc8fd87c5d,
     type: 3}
   image: {fileID: 21300000, guid: ac6d1142f69aa9c4b961616df61140d2, type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9013838667793922137}
   - component: {fileID: 7892458236702507112}
   - component: {fileID: -5262288389240465876}
+  - component: {fileID: 4248471941357390680}
   m_Layer: 0
   m_Name: SM_Cabbage_Cooked
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+--- !u!114 &4248471941357390680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356466107808930188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7938436687858956412}
   - component: {fileID: 818262323487389144}
   - component: {fileID: -4099521032713604816}
+  - component: {fileID: 3470835804531378051}
   m_Layer: 0
   m_Name: SM_Cheese
   m_TagString: Untagged
@@ -150,3 +151,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
+--- !u!114 &3470835804531378051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583843675727375291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae3b251db08354ba581dfe11ff46ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 50

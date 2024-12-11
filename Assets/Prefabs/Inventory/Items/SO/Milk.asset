@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  description: "Kemiklere iyi gelir ama hazm\u0131 zor"
   objPrefab: {fileID: 4144528811339228312, guid: 178d985fd88377840a4587013e75e577,
     type: 3}
   image: {fileID: 21300000, guid: 01e843245f1fc0d4a826171b4f026976, type: 3}

@@ -110,49 +110,60 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             InventoryManager.instance.inspectMenu.SetActive(true);
             SetInspectMenuVariables();
         });
+        if (item.type == ItemType.Weapon)
+        {
+            rightClickMenu.use.interactable = false;
+        }
+        else
+        {
+            rightClickMenu.use.interactable= true;
+        }
         rightClickMenu.use.onClick.RemoveAllListeners();
-        rightClickMenu.use.onClick.AddListener(() =>
-        {
-            InventoryManager.instance.UseSelectedItem(GetComponentInParent<InventorySlot>());
-        });
+        rightClickMenu.use.onClick.AddListener(UseItem);
         rightClickMenu.drop.onClick.RemoveAllListeners();
-        rightClickMenu.drop.onClick.AddListener(() =>
+        rightClickMenu.drop.onClick.AddListener(DropItem);
+    }
+    public void UseItem()
+    {
+        itemPrefab.GetComponent<IConsumableEffect>()?.ConsumeItem();
+        InventoryManager.instance.UseSelectedItem(GetComponentInParent<InventorySlot>());
+    }
+    public void DropItem()
+    {
+        InventoryManager.instance.rightClickMenu.SetActive(false);
+        if (itemPrefab == null) return;
+        InventoryManager.instance.DropSelectedItem(GetComponentInParent<InventorySlot>());
+        if (count >= 1)
         {
-            InventoryManager.instance.rightClickMenu.SetActive(false);
-            if (itemPrefab == null) return;
-            InventoryManager.instance.DropSelectedItem(GetComponentInParent<InventorySlot>());
-            if (count >=1)
-            {
-                Debug.Log("1");
-                GameObject droppedItem = Instantiate(itemPrefab, PlayerData.Instance.ItemOnHand);
-                droppedItem.SetActive(true);
-                droppedItem.transform.SetParent(null);
-                droppedItem.gameObject.AddComponent<Rigidbody>();
-                droppedItem.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
-                return;
-            }
-            else if (itemPrefab==PlayerData.Instance.ItemOnHand)
-            {
-                Debug.Log("2");
-                PlayerData.Instance.LeftHandLayer.data.target = null;
-                PlayerData.Instance.RightHandLayer.data.target = null;
-                PlayerData.Instance.ItemOnHand.transform.SetParent(null);
-                PlayerData.Instance.ItemOnHand.gameObject.AddComponent<Rigidbody>();
-                PlayerData.Instance.ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
-                PlayerData.Instance.ItemOnHand = null;
-                return;
-            }
-            else
-            {
-                Debug.Log("3");
-                itemPrefab.SetActive(true);
-                itemPrefab.transform.SetParent(null);
-                itemPrefab.gameObject.AddComponent<Rigidbody>();
-                itemPrefab.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
-                itemPrefab = null;
-                return;
-            }
-        });
+            Debug.Log("1");
+            GameObject droppedItem = Instantiate(itemPrefab, PlayerData.Instance.ItemOnHand);
+            droppedItem.SetActive(true);
+            droppedItem.transform.SetParent(null);
+            droppedItem.gameObject.AddComponent<Rigidbody>();
+            droppedItem.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
+            return;
+        }
+        else if (itemPrefab == PlayerData.Instance.ItemOnHand)
+        {
+            Debug.Log("2");
+            PlayerData.Instance.LeftHandLayer.data.target = null;
+            PlayerData.Instance.RightHandLayer.data.target = null;
+            PlayerData.Instance.ItemOnHand.transform.SetParent(null);
+            PlayerData.Instance.ItemOnHand.gameObject.AddComponent<Rigidbody>();
+            PlayerData.Instance.ItemOnHand.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
+            PlayerData.Instance.ItemOnHand = null;
+            return;
+        }
+        else
+        {
+            Debug.Log("3");
+            itemPrefab.SetActive(true);
+            itemPrefab.transform.SetParent(null);
+            itemPrefab.gameObject.AddComponent<Rigidbody>();
+            itemPrefab.transform.GetComponent<Rigidbody>().AddForce(transform.forward * 150 + Vector3.up * 250);
+            itemPrefab = null;
+            return;
+        }
     }
     public void SetInspectMenuVariables()
     {
