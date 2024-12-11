@@ -8402,9 +8402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ee45723c5f21a4a89db1a6d32cdb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetNearWall: {fileID: 0}
+  TargetNearWall: {fileID: 1110834325}
   target: {fileID: 377879696}
-  DistanceToWall: 0
   recoilX: 1
   recoilY: 2
   snappiness: 5
