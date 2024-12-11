@@ -79,8 +79,16 @@ public class GunFire : MonoBehaviour
     {
         if (transform.parent != null && transform.parent.name == "WeaponLoc")
         {
-            Debug.Log(MagazineCap + " / " + CurrentAmmoCount);
-            _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
+            //Debug.Log(MagazineCap + " / " + CurrentAmmoCount);
+            _Ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            if (Physics.Raycast(_Ray, out Hit, 0.75f, mask))
+            {
+                Recoil_Script.WeaponTargetLocalizer(true);
+            }
+            else
+            {
+                Recoil_Script.WeaponTargetLocalizer(false);
+            }
             RPM -= Time.deltaTime;
             if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot && CurrentAmmoCount > 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.ReloadAnimation"))
             {

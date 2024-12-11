@@ -135,7 +135,7 @@ MonoBehaviour:
   BulletDamage: 5
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 95
   MagazineCap: 30
   AmmoExitLoc: {fileID: 1452982051478011073}
   MuzzleLight: {fileID: 8842363616666079010}

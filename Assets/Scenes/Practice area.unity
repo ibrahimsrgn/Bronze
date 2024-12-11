@@ -6514,6 +6514,37 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 263114389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1110834324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1110834325}
+  m_Layer: 6
+  m_Name: Deneme
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1110834325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110834324}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.22, y: -9.39, z: 24}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7136494954158977739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119390227
 GameObject:
   m_ObjectHideFlags: 0
@@ -8371,7 +8402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ee45723c5f21a4a89db1a6d32cdb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetNearWall: {fileID: 0}
   target: {fileID: 377879696}
+  DistanceToWall: 0
   recoilX: 1
   recoilY: 2
   snappiness: 5
@@ -13335,12 +13368,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.3
+  m_Radius: 0.5
   m_SlopeLimit: 55
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0.18}
 --- !u!4 &4127895168038914082
 Transform:
   m_ObjectHideFlags: 0
@@ -14638,6 +14671,7 @@ Transform:
   m_Children:
   - {fileID: 1448122063}
   - {fileID: 377879696}
+  - {fileID: 1110834325}
   - {fileID: 1168747708}
   m_Father: {fileID: 165616030966839781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
