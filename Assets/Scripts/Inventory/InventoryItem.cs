@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerClickHandler
 {
     [Header("UI")]
+    public int id=0;
     public Image image;
     public TextMeshProUGUI countText;
     public GameObject itemPrefab;
@@ -14,7 +15,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] private Canvas canvas;
 
     public ItemSO item;
-     public int count = 1;
+    public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
 
 
@@ -24,6 +25,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.sprite = newItem.image;
         itemPrefab = newItem.objPrefab;
         description = newItem.description;
+        if (itemPrefab.TryGetComponent<ItemInteraction>(out ItemInteraction itemInteraction))
+        {
+            id = itemInteraction.id;
+        }
         RefreshCount();
     }
     public void RefreshCount()
@@ -51,22 +56,22 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnPointerDown(PointerEventData eventData)
     {
 
-       /* InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
-        selectedSlot.Selected();
-        int slotIndex = -1;
-        for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
-        {
-            if (InventoryManager.instance.inventorySlots[i] == selectedSlot)
-            {
-                slotIndex = i;
-                break;
-            }
-        }
+        /* InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
+         selectedSlot.Selected();
+         int slotIndex = -1;
+         for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
+         {
+             if (InventoryManager.instance.inventorySlots[i] == selectedSlot)
+             {
+                 slotIndex = i;
+                 break;
+             }
+         }
 
-        if (slotIndex != -1)
-        {
-            InventoryManager.instance.ChangeSelectedSlot(slotIndex);
-        }*/
+         if (slotIndex != -1)
+         {
+             InventoryManager.instance.ChangeSelectedSlot(slotIndex);
+         }*/
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -93,9 +98,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             }
         }
         //sağ click ile yapılacaklar
-        if(eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
-            InventoryManager.instance.rightClickMenu.transform.position = Input.mousePosition; 
+            InventoryManager.instance.rightClickMenu.transform.position = Input.mousePosition;
             SetButtonsListeners();
         }
     }
@@ -116,7 +121,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
         else
         {
-            rightClickMenu.use.interactable= true;
+            rightClickMenu.use.interactable = true;
         }
         rightClickMenu.use.onClick.RemoveAllListeners();
         rightClickMenu.use.onClick.AddListener(UseItem);

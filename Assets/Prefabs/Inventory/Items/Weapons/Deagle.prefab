@@ -5177,6 +5177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 14
+  usableAmmoId: 20
   _FireMode: 0
   BurstCount: 3
   BurstModeDelay: 0.1

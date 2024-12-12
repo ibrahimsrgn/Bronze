@@ -3,7 +3,7 @@ using UnityEngine;
 public class ItemInteraction : MonoBehaviour
 {
     private bool GUIActivater;
-    [SerializeField] private int id;
+    public int id;
     public void OnRayHit()
     {
         GUIActivater = true;

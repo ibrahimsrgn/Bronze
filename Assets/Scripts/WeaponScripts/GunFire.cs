@@ -8,6 +8,7 @@ public class GunFire : MonoBehaviour
 {
     #region Variables
     public int id;
+    public int usableAmmoId;
     private bool GUIActivater;
     private Rigidbody RigidBody;
     private PlayerData _PlayerData;

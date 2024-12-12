@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class InventoryManager : MonoBehaviour
     public Transform LootParent;
     public GameObject inspectMenu;
     public GameObject rightClickMenu;
+    [SerializeField] private TextMeshProUGUI currentAmmoCountText;
+    [SerializeField] private TextMeshProUGUI totalAmmoCountText;
 
     public int selectedSlot = -1;
     private void Awake()
@@ -188,5 +191,20 @@ public class InventoryManager : MonoBehaviour
         inventorySlots[selectedSlot].DeSelectWithOutSettingInActive();
         selectedSlot = -1;
     }
+    public void CountAmmo(int ammoId)
+    {
+        int totalAmmoCount = 0;
+        foreach(InventorySlot slot in inventorySlots)
+        {
+            if (ammoId == slot.GetComponentInChildren<InventoryItem>()?.id)
+            {
+                totalAmmoCount += slot.GetComponentInChildren<InventoryItem>().count;
+                
+            }
+        }
+        totalAmmoCountText.text = "/" + totalAmmoCount.ToString();
+        Debug.Log(totalAmmoCount);
+    }
+
 }
 
