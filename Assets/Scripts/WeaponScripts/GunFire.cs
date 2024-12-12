@@ -44,6 +44,7 @@ public class GunFire : MonoBehaviour
     private bool BurstCoroutineOn;
     private Ray _Ray;
     private RaycastHit Hit;
+    private RaycastHit WallChecker;
     private Vector3 TargetPoint;
     private Vector3 StartPosition;
     private Recoil Recoil_Script;
@@ -80,8 +81,8 @@ public class GunFire : MonoBehaviour
         if (transform.parent != null && transform.parent.name == "WeaponLoc")
         {
             //Debug.Log(MagazineCap + " / " + CurrentAmmoCount);
-            _Ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            if (Physics.Raycast(_Ray, out Hit, 0.75f, mask))
+            _Ray = new Ray(AmmoExitLoc.position, AmmoExitLoc.TransformDirection(Vector3.forward));
+            if (Physics.Raycast(_Ray, out WallChecker, 0.75f, mask))
             {
                 Recoil_Script.WeaponTargetLocalizer(true);
             }
