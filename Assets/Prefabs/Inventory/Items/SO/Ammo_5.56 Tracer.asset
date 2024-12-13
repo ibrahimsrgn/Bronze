@@ -20,4 +20,4 @@ MonoBehaviour:
   description: Ammo for 5.56 Caliber rifles
   objPrefab: {fileID: 4905189723880301182, guid: bdbea2dbbf6df0f42b23302411c87476,
     type: 3}
-  image: {fileID: 21300000, guid: 604509cfdd9a4d34892a27645f5aa304, type: 3}
+  image: {fileID: 21300000, guid: 754208f4222260d42bd2e0be6ea226d1, type: 3}

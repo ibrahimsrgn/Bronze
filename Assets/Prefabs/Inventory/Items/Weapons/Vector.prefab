@@ -5420,7 +5420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 16
-  usableAmmoId: 19
+  usableAmmoId: 20
   _FireMode: 2
   BurstCount: 0
   BurstModeDelay: 0
@@ -5431,6 +5431,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 95
   MagazineCap: 30
+  CurrentAmmoCount: 0
   AmmoExitLoc: {fileID: 1284221968994494884}
   MuzzleLight: {fileID: 5422625625016064391}
   MuzzleFlash: {fileID: 861334547509884871}

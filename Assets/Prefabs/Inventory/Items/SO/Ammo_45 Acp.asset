@@ -20,4 +20,4 @@ MonoBehaviour:
   description: Ammo for deagle
   objPrefab: {fileID: 4744375309067628679, guid: ca11420772905ef4a97ad3252a8f30af,
     type: 3}
-  image: {fileID: 21300000, guid: 604509cfdd9a4d34892a27645f5aa304, type: 3}
+  image: {fileID: 21300000, guid: 5504a411bec574542acaad87418a704f, type: 3}

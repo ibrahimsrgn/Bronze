@@ -20,4 +20,4 @@ MonoBehaviour:
   description: Ammo for 7.62 Caliber rifles
   objPrefab: {fileID: 5220686584574653965, guid: c1c444250848a004c97e1efedc2940c5,
     type: 3}
-  image: {fileID: 21300000, guid: 604509cfdd9a4d34892a27645f5aa304, type: 3}
+  image: {fileID: 21300000, guid: 3271339919a2807438bff38719b238bf, type: 3}

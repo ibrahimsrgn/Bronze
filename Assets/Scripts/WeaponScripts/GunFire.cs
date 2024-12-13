@@ -22,7 +22,7 @@ public class GunFire : MonoBehaviour
     [SerializeField] private int BulletDamage;
     [SerializeField] private LayerMask mask;
     [SerializeField] private int MagazineCap;
-    private int CurrentAmmoCount;
+    public int CurrentAmmoCount;
 
     [Header("Prefabs")]
     [SerializeField] private Transform AmmoExitLoc;
@@ -141,6 +141,7 @@ public class GunFire : MonoBehaviour
         Recoil_Script.RecoilFire();
         Animator.SetTrigger("Shooting");
         CurrentAmmoCount--;
+        InventoryManager.instance.RefreshCurrentAmmoUI(CurrentAmmoCount);
         TrailRenderer Trail = Instantiate(BulletTrail, AmmoExitLoc.position, Quaternion.identity);
         StartCoroutine(SpawnTrail(Trail, TargetPoint));
     }
@@ -247,20 +248,6 @@ public class GunFire : MonoBehaviour
                 Destroy(RigidBody);
                 transform.SetParent(playerData.WeaponLoc.transform);
                 gameObject.SetActive(false);
-                //playerData.ItemOnHand = transform;
-
-                //playerData.LeftHandLayer.data.target = LeftHandRigRef;
-                //playerData.RightHandLayer.data.target = RightHandRigRef;
-
-                //transform.position = playerData.WeaponLoc.transform.position;
-                //transform.rotation = playerData.WeaponLoc.transform.rotation;
-
-                //playerData.WeaponPosRot.position = WeaponLocRef.position;
-
-                //playerData.CamPosRef2 = AimCamLocRef;
-                //Animator.enabled = true;
-                //playerData._RigBuilder.Build();
-
             }
         }
     }
@@ -283,9 +270,19 @@ public class GunFire : MonoBehaviour
 
     public void Reload()
     {
-        Animator.SetTrigger("Reload");
-        CurrentAmmoCount = MagazineCap;
-        ReadyToShoot = true;
+        int usableAmmoCount = InventoryManager.instance.ReloadMagazine(MagazineCap);
+        if ( usableAmmoCount== 0)
+        {
+            return;
+        }
+        else
+        {
+            Animator.SetTrigger("Reload");
+            InventoryManager.instance.RefreshCurrentAmmoUI(usableAmmoCount);
+            CurrentAmmoCount = usableAmmoCount;
+            ReadyToShoot = true;
+        }
+        
     }
     //Shotgun için animasyonun 40. karesine atýlacak event ile +1 ammo yapýlacak
     //Oyuncu bozmadýðý sürece +1 ammodan sonra 10 kare geri sarýlacak animasyon ve mermiyi koyduðu yerde yine +1 ammo olacak 

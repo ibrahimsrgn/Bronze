@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
@@ -16,6 +17,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject rightClickMenu;
     [SerializeField] private TextMeshProUGUI currentAmmoCountText;
     [SerializeField] private TextMeshProUGUI totalAmmoCountText;
+    private int totalAmmoCount = 0;
+    private List<InventoryItem> ammoItems;
 
     public int selectedSlot = -1;
     private void Awake()
@@ -193,18 +196,94 @@ public class InventoryManager : MonoBehaviour
     }
     public void CountAmmo(int ammoId)
     {
-        int totalAmmoCount = 0;
+        totalAmmoCount = 0;
+        ammoItems=new List<InventoryItem> ();
         foreach(InventorySlot slot in inventorySlots)
         {
-            if (ammoId == slot.GetComponentInChildren<InventoryItem>()?.id)
+            if (slot.GetComponentInChildren<InventoryItem>() == null) return;
+            InventoryItem ammoInventoryItem=slot.GetComponentInChildren<InventoryItem>();
+            if (ammoId == ammoInventoryItem.id)
             {
-                totalAmmoCount += slot.GetComponentInChildren<InventoryItem>().count;
-                
+                 totalAmmoCount += ammoInventoryItem.count;
+                RefreshMaxAmmoUI();
+                ammoItems.Add(ammoInventoryItem);
             }
         }
-        totalAmmoCountText.text = "/" + totalAmmoCount.ToString();
         Debug.Log(totalAmmoCount);
     }
+    public int ReloadMagazine(int magazineCap)
+    {
+        if (magazineCap <= totalAmmoCount)
+        {
+            totalAmmoCount -=magazineCap;
+            RefreshMaxAmmoUI();
+            ReloadCalculator(magazineCap);
+            return magazineCap;
+        }
+        else if (magazineCap>totalAmmoCount)
+        {
+            int returnAmmoCount = totalAmmoCount;
+            totalAmmoCount = 0;
+            RefreshMaxAmmoUI();
+            ReloadCalculator(magazineCap);
+            return returnAmmoCount;
+        }
+        else { return 0; }
+    }
+    public void ReloadCalculator(int requiredAmmo)
+    {
+        if (ammoItems == null || ammoItems.Count == 0)
+        {
+            Debug.LogWarning("No ammo items available!");
+            return;
+        }
 
+        int remainingAmmoToLoad = requiredAmmo;
+
+        // Baştan sona en son eklenene kadar işle
+        for (int i = ammoItems.Count - 1; i >= 0 && remainingAmmoToLoad > 0; i--)
+        {
+            InventoryItem ammoItem = ammoItems[i];
+
+            if (ammoItem.count >= remainingAmmoToLoad)
+            {
+                ammoItem.count -= remainingAmmoToLoad;
+                remainingAmmoToLoad = 0;
+
+                if (ammoItem.count == 0)
+                {
+                    // Eğer öğe biterse çantadan çıkar
+                    ammoItems.RemoveAt(i);
+                    Destroy(ammoItem.gameObject);
+                }
+                ammoItem.RefreshCount();
+                break; // Yeterince mermi yüklendi
+            }
+            else
+            {
+                // Yetersizse tüm mermiyi kullan ve sonraki öğeye geç
+                remainingAmmoToLoad -= ammoItem.count;
+                ammoItems.RemoveAt(i);
+                Destroy(ammoItem.gameObject);
+            }
+        }
+
+        // Mermi sayısını UI ile güncelle
+        CountAmmo(ammoItems.Count > 0 ? ammoItems[0].id : -1);
+        RefreshMaxAmmoUI();
+
+        if (remainingAmmoToLoad > 0)
+        {
+            Debug.LogWarning($"Not enough ammo! Still missing {remainingAmmoToLoad} rounds.");
+        }
+    }
+    public void RefreshMaxAmmoUI()
+    {
+        totalAmmoCountText.text = "/" + totalAmmoCount.ToString();
+    }
+    public void RefreshCurrentAmmoUI(int currentAmmo)
+    {
+        currentAmmoCountText.text = currentAmmo.ToString();
+    }
 }
 
