@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1823812278963771940}
   - component: {fileID: 3377875709340849537}
   - component: {fileID: 649740206500372811}
-  - component: {fileID: -6008427919289127755}
   - component: {fileID: 2212193438616474883}
+  - component: {fileID: 8994079608868747606}
   m_Layer: 0
   m_Name: Chuck_Box_45_Acp
   m_TagString: Untagged
@@ -88,8 +88,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-6008427919289127755
-MeshCollider:
+--- !u!114 &2212193438616474883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298350842248806558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37b0570db924d84b846a563b9daaf36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 19
+--- !u!65 &8994079608868747606
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,20 +119,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2768427913230035704, guid: f003589a5e02418449494f7bda888bb6, type: 3}
---- !u!114 &2212193438616474883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298350842248806558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37b0570db924d84b846a563b9daaf36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 19
+  serializedVersion: 3
+  m_Size: {x: 0.0789579, y: 0.07139018, z: 0.028294114}
+  m_Center: {x: -0.0013428554, y: 0.03569509, z: 0}
