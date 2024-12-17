@@ -1,6 +1,5 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class WeaponSpawner : MonoBehaviour
 {
