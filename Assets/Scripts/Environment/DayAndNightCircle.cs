@@ -26,7 +26,7 @@ public class DayAndNightCircle : MonoBehaviour
         else
             OnHoursChange(18);
     }
-    private void Update()
+    private void FixedUpdate()
     {
         Second += Time.deltaTime * (1440 / HoursMultiplier);
         if (Second >= 60)
