@@ -359,7 +359,7 @@ MonoBehaviour:
   MoonDayNightCircle: {fileID: 544200366}
   Minute: 59
   Hours: 12
-  HoursMultiplier: 2
+  HoursMultiplier: 1440
 --- !u!4 &5440153
 Transform:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ MonoBehaviour:
   - id: 13
     name: AK47
     description: 
-    itemSO: {fileID: 11400000, guid: 81fb5ebcd527a6f4dae92ea3b1cda410, type: 2}
+    itemSO: {fileID: 11400000, guid: 95cab6a0b8cb1ca4ea5be998514c4a20, type: 2}
   - id: 14
     name: Deagle
     description: 
@@ -7821,7 +7821,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 0
     timeSlicing: 0
     lighting:
@@ -7876,7 +7876,7 @@ MonoBehaviour:
     cubeResolution:
       m_Override: 128
       m_UseOverride: 0
-      m_Level: 2
+      m_Level: 1
     cameraSettings:
       customRenderingSettings: 0
       renderingPathCustomFrameSettings:
@@ -7935,13 +7935,13 @@ MonoBehaviour:
         useOcclusionCulling: 1
         cullingMask:
           serializedVersion: 2
-          m_Bits: 4294967295
+          m_Bits: 1
         sceneCullingMaskOverride: 0
       invertFaceCulling: 0
       flipYMode: 0
       probeLayerMask:
         serializedVersion: 2
-        m_Bits: 4294967295
+        m_Bits: 1
       defaultFrameSettings: 0
       m_ObsoleteRenderingPath: 0
       m_ObsoleteFrameSettings:
@@ -7996,7 +7996,7 @@ MonoBehaviour:
     camera:
       camera: 0
   m_ProxyVolume: {fileID: 0}
-  m_BakedTexture: {fileID: 0}
+  m_BakedTexture: {fileID: 8900000, guid: 23d307a4ae29a1f498a70277d248bcfa, type: 3}
   m_CustomTexture: {fileID: 0}
   m_BakedRenderData:
     m_WorldToCameraRHS:
@@ -8076,9 +8076,9 @@ MonoBehaviour:
     m_CaptureRotation: {x: 0, y: 0, z: 0, w: 0}
     m_FieldOfView: 0
     m_Aspect: 0
-  m_HasValidSHForNormalization: 0
+  m_HasValidSHForNormalization: 1
   m_SHForNormalization:
-    'sh[ 0]': 0
+    'sh[ 0]': 3.4028235e+38
     'sh[ 1]': 0
     'sh[ 2]': 0
     'sh[ 3]': 0
@@ -8087,7 +8087,7 @@ MonoBehaviour:
     'sh[ 6]': 0
     'sh[ 7]': 0
     'sh[ 8]': 0
-    'sh[ 9]': 0
+    'sh[ 9]': 3.4028235e+38
     'sh[10]': 0
     'sh[11]': 0
     'sh[12]': 0
@@ -8096,7 +8096,7 @@ MonoBehaviour:
     'sh[15]': 0
     'sh[16]': 0
     'sh[17]': 0
-    'sh[18]': 0
+    'sh[18]': 3.4028235e+38
     'sh[19]': 0
     'sh[20]': 0
     'sh[21]': 0
@@ -8105,8 +8105,8 @@ MonoBehaviour:
     'sh[24]': 0
     'sh[25]': 0
     'sh[26]': 0
-  m_SHValidForCapturePosition: {x: 0, y: 0, z: 0}
-  m_SHValidForSourcePosition: {x: 0, y: 0, z: 0}
+  m_SHValidForCapturePosition: {x: 334, y: 20.313808, z: -100}
+  m_SHValidForSourcePosition: {x: 334, y: 20.313808, z: -100}
   m_HDProbeVersion: 9
   m_ObsoleteInfiniteProjection: 1
   m_ObsoleteInfluenceVolume:
@@ -11575,7 +11575,10 @@ MonoBehaviour:
   m_Script: {fileID: 945206338}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
+  m_Entries:
+  - id: 0
+    category: 0
+    gameObject: {fileID: 1245967196}
 --- !u!4 &1858722808
 Transform:
   m_ObjectHideFlags: 19
