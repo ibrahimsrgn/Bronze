@@ -205,7 +205,6 @@ MonoBehaviour:
       - rid: 6134358452970979593
       - rid: 6134358452970979595
       - rid: 6134358452970979596
-      - rid: 6134358452970979597
       - rid: 6134358452970979598
       - rid: 6134358452970979599
       - rid: 6134358452970979602
@@ -559,7 +558,7 @@ MonoBehaviour:
         m_Camera:
           bitDatas:
             data1: 5770166122053453
-            data2: 12934340311651418136
+            data2: 17546026330078806040
           lodBias: 1
           lodBiasMode: 0
           lodBiasQualityLevel: 0
