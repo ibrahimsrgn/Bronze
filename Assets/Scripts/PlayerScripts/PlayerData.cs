@@ -207,7 +207,10 @@ public class PlayerData : MonoBehaviour
     }
     public void UnEquipItem()
     {
+        if (ItemOnHand.gameObject.GetComponent<Animator>() != null)
+        {
         ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
+        }
         LeftHandLayer.data.target = null;
         RightHandLayer.data.target = null;
         ItemOnHand = null;
