@@ -3490,7 +3490,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.06412293, y: -0.010753279, z: 0.19222379, w: 0.9791949}
   m_LocalPosition: {x: -0.109991394, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_LocalScale: {x: 1, y: 0.01, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4581624065973108607}
@@ -7937,7 +7937,7 @@ Transform:
   m_GameObject: {fileID: 1237633520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.061, y: 0.0966, z: -0}
+  m_LocalPosition: {x: -0.102, y: 2.5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14473,7 +14473,7 @@ Transform:
   m_GameObject: {fileID: 689048547028595139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006929297, y: 1.4958706, z: 0.22901873}
+  m_LocalPosition: {x: -0.006913781, y: 1.5427647, z: 0.16113478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14660,7 +14660,7 @@ Transform:
   m_GameObject: {fileID: 8110076922515998677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.061, y: 0.0966, z: -0}
+  m_LocalPosition: {x: -0.102, y: 2.5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14689,6 +14689,7 @@ MonoBehaviour:
   CamPosRef2: {fileID: 1757059367}
   MainCamPos: {fileID: 1237633521}
   WeaponPosRot: {fileID: 1168747708}
+  WeaponPosRotData: {fileID: 0}
   CamPosSmoothSpeed: 25
   Gravity: -9.81
   JumpHeight: 1
@@ -15028,7 +15029,7 @@ Transform:
   m_GameObject: {fileID: 4962048836291807050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006929297, y: 1.4958706, z: 0.22901873}
+  m_LocalPosition: {x: -0.006913781, y: 1.5427647, z: 0.16113478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
