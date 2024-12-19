@@ -2141,7 +2141,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6660184903045082040}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 885eac34fd0d577439e6670a7ca3777e, type: 3}
+  m_Avatar: {fileID: 9000000, guid: e88b81dbbde6e97419fd1f6bdc41d4ca, type: 3}
   m_Controller: {fileID: 9100000, guid: 9e9cde210a031984897425badf17cf44, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   animator: {fileID: 127867265787259768}
   ragdollRoot: {fileID: 6279823610682781954}
   agent: {fileID: 3084441780533831977}
-  enableRagdollAtStart: 0
+  enableRagdollAtStart: 1
 --- !u!114 &4092622330389098468
 MonoBehaviour:
   m_ObjectHideFlags: 0

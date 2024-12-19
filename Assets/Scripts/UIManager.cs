@@ -26,6 +26,10 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
     }
+    private void Start()
+    {
+        hideHealthCoroutine = StartCoroutine(HideHealthUI());
+    }
 
     private void Update()
     {
