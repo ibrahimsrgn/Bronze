@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,7 +13,12 @@ public class UIManager : MonoBehaviour
     [Header("Health")]
     [SerializeField] private Image healthMain;
     [SerializeField] private Image healthFollower;
-    float healthLerpValue = 0;
+    [SerializeField] private Image healthFrame;
+    [SerializeField] private CanvasGroup healthUIGroup;
+    [SerializeField] private float fadeOutTimer;
+    [SerializeField] private float fadeDur;
+    private float healthLerpValue = 0;
+    private Coroutine hideHealthCoroutine;
 
     [Header("UIListManager")]
     [SerializeField] private List<GameObject> UIList;
@@ -46,6 +52,13 @@ public class UIManager : MonoBehaviour
     {
         healthMain.fillAmount = healthBarFillAmaount;
         healthLerpValue = 0;
+        ShowHealtUI();
+
+        if(hideHealthCoroutine != null)
+        {
+            StopCoroutine(hideHealthCoroutine);
+        }
+        hideHealthCoroutine = StartCoroutine(HideHealthUI());
     }
     /// <summary>
     /// Checks if health amount changes and makes smooth hp filling
@@ -58,7 +71,22 @@ public class UIManager : MonoBehaviour
             healthLerpValue += 1 * Time.deltaTime;
         }
     }
-
+    private void ShowHealtUI()
+    {
+        healthUIGroup.alpha = 1;
+    }
+    private IEnumerator HideHealthUI()
+    {
+        yield return new WaitForSeconds(fadeOutTimer);
+        float elapsedTime = 0;
+        while (elapsedTime < fadeDur)
+        {
+            elapsedTime += Time.deltaTime;
+            healthUIGroup.alpha=Mathf.Lerp(1f,0f,elapsedTime/fadeDur);
+            yield return null;
+        }
+        healthUIGroup.alpha = 0f;
+    }
     public void UIListManager(GameObject CurrentUI)
     {
         //To Do
