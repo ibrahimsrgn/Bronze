@@ -15,6 +15,7 @@ public class ItemSO : ScriptableObject{
     public bool stackable = true;
     public bool usable = true;
     public int maxStackableCount;
+    [Tooltip("Max 8 char")]public string displayName;
     public string description;
 
     [Header("Both")]

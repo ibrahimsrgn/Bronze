@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  displayName: Shawarma
   description: "Bildi\u011Fin d\xFCr\xFCm d\xF6ner kanka"
   objPrefab: {fileID: 5948615543843004562, guid: 3e95af7aa8f7e584fbde40f256a96ac1,
     type: 3}

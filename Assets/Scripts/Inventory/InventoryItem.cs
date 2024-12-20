@@ -10,7 +10,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public int id=0;
     public Image image;
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI displayNameTxt;
     public GameObject itemPrefab;
+    public string displayName;
     public string description;
     [SerializeField] private Canvas canvas;
 
@@ -25,6 +27,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.sprite = newItem.image;
         itemPrefab = newItem.objPrefab;
         description = newItem.description;
+        displayName=newItem.displayName;
+        displayNameTxt.text = displayName;
         if (itemPrefab.TryGetComponent<ItemInteraction>(out ItemInteraction itemInteraction))
         {
             id = itemInteraction.id;

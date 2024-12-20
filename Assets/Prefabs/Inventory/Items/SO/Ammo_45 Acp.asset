@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 0
   maxStackableCount: 45
+  displayName: .45 ACP
   description: Ammo for deagle
   objPrefab: {fileID: 4744375309067628679, guid: ca11420772905ef4a97ad3252a8f30af,
     type: 3}

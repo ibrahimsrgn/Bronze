@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de7ad44c55f914c419f04f801aaeddbf, type: 3}
-  m_Name: Ak-47m
+  m_Name: Weap_Ak-47m
   m_EditorClassIdentifier: 
   type: 1
   range: {x: 5, y: 4}
   stackable: 0
   usable: 0
   maxStackableCount: 0
+  displayName: AK74M
   description: "Bu bir kele\u015Ftir ruskilerin fav silah\u0131d\u0131r."
   objPrefab: {fileID: 1383266110669858418, guid: 513de2aa29138b04798cc644b788531d,
     type: 3}

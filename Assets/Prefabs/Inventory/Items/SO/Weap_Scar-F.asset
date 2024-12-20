@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 0
   usable: 0
   maxStackableCount: 0
+  displayName: Scar-F
   description: "\u0130yidir g\xFCzeldir ama bir M4 de\u011Fil"
   objPrefab: {fileID: 1367335300332428410, guid: fe70e777b68a45a43be72eb6f6d9263d,
     type: 3}

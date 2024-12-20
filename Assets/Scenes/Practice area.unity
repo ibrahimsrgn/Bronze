@@ -635,6 +635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot_8
       objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -859,6 +864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventorySlot_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
@@ -2951,6 +2961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot_6
       objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3068,6 +3083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventorySlot_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
@@ -6439,6 +6459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventorySlot_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
@@ -11689,6 +11714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot_5
       objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -12367,6 +12397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventorySlot_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}
@@ -14147,6 +14182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventorySlot_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435598356685883863, guid: 627ecae899aea0749bee0e8fef1eafe2,
+        type: 3}
+      propertyPath: inToolBox
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
         type: 3}

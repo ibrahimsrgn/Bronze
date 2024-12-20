@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 0
   maxStackableCount: 60
+  displayName: 5.56
   description: Ammo for 5.56 Caliber rifles
   objPrefab: {fileID: 4905189723880301182, guid: bdbea2dbbf6df0f42b23302411c87476,
     type: 3}

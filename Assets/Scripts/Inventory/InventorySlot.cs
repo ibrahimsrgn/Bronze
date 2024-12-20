@@ -9,36 +9,41 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public Image image;
     public Color selectedColor, deSelectedColor;
+    [SerializeField] private bool inToolBox;
 
     public void Selected()
     {
         image.color = selectedColor;
 
-        //Seçili slotda kuşanılabilicek item varsa kuşan
-        InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-        if (inventoryItem != null)
+        if (inToolBox)
         {
-            PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
-            GunFire gunFire = inventoryItem.itemPrefab.GetComponent<GunFire>();
-            //Nesne Silah değil ise
-            if (gunFire == null)
+            //Seçili slotda kuşanılabilicek item varsa kuşan
+            InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+            if (inventoryItem != null)
             {
-                inventoryItem.itemPrefab.transform.position= PlayerData.Instance.WeaponLoc.transform.position;
+                PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
+                GunFire gunFire = inventoryItem.itemPrefab.GetComponent<GunFire>();
+                //Nesne Silah değil ise
+                if (gunFire == null)
+                {
+                    inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+                    inventoryItem.itemPrefab.SetActive(true);
+                    return;
+                }
+                PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
+                PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
+                inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+                inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
+                PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
+                gunFire.Animator.enabled = true;
                 inventoryItem.itemPrefab.SetActive(true);
-                return;
+                PlayerData.Instance._RigBuilder.Build();
+                PlayerData.Instance.WeaponPosRot.position = Vector3.zero;
+                PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
+                InventoryManager.instance.CountAmmo(gunFire.usableAmmoId);
+                InventoryManager.instance.RefreshCurrentAmmoUI(gunFire.CurrentAmmoCount);
             }
-            PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
-            PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
-            inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
-            inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
-            PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
-            gunFire.Animator.enabled = true;
-            inventoryItem.itemPrefab.SetActive(true);
-            PlayerData.Instance._RigBuilder.Build();
-            PlayerData.Instance.WeaponPosRot.position = Vector3.zero;
-            PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
-            InventoryManager.instance.CountAmmo(gunFire.usableAmmoId);
-            InventoryManager.instance.RefreshCurrentAmmoUI(gunFire.CurrentAmmoCount);
+       
         }
         else
         {

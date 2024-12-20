@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  displayName: Carrot
   description: "G\xF6zlere iyi gelir derler ama \u015Fimdilik sadece can yeniliyor."
   objPrefab: {fileID: 8587871180315183817, guid: 1e1203f8a588c804f9589a27c2eec0ef,
     type: 3}

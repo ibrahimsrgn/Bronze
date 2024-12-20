@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  displayName: Milk
   description: "Kemiklere iyi gelir ama hazm\u0131 zor"
   objPrefab: {fileID: 4144528811339228312, guid: 178d985fd88377840a4587013e75e577,
     type: 3}

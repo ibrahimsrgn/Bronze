@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  displayName: Water
   description: "En sa\u011Fl\u0131kl\u0131 i\xE7ice\u011Fim sudur"
   objPrefab: {fileID: 3278578274882798281, guid: 68514281db9bf514a9ec72fb8afb93c7,
     type: 3}

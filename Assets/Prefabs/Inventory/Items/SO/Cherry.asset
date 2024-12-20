@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  displayName: Cherry
   description: 'Kiraz '
   objPrefab: {fileID: 7173102905140248997, guid: 919c482996839174abc6478994615941,
     type: 3}

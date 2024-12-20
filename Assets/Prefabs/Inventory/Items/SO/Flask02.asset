@@ -17,6 +17,7 @@ MonoBehaviour:
   stackable: 1
   usable: 1
   maxStackableCount: 9
+  displayName: Water flask
   description: "Dolu matara i\xE7inde mataray\u0131da yiyorsunuz"
   objPrefab: {fileID: 4421981031043792512, guid: 127113343556e1d48b2fb8d8c10bf4bf,
     type: 3}
