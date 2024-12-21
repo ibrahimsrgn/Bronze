@@ -35,7 +35,7 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number - 1);
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             InventorySlot slot = inventorySlots[selectedSlot];
             slot.GetComponentInChildren<InventoryItem>().UseItem();
@@ -83,6 +83,11 @@ public class InventoryManager : MonoBehaviour
         }
         gameObject = null;
         return false;
+    }
+    public InventorySlot GetSelectedSlot()
+    {
+        if (selectedSlot == -1) return null;
+        return inventorySlots[selectedSlot];
     }
     public GameObject SpawnNewItem(ItemSO item, InventorySlot slot)
     {

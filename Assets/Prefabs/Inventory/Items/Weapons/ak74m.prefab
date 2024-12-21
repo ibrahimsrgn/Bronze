@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 5823705352660007671}
   - component: {fileID: 2968666008928777781}
   - component: {fileID: 8781499749662636592}
+  - component: {fileID: 2072128375160886938}
   m_Layer: 7
   m_Name: ak74m
   m_TagString: Weapon
@@ -464,6 +465,27 @@ MonoBehaviour:
   WeaponLocRef: {fileID: 5791020978889610490}
   Animator: {fileID: 5823705352660007671}
   Shooting_Sound: {fileID: 2968666008928777781}
+--- !u!65 &2072128375160886938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383266110669858418}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78205705, y: 0.2080214, z: 0.03243345}
+  m_Center: {x: 0.10897148, y: -0.0034935772, z: 0.006794542}
 --- !u!1 &1498601768796245376
 GameObject:
   m_ObjectHideFlags: 0

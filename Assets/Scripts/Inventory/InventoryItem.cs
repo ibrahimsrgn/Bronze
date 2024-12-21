@@ -56,6 +56,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
+        PlayerData.Instance.UnEquipItem();
+        itemPrefab.gameObject.SetActive(false);
     }
     public void OnPointerDown(PointerEventData eventData)
     {

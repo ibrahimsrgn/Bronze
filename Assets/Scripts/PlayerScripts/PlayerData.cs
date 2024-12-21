@@ -60,16 +60,23 @@ public class PlayerData : MonoBehaviour
     public TwoBoneIKConstraint LeftHandLayer;
     public TwoBoneIKConstraint RightHandLayer;
 
+    [Header("Pos backups")]
+    private TwoBoneIKConstraint LeftHandLayerBckUp;
+    private TwoBoneIKConstraint RightHandLayerBckUp;
+    public Transform CamPosRef2BckUp;
+
     [SerializeField] private int angle;
     [SerializeField] private int angleZ;
 
     #endregion
 
     //-------------------------------------------------------------------
-
     #region Update Methods
     private void Awake()
     {
+        LeftHandLayerBckUp = LeftHandLayer;
+        RightHandLayerBckUp = RightHandLayer;
+        CamPosRef2BckUp = CamPosRef2;
         Instance = this;
         if (WeaponLoc.childCount <= 0)
             ItemOnHand = null;
@@ -181,14 +188,14 @@ public class PlayerData : MonoBehaviour
     {
         if (Value && ItemOnHand != null)
         {
-            if(ItemOnHand.GetComponent<GunFire>() != null)
+            if (ItemOnHand.GetComponent<GunFire>() != null)
             {
-            ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
-            ItemOnHand.gameObject.GetComponent<GunFire>().enabled = enabled;
+                ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
+                ItemOnHand.gameObject.GetComponent<GunFire>().enabled = enabled;
             }
-            if (ItemOnHand.TryGetComponent<ItemInteraction>(out ItemInteraction itemInteraction) && InventoryManager.instance.GetSelectedItemCount()>1)
+            if (ItemOnHand.TryGetComponent<ItemInteraction>(out ItemInteraction itemInteraction) && InventoryManager.instance.GetSelectedItemCount() > 1)
             {
-                GameObject droppedItem = Instantiate(ItemOnHand.gameObject,ItemOnHand);
+                GameObject droppedItem = Instantiate(ItemOnHand.gameObject, ItemOnHand);
                 droppedItem.transform.SetParent(null);
                 droppedItem.gameObject.AddComponent<Rigidbody>();
                 droppedItem.transform.GetComponent<Rigidbody>().AddForce(transform.forward * angleZ + Vector3.up * angle);
@@ -207,13 +214,15 @@ public class PlayerData : MonoBehaviour
     }
     public void UnEquipItem()
     {
-        if (ItemOnHand.gameObject.GetComponent<Animator>() != null)
-        {
-        ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
-        }
+        
         LeftHandLayer.data.target = null;
         RightHandLayer.data.target = null;
         ItemOnHand = null;
+        if (ItemOnHand == null) return;
+        if (ItemOnHand.gameObject.GetComponent<Animator>() != null)
+        {
+            ItemOnHand.gameObject.GetComponent<Animator>().enabled = false;
+        }
     }
     #endregion
 

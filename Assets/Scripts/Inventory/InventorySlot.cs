@@ -17,41 +17,13 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
         if (inToolBox)
         {
-            //Seçili slotda kuşanılabilicek item varsa kuşan
-            InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-            if (inventoryItem != null)
-            {
-                PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
-                GunFire gunFire = inventoryItem.itemPrefab.GetComponent<GunFire>();
-                //Nesne Silah değil ise
-                if (gunFire == null)
-                {
-                    inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
-                    inventoryItem.itemPrefab.SetActive(true);
-                    return;
-                }
-                PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
-                PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
-                inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
-                inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
-                PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
-                gunFire.Animator.enabled = true;
-                inventoryItem.itemPrefab.SetActive(true);
-                PlayerData.Instance._RigBuilder.Build();
-                PlayerData.Instance.WeaponPosRot.position = Vector3.zero;
-                PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
-                InventoryManager.instance.CountAmmo(gunFire.usableAmmoId);
-                InventoryManager.instance.RefreshCurrentAmmoUI(gunFire.CurrentAmmoCount);
-            }
-       
+            EquipItem();
         }
-        else
+        if (GetComponentInChildren<InventoryItem>()==null)
         {
-            if (PlayerData.Instance.ItemOnHand != null)
-            {
-                PlayerData.Instance.UnEquipItem();
-            }
+            PlayerData.Instance.UnEquipItem();
         }
+
     }
     public void DeSelected()
     {
@@ -63,12 +35,46 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         image.color = deSelectedColor;
     }
+    public void EquipItem()
+    {
+        InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+        Debug.Log(gameObject.name);
+        if (inventoryItem != null)
+        {
+            PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
+            GunFire gunFire = inventoryItem.itemPrefab.GetComponent<GunFire>();
+            //Nesne Silah değil ise
+            if (gunFire == null)
+            {
+                inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+                inventoryItem.itemPrefab.SetActive(true);
+                return;
+            }
+            PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
+            PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
+            inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
+            inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
+            PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
+            gunFire.Animator.enabled = true;
+            inventoryItem.itemPrefab.SetActive(true);
+            PlayerData.Instance._RigBuilder.Build();
+            PlayerData.Instance.WeaponPosRot.position = Vector3.zero;
+            PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
+            InventoryManager.instance.CountAmmo(gunFire.usableAmmoId);
+            InventoryManager.instance.RefreshCurrentAmmoUI(gunFire.CurrentAmmoCount);
+        }
+    }
     public void OnDrop(PointerEventData eventData)
     {
+
         if (transform.childCount == 0)
         {
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;
+            if (InventoryManager.instance.GetSelectedSlot() != null && InventoryManager.instance.GetSelectedSlot() == this)
+            {
+                Invoke(nameof(EquipItem), .1f);
+            }
         }
         else
         {
