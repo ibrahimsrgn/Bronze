@@ -17,8 +17,8 @@ MonoBehaviour:
   stackable: 0
   usable: 0
   maxStackableCount: 0
-  displayName: Scar-F
+  displayName: M4A1
   description: "\u0130yidir g\xFCzeldir ama bir M4 de\u011Fil"
-  objPrefab: {fileID: 1367335300332428410, guid: fe70e777b68a45a43be72eb6f6d9263d,
+  objPrefab: {fileID: 2658789836284135903, guid: d1fe3e0edcab82248ad449c4c7ae5cd4,
     type: 3}
   image: {fileID: 21300000, guid: fd54ebd85a468cf42b0108748c7034ba, type: 3}

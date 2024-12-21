@@ -92,7 +92,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367335300332428410}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.27494645, y: 0.69948304, z: 0.24399614, w: -0.6128571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5827665, y: 1.6738333, z: -5.5148764}
   m_LocalScale: {x: 0.21000005, y: 0.21, z: 0.21000005}
   m_ConstrainProportionsScale: 1
@@ -138,6 +138,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 95
   MagazineCap: 30
+  CurrentAmmoCount: 0
   AmmoExitLoc: {fileID: 1452982051478011073}
   MuzzleLight: {fileID: 8842363616666079010}
   MuzzleFlash: {fileID: 7149122386723688090}
