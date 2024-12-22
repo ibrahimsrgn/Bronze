@@ -33,6 +33,8 @@ public class InventoryManager : MonoBehaviour
             if (isNumber && number > 0 && number < 9)
             {
                 ChangeSelectedSlot(number - 1);
+                UIManager.instance.ShowToolBoxUI();
+                UIManager.instance.HideCanvasTimer(2);
             }
         }
         if (Input.GetKeyDown(KeyCode.T))
@@ -284,10 +286,14 @@ public class InventoryManager : MonoBehaviour
     }
     public void RefreshMaxAmmoUI()
     {
+        UIManager.instance.ShowAmmoUI();
+        UIManager.instance.HideCanvasTimer(1);
         totalAmmoCountText.text = "/" + totalAmmoCount.ToString();
     }
     public void RefreshCurrentAmmoUI(int currentAmmo)
     {
+        UIManager.instance.ShowAmmoUI();
+        UIManager.instance.HideCanvasTimer(1);
         currentAmmoCountText.text = currentAmmo.ToString();
     }
 }

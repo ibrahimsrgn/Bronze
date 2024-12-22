@@ -17,7 +17,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
         if (inToolBox)
         {
-            EquipItem();
+           Invoke(nameof(EquipItem),0.1f);
         }
         if (GetComponentInChildren<InventoryItem>()==null)
         {
@@ -54,6 +54,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             }
             inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
             inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
+            PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
+            PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
             PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
             gunFire.Animator.enabled = true;
             inventoryItem.itemPrefab.SetActive(true);
