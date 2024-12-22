@@ -12,8 +12,7 @@ Welcome to the **Zombie Survival Game**, a demo project aiming to deliver a real
   - **Aiming and Scoping**: Players can aim down sights for better accuracy.
   - **Magazine Reloading**: Realistic magazine reloading system, requiring players to change the magazine when it's empty.
 - **Inventory System**:
-  - Visual-only inventory: Items can be displayed and moved within the inventory, but they currently cannot be interacted with or used during gameplay.
-  - Item interactions are limited to weapons placed by the developers in the scene, which players can pick up and equip.
+  - Inventory: Items can be displayed and moved within the inventory and also can used by player.
 - **Day-Night Cycle**: A dynamic system with adjustable in-game time, allowing players to set the time as they wish.
 - **Fully Modeled Player Character**: The player character includes a fully visible body with detailed animations for feet, torso, and other parts.
 
@@ -30,4 +29,9 @@ This is an early demo focused on creating a solid foundation for a survival game
 ### Important Note
 
 The game is **not yet playable**, but we are working hard to make it available soon. We plan to release the playable version on Steam in the near future.
-If you’re curious, check out a **short video of the game** [here](https://youtu.be/t4JYdNOL20c?si=ucsJMmkmYZvsIbE8)!
+
+![](https://github.com/ibrahimsrgn/Bronze/blob/main/Assets/WaterResources/Images/Image%201.png?raw=true)
+![](https://github.com/ibrahimsrgn/Bronze/blob/main/Assets/WaterResources/Images/Image%202.png?raw=true)
+![](https://github.com/ibrahimsrgn/Bronze/blob/main/Assets/WaterResources/Images/image.png?raw=true)
+
+
