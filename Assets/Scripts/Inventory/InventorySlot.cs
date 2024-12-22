@@ -43,6 +43,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
             GunFire gunFire = inventoryItem.itemPrefab.GetComponent<GunFire>();
+            PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
+            PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
             //Nesne Silah değil ise
             if (gunFire == null)
             {
@@ -50,8 +52,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 inventoryItem.itemPrefab.SetActive(true);
                 return;
             }
-            PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
-            PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
             inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
             inventoryItem.itemPrefab.transform.rotation = PlayerData.Instance.WeaponLoc.transform.rotation;
             PlayerData.Instance.CamPosRef2 = gunFire.AimCamLocRef;
