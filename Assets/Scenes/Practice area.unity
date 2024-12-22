@@ -15647,6 +15647,7 @@ MonoBehaviour:
   _CharacterController: {fileID: 4098235283952937750}
   LeftHandLayer: {fileID: 1178717092}
   RightHandLayer: {fileID: 707741762}
+  CamPosRef2BckUp: {fileID: 0}
   angle: 150
   angleZ: 250
 --- !u!4 &4814338125978214378
