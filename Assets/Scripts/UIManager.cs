@@ -15,10 +15,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image healthFollower;
     [SerializeField] private Image healthFrame;
     [SerializeField] private CanvasGroup healthUIGroup;
+    [SerializeField] private CanvasGroup toolBoxUIGroup;
+    [SerializeField] private CanvasGroup ammoUIGroup;
     [SerializeField] private float fadeOutTimer;
     [SerializeField] private float fadeDur;
     private float healthLerpValue = 0;
     private Coroutine hideHealthCoroutine;
+    private Coroutine hideToolBoxCoroutine;
+    private Coroutine hideAmmoCoroutine;
 
     [Header("UIListManager")]
     [SerializeField] private List<GameObject> UIList;
@@ -28,7 +32,9 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        hideHealthCoroutine = StartCoroutine(HideHealthUI());
+        hideHealthCoroutine = StartCoroutine(HideCanvasGroup(healthUIGroup, fadeOutTimer));
+        hideToolBoxCoroutine = StartCoroutine(HideCanvasGroup(toolBoxUIGroup, fadeOutTimer));
+        hideAmmoCoroutine = StartCoroutine(HideCanvasGroup(ammoUIGroup, fadeOutTimer));
     }
 
     private void Update()
@@ -58,11 +64,11 @@ public class UIManager : MonoBehaviour
         healthLerpValue = 0;
         ShowHealtUI();
 
-        if(hideHealthCoroutine != null)
+        if (hideHealthCoroutine != null)
         {
             StopCoroutine(hideHealthCoroutine);
         }
-        hideHealthCoroutine = StartCoroutine(HideHealthUI());
+        hideHealthCoroutine = StartCoroutine(HideCanvasGroup(healthUIGroup, fadeOutTimer));
     }
     /// <summary>
     /// Checks if health amount changes and makes smooth hp filling
@@ -75,21 +81,66 @@ public class UIManager : MonoBehaviour
             healthLerpValue += 1 * Time.deltaTime;
         }
     }
-    private void ShowHealtUI()
+    public void ShowHealtUI()
     {
         healthUIGroup.alpha = 1;
     }
-    private IEnumerator HideHealthUI()
+    public void ShowAmmoUI()
     {
-        yield return new WaitForSeconds(fadeOutTimer);
+        ammoUIGroup.alpha = 1;
+    }
+    public void ShowToolBoxUI()
+    {
+        toolBoxUIGroup.alpha = 1;
+    }
+    /// <summary>
+    /// Healt UI ID 0
+    /// Ammo UI ID 1
+    /// ToolBox UI ID 2
+    /// </summary>
+    /// <param name="canvasGroup"></param>
+    /// <param name="timer"></param>
+    /// <param name="canvasID"></param>
+    public void HideCanvasTimer(int canvasID)
+    {
+        if (canvasID == 0)
+        {
+            if (hideHealthCoroutine != null)
+            {
+                StopCoroutine(hideHealthCoroutine);
+            }
+            hideHealthCoroutine = StartCoroutine(HideCanvasGroup(healthUIGroup, fadeOutTimer));
+        }
+        else if (canvasID == 1)
+        {
+            if (hideAmmoCoroutine != null)
+            {
+                StopCoroutine(hideAmmoCoroutine);
+            }
+            hideAmmoCoroutine = StartCoroutine(HideCanvasGroup(ammoUIGroup, fadeOutTimer));
+        }
+        else if (canvasID == 2)
+        {
+            if (hideToolBoxCoroutine != null)
+            {
+                StopCoroutine(hideToolBoxCoroutine);
+            }
+            hideToolBoxCoroutine = StartCoroutine(HideCanvasGroup(toolBoxUIGroup, fadeOutTimer));
+
+        }
+        
+    }
+    private IEnumerator HideCanvasGroup(CanvasGroup canvasGroup, float timer)
+    {
+        yield return new WaitForSeconds(timer);
         float elapsedTime = 0;
         while (elapsedTime < fadeDur)
         {
             elapsedTime += Time.deltaTime;
-            healthUIGroup.alpha=Mathf.Lerp(1f,0f,elapsedTime/fadeDur);
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDur);
             yield return null;
         }
-        healthUIGroup.alpha = 0f;
+        canvasGroup.alpha = 0f;
     }
     public void UIListManager(GameObject CurrentUI)
     {

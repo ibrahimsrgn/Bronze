@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerClickHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     [Header("UI")]
     public int id=0;
@@ -58,26 +58,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(parentAfterDrag);
         PlayerData.Instance.UnEquipItem();
         itemPrefab.gameObject.SetActive(false);
-    }
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
-        /* InventorySlot selectedSlot = GetComponentInParent<InventorySlot>();
-         selectedSlot.Selected();
-         int slotIndex = -1;
-         for (int i = 0; i < InventoryManager.instance.inventorySlots.Length; i++)
-         {
-             if (InventoryManager.instance.inventorySlots[i] == selectedSlot)
-             {
-                 slotIndex = i;
-                 break;
-             }
-         }
-
-         if (slotIndex != -1)
-         {
-             InventoryManager.instance.ChangeSelectedSlot(slotIndex);
-         }*/
     }
 
     public void OnPointerClick(PointerEventData eventData)
