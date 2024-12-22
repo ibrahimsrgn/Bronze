@@ -52,13 +52,13 @@ public class DayAndNightCircle : MonoBehaviour
 
     private void OnHoursChange(int hours)
     {
-        if (hours == 6)
+        if (hours >= 6 && hours < 18)
         {
             Moon.shadows = LightShadows.None;
             Sun.shadows = LightShadows.Soft;
             
         }
-        if (hours == 18)
+        if ((hours >= 18 && hours <= 24) || hours < 6)
         {
             Sun.shadows = LightShadows.None;
             Moon.shadows = LightShadows.Soft;
