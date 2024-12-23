@@ -65,7 +65,8 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < itemInSlot.item.maxStackableCount && itemInSlot.item.stackable)
             {
-                itemInSlot.count++;
+               //itemInSlot.count++;
+                itemInSlot.count+=10;
                 itemInSlot.RefreshCount();
                 gameObject = null;
                 return true;
@@ -239,6 +240,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void ReloadCalculator(int requiredAmmo)
     {
+        Debug.Log("requiredAmmo: " + requiredAmmo);
         if (ammoItems == null || ammoItems.Count == 0)
         {
             Debug.LogWarning("No ammo items available!");
@@ -261,6 +263,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     // Eğer öğe biterse çantadan çıkar
                     ammoItems.RemoveAt(i);
+                    Debug.Log("Ammo item removed");
                     Destroy(ammoItem.gameObject);
                 }
                 ammoItem.RefreshCount();
@@ -270,13 +273,14 @@ public class InventoryManager : MonoBehaviour
             {
                 // Yetersizse tüm mermiyi kullan ve sonraki öğeye geç
                 remainingAmmoToLoad -= ammoItem.count;
+                    Debug.Log("Ammo item removed");
                 ammoItems.RemoveAt(i);
                 Destroy(ammoItem.gameObject);
             }
         }
 
         // Mermi sayısını UI ile güncelle
-        CountAmmo(ammoItems.Count > 0 ? ammoItems[0].id : -1);
+        //CountAmmo(ammoItems.Count > 0 ? ammoItems[0].id : -1);
         RefreshMaxAmmoUI();
 
         if (remainingAmmoToLoad > 0)
