@@ -50,6 +50,7 @@ public class GunFire : MonoBehaviour
     private Vector3 StartPosition;
     private Recoil Recoil_Script;
     private int usableAmmoCount2;
+    private bool readyToReload = true;
 
     public enum FireMode
     {
@@ -114,10 +115,13 @@ public class GunFire : MonoBehaviour
                 ReadyToShoot = true;
             }
 
-            if (_PlayerData.OnReloadBool && CurrentAmmoCount < MagazineCap)
+            if (_PlayerData.OnReloadBool && CurrentAmmoCount < MagazineCap&&readyToReload)
             {
+                readyToReload=false;
+                Debug.Log("1");
                 ReadyToShoot = false;
                 Reload();
+                PlayerData.Instance.OnReloadBool=false;
             }
         }
     }
@@ -270,7 +274,8 @@ public class GunFire : MonoBehaviour
 
     public void Reload()
     {
-        int usableAmmoCount = InventoryManager.instance.ReloadMagazine(MagazineCap);
+        int requiredAmmo = MagazineCap - CurrentAmmoCount;
+        int usableAmmoCount = InventoryManager.instance.ReloadMagazine(requiredAmmo);
         if ( usableAmmoCount== 0)
         {
             return;
@@ -287,6 +292,7 @@ public class GunFire : MonoBehaviour
         InventoryManager.instance.RefreshCurrentAmmoUI(usableAmmoCount2);
         CurrentAmmoCount = usableAmmoCount2;
         ReadyToShoot = true;
+        readyToReload=true;
     }
 
     
