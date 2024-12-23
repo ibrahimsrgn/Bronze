@@ -275,7 +275,7 @@ public class GunFire : MonoBehaviour
     public void Reload()
     {
         int requiredAmmo = MagazineCap - CurrentAmmoCount;
-        int usableAmmoCount = InventoryManager.instance.ReloadMagazine(requiredAmmo);
+        int usableAmmoCount = InventoryManager.instance.ReloadMagazine(MagazineCap, requiredAmmo);
         if ( usableAmmoCount== 0)
         {
             return;
