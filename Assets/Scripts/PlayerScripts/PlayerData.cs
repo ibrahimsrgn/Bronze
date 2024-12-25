@@ -53,8 +53,10 @@ public class PlayerData : MonoBehaviour
     public Transform ItemOnHand;
     public Transform WeaponLoc;
     public CharacterController _CharacterController;
+    public GameObject FlashLight;
     private bool _OnDrop;
     private bool _OnCollect;
+    private int FlashCount = 1;
 
     [Header("Rig Layer References")]
     public TwoBoneIKConstraint LeftHandLayer;
@@ -214,7 +216,7 @@ public class PlayerData : MonoBehaviour
     }
     public void UnEquipItem()
     {
-        
+
         LeftHandLayer.data.target = null;
         RightHandLayer.data.target = null;
         ItemOnHand = null;
@@ -242,6 +244,15 @@ public class PlayerData : MonoBehaviour
     private void OnJump(InputValue Value)
     {
         JumpInput = Value.isPressed;
+    }
+
+    private void OnFlash(InputValue Value)
+    {
+        if (Value.isPressed)
+        {
+            FlashCount++;
+        }
+        FlashLight.active = (FlashCount % 2 == 0);
     }
 
     private void OnSprint(InputValue Value)

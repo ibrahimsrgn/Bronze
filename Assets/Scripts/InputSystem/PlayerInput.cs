@@ -71,6 +71,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Flash"",
+                    ""type"": ""Button"",
+                    ""id"": ""485c0c1f-b129-421e-ba9d-d8f9613c07d0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -170,6 +179,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dc0a874-a9d5-4392-bb63-6fd7b7e5506b"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -332,6 +352,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Land_Sprint = m_Land.FindAction("Sprint", throwIfNotFound: true);
         m_Land_Look = m_Land.FindAction("Look", throwIfNotFound: true);
         m_Land_Crouch = m_Land.FindAction("Crouch", throwIfNotFound: true);
+        m_Land_Flash = m_Land.FindAction("Flash", throwIfNotFound: true);
         // Weapon
         m_Weapon = asset.FindActionMap("Weapon", throwIfNotFound: true);
         m_Weapon_Fire = m_Weapon.FindAction("Fire", throwIfNotFound: true);
@@ -415,6 +436,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Land_Sprint;
     private readonly InputAction m_Land_Look;
     private readonly InputAction m_Land_Crouch;
+    private readonly InputAction m_Land_Flash;
     public struct LandActions
     {
         private @PlayerInput m_Wrapper;
@@ -424,6 +446,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Land_Sprint;
         public InputAction @Look => m_Wrapper.m_Land_Look;
         public InputAction @Crouch => m_Wrapper.m_Land_Crouch;
+        public InputAction @Flash => m_Wrapper.m_Land_Flash;
         public InputActionMap Get() { return m_Wrapper.m_Land; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -448,6 +471,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
+            @Flash.started += instance.OnFlash;
+            @Flash.performed += instance.OnFlash;
+            @Flash.canceled += instance.OnFlash;
         }
 
         private void UnregisterCallbacks(ILandActions instance)
@@ -467,6 +493,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
+            @Flash.started -= instance.OnFlash;
+            @Flash.performed -= instance.OnFlash;
+            @Flash.canceled -= instance.OnFlash;
         }
 
         public void RemoveCallbacks(ILandActions instance)
@@ -615,6 +644,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnFlash(InputAction.CallbackContext context);
     }
     public interface IWeaponActions
     {
