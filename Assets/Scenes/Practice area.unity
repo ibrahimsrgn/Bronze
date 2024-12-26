@@ -357,7 +357,7 @@ MonoBehaviour:
   SunDayNightCircle: {fileID: 785411605}
   MoonDayNightCircle: {fileID: 544200366}
   Minute: 59
-  Hours: 20
+  Hours: 14
   HoursMultiplier: 213123123
 --- !u!4 &5440153
 Transform:
