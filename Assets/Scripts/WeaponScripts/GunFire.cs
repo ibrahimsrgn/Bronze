@@ -39,6 +39,7 @@ public class GunFire : MonoBehaviour
     [SerializeField] public Animator Animator;
 
     public AudioSource Shooting_Sound;
+    public AudioSource Reload_Sound;
     private bool ReadyToShoot = true;
     private float RPMData;
     private int BurstCountData;
@@ -95,7 +96,7 @@ public class GunFire : MonoBehaviour
             RPM -= Time.deltaTime;
             if (_PlayerData.MouseClickInput && RPM <= 0 && ReadyToShoot && CurrentAmmoCount > 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.ReloadAnimation"))
             {
-                Shooting_Sound.Play();
+                Shooting_Sound.PlayOneShot(Shooting_Sound.clip);
                 switch (_FireMode)
                 {
                     case FireMode.Single:
@@ -274,6 +275,7 @@ public class GunFire : MonoBehaviour
 
     public void Reload()
     {
+        Reload_Sound.Play();
         int requiredAmmo = MagazineCap - CurrentAmmoCount;
         int usableAmmoCount = InventoryManager.instance.ReloadMagazine(MagazineCap, requiredAmmo);
         if ( usableAmmoCount== 0)
