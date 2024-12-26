@@ -2374,8 +2374,10 @@ MonoBehaviour:
   diffusionProfiles:
     m_OverrideState: 1
     m_Value:
-    - {fileID: 11400000, guid: 404820c4cf36ad944862fa59c56064f0, type: 2}
-    - {fileID: 11400000, guid: 2384dbf2c1c420f45a792fbc315fbfb1, type: 2}
+    - {fileID: 11400000, guid: cb824b513c3aa274db0944d6fb82a86c, type: 2}
+    - {fileID: 11400000, guid: 2f995df9a3ad4e6499669b35a6ff3a2b, type: 2}
+    - {fileID: 11400000, guid: 2d31128e8db0c1643872f253a85dc22e, type: 2}
+    - {fileID: 11400000, guid: f0d53ace3a50e6b4dbc57630f27e7b67, type: 2}
 --- !u!114 &9216358423857240346
 MonoBehaviour:
   m_ObjectHideFlags: 3
