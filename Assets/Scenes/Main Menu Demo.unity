@@ -1529,6 +1529,142 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627ecae899aea0749bee0e8fef1eafe2, type: 3}
+--- !u!1 &200810028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200810029}
+  - component: {fileID: 200810031}
+  - component: {fileID: 200810030}
+  m_Layer: 5
+  m_Name: Text (TMP)_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &200810029
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200810028}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.12953368, y: 0.33670035, z: 0.13157895}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068432933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 42.3, y: -12.999996}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &200810030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200810028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Made By
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279541493
+  m_fontColor: {r: 0.9622642, g: 0.6185306, b: 0.077162705, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 25
+  m_fontSizeBase: 25
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &200810031
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200810028}
+  m_CullTransparentMesh: 1
 --- !u!1 &213884398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1835,7 @@ RectTransform:
   m_Father: {fileID: 1493477579}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.58181816, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2209,10 +2345,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 587690277}
   m_HandleRect: {fileID: 1244777182}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -35
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: -40
+  m_Value: -3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2464,6 +2600,142 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627ecae899aea0749bee0e8fef1eafe2, type: 3}
+--- !u!1 &365881816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365881817}
+  - component: {fileID: 365881819}
+  - component: {fileID: 365881818}
+  m_Layer: 5
+  m_Name: Text (TMP)_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &365881817
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365881816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.12953368, y: 0.33670035, z: 0.13157895}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068432933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 67.7, y: -32.6}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &365881818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365881816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Alparslan YILDIRIM
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4289901236
+  m_fontColor: {r: 0.7058824, g: 0.69803923, b: 0.69803923, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 25
+  m_fontSizeBase: 25
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &365881819
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365881816}
+  m_CullTransparentMesh: 1
 --- !u!224 &390576211 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
@@ -3507,7 +3779,7 @@ PrefabInstance:
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
@@ -3517,7 +3789,7 @@ PrefabInstance:
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
@@ -3567,12 +3839,12 @@ PrefabInstance:
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5.56
       objectReference: {fileID: 0}
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -105
       objectReference: {fileID: 0}
     - target: {fileID: 2229718541902114972, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
@@ -3611,6 +3883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Extras
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166948260884083270, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4341,7 +4618,7 @@ RectTransform:
   m_Father: {fileID: 1721001418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.58181816, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4466,10 +4743,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 222749919}
   m_HandleRect: {fileID: 1795123411}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -35
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: -40
+  m_Value: -3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6356,7 +6633,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 142}
+  m_SizeDelta: {x: 100, y: 177.9841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1003234344
 PrefabInstance:
@@ -6599,12 +6876,258 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627ecae899aea0749bee0e8fef1eafe2, type: 3}
+--- !u!1 &1050881613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1050881614}
+  - component: {fileID: 1050881616}
+  - component: {fileID: 1050881615}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1050881614
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050881613}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.12953368, y: 0.33670035, z: 0.13157895}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068432933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 18.6, y: -32.6}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1050881615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050881613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Halil ibrahim SARGIN
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4289901236
+  m_fontColor: {r: 0.7058824, g: 0.69803923, b: 0.69803923, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 25
+  m_fontSizeBase: 25
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1050881616
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050881613}
+  m_CullTransparentMesh: 1
 --- !u!224 &1063673357 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
     type: 3}
   m_PrefabInstance: {fileID: 1784586461}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1068432932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1068432933}
+  - component: {fileID: 1068432937}
+  - component: {fileID: 1068432936}
+  - component: {fileID: 1068432935}
+  - component: {fileID: 1068432934}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1068432933
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068432932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7.72, y: 2.97, z: 7.6}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1050881614}
+  - {fileID: 200810029}
+  - {fileID: 365881817}
+  m_Father: {fileID: 1565282337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 607, y: -421}
+  m_SizeDelta: {x: 85.9515, y: 38.2288}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1068432934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068432932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0.3, y: -0.5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1068432935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068432932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  m_EffectDistance: {x: 1, y: 3}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1068432936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068432932}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1068432937
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068432932}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1090144269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7459,6 +7982,7 @@ RectTransform:
   m_Children:
   - {fileID: 616206407}
   - {fileID: 506850950}
+  - {fileID: 1565282337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7498,8 +8022,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1869331317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.58181816, y: 0}
+  m_AnchorMax: {x: 0.58181816, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8681,10 +9205,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2026152506}
   m_HandleRect: {fileID: 1444384030}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -35
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: -40
+  m_Value: -3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9095,8 +9619,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1778407274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.58181816, y: 0}
+  m_AnchorMax: {x: 0.58181816, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9510,7 +10034,8 @@ AudioSource:
   m_GameObject: {fileID: 1458303973}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4762fc244bf534d4db2d6d748848dca0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 2dc9a029d0f6a4d4f95eca9f86b410f2, type: 3}
   m_Resource: {fileID: 8300000, guid: 2dc9a029d0f6a4d4f95eca9f86b410f2, type: 3}
   m_PlayOnAwake: 1
@@ -9607,7 +10132,8 @@ AudioSource:
   m_GameObject: {fileID: 1458303973}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4762fc244bf534d4db2d6d748848dca0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 0064191e8aa6fc945aefce68dc3e44ad, type: 3}
   m_Resource: {fileID: 8300000, guid: 0064191e8aa6fc945aefce68dc3e44ad, type: 3}
   m_PlayOnAwake: 1
@@ -10298,6 +10824,42 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 654918867}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1565282336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565282337}
+  m_Layer: 5
+  m_Name: Extras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1565282337
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565282336}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1068432933}
+  m_Father: {fileID: 1231401719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1604366262
 GameObject:
   m_ObjectHideFlags: 0
@@ -11933,8 +12495,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 869993367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.58181816, y: 0}
+  m_AnchorMax: {x: 0.58181816, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13378,7 +13940,7 @@ RectTransform:
   m_Father: {fileID: 1399950280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.58181816, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14081,28 +14643,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1039138374}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &376018849103021267
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376018849105127531}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 8dea3d00786ffc0459f4908c132f8854, type: 3}
 --- !u!1 &376018849105127531
 GameObject:
   m_ObjectHideFlags: 0
@@ -14114,7 +14654,6 @@ GameObject:
   - component: {fileID: 376018849105189553}
   - component: {fileID: 376018849108101491}
   - component: {fileID: 376018849107101319}
-  - component: {fileID: 376018849103021267}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_C (1)
   m_TagString: Untagged
@@ -14269,7 +14808,6 @@ GameObject:
   - component: {fileID: 390096850058468296}
   - component: {fileID: 390096850055546890}
   - component: {fileID: 390096850056546302}
-  - component: {fileID: 390096850060625322}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_C (2)
   m_TagString: Untagged
@@ -14277,28 +14815,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!64 &390096850060625322
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390096850058537234}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 8dea3d00786ffc0459f4908c132f8854, type: 3}
 --- !u!1 &689048547028595139
 GameObject:
   m_ObjectHideFlags: 0
@@ -14346,7 +14862,6 @@ GameObject:
   - component: {fileID: 799588910438244961}
   - component: {fileID: 799588910441640893}
   - component: {fileID: 799588910440540937}
-  - component: {fileID: 799588910444748223}
   m_Layer: 0
   m_Name: BrickHouse_Floor_End_A (1)
   m_TagString: Untagged
@@ -14407,49 +14922,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799588910438491551}
   m_Mesh: {fileID: 4300002, guid: e738815e6ed0a1042ab2112032ee725f, type: 3}
---- !u!65 &799588910444748223
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799588910438491551}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2, y: 0.3000005, z: 11.2}
-  m_Center: {x: 1.1, y: -0.049999997, z: 0}
---- !u!64 &1371250746509794896
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371250746511897320}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 8dea3d00786ffc0459f4908c132f8854, type: 3}
 --- !u!4 &1371250746511818802
 Transform:
   m_ObjectHideFlags: 0
@@ -14476,7 +14948,6 @@ GameObject:
   - component: {fileID: 1371250746511818802}
   - component: {fileID: 1371250746513101808}
   - component: {fileID: 1371250746514136068}
-  - component: {fileID: 1371250746509794896}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_C (3)
   m_TagString: Untagged
@@ -14630,7 +15101,6 @@ GameObject:
   - component: {fileID: 1981053896992228572}
   - component: {fileID: 1981053896991451154}
   - component: {fileID: 1981053896990343392}
-  - component: {fileID: 1981053896994623250}
   m_Layer: 0
   m_Name: BrickHouse_Floor_End_A_DM_A
   m_TagString: Untagged
@@ -14638,27 +15108,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!65 &1981053896994623250
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981053896992601150}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2, y: 0.3004388, z: 11.2}
-  m_Center: {x: 1.1, y: -0.05021915, z: 0}
 --- !u!23 &2039602379481566328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14723,7 +15172,6 @@ GameObject:
   - component: {fileID: 2039602379483996086}
   - component: {fileID: 2039602379482625018}
   - component: {fileID: 2039602379481566328}
-  - component: {fileID: 2039602379485761704}
   m_Layer: 0
   m_Name: BrickHouse_Base_Stairs_A (7)
   m_TagString: Untagged
@@ -14746,28 +15194,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2039602379485761704
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039602379483733684}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: feef4de4c42d64d4e81f2a11b66a9a96, type: 3}
 --- !u!114 &2216511548865549484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14892,7 +15318,6 @@ GameObject:
   - component: {fileID: 2472894612444628584}
   - component: {fileID: 2472894612441231914}
   - component: {fileID: 2472894612442277294}
-  - component: {fileID: 2472894612446387114}
   m_Layer: 0
   m_Name: BrickHouse_Mid_A (3)
   m_TagString: Untagged
@@ -14915,28 +15340,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2472894612446387114
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2472894612444283614}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: fefca4b56654b8945afe1beff73c2752, type: 3}
 --- !u!33 &2581433219404727958
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15001,7 +15404,6 @@ GameObject:
   - component: {fileID: 2581433219408172372}
   - component: {fileID: 2581433219404727958}
   - component: {fileID: 2581433219405760866}
-  - component: {fileID: 2581433219409808182}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_C
   m_TagString: Untagged
@@ -15024,28 +15426,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2581433219409808182
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2581433219407718286}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 8dea3d00786ffc0459f4908c132f8854, type: 3}
 --- !u!4 &2646187282031984842
 Transform:
   m_ObjectHideFlags: 0
@@ -15125,7 +15505,6 @@ GameObject:
   - component: {fileID: 2793792909054753969}
   - component: {fileID: 2793792909051331775}
   - component: {fileID: 2793792909052455609}
-  - component: {fileID: 2793792909056715367}
   m_Layer: 0
   m_Name: BrickHouse_Floor_Mid_A
   m_TagString: Untagged
@@ -15148,27 +15527,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2793792909056715367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2793792909054498357}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 0.3000005, z: 11.2}
-  m_Center: {x: -2, y: -0.049999997, z: 0}
 --- !u!1 &2987713019579674975
 GameObject:
   m_ObjectHideFlags: 0
@@ -15353,7 +15711,6 @@ GameObject:
   - component: {fileID: 3493781968901735420}
   - component: {fileID: 3493781968904564656}
   - component: {fileID: 3493781968903508018}
-  - component: {fileID: 3493781968907701474}
   m_Layer: 0
   m_Name: BrickHouse_Base_Stairs_A (6)
   m_TagString: Untagged
@@ -15429,28 +15786,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3493781968901473022}
   m_Mesh: {fileID: 4300000, guid: feef4de4c42d64d4e81f2a11b66a9a96, type: 3}
---- !u!64 &3493781968907701474
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3493781968901473022}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: feef4de4c42d64d4e81f2a11b66a9a96, type: 3}
 --- !u!4 &3795413034286043154
 Transform:
   m_ObjectHideFlags: 0
@@ -15477,7 +15812,6 @@ GameObject:
   - component: {fileID: 3795413034286043154}
   - component: {fileID: 3795413034289447616}
   - component: {fileID: 3795413034288239002}
-  - component: {fileID: 3795413034292643570}
   m_Layer: 0
   m_Name: BrickHouse_Mid_C (3)
   m_TagString: Untagged
@@ -15538,28 +15872,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3795413034286358276}
   m_Mesh: {fileID: 4300002, guid: 35ab284a2483a154297995a4ecf1b9aa, type: 3}
---- !u!64 &3795413034292643570
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3795413034286358276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 35ab284a2483a154297995a4ecf1b9aa, type: 3}
 --- !u!4 &4057822273086807504
 Transform:
   m_ObjectHideFlags: 0
@@ -15586,7 +15898,6 @@ GameObject:
   - component: {fileID: 4057822273086807504}
   - component: {fileID: 4057822273090174464}
   - component: {fileID: 4057822273089034216}
-  - component: {fileID: 4057822273093214896}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_A (3)
   m_TagString: Untagged
@@ -15647,27 +15958,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4057822273087057296}
   m_Mesh: {fileID: 4300004, guid: 40581848ce71d194db3034b2ba2ecf5b, type: 3}
---- !u!65 &4057822273093214896
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4057822273087057296}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.20000166}
-  m_Center: {x: -2, y: 2.5, z: -0.000000461936}
 --- !u!81 &4068083418763168463
 AudioListener:
   m_ObjectHideFlags: 0
@@ -15676,27 +15966,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689048547028595139}
   m_Enabled: 1
---- !u!65 &4128817536981195960
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4128817536983408874}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 0.3000005, z: 11.2}
-  m_Center: {x: -2, y: -0.049999997, z: 0}
 --- !u!4 &4128817536983157358
 Transform:
   m_ObjectHideFlags: 0
@@ -15723,7 +15992,6 @@ GameObject:
   - component: {fileID: 4128817536983157358}
   - component: {fileID: 4128817536986575456}
   - component: {fileID: 4128817536985586790}
-  - component: {fileID: 4128817536981195960}
   m_Layer: 0
   m_Name: BrickHouse_Floor_Mid_A (1)
   m_TagString: Untagged
@@ -15863,7 +16131,6 @@ GameObject:
   - component: {fileID: 4305996026096551420}
   - component: {fileID: 4305996026093727922}
   - component: {fileID: 4305996026094786586}
-  - component: {fileID: 4305996026098861520}
   m_Layer: 0
   m_Name: BrickHouse_Mid_B (2)
   m_TagString: Untagged
@@ -15871,49 +16138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!64 &4305996026098861520
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4305996026096808856}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f1a73dd9e67a25140a9eb78307675a22, type: 3}
---- !u!65 &4410012762457523491
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410012762460015107}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.20000166}
-  m_Center: {x: -2, y: 2.5, z: -0.000000461936}
 --- !u!4 &4410012762459748931
 Transform:
   m_ObjectHideFlags: 0
@@ -15940,7 +16164,6 @@ GameObject:
   - component: {fileID: 4410012762459748931}
   - component: {fileID: 4410012762461100435}
   - component: {fileID: 4410012762461712507}
-  - component: {fileID: 4410012762457523491}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_A (4)
   m_TagString: Untagged
@@ -16080,7 +16303,6 @@ GameObject:
   - component: {fileID: 4715786719045316024}
   - component: {fileID: 4715786719042379492}
   - component: {fileID: 4715786719043449058}
-  - component: {fileID: 4715786719047314398}
   m_Layer: 0
   m_Name: BrickHouse_Deco_IntColumn_A (1)
   m_TagString: Untagged
@@ -16088,48 +16310,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!65 &4715786719047314398
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4715786719045612198}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.39999995, y: 5, z: 0.4000002}
-  m_Center: {x: 0.000000014901161, y: 2.5, z: -0.00000011175871}
---- !u!65 &4799271351764604484
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4799271351766833508}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.20000166}
-  m_Center: {x: -2, y: 2.5, z: -0.000000461936}
 --- !u!4 &4799271351766559012
 Transform:
   m_ObjectHideFlags: 0
@@ -16156,7 +16336,6 @@ GameObject:
   - component: {fileID: 4799271351766559012}
   - component: {fileID: 4799271351770008308}
   - component: {fileID: 4799271351768785692}
-  - component: {fileID: 4799271351764604484}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_A (7)
   m_TagString: Untagged
@@ -16235,27 +16414,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &5344558101883559915
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344558101885519507}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.39999995, y: 5, z: 0.4000002}
-  m_Center: {x: 0.000000014901161, y: 2.5, z: -0.00000011175871}
 --- !u!1 &5344558101885519507
 GameObject:
   m_ObjectHideFlags: 0
@@ -16267,7 +16425,6 @@ GameObject:
   - component: {fileID: 5344558101885753741}
   - component: {fileID: 5344558101886659281}
   - component: {fileID: 5344558101887681751}
-  - component: {fileID: 5344558101883559915}
   m_Layer: 0
   m_Name: BrickHouse_Deco_IntColumn_A
   m_TagString: Untagged
@@ -16407,7 +16564,6 @@ GameObject:
   - component: {fileID: 5820574486317364760}
   - component: {fileID: 5820574486316007702}
   - component: {fileID: 5820574486314955254}
-  - component: {fileID: 5820574486319080272}
   m_Layer: 0
   m_Name: BrickHouse_End_B (2)
   m_TagString: Untagged
@@ -16430,50 +16586,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5820574486319080272
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5820574486317189686}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: ecb3f7ff52f7ee249b243771c5d9d9d0, type: 3}
---- !u!64 &5939153380052114529
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5939153380058520597}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f7fe600ca9d3635418e49f543f4616e8, type: 3}
 --- !u!33 &5939153380055253775
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16538,7 +16650,6 @@ GameObject:
   - component: {fileID: 5939153380058608443}
   - component: {fileID: 5939153380055253775}
   - component: {fileID: 5939153380056265983}
-  - component: {fileID: 5939153380052114529}
   m_Layer: 0
   m_Name: BrickHouse_IntStairs_A
   m_TagString: Untagged
@@ -16587,7 +16698,6 @@ GameObject:
   - component: {fileID: 6046106320347128163}
   - component: {fileID: 6046106320350479027}
   - component: {fileID: 6046106320349358939}
-  - component: {fileID: 6046106320353533443}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_A (8)
   m_TagString: Untagged
@@ -16648,27 +16758,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6046106320347369763}
   m_Mesh: {fileID: 4300004, guid: 40581848ce71d194db3034b2ba2ecf5b, type: 3}
---- !u!65 &6046106320353533443
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6046106320347369763}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.20000166}
-  m_Center: {x: -2, y: 2.5, z: -0.000000461936}
 --- !u!4 &6071520002817684442
 Transform:
   m_ObjectHideFlags: 0
@@ -16782,7 +16871,6 @@ GameObject:
   - component: {fileID: 6384085559215404356}
   - component: {fileID: 6384085559212099096}
   - component: {fileID: 6384085559213139998}
-  - component: {fileID: 6384085559217664802}
   m_Layer: 0
   m_Name: BrickHouse_Deco_IntColumn_A (2)
   m_TagString: Untagged
@@ -16805,27 +16893,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6384085559217664802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6384085559215172186}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.39999995, y: 5, z: 0.4000002}
-  m_Center: {x: 0.000000014901161, y: 2.5, z: -0.00000011175871}
 --- !u!1001 &6397035186112746248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16955,7 +17022,6 @@ GameObject:
   - component: {fileID: 6575312786317826625}
   - component: {fileID: 6575312786320759237}
   - component: {fileID: 6575312786319791407}
-  - component: {fileID: 6575312786323861087}
   m_Layer: 0
   m_Name: BrickHouse_End_A (3)
   m_TagString: Untagged
@@ -17031,49 +17097,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6575312786317557341}
   m_Mesh: {fileID: 4300002, guid: 7f05e1cf6332ea548876507a754862b3, type: 3}
---- !u!64 &6575312786323861087
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6575312786317557341}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 7f05e1cf6332ea548876507a754862b3, type: 3}
---- !u!65 &7032247064833680321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7032247064836173025}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.20000166}
-  m_Center: {x: -2, y: 2.5, z: -0.000000461936}
 --- !u!4 &7032247064835890337
 Transform:
   m_ObjectHideFlags: 0
@@ -17100,7 +17123,6 @@ GameObject:
   - component: {fileID: 7032247064835890337}
   - component: {fileID: 7032247064837193585}
   - component: {fileID: 7032247064837854873}
-  - component: {fileID: 7032247064833680321}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_A (6)
   m_TagString: Untagged
@@ -17232,28 +17254,6 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 12
---- !u!64 &7454576164701178035
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7454576164707471685}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 35ab284a2483a154297995a4ecf1b9aa, type: 3}
 --- !u!33 &7454576164704144513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17318,7 +17318,6 @@ GameObject:
   - component: {fileID: 7454576164707556947}
   - component: {fileID: 7454576164704144513}
   - component: {fileID: 7454576164705558491}
-  - component: {fileID: 7454576164701178035}
   m_Layer: 0
   m_Name: BrickHouse_Mid_C (2)
   m_TagString: Untagged
@@ -17420,7 +17419,6 @@ GameObject:
   - component: {fileID: 7565467315263925155}
   - component: {fileID: 7565467315263156101}
   - component: {fileID: 7565467315262119615}
-  - component: {fileID: 7565467315266277327}
   m_Layer: 0
   m_Name: BrickHouse_Floor_Mid_A_DM_A
   m_TagString: Untagged
@@ -17428,48 +17426,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!65 &7565467315266277327
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565467315264249533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.000001, y: 0.30000252, z: 11.200001}
-  m_Center: {x: -1.9999999, y: -0.049998976, z: 0.00000023841858}
---- !u!65 &7669656160897377508
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7669656160899531162}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.20999998, y: 1.0308168, z: 1.9826257}
-  m_Center: {x: -0.004999999, y: -0.48540843, z: -0.99131334}
 --- !u!4 &7669656160899204368
 Transform:
   m_ObjectHideFlags: 0
@@ -17496,7 +17452,6 @@ GameObject:
   - component: {fileID: 7669656160899204368}
   - component: {fileID: 7669656160902631492}
   - component: {fileID: 7669656160901557036}
-  - component: {fileID: 7669656160897377508}
   m_Layer: 0
   m_Name: BrickHouse_Deco_Handrail_A
   m_TagString: Untagged
@@ -17598,7 +17553,6 @@ GameObject:
   - component: {fileID: 8163090998773222714}
   - component: {fileID: 8163090998774543668}
   - component: {fileID: 8163090998775520050}
-  - component: {fileID: 8163090998779649004}
   m_Layer: 0
   m_Name: BrickHouse_Floor_Mid_A (3)
   m_TagString: Untagged
@@ -17659,49 +17613,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8163090998779649004
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8163090998773508030}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 0.3000005, z: 11.2}
-  m_Center: {x: -2, y: -0.049999997, z: 0}
---- !u!64 &8390673519074560955
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390673519076591015}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: feef4de4c42d64d4e81f2a11b66a9a96, type: 3}
 --- !u!4 &8390673519076328613
 Transform:
   m_ObjectHideFlags: 0
@@ -17728,7 +17639,6 @@ GameObject:
   - component: {fileID: 8390673519076328613}
   - component: {fileID: 8390673519077714153}
   - component: {fileID: 8390673519078758251}
-  - component: {fileID: 8390673519074560955}
   m_Layer: 0
   m_Name: BrickHouse_Base_Stairs_A (8)
   m_TagString: Untagged
@@ -17789,28 +17699,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8501243385656709747
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8501243385658818251}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 8dea3d00786ffc0459f4908c132f8854, type: 3}
 --- !u!4 &8501243385658608657
 Transform:
   m_ObjectHideFlags: 0
@@ -17837,7 +17725,6 @@ GameObject:
   - component: {fileID: 8501243385658608657}
   - component: {fileID: 8501243385659957203}
   - component: {fileID: 8501243385661050919}
-  - component: {fileID: 8501243385656709747}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_C
   m_TagString: Untagged
@@ -17955,27 +17842,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!65 &8588494326921039545
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8588494326926934425}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.20000166}
-  m_Center: {x: -2, y: 2.5, z: -0.000000461936}
 --- !u!33 &8588494326923825673
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18040,7 +17906,6 @@ GameObject:
   - component: {fileID: 8588494326927225305}
   - component: {fileID: 8588494326923825673}
   - component: {fileID: 8588494326925261793}
-  - component: {fileID: 8588494326921039545}
   m_Layer: 0
   m_Name: BrickHouse_IntWall_A (5)
   m_TagString: Untagged
@@ -18063,28 +17928,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6071520002817684442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &8906125912662674071
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906125912664773603}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: fefca4b56654b8945afe1beff73c2752, type: 3}
 --- !u!1 &8906125912664773603
 GameObject:
   m_ObjectHideFlags: 0
@@ -18096,7 +17939,6 @@ GameObject:
   - component: {fileID: 8906125912664987477}
   - component: {fileID: 8906125912667874071}
   - component: {fileID: 8906125912666829971}
-  - component: {fileID: 8906125912662674071}
   m_Layer: 0
   m_Name: BrickHouse_Mid_A (2)
   m_TagString: Untagged
@@ -18249,7 +18091,6 @@ GameObject:
   - component: {fileID: 9076830504908500622}
   - component: {fileID: 9076830504911996786}
   - component: {fileID: 9076830504910859556}
-  - component: {fileID: 9076830504915216844}
   m_Layer: 0
   m_Name: BrickHouse_Floor_Mid_B
   m_TagString: Untagged
@@ -18309,28 +18150,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9076830504908938722}
-  m_Mesh: {fileID: 4300000, guid: 6944c949f8d183d43bc3b8ef552b99c2, type: 3}
---- !u!64 &9076830504915216844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9076830504908938722}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6944c949f8d183d43bc3b8ef552b99c2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
