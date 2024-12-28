@@ -2,6 +2,13 @@ fileFormatVersion: 2
 guid: cb46d61a31f3bb34395ab55c7580ebee
 labels:
 - Animation
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154271
+  packageName: Basic Motions FREE
+  packageVersion: 2.3
+  assetPath: Assets/Kevin Iglesias/Basic Motions/Animations/Male/Movement/Walk/HumanM@Walk01_Backward.fbx
+  uploadId: 706929
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -18,8 +25,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -58,7 +63,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.40140843
+        functionName: Step
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ebbd4f85a2921894b88ad91a5be5a7dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.91901404
+        functionName: Step
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ebbd4f85a2921894b88ad91a5be5a7dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -840,10 +861,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 154271
-  packageName: Basic Motions FREE
-  packageVersion: 2.3
-  assetPath: Assets/Kevin Iglesias/Basic Motions/Animations/Male/Movement/Walk/HumanM@Walk01_Backward.fbx
-  uploadId: 706929
