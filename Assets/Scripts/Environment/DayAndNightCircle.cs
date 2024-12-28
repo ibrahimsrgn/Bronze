@@ -8,7 +8,8 @@ public class DayAndNightCircle : MonoBehaviour
     [SerializeField] private Light Sun;
     [SerializeField] private Light Moon;
 
-
+    public AudioSource AudioSourceNight;
+    public AudioSource AudioSourceDay;
     public Transform SunDayNightCircle;
     public Transform MoonDayNightCircle;
     public float Minute;
@@ -54,12 +55,16 @@ public class DayAndNightCircle : MonoBehaviour
     {
         if (hours >= 6 && hours < 18)
         {
+            AudioSourceNight.Stop();
+            AudioSourceDay.Play();
             Moon.shadows = LightShadows.None;
             Sun.shadows = LightShadows.Soft;
-            
+
         }
         if ((hours >= 18 && hours <= 24) || hours < 6)
         {
+            AudioSourceDay.Stop();
+            AudioSourceNight.Play();
             Sun.shadows = LightShadows.None;
             Moon.shadows = LightShadows.Soft;
         }
