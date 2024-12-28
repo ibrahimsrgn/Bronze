@@ -31,6 +31,7 @@ public class LootBox : MonoBehaviour
         //Toplam item sayýsýna göre olacak
         //Her itemin kendine göre þans deðeri olmasý lazým
         int randomitem=Random.Range(0, ItemPool.instance.items.Length);
+        if (ItemPool.instance.items[randomitem].itemSO == null) return;
         InventoryManager.instance.SpawnNewItem(ItemPool.instance.items[randomitem].itemSO, inventorySlot);
     }
 }

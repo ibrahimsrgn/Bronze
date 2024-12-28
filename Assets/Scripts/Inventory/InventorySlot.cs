@@ -50,6 +50,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 inventoryItem.itemPrefab.SetActive(true);
                 return;
             }
+            InventoryManager.instance.CountAmmo(gunFire.usableAmmoId);
             PlayerData.Instance.LeftHandLayer.data.target = gunFire.LeftHandRigRef;
             PlayerData.Instance.RightHandLayer.data.target = gunFire.RightHandRigRef;
             inventoryItem.itemPrefab.transform.position = PlayerData.Instance.WeaponLoc.transform.position;
@@ -62,7 +63,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             PlayerData.Instance._RigBuilder.Build();
             PlayerData.Instance.WeaponPosRot.position = Vector3.zero;
             PlayerData.Instance.WeaponPosRot.localPosition = gunFire.WeaponLocRef.localPosition;
-            InventoryManager.instance.CountAmmo(gunFire.usableAmmoId);
             InventoryManager.instance.RefreshCurrentAmmoUI(gunFire.CurrentAmmoCount);
         }
     }
@@ -75,7 +75,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             inventoryItem.parentAfterDrag = transform;
             if (InventoryManager.instance.GetSelectedSlot() != null && InventoryManager.instance.GetSelectedSlot() == this)
             {
-                Invoke(nameof(EquipItem), .1f);
+                Invoke(nameof(EquipItem), 0.1f);
             }
         }
         else

@@ -486,6 +486,7 @@ MonoBehaviour:
   rightClickMenu: {fileID: 482638740}
   currentAmmoCountText: {fileID: 2108343986}
   totalAmmoCountText: {fileID: 623104297}
+  totalAmmoCount: 0
   selectedSlot: -1
 --- !u!114 &5440157
 MonoBehaviour:
@@ -500,88 +501,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - id: 0
-    name: Apple
+  - name: Apple
+    id: 0
     description: 
     itemSO: {fileID: 11400000, guid: d7b308a01675f3b47934280e08f85d61, type: 2}
-  - id: 1
-    name: Banana
+  - name: Banana
+    id: 1
     description: 
     itemSO: {fileID: 11400000, guid: 696623495c713364290abb04d8fbd6e8, type: 2}
-  - id: 2
-    name: Carrot
+  - name: Carrot
+    id: 2
     description: 
     itemSO: {fileID: 11400000, guid: d28beea165523014bb8a3d89e14a24c4, type: 2}
-  - id: 3
-    name: Cheese
+  - name: Cheese
+    id: 3
     description: 
     itemSO: {fileID: 11400000, guid: 3f9ca2886a0a79d48aae395669797ec3, type: 2}
-  - id: 4
-    name: Cherry
+  - name: Cherry
+    id: 4
     description: 
     itemSO: {fileID: 11400000, guid: 0912860a8e927b944b7d9a5fea6a3971, type: 2}
-  - id: 5
-    name: Cucumber
+  - name: Cucumber
+    id: 5
     description: 
     itemSO: {fileID: 11400000, guid: 3ab648c0d9764ea49bf8a160c35e50f1, type: 2}
-  - id: 6
-    name: Flask02
+  - name: Flask02
+    id: 6
     description: 
     itemSO: {fileID: 11400000, guid: 5fe8a2b5b0160ea488f5b05445fb7d75, type: 2}
-  - id: 7
-    name: Frenc Fries
+  - name: Frenc Fries
+    id: 7
     description: 
     itemSO: {fileID: 11400000, guid: 884cbba63b53f8d4291858766c67cb24, type: 2}
-  - id: 8
-    name: Milk
+  - name: Milk
+    id: 8
     description: 
     itemSO: {fileID: 11400000, guid: 60b36a19c07e46741934971bbc505169, type: 2}
-  - id: 9
-    name: Pevko Beer
+  - name: Pevko Beer
+    id: 9
     description: 
     itemSO: {fileID: 11400000, guid: 797c2fe6184ad314d97f69b71306c005, type: 2}
-  - id: 10
-    name: Sausages
+  - name: Sausages
+    id: 10
     description: 
     itemSO: {fileID: 11400000, guid: 0efb8c03aefcf0b418ec050fa9b87e47, type: 2}
-  - id: 11
-    name: Shawarma
+  - name: Shawarma
+    id: 11
     description: 
     itemSO: {fileID: 11400000, guid: 1019c22242fd07248a9ac1abbce1a4c7, type: 2}
-  - id: 12
-    name: Water
+  - name: Water
+    id: 12
     description: 
     itemSO: {fileID: 11400000, guid: 0faa94b49baff5346af5c79a1277a4e9, type: 2}
-  - id: 13
-    name: AK47
+  - name: AK47
+    id: 13
     description: 
     itemSO: {fileID: 11400000, guid: 95cab6a0b8cb1ca4ea5be998514c4a20, type: 2}
-  - id: 14
-    name: Deagle
+  - name: Deagle
+    id: 14
     description: 
     itemSO: {fileID: 11400000, guid: de1bd212e91b0de41b288ded0356d56d, type: 2}
-  - id: 15
-    name: Scar-F
+  - name: Scar-F
+    id: 15
     description: 
-    itemSO: {fileID: 11400000, guid: 60c223c7e9adcfd4da5d0dafbad56f4a, type: 2}
-  - id: 16
-    name: Vector
+    itemSO: {fileID: 0}
+  - name: Vector
+    id: 16
     description: 
-    itemSO: {fileID: 11400000, guid: 172c3ba51c06fb142b6a2bd2e8f0e8c3, type: 2}
-  - id: 17
-    name: Chuck_Box_5.56_TRACER
+    itemSO: {fileID: 0}
+  - name: Chuck_Box_5.56_TRACER
+    id: 17
     description: 
-    itemSO: {fileID: 11400000, guid: 9320795a905de6e4485e91c438a9254d, type: 2}
-  - id: 18
-    name: Chunk_Box_7.62-54_FMJ
+    itemSO: {fileID: 0}
+  - name: Chunk_Box_7.62-54_FMJ
+    id: 18
     description: 
     itemSO: {fileID: 11400000, guid: 752e975965fd0534a876ba82af2c4e0b, type: 2}
-  - id: 19
-    name: Chuck_Box_45_Acp
+  - name: Chuck_Box_45_Acp
+    id: 19
     description: 
-    itemSO: {fileID: 11400000, guid: d45ff70451b6f014488be82679a77fd3, type: 2}
-  - id: 20
-    name: Chuck_Box_357
+    itemSO: {fileID: 0}
+  - name: Chuck_Box_357
+    id: 20
     description: 
     itemSO: {fileID: 11400000, guid: 58d4b85216ffe9b499e1f218685cdd2c, type: 2}
 --- !u!114 &5440158
@@ -17976,7 +17977,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911057755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 

@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject rightClickMenu;
     [SerializeField] private TextMeshProUGUI currentAmmoCountText;
     [SerializeField] private TextMeshProUGUI totalAmmoCountText;
-    private int totalAmmoCount = 0;
+    public int totalAmmoCount = 0;
     private List<InventoryItem> ammoItems;
 
     public int selectedSlot = -1;
@@ -205,17 +205,19 @@ public class InventoryManager : MonoBehaviour
     }
     public void CountAmmo(int ammoId)
     {
+        Debug.Log("Counting ammo");
         totalAmmoCount = 0;
         ammoItems = new List<InventoryItem>();
         foreach (InventorySlot slot in inventorySlots)
         {
-            if (slot.GetComponentInChildren<InventoryItem>() == null) return;
-            InventoryItem ammoInventoryItem = slot.GetComponentInChildren<InventoryItem>();
-            if (ammoId == ammoInventoryItem.id)
-            {
-                totalAmmoCount += ammoInventoryItem.count;
-                RefreshMaxAmmoUI();
-                ammoItems.Add(ammoInventoryItem);
+            if (slot.GetComponentInChildren<InventoryItem>() != null) 
+            {InventoryItem ammoInventoryItem = slot.GetComponentInChildren<InventoryItem>();
+                if (ammoId == ammoInventoryItem.id)
+                {
+                    totalAmmoCount += ammoInventoryItem.count;
+                    RefreshMaxAmmoUI();
+                    ammoItems.Add(ammoInventoryItem);
+                }
             }
         }
         Debug.Log(totalAmmoCount);

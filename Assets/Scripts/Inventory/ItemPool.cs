@@ -9,8 +9,8 @@ public class ItemPool : MonoBehaviour
     [System.Serializable]
     public struct item
     {
-        public int id;
         public string name;
+        public int id;
         public string description;
         public ItemSO itemSO;
     }

@@ -116,7 +116,7 @@ public class GunFire : MonoBehaviour
                 ReadyToShoot = true;
             }
 
-            if (_PlayerData.OnReloadBool && CurrentAmmoCount < MagazineCap&&readyToReload)
+            if (_PlayerData.OnReloadBool && CurrentAmmoCount < MagazineCap&&readyToReload&&InventoryManager.instance.totalAmmoCount>0)
             {
                 readyToReload=false;
                 Debug.Log("1");
@@ -297,9 +297,14 @@ public class GunFire : MonoBehaviour
         readyToReload=true;
     }
 
-    
+
     //Shotgun için animasyonun 40. karesine atýlacak event ile +1 ammo yapýlacak
     //Oyuncu bozmadýðý sürece +1 ammodan sonra 10 kare geri sarýlacak animasyon ve mermiyi koyduðu yerde yine +1 ammo olacak 
     //Tamamý dolana kadar animasyon tekrar edecek
     #endregion
+    private void OnEnable()
+    {
+        InventoryManager.instance.RefreshMaxAmmoUI();
+        InventoryManager.instance.RefreshCurrentAmmoUI(CurrentAmmoCount);
+    }
 }

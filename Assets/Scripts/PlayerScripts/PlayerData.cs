@@ -296,6 +296,10 @@ public class PlayerData : MonoBehaviour
         _OnCrouch = Value.isPressed;
         Animator.SetBool("Crouch", Value.isPressed);
     }
+    private void OnEsc(InputValue Value)
+    {
+        Debug.Log("Esc Pressed");
+    }
 
     private void InstaTransfer(InputValue value)
     {
