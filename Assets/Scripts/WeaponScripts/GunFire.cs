@@ -119,7 +119,6 @@ public class GunFire : MonoBehaviour
             if (_PlayerData.OnReloadBool && CurrentAmmoCount < MagazineCap&&readyToReload&&InventoryManager.instance.totalAmmoCount>0)
             {
                 readyToReload=false;
-                Debug.Log("1");
                 ReadyToShoot = false;
                 Reload();
                 PlayerData.Instance.OnReloadBool=false;
@@ -295,6 +294,7 @@ public class GunFire : MonoBehaviour
         CurrentAmmoCount = usableAmmoCount2;
         ReadyToShoot = true;
         readyToReload=true;
+        InventoryManager.instance.RefreshMaxAmmoUI();
     }
 
 

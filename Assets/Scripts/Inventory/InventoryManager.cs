@@ -237,13 +237,12 @@ public class InventoryManager : MonoBehaviour
             totalAmmoCount = 0;
             RefreshMaxAmmoUI();
 
-            return ReloadCalculator(requiredAmmo, magazineCap);
+            return (magazineCap-requiredAmmo)+ ReloadCalculator(returnAmmoCount, magazineCap);
         }
         else { return 0; }
     }
     public int ReloadCalculator(int requiredAmmo, int magazineCap)
     {
-        Debug.Log("requiredAmmo: " + requiredAmmo);
         if (ammoItems == null || ammoItems.Count == 0)
         {
             Debug.LogWarning("No ammo items available!");
@@ -266,11 +265,12 @@ public class InventoryManager : MonoBehaviour
                 {
                     // Eğer öğe biterse çantadan çıkar
                     ammoItems.RemoveAt(i);
-                    Debug.Log("Ammo item removed");
                     Destroy(ammoItem.gameObject);
                 }
                 ammoItem.RefreshCount();
-                return requiredAmmo;
+                Debug.Log("required ammo ="+requiredAmmo+" remaining ammo to load"+remainingAmmoToLoad);
+                Debug.Log(requiredAmmo - remainingAmmoToLoad);
+                return requiredAmmo-remainingAmmoToLoad;
             }
             else
             {
@@ -288,6 +288,7 @@ public class InventoryManager : MonoBehaviour
         if (remainingAmmoToLoad > 0)
         {
             Debug.LogWarning($"Not enough ammo! Still missing {remainingAmmoToLoad} rounds.");
+            Debug.Log(requiredAmmo - remainingAmmoToLoad);
             return requiredAmmo - remainingAmmoToLoad;
         }
         return 0;
