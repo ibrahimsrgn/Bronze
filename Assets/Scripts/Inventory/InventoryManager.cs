@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
         if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 9)
+            if (isNumber && number > 0 && number < 9&&PlayerData.Instance.canChangeWeapon)
             {
                 ChangeSelectedSlot(number - 1);
                 UIManager.instance.ShowToolBoxUI();

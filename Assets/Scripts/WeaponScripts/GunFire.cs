@@ -275,6 +275,7 @@ public class GunFire : MonoBehaviour
     public void Reload()
     {
         Reload_Sound.Play();
+        PlayerData.Instance.canChangeWeapon = false;
         int requiredAmmo = MagazineCap - CurrentAmmoCount;
         int usableAmmoCount = InventoryManager.instance.ReloadMagazine(MagazineCap, requiredAmmo);
         if ( usableAmmoCount== 0)
@@ -293,8 +294,9 @@ public class GunFire : MonoBehaviour
         InventoryManager.instance.RefreshCurrentAmmoUI(usableAmmoCount2);
         CurrentAmmoCount = usableAmmoCount2;
         ReadyToShoot = true;
-        readyToReload=true;
+        readyToReload =true;
         InventoryManager.instance.RefreshMaxAmmoUI();
+        PlayerData.Instance.canChangeWeapon = true;
     }
 
 

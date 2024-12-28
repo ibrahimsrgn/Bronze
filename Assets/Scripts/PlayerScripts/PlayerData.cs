@@ -14,6 +14,7 @@ public class PlayerData : MonoBehaviour
     [HideInInspector] public Vector2 MoveInput;
     private Vector3 CurrentInput;
     public HealthManager healthManager;
+    public bool canChangeWeapon = true;
 
     [Header("Player Movement")]
     public float PlayerWalkSpeed;
