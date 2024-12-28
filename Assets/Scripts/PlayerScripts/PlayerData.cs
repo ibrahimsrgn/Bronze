@@ -11,7 +11,7 @@ public class PlayerData : MonoBehaviour
 {
     #region Variables
     public static PlayerData Instance;
-    private Vector2 MoveInput;
+    [HideInInspector] public Vector2 MoveInput;
     private Vector3 CurrentInput;
     public HealthManager healthManager;
 

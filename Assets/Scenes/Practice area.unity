@@ -58427,6 +58427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36527c2ec07c2904c891f0db93b49599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveInput: {x: 0, y: 0}
   healthManager: {fileID: 2477824923596005545}
   PlayerWalkSpeed: 3
   SprintSpeed: 2.5
@@ -75936,6 +75937,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c8657061120b2da4fb645654b16201f6, type: 3}
   - {fileID: 8300000, guid: 8ff53086d637af8478c1408b78b3dd05, type: 3}
   - {fileID: 8300000, guid: b662731f964d624449b092d4198147de, type: 3}
+  PlayerData: {fileID: 4642316756767583766}
 --- !u!64 &6615262775300353842
 MeshCollider:
   m_ObjectHideFlags: 0
