@@ -12,7 +12,11 @@ public class FootStepScript : MonoBehaviour
     // Update is called once per frame
     private void Step()
     {
-        if (PlayerData.MoveInput.x != 0 && PlayerData.MoveInput.y != 0)
+        if (PlayerData.MoveInput.x == 0 && PlayerData.MoveInput.y == 0)
+        {
+            return;
+        }
+        else
         {
             int Randomizer = Random.Range(0, Clips.Length);
             m_AudioSource.PlayOneShot(Clips[Randomizer]);
