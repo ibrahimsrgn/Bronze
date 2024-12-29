@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sun: {fileID: 785411607}
   Moon: {fileID: 544200368}
+  AudioSourceNight: {fileID: 0}
+  AudioSourceDay: {fileID: 0}
   SunDayNightCircle: {fileID: 785411605}
   MoonDayNightCircle: {fileID: 544200366}
   Minute: 59
@@ -1071,7 +1073,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a04b27995f02c3243b660aa2a63a3db0, type: 2}
+  sharedProfile: {fileID: 11400000, guid: de17a179e2d289d4999493460544a1da, type: 2}
 --- !u!4 &178734488
 Transform:
   m_ObjectHideFlags: 0
