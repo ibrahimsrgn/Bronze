@@ -46,8 +46,8 @@ public class DayAndNightCircle : MonoBehaviour
             }
         }
         AngleManager = ((Hours - 6) * 15f) + (Minute * 0.25f) + (0.0041666666666667f * Second);
-        MoonDayNightCircle.transform.eulerAngles = Quaternion.Euler(180 + AngleManager, 0, 0).eulerAngles;
-        SunDayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, AngleManager / 4, 0).eulerAngles;
+        MoonDayNightCircle.transform.eulerAngles = Quaternion.Euler(180 + AngleManager, 317.9f, 0).eulerAngles;
+        SunDayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, 326.9f, 0).eulerAngles;
         //Debug.Log($"{Hours}, {Minute}, {Second} ---- {SunDayNightCircle.transform.eulerAngles.x}");
     }
 
