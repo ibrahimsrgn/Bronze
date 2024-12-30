@@ -239,13 +239,13 @@ public class GunFire : MonoBehaviour
     #region Weapon Interaction
     public void OnRayHit(PlayerData playerData)
     {
-        if (playerData != null && transform.parent == null)
+        if (playerData != null)
         {
             RigidBody = GetComponent<Rigidbody>();
             GUIActivater = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                 InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO,out GameObject addedItem);
+                InventoryManager.instance.AddItem(ItemPool.instance.items[id].itemSO,out GameObject addedItem);
                 addedItem.GetComponent<InventoryItem>().itemPrefab = gameObject;
                 Debug.Log(addedItem);
 
