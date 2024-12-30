@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < itemInSlot.item.maxStackableCount && itemInSlot.item.stackable)
             {
                 //itemInSlot.count++;
-                itemInSlot.count += 10;
+                itemInSlot.count =item.maxStackableCount;
                 itemInSlot.RefreshCount();
                 gameObject = null;
                 return true;
@@ -79,8 +79,6 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot == null)
             {
                 gameObject = SpawnNewItem(item, slot);
-                // gameObject = item.objPrefab;
-
                 return true;
             }
         }
@@ -98,6 +96,11 @@ public class InventoryManager : MonoBehaviour
         GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+        if (inventoryItem.item.type == ItemType.Ammunation)
+        {
+            inventoryItem.count = item.maxStackableCount;
+            inventoryItem.RefreshCount();
+        }
         return newItem;
     }
     public ItemSO UseSelectedItem()
