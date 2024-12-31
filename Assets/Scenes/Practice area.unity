@@ -398,12 +398,12 @@ MonoBehaviour:
   player: {fileID: 2217074062621590586}
   spawnRangeFromPlayer: 15
   spawnInterval: 5
-  canSpawn: 0
+  canSpawn: 1
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 8c7446486ea3bef488177f579c67e103,
       type: 3}
     spawnLuck: 1
-  maxZombieCount: 15
+  maxZombieCount: 1
   zombieCount: 0
 --- !u!114 &5440155
 MonoBehaviour:
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 459452528}
+  EscMenu: {fileID: 1020730600}
   healthMain: {fileID: 1995893143}
   healthFollower: {fileID: 1462323766}
   healthFrame: {fileID: 2100015157}
@@ -3265,7 +3266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263684608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9203,28 +9204,56 @@ PrefabInstance:
     m_TransformParent: {fileID: 6071520002817684442}
     m_Modifications:
     - target: {fileID: 1152223492413680, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152223492413680, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215764761858414, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1215764761858414, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1301124330465196, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301124330465196, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366734475055614, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1366734475055614, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1567861761543720, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567861761543720, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1582520027666586, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582520027666586, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731212812161192, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1731212812161192, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9233,6 +9262,10 @@ PrefabInstance:
     - target: {fileID: 1950602138877448, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_Name
       value: PBR_Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950602138877448, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1950602138877448, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11157,7 +11190,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -12997,6 +13030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BedSingle01emptyV1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680301532144282658, guid: e3729cab5cd8f4c459ef8d249965eeae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8680301532144282658, guid: e3729cab5cd8f4c459ef8d249965eeae,
         type: 3}
@@ -20715,7 +20753,7 @@ PrefabInstance:
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
@@ -20724,12 +20762,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1020730600}
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5440155}
+    - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
@@ -20739,12 +20792,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowEscMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466404243918971475, guid: 1d6579072a2b8c043975b5753b728e1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5506323315836635098, guid: 1d6579072a2b8c043975b5753b728e1b,
@@ -22017,7 +22085,7 @@ GameObject:
   - component: {fileID: 94960783489188004}
   - component: {fileID: 94960783488059122}
   - component: {fileID: 94960783483580610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22089,7 +22157,7 @@ GameObject:
   - component: {fileID: 119805699220907923}
   - component: {fileID: 119805699221998749}
   - component: {fileID: 119805699226531613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22320,7 +22388,7 @@ GameObject:
   - component: {fileID: 129682081795323849}
   - component: {fileID: 129682081796384383}
   - component: {fileID: 129682081800503867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22544,7 +22612,7 @@ GameObject:
   - component: {fileID: 142966771130468604}
   - component: {fileID: 142966771131610322}
   - component: {fileID: 142966771127282176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_IntStairs_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22900,7 +22968,7 @@ GameObject:
   - component: {fileID: 188337730737294769}
   - component: {fileID: 188337730738410137}
   - component: {fileID: 188337730734228137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23242,7 +23310,7 @@ GameObject:
   - component: {fileID: 223629270138876225}
   - component: {fileID: 223629270139844375}
   - component: {fileID: 223629270144450855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23371,7 +23439,7 @@ GameObject:
   - component: {fileID: 230334740355391414}
   - component: {fileID: 230334740354305994}
   - component: {fileID: 230334740350128776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Cor_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23588,7 +23656,7 @@ GameObject:
   - component: {fileID: 309184873818125923}
   - component: {fileID: 309184873817124917}
   - component: {fileID: 309184873813018117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23746,7 +23814,7 @@ GameObject:
   - component: {fileID: 324237026879871987}
   - component: {fileID: 324237026878791625}
   - component: {fileID: 324237026883023407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23928,7 +23996,7 @@ GameObject:
   - component: {fileID: 335149506712904826}
   - component: {fileID: 335149506713775842}
   - component: {fileID: 335149506709793810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24036,7 +24104,7 @@ GameObject:
   - component: {fileID: 365038157678235194}
   - component: {fileID: 365038157677174656}
   - component: {fileID: 365038157672972348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24238,7 +24306,7 @@ GameObject:
   - component: {fileID: 374602076121100021}
   - component: {fileID: 374602076120128249}
   - component: {fileID: 374602076115947381}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24325,7 +24393,7 @@ GameObject:
   - component: {fileID: 376018848724897791}
   - component: {fileID: 376018848723795979}
   - component: {fileID: 376018848728138335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24403,7 +24471,7 @@ GameObject:
   - component: {fileID: 376018849108101491}
   - component: {fileID: 376018849107101319}
   - component: {fileID: 376018849103021267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24527,7 +24595,7 @@ GameObject:
   - component: {fileID: 390096849616670342}
   - component: {fileID: 390096849617764722}
   - component: {fileID: 390096849613423398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24667,7 +24735,7 @@ GameObject:
   - component: {fileID: 390096850055546890}
   - component: {fileID: 390096850056546302}
   - component: {fileID: 390096850060625322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24906,7 +24974,7 @@ GameObject:
   - component: {fileID: 421514710103225179}
   - component: {fileID: 421514710104260379}
   - component: {fileID: 421514710100067943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25333,7 +25401,7 @@ GameObject:
   - component: {fileID: 465231243757445370}
   - component: {fileID: 465231243756316332}
   - component: {fileID: 465231243760734364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25462,7 +25530,7 @@ GameObject:
   - component: {fileID: 472827213180491462}
   - component: {fileID: 472827213181559498}
   - component: {fileID: 472827213177386822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25532,7 +25600,7 @@ GameObject:
   - component: {fileID: 495230794859361868}
   - component: {fileID: 495230794860337226}
   - component: {fileID: 495230794856077460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25693,7 +25761,7 @@ GameObject:
   - component: {fileID: 588524769436773989}
   - component: {fileID: 588524769437888845}
   - component: {fileID: 588524769433739645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25895,7 +25963,7 @@ GameObject:
   - component: {fileID: 604185417219750927}
   - component: {fileID: 604185417218771967}
   - component: {fileID: 604185417214501729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntStairs_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26377,7 +26445,7 @@ GameObject:
   - component: {fileID: 680526745651631849}
   - component: {fileID: 680526745650562911}
   - component: {fileID: 680526745654305563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26673,7 +26741,7 @@ GameObject:
   - component: {fileID: 710873095050160866}
   - component: {fileID: 710873095049539288}
   - component: {fileID: 710873095044907838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26923,7 +26991,7 @@ GameObject:
   - component: {fileID: 734322046924370302}
   - component: {fileID: 734322046925548968}
   - component: {fileID: 734322046929672204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27052,7 +27120,7 @@ GameObject:
   - component: {fileID: 738053240165388763}
   - component: {fileID: 738053240166476467}
   - component: {fileID: 738053240162231675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27192,7 +27260,7 @@ GameObject:
   - component: {fileID: 761872034951634453}
   - component: {fileID: 761872034950599253}
   - component: {fileID: 761872034954783529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27247,7 +27315,7 @@ GameObject:
   - component: {fileID: 778106587739881785}
   - component: {fileID: 778106587741367221}
   - component: {fileID: 778106587745598513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27370,7 +27438,7 @@ GameObject:
   - component: {fileID: 796284416123338226}
   - component: {fileID: 796284416122087600}
   - component: {fileID: 796284416126434668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27537,7 +27605,7 @@ GameObject:
   - component: {fileID: 799349609000446122}
   - component: {fileID: 799349608999403122}
   - component: {fileID: 799349608995192930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Top (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27660,7 +27728,7 @@ GameObject:
   - component: {fileID: 799588910083536177}
   - component: {fileID: 799588910082534789}
   - component: {fileID: 799588910078319411}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_End_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27694,7 +27762,7 @@ GameObject:
   - component: {fileID: 799588910441640893}
   - component: {fileID: 799588910440540937}
   - component: {fileID: 799588910444748223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_End_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27970,7 +28038,7 @@ GameObject:
   - component: {fileID: 845990513279123059}
   - component: {fileID: 845990513278077477}
   - component: {fileID: 845990513273972143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28165,7 +28233,7 @@ GameObject:
   - component: {fileID: 870626590948772022}
   - component: {fileID: 870626590949850298}
   - component: {fileID: 870626590954055990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28437,7 +28505,7 @@ GameObject:
   - component: {fileID: 918688183244517860}
   - component: {fileID: 918688183245696306}
   - component: {fileID: 918688183249688726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28581,7 +28649,7 @@ GameObject:
   - component: {fileID: 930589583403764252}
   - component: {fileID: 930589583402703786}
   - component: {fileID: 930589583398322158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28653,7 +28721,7 @@ GameObject:
   - component: {fileID: 941979089117412127}
   - component: {fileID: 941979089116423223}
   - component: {fileID: 941979089120637959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28868,7 +28936,7 @@ GameObject:
   - component: {fileID: 967962242744848862}
   - component: {fileID: 967962242745926050}
   - component: {fileID: 967962242741755104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Cor_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28976,7 +29044,7 @@ GameObject:
   - component: {fileID: 973521952534613857}
   - component: {fileID: 973521952533533253}
   - component: {fileID: 973521952529357863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29031,7 +29099,7 @@ GameObject:
   - component: {fileID: 983527682335860478}
   - component: {fileID: 983527682336846780}
   - component: {fileID: 983527682332730976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29124,7 +29192,7 @@ GameObject:
   - component: {fileID: 992306695539557082}
   - component: {fileID: 992306695541049142}
   - component: {fileID: 992306695536424244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29442,7 +29510,7 @@ GameObject:
   - component: {fileID: 1020497259432151868}
   - component: {fileID: 1020497259430748592}
   - component: {fileID: 1020497259434980916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29556,7 +29624,7 @@ GameObject:
   - component: {fileID: 1028259762245608624}
   - component: {fileID: 1028259762244589156}
   - component: {fileID: 1028259762240389862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29679,7 +29747,7 @@ GameObject:
   - component: {fileID: 1039712779262995258}
   - component: {fileID: 1039712779264064140}
   - component: {fileID: 1039712779259403976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29933,7 +30001,7 @@ GameObject:
   - component: {fileID: 1049549440710966852}
   - component: {fileID: 1049549440711995390}
   - component: {fileID: 1049549440707801154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30059,7 +30127,7 @@ GameObject:
   - component: {fileID: 1084331571421076023}
   - component: {fileID: 1084331571422284141}
   - component: {fileID: 1084331571417718277}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_C (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30167,7 +30235,7 @@ GameObject:
   - component: {fileID: 1091681311816596330}
   - component: {fileID: 1091681311817617508}
   - component: {fileID: 1091681311813626852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30363,7 +30431,7 @@ GameObject:
   - component: {fileID: 1114993025384445404}
   - component: {fileID: 1114993025383428582}
   - component: {fileID: 1114993025387584512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30708,7 +30776,7 @@ GameObject:
   - component: {fileID: 1139531120321786968}
   - component: {fileID: 1139531120322898800}
   - component: {fileID: 1139531120318724928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30958,7 +31026,7 @@ GameObject:
   - component: {fileID: 1192105670025997549}
   - component: {fileID: 1192105670027009593}
   - component: {fileID: 1192105670031198907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31351,7 +31419,7 @@ GameObject:
   - component: {fileID: 1249070067778832981}
   - component: {fileID: 1249070067779852145}
   - component: {fileID: 1249070067784063251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31406,7 +31474,7 @@ GameObject:
   - component: {fileID: 1252421976289721895}
   - component: {fileID: 1252421976290828559}
   - component: {fileID: 1252421976295076159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31681,7 +31749,7 @@ GameObject:
   - component: {fileID: 1275026414253054600}
   - component: {fileID: 1275026414254206980}
   - component: {fileID: 1275026414249977728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32148,7 +32216,7 @@ GameObject:
   - component: {fileID: 1361833048389288600}
   - component: {fileID: 1361833048390268564}
   - component: {fileID: 1361833048394441496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32361,7 +32429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8671035760240344080}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pref_BrickHouse_B
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -32556,7 +32624,7 @@ GameObject:
   - component: {fileID: 1371250746062722428}
   - component: {fileID: 1371250746063788680}
   - component: {fileID: 1371250746067867868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32634,7 +32702,7 @@ GameObject:
   - component: {fileID: 1371250746513101808}
   - component: {fileID: 1371250746514136068}
   - component: {fileID: 1371250746509794896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32795,7 +32863,7 @@ GameObject:
   - component: {fileID: 1378420728190057954}
   - component: {fileID: 1378420728191061814}
   - component: {fileID: 1378420728186870708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32974,7 +33042,7 @@ GameObject:
   - component: {fileID: 1415312823251627577}
   - component: {fileID: 1415312823250557551}
   - component: {fileID: 1415312823246288357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33175,7 +33243,7 @@ GameObject:
   - component: {fileID: 1433988254792211033}
   - component: {fileID: 1433988254791594197}
   - component: {fileID: 1433988254787430225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33315,7 +33383,7 @@ GameObject:
   - component: {fileID: 1442244215563731229}
   - component: {fileID: 1442244215564726455}
   - component: {fileID: 1442244215568964937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Cor_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33731,7 +33799,7 @@ GameObject:
   - component: {fileID: 1490946316730458289}
   - component: {fileID: 1490946316731382887}
   - component: {fileID: 1490946316727241155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33948,7 +34016,7 @@ GameObject:
   - component: {fileID: 1541400249597628970}
   - component: {fileID: 1541400249596607276}
   - component: {fileID: 1541400249592394508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34542,7 +34610,7 @@ GameObject:
   - component: {fileID: 1573332520102973147}
   - component: {fileID: 1573332520103666775}
   - component: {fileID: 1573332520099509203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34852,7 +34920,7 @@ GameObject:
   - component: {fileID: 1653834548604689303}
   - component: {fileID: 1653834548603611459}
   - component: {fileID: 1653834548599422401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34939,7 +35007,7 @@ GameObject:
   - component: {fileID: 1675781341034247739}
   - component: {fileID: 1675781341033153775}
   - component: {fileID: 1675781341037351021}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35015,7 +35083,7 @@ GameObject:
   - component: {fileID: 1680092686297161359}
   - component: {fileID: 1680092686296435661}
   - component: {fileID: 1680092686291934737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35211,7 +35279,7 @@ GameObject:
   - component: {fileID: 1686216251995812145}
   - component: {fileID: 1686216251994846429}
   - component: {fileID: 1686216251998947039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35659,7 +35727,7 @@ GameObject:
   - component: {fileID: 1734798077690044694}
   - component: {fileID: 1734798077688983712}
   - component: {fileID: 1734798077692843236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35788,7 +35856,7 @@ GameObject:
   - component: {fileID: 1748327924041642713}
   - component: {fileID: 1748327924042558991}
   - component: {fileID: 1748327924038425515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36022,7 +36090,7 @@ GameObject:
   - component: {fileID: 1776344033388614965}
   - component: {fileID: 1776344033389592671}
   - component: {fileID: 1776344033393852499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36078,7 +36146,7 @@ GameObject:
   - component: {fileID: 1790424900078574796}
   - component: {fileID: 1790424900077696576}
   - component: {fileID: 1790424900081918404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36208,7 +36276,7 @@ GameObject:
   - component: {fileID: 1805624001886751159}
   - component: {fileID: 1805624001887749091}
   - component: {fileID: 1805624001883617987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Ext_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36527,7 +36595,7 @@ GameObject:
   - component: {fileID: 1832068009861542787}
   - component: {fileID: 1832068009862510037}
   - component: {fileID: 1832068009866396645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36641,7 +36709,7 @@ GameObject:
   - component: {fileID: 1832758577903217590}
   - component: {fileID: 1832758577902584122}
   - component: {fileID: 1832758577898428094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36889,7 +36957,7 @@ GameObject:
   - component: {fileID: 1911157448159941769}
   - component: {fileID: 1911157448161218739}
   - component: {fileID: 1911157448156806485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37337,7 +37405,7 @@ GameObject:
   - component: {fileID: 1981053896302128798}
   - component: {fileID: 1981053896300856940}
   - component: {fileID: 1981053896296843678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_End_A_DM_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37477,7 +37545,7 @@ GameObject:
   - component: {fileID: 1981053896991451154}
   - component: {fileID: 1981053896990343392}
   - component: {fileID: 1981053896994623250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_End_A_DM_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37585,7 +37653,7 @@ GameObject:
   - component: {fileID: 1996988986782168248}
   - component: {fileID: 1996988986783229186}
   - component: {fileID: 1996988986787429054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38218,7 +38286,7 @@ GameObject:
   - component: {fileID: 2039602379482625018}
   - component: {fileID: 2039602379481566328}
   - component: {fileID: 2039602379485761704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38296,7 +38364,7 @@ GameObject:
   - component: {fileID: 2039602379933070710}
   - component: {fileID: 2039602379932011252}
   - component: {fileID: 2039602379927819812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38491,7 +38559,7 @@ GameObject:
   - component: {fileID: 2050147225046643467}
   - component: {fileID: 2050147225048084445}
   - component: {fileID: 2050147225051945593}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38847,7 +38915,7 @@ GameObject:
   - component: {fileID: 2131189899526168818}
   - component: {fileID: 2131189899527703166}
   - component: {fileID: 2131189899531869690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39245,7 +39313,7 @@ GameObject:
   - component: {fileID: 2146388348356992754}
   - component: {fileID: 2146388348355893412}
   - component: {fileID: 2146388348351934100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39332,7 +39400,7 @@ GameObject:
   - component: {fileID: 2170353132822029136}
   - component: {fileID: 2170353132823216006}
   - component: {fileID: 2170353132827200034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39950,7 +40018,7 @@ GameObject:
   - component: {fileID: 2254799019664547428}
   - component: {fileID: 2254799019665955422}
   - component: {fileID: 2254799019669796792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40330,7 +40398,7 @@ GameObject:
   - component: {fileID: 2343840163391312978}
   - component: {fileID: 2343840163390185566}
   - component: {fileID: 2343840163394368978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40513,7 +40581,7 @@ GameObject:
   - component: {fileID: 2354580128489729824}
   - component: {fileID: 2354580128488659830}
   - component: {fileID: 2354580128484521212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41380,7 +41448,7 @@ GameObject:
   - component: {fileID: 2466274482672124606}
   - component: {fileID: 2466274482673665668}
   - component: {fileID: 2466274482668989282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41467,7 +41535,7 @@ GameObject:
   - component: {fileID: 2472894612441231914}
   - component: {fileID: 2472894612442277294}
   - component: {fileID: 2472894612446387114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41545,7 +41613,7 @@ GameObject:
   - component: {fileID: 2472894613143205030}
   - component: {fileID: 2472894613144249122}
   - component: {fileID: 2472894613140135206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41662,7 +41730,7 @@ GameObject:
   - component: {fileID: 2489018367691139192}
   - component: {fileID: 2489018367692217004}
   - component: {fileID: 2489018367696408110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41844,7 +41912,7 @@ GameObject:
   - component: {fileID: 2490937956326427106}
   - component: {fileID: 2490937956325316298}
   - component: {fileID: 2490937956321068794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42478,7 +42546,7 @@ GameObject:
   - component: {fileID: 2565675232217145008}
   - component: {fileID: 2565675232216288242}
   - component: {fileID: 2565675232211951150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42548,7 +42616,7 @@ GameObject:
   - component: {fileID: 2578366906069958213}
   - component: {fileID: 2578366906070973055}
   - component: {fileID: 2578366906066802585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42673,7 +42741,7 @@ GameObject:
   - component: {fileID: 2581433219404727958}
   - component: {fileID: 2581433219405760866}
   - component: {fileID: 2581433219409808182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42751,7 +42819,7 @@ GameObject:
   - component: {fileID: 2581433220325883930}
   - component: {fileID: 2581433220326952942}
   - component: {fileID: 2581433220322643386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43107,7 +43175,7 @@ GameObject:
   - component: {fileID: 2632116218715233278}
   - component: {fileID: 2632116218714186876}
   - component: {fileID: 2632116218718386348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43375,7 +43443,7 @@ GameObject:
   - component: {fileID: 2718273368734183739}
   - component: {fileID: 2718273368734954711}
   - component: {fileID: 2718273368731027157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43447,7 +43515,7 @@ GameObject:
   - component: {fileID: 2793792909051331775}
   - component: {fileID: 2793792909052455609}
   - component: {fileID: 2793792909056715367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43523,7 +43591,7 @@ GameObject:
   - component: {fileID: 2793792910039663155}
   - component: {fileID: 2793792910040656949}
   - component: {fileID: 2793792910036659435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43684,7 +43752,7 @@ GameObject:
   - component: {fileID: 2799219354951099142}
   - component: {fileID: 2799219354952230224}
   - component: {fileID: 2799219354948129632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43807,7 +43875,7 @@ GameObject:
   - component: {fileID: 2800681708873938563}
   - component: {fileID: 2800681708872678427}
   - component: {fileID: 2800681708868730603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43826,7 +43894,7 @@ GameObject:
   - component: {fileID: 2810991999383163088}
   - component: {fileID: 2810991999382094182}
   - component: {fileID: 2810991999386494242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44456,7 +44524,7 @@ GameObject:
   - component: {fileID: 2927190987552667872}
   - component: {fileID: 2927190987553638730}
   - component: {fileID: 2927190987549533364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Cor_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44689,7 +44757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6071520002107356502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pref_BrickHouse_A_1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -44705,7 +44773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6071520002817684442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pref_BrickHouse_A
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -44777,7 +44845,7 @@ GameObject:
   - component: {fileID: 2991497483760841123}
   - component: {fileID: 2991497483761954443}
   - component: {fileID: 2991497483766202043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45139,7 +45207,7 @@ GameObject:
   - component: {fileID: 3035515199361811774}
   - component: {fileID: 3035515199363035058}
   - component: {fileID: 3035515199358875702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45572,7 +45640,7 @@ GameObject:
   - component: {fileID: 3055856953912215332}
   - component: {fileID: 3055856953911628390}
   - component: {fileID: 3055856953906988986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45788,7 +45856,7 @@ GameObject:
   - component: {fileID: 3079468968333281010}
   - component: {fileID: 3079468968332739358}
   - component: {fileID: 3079468968328048924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45822,7 +45890,7 @@ GameObject:
   - component: {fileID: 3106745172897219740}
   - component: {fileID: 3106745172896345616}
   - component: {fileID: 3106745172900575636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46020,7 +46088,7 @@ GameObject:
   - component: {fileID: 3129259510491240529}
   - component: {fileID: 3129259510490181975}
   - component: {fileID: 3129259510486006135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46183,7 +46251,7 @@ GameObject:
   - component: {fileID: 3157986736516539057}
   - component: {fileID: 3157986736515123261}
   - component: {fileID: 3157986736510967737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46255,7 +46323,7 @@ GameObject:
   - component: {fileID: 3178616777191993665}
   - component: {fileID: 3178616777193047319}
   - component: {fileID: 3178616777197333149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46472,7 +46540,7 @@ GameObject:
   - component: {fileID: 3217745726635316773}
   - component: {fileID: 3217745726636735657}
   - component: {fileID: 3217745726640892717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46601,7 +46669,7 @@ GameObject:
   - component: {fileID: 3232494131983105062}
   - component: {fileID: 3232494131984242346}
   - component: {fileID: 3232494131980009774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46725,7 +46793,7 @@ GameObject:
   - component: {fileID: 3241084556555359829}
   - component: {fileID: 3241084556554338131}
   - component: {fileID: 3241084556550125427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46995,7 +47063,7 @@ GameObject:
   - component: {fileID: 3248947215315459351}
   - component: {fileID: 3248947215314339965}
   - component: {fileID: 3248947215310211185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47283,7 +47351,7 @@ GameObject:
   - component: {fileID: 3308159302041665427}
   - component: {fileID: 3308159302040576695}
   - component: {fileID: 3308159302044789973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47391,7 +47459,7 @@ GameObject:
   - component: {fileID: 3329555757918805061}
   - component: {fileID: 3329555757917804253}
   - component: {fileID: 3329555757921981485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47762,7 +47830,7 @@ GameObject:
   - component: {fileID: 3366796465372907551}
   - component: {fileID: 3366796465371382407}
   - component: {fileID: 3366796465376018551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47824,7 +47892,7 @@ GameObject:
   - component: {fileID: 3389767612605459643}
   - component: {fileID: 3389767612604384701}
   - component: {fileID: 3389767612600208797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47979,7 +48047,7 @@ GameObject:
   - component: {fileID: 3390547391854665311}
   - component: {fileID: 3390547391853533193}
   - component: {fileID: 3390547391857372729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48217,7 +48285,7 @@ GameObject:
   - component: {fileID: 3400791156589364539}
   - component: {fileID: 3400791156590313729}
   - component: {fileID: 3400791156586228967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48650,7 +48718,7 @@ GameObject:
   - component: {fileID: 3416769878870519137}
   - component: {fileID: 3416769878869458135}
   - component: {fileID: 3416769878865189011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48737,7 +48805,7 @@ GameObject:
   - component: {fileID: 3436032439843908431}
   - component: {fileID: 3436032439842790117}
   - component: {fileID: 3436032439847040795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Cor_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49321,7 +49389,7 @@ GameObject:
   - component: {fileID: 3493781968904564656}
   - component: {fileID: 3493781968903508018}
   - component: {fileID: 3493781968907701474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49505,7 +49573,7 @@ GameObject:
   - component: {fileID: 3493781969015236924}
   - component: {fileID: 3493781969014183614}
   - component: {fileID: 3493781969009986158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50133,7 +50201,7 @@ GameObject:
   - component: {fileID: 3601638041205750158}
   - component: {fileID: 3601638041204785112}
   - component: {fileID: 3601638041209063912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50440,7 +50508,7 @@ GameObject:
   - component: {fileID: 3673706502415025707}
   - component: {fileID: 3673706502413851389}
   - component: {fileID: 3673706502409727833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50533,7 +50601,7 @@ GameObject:
   - component: {fileID: 3680959635230081558}
   - component: {fileID: 3680959635229433536}
   - component: {fileID: 3680959635224914788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51054,7 +51122,7 @@ GameObject:
   - component: {fileID: 3728132301812072038}
   - component: {fileID: 3728132301813080898}
   - component: {fileID: 3728132301817294112}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51215,7 +51283,7 @@ GameObject:
   - component: {fileID: 3753404227809110651}
   - component: {fileID: 3753404227810132861}
   - component: {fileID: 3753404227814345565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51577,7 +51645,7 @@ GameObject:
   - component: {fileID: 3795413033646031948}
   - component: {fileID: 3795413033644889878}
   - component: {fileID: 3795413033641001086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_C (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51611,7 +51679,7 @@ GameObject:
   - component: {fileID: 3795413034289447616}
   - component: {fileID: 3795413034288239002}
   - component: {fileID: 3795413034292643570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_C (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51922,7 +51990,7 @@ GameObject:
   - component: {fileID: 3839062650109124992}
   - component: {fileID: 3839062650108437946}
   - component: {fileID: 3839062650112264284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52262,7 +52330,7 @@ GameObject:
   - component: {fileID: 3859968681428412330}
   - component: {fileID: 3859968681429508604}
   - component: {fileID: 3859968681433536460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (48)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52423,7 +52491,7 @@ GameObject:
   - component: {fileID: 3872663535936118623}
   - component: {fileID: 3872663535934986931}
   - component: {fileID: 3872663535939266737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52499,7 +52567,7 @@ GameObject:
   - component: {fileID: 3874801554656025403}
   - component: {fileID: 3874801554656611961}
   - component: {fileID: 3874801554652896165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52861,7 +52929,7 @@ GameObject:
   - component: {fileID: 3913688749457339480}
   - component: {fileID: 3913688749456715874}
   - component: {fileID: 3913688749452090756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53019,7 +53087,7 @@ GameObject:
   - component: {fileID: 3937580039082427545}
   - component: {fileID: 3937580039083463983}
   - component: {fileID: 3937580039087468907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53289,7 +53357,7 @@ GameObject:
   - component: {fileID: 3983568245180604734}
   - component: {fileID: 3983568245181592700}
   - component: {fileID: 3983568245185896864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53852,7 +53920,7 @@ GameObject:
   - component: {fileID: 4057822272732067980}
   - component: {fileID: 4057822272730829156}
   - component: {fileID: 4057822272726656060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53886,7 +53954,7 @@ GameObject:
   - component: {fileID: 4057822273090174464}
   - component: {fileID: 4057822273089034216}
   - component: {fileID: 4057822273093214896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54032,7 +54100,7 @@ GameObject:
   - component: {fileID: 4060784923141221982}
   - component: {fileID: 4060784923140184584}
   - component: {fileID: 4060784923144467842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54360,7 +54428,7 @@ GameObject:
   - component: {fileID: 4100700600850258832}
   - component: {fileID: 4100700600851334836}
   - component: {fileID: 4100700600847124694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54684,7 +54752,7 @@ GameObject:
   - component: {fileID: 4126969420316766933}
   - component: {fileID: 4126969420318140311}
   - component: {fileID: 4126969420313637451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54839,7 +54907,7 @@ GameObject:
   - component: {fileID: 4128817536551957740}
   - component: {fileID: 4128817536550836970}
   - component: {fileID: 4128817536554965556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54915,7 +54983,7 @@ GameObject:
   - component: {fileID: 4128817536986575456}
   - component: {fileID: 4128817536985586790}
   - component: {fileID: 4128817536981195960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55293,7 +55361,7 @@ GameObject:
   - component: {fileID: 4159054390677029871}
   - component: {fileID: 4159054390675857209}
   - component: {fileID: 4159054390671731357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55333,7 +55401,7 @@ GameObject:
   - component: {fileID: 4175344221281629227}
   - component: {fileID: 4175344221281022407}
   - component: {fileID: 4175344221276373957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55457,7 +55525,7 @@ GameObject:
   - component: {fileID: 4199705756685957280}
   - component: {fileID: 4199705756686979494}
   - component: {fileID: 4199705756682803590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55604,7 +55672,7 @@ GameObject:
   - component: {fileID: 4210358101972996132}
   - component: {fileID: 4210358101974038818}
   - component: {fileID: 4210358101969858818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55659,7 +55727,7 @@ GameObject:
   - component: {fileID: 4218878241846900922}
   - component: {fileID: 4218878241848376448}
   - component: {fileID: 4218878241843745126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55876,7 +55944,7 @@ GameObject:
   - component: {fileID: 4237129160162079408}
   - component: {fileID: 4237129160163547196}
   - component: {fileID: 4237129160159383480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56355,7 +56423,7 @@ GameObject:
   - component: {fileID: 4305996026093727922}
   - component: {fileID: 4305996026094786586}
   - component: {fileID: 4305996026098861520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56433,7 +56501,7 @@ GameObject:
   - component: {fileID: 4305996026460157502}
   - component: {fileID: 4305996026461183638}
   - component: {fileID: 4305996026456834908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56742,7 +56810,7 @@ GameObject:
   - component: {fileID: 4331298644205024662}
   - component: {fileID: 4331298644204396314}
   - component: {fileID: 4331298644200229022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56882,7 +56950,7 @@ GameObject:
   - component: {fileID: 4340272714876472115}
   - component: {fileID: 4340272714877996767}
   - component: {fileID: 4340272714881727709}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57081,7 +57149,7 @@ GameObject:
   - component: {fileID: 4384113584790938273}
   - component: {fileID: 4384113584791758491}
   - component: {fileID: 4384113584787786621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57513,7 +57581,7 @@ GameObject:
   - component: {fileID: 4410012762461100435}
   - component: {fileID: 4410012762461712507}
   - component: {fileID: 4410012762457523491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57653,7 +57721,7 @@ GameObject:
   - component: {fileID: 4410012763435769631}
   - component: {fileID: 4410012763436480247}
   - component: {fileID: 4410012763440645039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58178,7 +58246,7 @@ GameObject:
   - component: {fileID: 4482814813316103307}
   - component: {fileID: 4482814813315479729}
   - component: {fileID: 4482814813319238999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58286,7 +58354,7 @@ GameObject:
   - component: {fileID: 4503328857735637470}
   - component: {fileID: 4503328857734939474}
   - component: {fileID: 4503328857739105494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58593,7 +58661,7 @@ GameObject:
   - component: {fileID: 4531482172265446968}
   - component: {fileID: 4531482172266450156}
   - component: {fileID: 4531482172262258798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58773,7 +58841,7 @@ GameObject:
   - component: {fileID: 4536246450316218453}
   - component: {fileID: 4536246450315167373}
   - component: {fileID: 4536246450319374493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Top (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58896,7 +58964,7 @@ GameObject:
   - component: {fileID: 4543743095135832754}
   - component: {fileID: 4543743095134691390}
   - component: {fileID: 4543743095138924474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59226,7 +59294,7 @@ GameObject:
   - component: {fileID: 4565341049198275930}
   - component: {fileID: 4565341049197621644}
   - component: {fileID: 4565341049193088040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59889,7 +59957,7 @@ GameObject:
   - component: {fileID: 4627837646677771653}
   - component: {fileID: 4627837646678844281}
   - component: {fileID: 4627837646675100975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_Cap_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60066,7 +60134,7 @@ GameObject:
   - component: {fileID: 4639102565324458303}
   - component: {fileID: 4639102565325527287}
   - component: {fileID: 4639102565321381359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60215,7 +60283,7 @@ GameObject:
   - component: {fileID: 4675420072453779822}
   - component: {fileID: 4675420072452400172}
   - component: {fileID: 4675420072448520688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60737,7 +60805,7 @@ GameObject:
   - component: {fileID: 4715786718956968040}
   - component: {fileID: 4715786718958007918}
   - component: {fileID: 4715786718953352530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_IntColumn_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60877,7 +60945,7 @@ GameObject:
   - component: {fileID: 4715786719042379492}
   - component: {fileID: 4715786719043449058}
   - component: {fileID: 4715786719047314398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_IntColumn_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60985,7 +61053,7 @@ GameObject:
   - component: {fileID: 4715890895395201031}
   - component: {fileID: 4715890895396213459}
   - component: {fileID: 4715890895400404561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61078,7 +61146,7 @@ GameObject:
   - component: {fileID: 4723119008667913412}
   - component: {fileID: 4723119008668940204}
   - component: {fileID: 4723119008673151076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61207,7 +61275,7 @@ GameObject:
   - component: {fileID: 4738454956909129096}
   - component: {fileID: 4738454956910462724}
   - component: {fileID: 4738454956906303616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61241,7 +61309,7 @@ GameObject:
   - component: {fileID: 4756952265995103667}
   - component: {fileID: 4756952265996233701}
   - component: {fileID: 4756952266000719317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61634,7 +61702,7 @@ GameObject:
   - component: {fileID: 4799271351587966072}
   - component: {fileID: 4799271351586842000}
   - component: {fileID: 4799271351591014600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61710,7 +61778,7 @@ GameObject:
   - component: {fileID: 4799271351770008308}
   - component: {fileID: 4799271351768785692}
   - component: {fileID: 4799271351764604484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61902,7 +61970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4693189293928568379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pref_IndBuilding1_A
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -61996,7 +62064,7 @@ GameObject:
   - component: {fileID: 4854535296697534713}
   - component: {fileID: 4854535296698589053}
   - component: {fileID: 4854535296694477177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62045,7 +62113,7 @@ GameObject:
   - component: {fileID: 4858103153887544952}
   - component: {fileID: 4858103153888638124}
   - component: {fileID: 4858103153892827182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62408,7 +62476,7 @@ GameObject:
   - component: {fileID: 4897415556808845192}
   - component: {fileID: 4897415556808287154}
   - component: {fileID: 4897415556811984468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62463,7 +62531,7 @@ GameObject:
   - component: {fileID: 4905492649012101304}
   - component: {fileID: 4905492649013642370}
   - component: {fileID: 4905492649017354596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62970,7 +63038,7 @@ GameObject:
   - component: {fileID: 4951515613984602242}
   - component: {fileID: 4951515613983566132}
   - component: {fileID: 4951515613979561328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63417,7 +63485,7 @@ GameObject:
   - component: {fileID: 4997195738914344759}
   - component: {fileID: 4997195738913065741}
   - component: {fileID: 4997195738917496555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63601,7 +63669,7 @@ GameObject:
   - component: {fileID: 5027381936067010494}
   - component: {fileID: 5027381936065823592}
   - component: {fileID: 5027381936061707980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63871,7 +63939,7 @@ GameObject:
   - component: {fileID: 5044625976258253253}
   - component: {fileID: 5044625976257193363}
   - component: {fileID: 5044625976261429785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64743,7 +64811,7 @@ GameObject:
   - component: {fileID: 5102380679909533141}
   - component: {fileID: 5102380679908630585}
   - component: {fileID: 5102380679904285243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65394,7 +65462,7 @@ GameObject:
   - component: {fileID: 5207631846385942747}
   - component: {fileID: 5207631846384868863}
   - component: {fileID: 5207631846380721053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65574,7 +65642,7 @@ GameObject:
   - component: {fileID: 5256686489998854849}
   - component: {fileID: 5256686489997888663}
   - component: {fileID: 5256686489993804455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65822,7 +65890,7 @@ GameObject:
   - component: {fileID: 5261307167910233005}
   - component: {fileID: 5261307167911627061}
   - component: {fileID: 5261307167915445189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66074,7 +66142,7 @@ GameObject:
   - component: {fileID: 5274830658728312272}
   - component: {fileID: 5274830658727191288}
   - component: {fileID: 5274830658723050184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66240,7 +66308,7 @@ GameObject:
   - component: {fileID: 5310838688089358443}
   - component: {fileID: 5310838688088326121}
   - component: {fileID: 5310838688084124473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66386,7 +66454,7 @@ GameObject:
   - component: {fileID: 5323457215112307243}
   - component: {fileID: 5323457215113537715}
   - component: {fileID: 5323457215109196355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67015,7 +67083,7 @@ GameObject:
   - component: {fileID: 5344558101520067677}
   - component: {fileID: 5344558101521121883}
   - component: {fileID: 5344558101525518695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_IntColumn_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67091,7 +67159,7 @@ GameObject:
   - component: {fileID: 5344558101886659281}
   - component: {fileID: 5344558101887681751}
   - component: {fileID: 5344558101883559915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_IntColumn_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67308,7 +67376,7 @@ GameObject:
   - component: {fileID: 5373796375045705484}
   - component: {fileID: 5373796375047064288}
   - component: {fileID: 5373796375042570466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67572,7 +67640,7 @@ GameObject:
   - component: {fileID: 5380037592186378106}
   - component: {fileID: 5380037592187411258}
   - component: {fileID: 5380037592191623750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67665,7 +67733,7 @@ GameObject:
   - component: {fileID: 5427295796704884700}
   - component: {fileID: 5427295796703871952}
   - component: {fileID: 5427295796708054620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67938,7 +68006,7 @@ GameObject:
   - component: {fileID: 5447921805957848704}
   - component: {fileID: 5447921805956763388}
   - component: {fileID: 5447921805960942526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Cor_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68067,7 +68135,7 @@ GameObject:
   - component: {fileID: 5453075739772556333}
   - component: {fileID: 5453075739771503349}
   - component: {fileID: 5453075739767323877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Top (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69200,7 +69268,7 @@ GameObject:
   - component: {fileID: 5600465516055613429}
   - component: {fileID: 5600465516054532817}
   - component: {fileID: 5600465516050357427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69287,7 +69355,7 @@ GameObject:
   - component: {fileID: 5606959116969432667}
   - component: {fileID: 5606959116968315251}
   - component: {fileID: 5606959116972464451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Top (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69395,7 +69463,7 @@ GameObject:
   - component: {fileID: 5633968770864858485}
   - component: {fileID: 5633968770866004303}
   - component: {fileID: 5633968770870111401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69863,7 +69931,7 @@ GameObject:
   - component: {fileID: 5711910379644530609}
   - component: {fileID: 5711910379643473971}
   - component: {fileID: 5711910379647667427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70080,7 +70148,7 @@ GameObject:
   - component: {fileID: 5762340026332254188}
   - component: {fileID: 5762340026333270728}
   - component: {fileID: 5762340026337516714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70173,7 +70241,7 @@ GameObject:
   - component: {fileID: 5820574486316007702}
   - component: {fileID: 5820574486314955254}
   - component: {fileID: 5820574486319080272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_End_B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70251,7 +70319,7 @@ GameObject:
   - component: {fileID: 5820574486750594970}
   - component: {fileID: 5820574486749575034}
   - component: {fileID: 5820574486745441756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_End_B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70483,7 +70551,7 @@ GameObject:
   - component: {fileID: 5826024125208955999}
   - component: {fileID: 5826024125209912841}
   - component: {fileID: 5826024125205619425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70947,7 +71015,7 @@ GameObject:
   - component: {fileID: 5899416974627463004}
   - component: {fileID: 5899416974626484570}
   - component: {fileID: 5899416974630482308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71203,7 +71271,7 @@ GameObject:
   - component: {fileID: 5939153379139306883}
   - component: {fileID: 5939153379140416115}
   - component: {fileID: 5939153379144555245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntStairs_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71387,7 +71455,7 @@ GameObject:
   - component: {fileID: 5939153380055253775}
   - component: {fileID: 5939153380056265983}
   - component: {fileID: 5939153380052114529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntStairs_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71421,7 +71489,7 @@ GameObject:
   - component: {fileID: 5948973809924155243}
   - component: {fileID: 5948973809925153085}
   - component: {fileID: 5948973809929770765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71705,7 +71773,7 @@ GameObject:
   - component: {fileID: 5962631927475061440}
   - component: {fileID: 5962631927476096640}
   - component: {fileID: 5962631927480317948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71745,7 +71813,7 @@ GameObject:
   - component: {fileID: 5976273024299798387}
   - component: {fileID: 5976273024300878665}
   - component: {fileID: 5976273024305047215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72266,7 +72334,7 @@ GameObject:
   - component: {fileID: 6046106319907570751}
   - component: {fileID: 6046106319906352599}
   - component: {fileID: 6046106319902169231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72300,7 +72368,7 @@ GameObject:
   - component: {fileID: 6046106320350479027}
   - component: {fileID: 6046106320349358939}
   - component: {fileID: 6046106320353533443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72393,7 +72461,7 @@ GameObject:
   - component: {fileID: 6057012519764639847}
   - component: {fileID: 6057012519765752905}
   - component: {fileID: 6057012519769809563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_IntStairs_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72619,7 +72687,7 @@ GameObject:
   - component: {fileID: 6102058777092547506}
   - component: {fileID: 6102058777093558630}
   - component: {fileID: 6102058777097749988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72712,7 +72780,7 @@ GameObject:
   - component: {fileID: 6115205527962701185}
   - component: {fileID: 6115205527961701335}
   - component: {fileID: 6115205527966203367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72856,7 +72924,7 @@ GameObject:
   - component: {fileID: 6118854217062173157}
   - component: {fileID: 6118854217063138173}
   - component: {fileID: 6118854217059058061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73375,7 +73443,7 @@ GameObject:
   - component: {fileID: 6195421754467196658}
   - component: {fileID: 6195421754466160452}
   - component: {fileID: 6195421754470034176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74408,7 +74476,7 @@ GameObject:
   - component: {fileID: 6295549019053715879}
   - component: {fileID: 6295549019055088869}
   - component: {fileID: 6295549019050586425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74442,7 +74510,7 @@ GameObject:
   - component: {fileID: 6310407683093668585}
   - component: {fileID: 6310407683092953003}
   - component: {fileID: 6310407683096797815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75021,7 +75089,7 @@ GameObject:
   - component: {fileID: 6358214427006506232}
   - component: {fileID: 6358214427005409298}
   - component: {fileID: 6358214427001348962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_End_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75182,7 +75250,7 @@ GameObject:
   - component: {fileID: 6376819535198824542}
   - component: {fileID: 6376819535199812892}
   - component: {fileID: 6376819535195728064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75222,7 +75290,7 @@ GameObject:
   - component: {fileID: 6384085559108698260}
   - component: {fileID: 6384085559109774994}
   - component: {fileID: 6384085559106041262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_IntColumn_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75362,7 +75430,7 @@ GameObject:
   - component: {fileID: 6384085559212099096}
   - component: {fileID: 6384085559213139998}
   - component: {fileID: 6384085559217664802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_IntColumn_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75578,7 +75646,7 @@ GameObject:
   - component: {fileID: 6390320723860732975}
   - component: {fileID: 6390320723861726363}
   - component: {fileID: 6390320723865932333}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_End_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75912,7 +75980,7 @@ GameObject:
   - component: {fileID: 6431242060540992051}
   - component: {fileID: 6431242060539912539}
   - component: {fileID: 6431242060544126611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76094,7 +76162,7 @@ GameObject:
   - component: {fileID: 6460687873753130769}
   - component: {fileID: 6460687873752281683}
   - component: {fileID: 6460687873756260239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76363,7 +76431,7 @@ GameObject:
   - component: {fileID: 6471805791968525439}
   - component: {fileID: 6471805791967495959}
   - component: {fileID: 6471805791971641567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76548,7 +76616,7 @@ GameObject:
   - component: {fileID: 6513342335431001656}
   - component: {fileID: 6513342335432077876}
   - component: {fileID: 6513342335427897272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76982,7 +77050,7 @@ GameObject:
   - component: {fileID: 6549536973059256977}
   - component: {fileID: 6549536973058234397}
   - component: {fileID: 6549536973054070681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77464,7 +77532,7 @@ GameObject:
   - component: {fileID: 6567010775713315032}
   - component: {fileID: 6567010775714343278}
   - component: {fileID: 6567010775718333738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77504,7 +77572,7 @@ GameObject:
   - component: {fileID: 6575312786320759237}
   - component: {fileID: 6575312786319791407}
   - component: {fileID: 6575312786323861087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_End_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77688,7 +77756,7 @@ GameObject:
   - component: {fileID: 6575312787219832649}
   - component: {fileID: 6575312787218961315}
   - component: {fileID: 6575312787214641363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_End_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78346,7 +78414,7 @@ GameObject:
   - component: {fileID: 6618806459910691691}
   - component: {fileID: 6618806459911755563}
   - component: {fileID: 6618806459915939415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78475,7 +78543,7 @@ GameObject:
   - component: {fileID: 6636480190123967970}
   - component: {fileID: 6636480190125310424}
   - component: {fileID: 6636480190120832062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79003,7 +79071,7 @@ GameObject:
   - component: {fileID: 6655725967442755071}
   - component: {fileID: 6655725967443839475}
   - component: {fileID: 6655725967439633535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79683,7 +79751,7 @@ GameObject:
   - component: {fileID: 6705666864695793707}
   - component: {fileID: 6705666864696744977}
   - component: {fileID: 6705666864692654583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79717,7 +79785,7 @@ GameObject:
   - component: {fileID: 6718858616585333870}
   - component: {fileID: 6718858616586331894}
   - component: {fileID: 6718858616590607366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79863,7 +79931,7 @@ GameObject:
   - component: {fileID: 6732870547477167372}
   - component: {fileID: 6732870547476074456}
   - component: {fileID: 6732870547480271706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80229,7 +80297,7 @@ GameObject:
   - component: {fileID: 6788135846232989274}
   - component: {fileID: 6788135846231963814}
   - component: {fileID: 6788135846228221680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_Cap_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80263,7 +80331,7 @@ GameObject:
   - component: {fileID: 6792700379365176863}
   - component: {fileID: 6792700379364582237}
   - component: {fileID: 6792700379368273537}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80784,7 +80852,7 @@ GameObject:
   - component: {fileID: 6839070506686016532}
   - component: {fileID: 6839070506684956066}
   - component: {fileID: 6839070506680424934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80803,7 +80871,7 @@ GameObject:
   - component: {fileID: 6864528861642759296}
   - component: {fileID: 6864528861643821248}
   - component: {fileID: 6864528861648005564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81180,7 +81248,7 @@ GameObject:
   - component: {fileID: 6915142314006124190}
   - component: {fileID: 6915142314005069366}
   - component: {fileID: 6915142314009109500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81366,7 +81434,7 @@ GameObject:
   - component: {fileID: 6928790394123680405}
   - component: {fileID: 6928790394124708643}
   - component: {fileID: 6928790394120834919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81474,7 +81542,7 @@ GameObject:
   - component: {fileID: 6949721944797382511}
   - component: {fileID: 6949721944798451417}
   - component: {fileID: 6949721944794460829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81629,7 +81697,7 @@ GameObject:
   - component: {fileID: 6955162761908711286}
   - component: {fileID: 6955162761907625378}
   - component: {fileID: 6955162761911814432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81995,7 +82063,7 @@ GameObject:
   - component: {fileID: 6982774268181598449}
   - component: {fileID: 6982774268180516309}
   - component: {fileID: 6982774268184724407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabin2_Door_A_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82613,7 +82681,7 @@ GameObject:
   - component: {fileID: 7027756014130255193}
   - component: {fileID: 7027756014129200223}
   - component: {fileID: 7027756014125020287}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82715,7 +82783,7 @@ GameObject:
   - component: {fileID: 7032247064202230269}
   - component: {fileID: 7032247064202858517}
   - component: {fileID: 7032247064207041869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82791,7 +82859,7 @@ GameObject:
   - component: {fileID: 7032247064837193585}
   - component: {fileID: 7032247064837854873}
   - component: {fileID: 7032247064833680321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82993,7 +83061,7 @@ GameObject:
   - component: {fileID: 7040794840500203027}
   - component: {fileID: 7040794840501414441}
   - component: {fileID: 7040794840497047503}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83257,7 +83325,7 @@ GameObject:
   - component: {fileID: 7047931511036533769}
   - component: {fileID: 7047931511035304421}
   - component: {fileID: 7047931511039683559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83365,7 +83433,7 @@ GameObject:
   - component: {fileID: 7061382608119478329}
   - component: {fileID: 7061382608118239435}
   - component: {fileID: 7061382608122650425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_End_A_DM_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83420,7 +83488,7 @@ GameObject:
   - component: {fileID: 7068633043027461542}
   - component: {fileID: 7068633043026430438}
   - component: {fileID: 7068633043030618266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Handrail_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83992,7 +84060,7 @@ GameObject:
   - component: {fileID: 7159667470073088666}
   - component: {fileID: 7159667470074125100}
   - component: {fileID: 7159667470078787432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84168,7 +84236,7 @@ GameObject:
   - component: {fileID: 7183772530195815878}
   - component: {fileID: 7183772530196859678}
   - component: {fileID: 7183772530201064718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Top (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84229,7 +84297,7 @@ GameObject:
   - component: {fileID: 7197653191645286577}
   - component: {fileID: 7197653191644551721}
   - component: {fileID: 7197653191640078553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84391,7 +84459,7 @@ GameObject:
   - component: {fileID: 7199509397150658873}
   - component: {fileID: 7199509397151760531}
   - component: {fileID: 7199509397147495789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Cor_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84499,7 +84567,7 @@ GameObject:
   - component: {fileID: 7205474248303420430}
   - component: {fileID: 7205474248302284802}
   - component: {fileID: 7205474248298071438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Base (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84694,7 +84762,7 @@ GameObject:
   - component: {fileID: 7223127934659871751}
   - component: {fileID: 7223127934658811325}
   - component: {fileID: 7223127934663002625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84946,7 +85014,7 @@ GameObject:
   - component: {fileID: 7246147890855158763}
   - component: {fileID: 7246147890853808487}
   - component: {fileID: 7246147890849586915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85559,7 +85627,7 @@ GameObject:
   - component: {fileID: 7307796569779331634}
   - component: {fileID: 7307796569780385002}
   - component: {fileID: 7307796569784568570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86279,7 +86347,7 @@ GameObject:
   - component: {fileID: 7432715559090915755}
   - component: {fileID: 7432715559092007619}
   - component: {fileID: 7432715559096188171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86476,7 +86544,7 @@ GameObject:
   - component: {fileID: 7446240231609532175}
   - component: {fileID: 7446240231610180569}
   - component: {fileID: 7446240231606441597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86495,7 +86563,7 @@ GameObject:
   - component: {fileID: 7446346062403663799}
   - component: {fileID: 7446346062402761307}
   - component: {fileID: 7446346062406795353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86678,7 +86746,7 @@ GameObject:
   - component: {fileID: 7454576164704144513}
   - component: {fileID: 7454576164705558491}
   - component: {fileID: 7454576164701178035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_C (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86712,7 +86780,7 @@ GameObject:
   - component: {fileID: 7454576164877699597}
   - component: {fileID: 7454576164879178071}
   - component: {fileID: 7454576164883025471}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_C (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87415,7 +87483,7 @@ GameObject:
   - component: {fileID: 7539361368049598854}
   - component: {fileID: 7539361368050698192}
   - component: {fileID: 7539361368046088672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (51)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87663,7 +87731,7 @@ GameObject:
   - component: {fileID: 7565467315263156101}
   - component: {fileID: 7565467315262119615}
   - component: {fileID: 7565467315266277327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A_DM_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87739,7 +87807,7 @@ GameObject:
   - component: {fileID: 7565467315915942153}
   - component: {fileID: 7565467315914872883}
   - component: {fileID: 7565467315910707523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A_DM_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87826,7 +87894,7 @@ GameObject:
   - component: {fileID: 7565806835785332246}
   - component: {fileID: 7565806835784228120}
   - component: {fileID: 7565806835788359320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87955,7 +88023,7 @@ GameObject:
   - component: {fileID: 7571773079927907901}
   - component: {fileID: 7571773079926471403}
   - component: {fileID: 7571773079922593615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88209,7 +88277,7 @@ GameObject:
   - component: {fileID: 7616175948643948112}
   - component: {fileID: 7616175948645039324}
   - component: {fileID: 7616175948640873304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88332,7 +88400,7 @@ GameObject:
   - component: {fileID: 7622204178522109768}
   - component: {fileID: 7622204178523102278}
   - component: {fileID: 7622204178518583238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88495,7 +88563,7 @@ GameObject:
   - component: {fileID: 7669656160902631492}
   - component: {fileID: 7669656160901557036}
   - component: {fileID: 7669656160897377508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88635,7 +88703,7 @@ GameObject:
   - component: {fileID: 7669656161524979400}
   - component: {fileID: 7669656161523969440}
   - component: {fileID: 7669656161528144488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88981,7 +89049,7 @@ GameObject:
   - component: {fileID: 7698216553091901873}
   - component: {fileID: 7698216553090952587}
   - component: {fileID: 7698216553095037037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89212,7 +89280,7 @@ GameObject:
   - component: {fileID: 7702614626354467816}
   - component: {fileID: 7702614626353024830}
   - component: {fileID: 7702614626357688986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89288,7 +89356,7 @@ GameObject:
   - component: {fileID: 7722089552054946642}
   - component: {fileID: 7722089552053887068}
   - component: {fileID: 7722089552049495004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89738,7 +89806,7 @@ GameObject:
   - component: {fileID: 7790591916726945961}
   - component: {fileID: 7790591916728241477}
   - component: {fileID: 7790591916732202823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90314,7 +90382,7 @@ GameObject:
   - component: {fileID: 7815557283778992636}
   - component: {fileID: 7815557283777807658}
   - component: {fileID: 7815557283773689998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90333,7 +90401,7 @@ GameObject:
   - component: {fileID: 7834960701988460543}
   - component: {fileID: 7834960701989479723}
   - component: {fileID: 7834960701993677225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90658,7 +90726,7 @@ GameObject:
   - component: {fileID: 7894184947780522142}
   - component: {fileID: 7894184947779436770}
   - component: {fileID: 7894184947783654816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Cor_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90840,7 +90908,7 @@ GameObject:
   - component: {fileID: 7896732585672381588}
   - component: {fileID: 7896732585673801240}
   - component: {fileID: 7896732585669568924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91234,7 +91302,7 @@ GameObject:
   - component: {fileID: 7941319511391897002}
   - component: {fileID: 7941319511392857894}
   - component: {fileID: 7941319511388698786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91342,7 +91410,7 @@ GameObject:
   - component: {fileID: 7945908241953117030}
   - component: {fileID: 7945908241952039346}
   - component: {fileID: 7945908241947850032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91824,7 +91892,7 @@ GameObject:
   - component: {fileID: 8010039055936290153}
   - component: {fileID: 8010039055935216533}
   - component: {fileID: 8010039055939091907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Deco_Handrail_Cap_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92008,7 +92076,7 @@ GameObject:
   - component: {fileID: 8065317739582390596}
   - component: {fileID: 8065317739581362418}
   - component: {fileID: 8065317739576718518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92257,7 +92325,7 @@ GameObject:
   - component: {fileID: 8077310207883787580}
   - component: {fileID: 8077310207884785572}
   - component: {fileID: 8077310207888995668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92480,7 +92548,7 @@ GameObject:
   - component: {fileID: 8089608259327555886}
   - component: {fileID: 8089608259329059948}
   - component: {fileID: 8089608259324361136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93160,7 +93228,7 @@ GameObject:
   - component: {fileID: 8163090998080893880}
   - component: {fileID: 8163090998082002366}
   - component: {fileID: 8163090998077611360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93194,7 +93262,7 @@ GameObject:
   - component: {fileID: 8163090998774543668}
   - component: {fileID: 8163090998775520050}
   - component: {fileID: 8163090998779649004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93469,7 +93537,7 @@ GameObject:
   - component: {fileID: 8203013991044831121}
   - component: {fileID: 8203013991045796295}
   - component: {fileID: 8203013991042099191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93626,7 +93694,7 @@ GameObject:
   - component: {fileID: 8229152054416003350}
   - component: {fileID: 8229152054417089474}
   - component: {fileID: 8229152054421288768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93772,7 +93840,7 @@ GameObject:
   - component: {fileID: 8236961150631834213}
   - component: {fileID: 8236961150630835251}
   - component: {fileID: 8236961150635115011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93971,7 +94039,7 @@ GameObject:
   - component: {fileID: 8241795041731605297}
   - component: {fileID: 8241795041730487923}
   - component: {fileID: 8241795041726313391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94188,7 +94256,7 @@ GameObject:
   - component: {fileID: 8255261131034925931}
   - component: {fileID: 8255261131035986595}
   - component: {fileID: 8255261131031709627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94334,7 +94402,7 @@ GameObject:
   - component: {fileID: 8271541444147677953}
   - component: {fileID: 8271541444147093059}
   - component: {fileID: 8271541444142484383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94673,7 +94741,7 @@ GameObject:
   - component: {fileID: 8321882850993261249}
   - component: {fileID: 8321882850991923277}
   - component: {fileID: 8321882850987702217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94906,7 +94974,7 @@ GameObject:
   - component: {fileID: 8358702012909420276}
   - component: {fileID: 8358702012910423072}
   - component: {fileID: 8358702012906231970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95055,7 +95123,7 @@ GameObject:
   - component: {fileID: 8378985879090829708}
   - component: {fileID: 8378985879089801580}
   - component: {fileID: 8378985879093935050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_End_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95448,7 +95516,7 @@ GameObject:
   - component: {fileID: 8390673518895738469}
   - component: {fileID: 8390673518896779751}
   - component: {fileID: 8390673518900972855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95526,7 +95594,7 @@ GameObject:
   - component: {fileID: 8390673519077714153}
   - component: {fileID: 8390673519078758251}
   - component: {fileID: 8390673519074560955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Base_Stairs_A (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96068,7 +96136,7 @@ GameObject:
   - component: {fileID: 8501243385659957203}
   - component: {fileID: 8501243385661050919}
   - component: {fileID: 8501243385656709747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96208,7 +96276,7 @@ GameObject:
   - component: {fileID: 8501243386031724895}
   - component: {fileID: 8501243386032723627}
   - component: {fileID: 8501243386036802815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96822,7 +96890,7 @@ GameObject:
   - component: {fileID: 8588494326746141829}
   - component: {fileID: 8588494326747610477}
   - component: {fileID: 8588494326751807541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97004,7 +97072,7 @@ GameObject:
   - component: {fileID: 8588494326923825673}
   - component: {fileID: 8588494326925261793}
   - component: {fileID: 8588494326921039545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_IntWall_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97127,7 +97195,7 @@ GameObject:
   - component: {fileID: 8603930546836858173}
   - component: {fileID: 8603930546835421675}
   - component: {fileID: 8603930546831543375}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97146,7 +97214,7 @@ GameObject:
   - component: {fileID: 8631157441820815119}
   - component: {fileID: 8631157441819814233}
   - component: {fileID: 8631157441824038761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_Column_Mid (50)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97561,7 +97629,7 @@ GameObject:
   - component: {fileID: 8644626772300650459}
   - component: {fileID: 8644626772301628081}
   - component: {fileID: 8644626772297499325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Stairs (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98074,7 +98142,7 @@ GameObject:
   - component: {fileID: 8714931814037370880}
   - component: {fileID: 8714931814036448470}
   - component: {fileID: 8714931814032183666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Deco_IntColumn_Mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98986,7 +99054,7 @@ GameObject:
   - component: {fileID: 8811782903535950551}
   - component: {fileID: 8811782903534890625}
   - component: {fileID: 8811782903539122443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99732,7 +99800,7 @@ GameObject:
   - component: {fileID: 8870873069566195307}
   - component: {fileID: 8870873069565166783}
   - component: {fileID: 8870873069569364029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99823,7 +99891,7 @@ GameObject:
   - component: {fileID: 8897574672476755806}
   - component: {fileID: 8897574672475743626}
   - component: {fileID: 8897574672471552264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99916,7 +99984,7 @@ GameObject:
   - component: {fileID: 8905569716918125967}
   - component: {fileID: 8905569716919194681}
   - component: {fileID: 8905569716915335293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100056,7 +100124,7 @@ GameObject:
   - component: {fileID: 8906125912031995291}
   - component: {fileID: 8906125912030949919}
   - component: {fileID: 8906125912035085339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100134,7 +100202,7 @@ GameObject:
   - component: {fileID: 8906125912667874071}
   - component: {fileID: 8906125912666829971}
   - component: {fileID: 8906125912662674071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100397,7 +100465,7 @@ GameObject:
   - component: {fileID: 8922779097321184730}
   - component: {fileID: 8922779097320148064}
   - component: {fileID: 8922779097324344284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100942,7 +101010,7 @@ GameObject:
   - component: {fileID: 9000844305022803224}
   - component: {fileID: 9000844305021814874}
   - component: {fileID: 9000844305017576838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Base_Mid_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101044,7 +101112,7 @@ GameObject:
   - component: {fileID: 9036868293435585966}
   - component: {fileID: 9036868293434040098}
   - component: {fileID: 9036868293438261414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101152,7 +101220,7 @@ GameObject:
   - component: {fileID: 9076830504911996786}
   - component: {fileID: 9076830504910859556}
   - component: {fileID: 9076830504915216844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101336,7 +101404,7 @@ GameObject:
   - component: {fileID: 9076830505543680510}
   - component: {fileID: 9076830505542740904}
   - component: {fileID: 9076830505538645824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Floor_Mid_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101355,7 +101423,7 @@ GameObject:
   - component: {fileID: 9088679153010154850}
   - component: {fileID: 9088679153011240886}
   - component: {fileID: 9088679153015438132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Int_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101624,7 +101692,7 @@ GameObject:
   - component: {fileID: 9108550266223044011}
   - component: {fileID: 9108550266224140359}
   - component: {fileID: 9108550266228281925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Floor_Mid_A_4x (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101747,7 +101815,7 @@ GameObject:
   - component: {fileID: 9111200167763433532}
   - component: {fileID: 9111200167764529752}
   - component: {fileID: 9111200167768651878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickHouse_Ext_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101917,7 +101985,7 @@ GameObject:
   - component: {fileID: 9135991820385259595}
   - component: {fileID: 9135991820384223741}
   - component: {fileID: 9135991820380497337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Top_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102452,7 +102520,7 @@ GameObject:
   - component: {fileID: 9191636593082874814}
   - component: {fileID: 9191636593083420978}
   - component: {fileID: 9191636593087645366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102566,7 +102634,7 @@ GameObject:
   - component: {fileID: 9199024441067647614}
   - component: {fileID: 9199024441066952946}
   - component: {fileID: 9199024441062723446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Mid_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102742,7 +102810,7 @@ GameObject:
   - component: {fileID: 9200620063727003114}
   - component: {fileID: 9200620063728029412}
   - component: {fileID: 9200620063723386212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Roof_Mid_A_4x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102999,7 +103067,7 @@ GameObject:
   - component: {fileID: 9218553966196060375}
   - component: {fileID: 9218553966197081217}
   - component: {fileID: 9218553966193011467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IndBuilding1_Wall_Cor_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

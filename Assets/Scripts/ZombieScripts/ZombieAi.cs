@@ -32,6 +32,7 @@ public class ZombieAi : MonoBehaviour
     private bool GUIActivater = false;
 
     public ZombieSpawner zombieSpawner;
+    public ZombieSoundManager zombieSoundManager;
 
     //Wait for attack ends
     private float waitTimerMax = 1f;
@@ -59,6 +60,7 @@ public class ZombieAi : MonoBehaviour
             zombieSpawner.zombieCount--;
             Destroy(gameObject);
         }
+        zombieSoundManager.PlaySpawn();
     }
     private void Update()
     {
@@ -118,6 +120,7 @@ public class ZombieAi : MonoBehaviour
     {
         loot = spawnLoot.SpawnLootBox();
         zombieSpawner.zombieCount--;
+        zombieSoundManager.PlayDie();
     }
 
     private void Patroling()
@@ -128,6 +131,7 @@ public class ZombieAi : MonoBehaviour
         float distanceToWalkPoint = Vector3.Distance(transform.position, walkPoint);
         //Walk point reached
         if (distanceToWalkPoint < 1f) Invoke(nameof(ResetWalkPoint), 5);
+        zombieSoundManager.PlayStep();
     }
     private void ResetWalkPoint()
     {
@@ -149,6 +153,8 @@ public class ZombieAi : MonoBehaviour
 
         //Debug.Log("Chasing");
         agent.SetDestination(player.position);
+        zombieSoundManager.PlayChase();
+        zombieSoundManager.PlayStep();
 
     }
     private void AttackPlayer()
@@ -160,7 +166,7 @@ public class ZombieAi : MonoBehaviour
         playerPos.y = transform.position.y;
         transform.LookAt(playerPos);
 
-
+        zombieSoundManager.PlayAttack();
         //oyuncu kaybolursa son lokasyonuna git
         walkPoint = player.position;
         walkPointSet = true;

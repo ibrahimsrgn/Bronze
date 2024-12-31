@@ -300,6 +300,7 @@ public class PlayerData : MonoBehaviour
     private void OnEsc(InputValue Value)
     {
         Debug.Log("Esc Pressed");
+        UIManager.instance.ShowEscMenu();
     }
 
     private void InstaTransfer(InputValue value)

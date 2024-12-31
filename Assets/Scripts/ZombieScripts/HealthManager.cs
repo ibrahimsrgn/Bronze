@@ -29,6 +29,7 @@ public class HealthManager : MonoBehaviour
         {
             UIManager.instance.UpdateHealth(currentHealth / maxHealth);
         }
+        else { zombieAi.zombieSoundManager.PlayHit(); }
     }
     public void GetHeal(int healAmount)
     {

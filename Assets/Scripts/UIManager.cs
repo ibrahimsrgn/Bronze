@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; private set; }
 
     [SerializeField] private GameObject Inventory;
+    [SerializeField] private GameObject EscMenu;
     [Header("Health")]
     [SerializeField] private Image healthMain;
     [SerializeField] private Image healthFollower;
@@ -23,6 +24,7 @@ public class UIManager : MonoBehaviour
     private Coroutine hideHealthCoroutine;
     private Coroutine hideToolBoxCoroutine;
     private Coroutine hideAmmoCoroutine;
+    private bool isTimeStopped = false;
 
     [Header("UIListManager")]
     [SerializeField] private List<GameObject> UIList;
@@ -165,5 +167,19 @@ public class UIManager : MonoBehaviour
     {
         UIList[UIList.Count - 1].gameObject.SetActive(false);
         UIList.Remove(UIList[UIList.Count - 1]);
+    }
+    public void ShowEscMenu()
+    {
+        isTimeStopped = !isTimeStopped;
+        if(isTimeStopped)
+        {
+            Time.timeScale = 0;
+            UIListManager(EscMenu);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            EscMenu.SetActive(false);
+        }
     }
 }
