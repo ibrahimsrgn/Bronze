@@ -20,7 +20,6 @@ public class ZombieSoundManager : MonoBehaviour
         if(zombieSoundSourceFoot.isPlaying) return;
         int random = Random.Range(0, step.Length);
         zombieSoundSourceFoot.PlayOneShot(step[random]);
-        Debug.Log(step[random].name);
     } //Forest_ground_step1
     public void PlayAttack()
     {
