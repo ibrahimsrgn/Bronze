@@ -68,6 +68,8 @@ public class PlayerData : MonoBehaviour
     private TwoBoneIKConstraint RightHandLayerBckUp;
     public Transform CamPosRef2BckUp;
 
+    UIManager _UIManager;
+
     [SerializeField] private int angle;
     [SerializeField] private int angleZ;
 
@@ -77,6 +79,7 @@ public class PlayerData : MonoBehaviour
     #region Update Methods
     private void Awake()
     {
+        _UIManager = FindFirstObjectByType<UIManager>();
         LeftHandLayerBckUp = LeftHandLayer;
         RightHandLayerBckUp = RightHandLayer;
         CamPosRef2BckUp = CamPosRef2;
@@ -112,7 +115,7 @@ public class PlayerData : MonoBehaviour
     private void CharacterMove()
     {
         CurrentInput = transform.right * MoveInput.x + transform.forward * MoveInput.y;
-        _CharacterController.Move(CurrentInput * PlayerWalkSpeed * Time.deltaTime * (MoveInput.y > 0 ? SprintSpeedData : 1));
+        _CharacterController.Move(CurrentInput * PlayerWalkSpeed * Time.deltaTime * (MoveInput.y > 0 ? SprintSpeedData : 1) * (_UIManager.UIList.Count == 0 ? 1 : 0));
     }
 
     private void ApplyGravity()
@@ -133,7 +136,7 @@ public class PlayerData : MonoBehaviour
         {
             Velocity.y = -2f;
         }
-        _CharacterController.Move(Velocity * Time.deltaTime);
+        _CharacterController.Move(Velocity * Time.deltaTime * (_UIManager.UIList.Count == 0 ? 1 : 0));
     }
     #endregion
 
@@ -146,8 +149,8 @@ public class PlayerData : MonoBehaviour
         Animator.SetBool("ItemOnHand", ItemOnHand);
         float targetSpeed = SprintSpeedData > 1 ? 2f : 1f;
         SmoothInput = Vector2.Lerp(SmoothInput, MoveInput * targetSpeed, SmoothSpeed * Time.deltaTime);
-        Animator.SetFloat("X", SmoothInput.x);
-        Animator.SetFloat("Y", SmoothInput.y);
+        Animator.SetFloat("X", SmoothInput.x * (_UIManager.UIList.Count == 0 ? 1 : 0));
+        Animator.SetFloat("Y", SmoothInput.y * (_UIManager.UIList.Count == 0 ? 1 : 0));
     }
 
     private void LayerMaskUpdater()

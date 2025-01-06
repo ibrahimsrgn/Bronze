@@ -399,7 +399,7 @@ MonoBehaviour:
   player: {fileID: 2217074062621590586}
   spawnRangeFromPlayer: 15
   spawnInterval: 5
-  canSpawn: 1
+  canSpawn: 0
   zombies:
   - zombiePrefab: {fileID: 6660184903045082040, guid: 8c7446486ea3bef488177f579c67e103,
       type: 3}
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdb94b7b5586e4419e3e4151e39d438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachinePanTilt: {fileID: 7136494954158977744}
   Inventory: {fileID: 459452528}
   EscMenu: {fileID: 1020730600}
   healthMain: {fileID: 1995893143}

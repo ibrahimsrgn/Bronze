@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+
+    public CinemachinePanTilt cinemachinePanTilt;
+
     public static UIManager instance { get; private set; }
 
     [SerializeField] private GameObject Inventory;
@@ -27,7 +32,7 @@ public class UIManager : MonoBehaviour
     private bool isTimeStopped = false;
 
     [Header("UIListManager")]
-    [SerializeField] private List<GameObject> UIList;
+    [SerializeField] public List<GameObject> UIList;
     private void Awake()
     {
         instance = this;
@@ -152,10 +157,13 @@ public class UIManager : MonoBehaviour
         CurrentUI.SetActive(!CurrentUI.gameObject.activeInHierarchy);
         if (CurrentUI.gameObject.activeInHierarchy)
         {
+            cinemachinePanTilt.enabled = false;
             UIList.Add(CurrentUI);
         }
         else
         {
+            if (UIList.Count <= 1)
+                cinemachinePanTilt.enabled = true;
             UIList.Remove(CurrentUI);
         }
         if (!UIList.Contains(Inventory))
@@ -167,6 +175,8 @@ public class UIManager : MonoBehaviour
     {
         UIList[UIList.Count - 1].gameObject.SetActive(false);
         UIList.Remove(UIList[UIList.Count - 1]);
+        if (UIList.Count <= 1)
+            cinemachinePanTilt.enabled = true;
     }
     public void ShowEscMenu()
     {
