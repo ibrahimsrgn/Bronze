@@ -135,7 +135,7 @@ public class UIManager : MonoBehaviour
             hideToolBoxCoroutine = StartCoroutine(HideCanvasGroup(toolBoxUIGroup, fadeOutTimer));
 
         }
-        
+
     }
     private IEnumerator HideCanvasGroup(CanvasGroup canvasGroup, float timer)
     {
@@ -157,6 +157,7 @@ public class UIManager : MonoBehaviour
         CurrentUI.SetActive(!CurrentUI.gameObject.activeInHierarchy);
         if (CurrentUI.gameObject.activeInHierarchy)
         {
+            Debug.Log("a");
             cinemachinePanTilt.enabled = false;
             UIList.Add(CurrentUI);
         }
@@ -181,15 +182,7 @@ public class UIManager : MonoBehaviour
     public void ShowEscMenu()
     {
         isTimeStopped = !isTimeStopped;
-        if(isTimeStopped)
-        {
-            Time.timeScale = 0;
-            UIListManager(EscMenu);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            EscMenu.SetActive(false);
-        }
+        UIListManager(EscMenu);
+        Time.timeScale = (isTimeStopped ? 1 : 0);
     }
 }
