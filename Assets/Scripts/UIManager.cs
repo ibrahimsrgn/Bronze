@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CanvasGroup ammoUIGroup;
     [SerializeField] private float fadeOutTimer;
     [SerializeField] private float fadeDur;
+    [SerializeField] private TextMeshProUGUI timeUI;
     private float healthLerpValue = 0;
     private Coroutine hideHealthCoroutine;
     private Coroutine hideToolBoxCoroutine;
@@ -186,5 +188,9 @@ public class UIManager : MonoBehaviour
             UIListManager(EscMenu);
             Time.timeScale = (isTimeStopped ? 0 : 1);
         }
+    }
+    public void UpdateTimeUI(string time)
+    {
+        timeUI.text = time;
     }
 }

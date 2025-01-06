@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class UITimeSelector : MonoBehaviour
 {
+    [SerializeField] private DayAndNightCircle dayAndNightCircle;
     [SerializeField] private GameObject timeSelectorCursor;
     [SerializeField] private TextMeshProUGUI[] times;
     [SerializeField] private ScrollRect scrollRect;
@@ -12,7 +13,7 @@ public class UITimeSelector : MonoBehaviour
     private bool isScrolling = false;
     private void Update()
     {
-        if(scrollRect.velocity.magnitude < 0.1f&&selectedTime==setSelectedTime&&setSelectedTime!=null)
+        if (scrollRect.velocity.magnitude < 0.1f && selectedTime == setSelectedTime && setSelectedTime != null)
         {
             selectedTime = null;
         }
@@ -32,8 +33,9 @@ public class UITimeSelector : MonoBehaviour
         }
         if (selectedTime != null)
         {
-            setSelectedTime=selectedTime;
+            setSelectedTime = selectedTime;
             //Debug.Log("Selected Time: " + selectedTime.text);
+            dayAndNightCircle.AdvanceTime(int.Parse(selectedTime.text));
         }
         else
         {

@@ -16,7 +16,7 @@ public class DayAndNightCircle : MonoBehaviour
     public int Hours;
     [Header("Day & Night Circle Per min")]
     public int HoursMultiplier;
-
+    private int wantedHours;
     private float Second;
     private float AngleManager;
 
@@ -49,6 +49,11 @@ public class DayAndNightCircle : MonoBehaviour
         MoonDayNightCircle.transform.eulerAngles = Quaternion.Euler(180 + AngleManager, 317.9f, 0).eulerAngles;
         SunDayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, 326.9f, 0).eulerAngles;
         //Debug.Log($"{Hours}, {Minute}, {Second} ---- {SunDayNightCircle.transform.eulerAngles.x}");
+        UIManager.instance.UpdateTimeUI(Hours+":"+Minute);
+        if(Hours == wantedHours)
+        {
+            StopAdvancingTime();
+        }
     }
 
     private void OnHoursChange(int hours)
@@ -68,5 +73,14 @@ public class DayAndNightCircle : MonoBehaviour
             Sun.shadows = LightShadows.None;
             Moon.shadows = LightShadows.Soft;
         }
+    }
+    public void AdvanceTime(int time)
+    {
+        wantedHours = time;
+        HoursMultiplier = 1;
+    }
+    public void StopAdvancingTime()
+    {
+        HoursMultiplier = 120;
     }
 }
