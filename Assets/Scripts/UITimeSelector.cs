@@ -14,7 +14,6 @@ public class UITimeSelector : MonoBehaviour
     {
         if(scrollRect.velocity.magnitude < 0.1f&&selectedTime==setSelectedTime&&setSelectedTime!=null)
         {
-            Debug.Log("Selected Time2: " + setSelectedTime.text);
             selectedTime = null;
         }
     }

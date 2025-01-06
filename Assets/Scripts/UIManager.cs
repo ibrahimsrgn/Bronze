@@ -157,7 +157,6 @@ public class UIManager : MonoBehaviour
         CurrentUI.SetActive(!CurrentUI.gameObject.activeInHierarchy);
         if (CurrentUI.gameObject.activeInHierarchy)
         {
-            Debug.Log("a");
             cinemachinePanTilt.enabled = false;
             UIList.Add(CurrentUI);
         }
@@ -181,8 +180,11 @@ public class UIManager : MonoBehaviour
     }
     public void ShowEscMenu()
     {
-        isTimeStopped = !isTimeStopped;
-        UIListManager(EscMenu);
-        Time.timeScale = (isTimeStopped ? 1 : 0);
+        if (UIList.Count == 0 || EscMenu.activeInHierarchy)
+        {
+            isTimeStopped = !isTimeStopped;
+            UIListManager(EscMenu);
+            Time.timeScale = (isTimeStopped ? 0 : 1);
+        }
     }
 }
