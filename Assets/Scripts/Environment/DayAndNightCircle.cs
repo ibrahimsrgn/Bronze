@@ -12,7 +12,7 @@ public class DayAndNightCircle : MonoBehaviour
     public AudioSource AudioSourceDay;
     public Transform SunDayNightCircle;
     public Transform MoonDayNightCircle;
-    public float Minute;
+    public int Minute;
     public int Hours;
     [Header("Day & Night Circle Per min")]
     public int HoursMultiplier;
@@ -49,7 +49,7 @@ public class DayAndNightCircle : MonoBehaviour
         MoonDayNightCircle.transform.eulerAngles = Quaternion.Euler(180 + AngleManager, 317.9f, 0).eulerAngles;
         SunDayNightCircle.transform.eulerAngles = Quaternion.Euler(AngleManager, 326.9f, 0).eulerAngles;
         //Debug.Log($"{Hours}, {Minute}, {Second} ---- {SunDayNightCircle.transform.eulerAngles.x}");
-        UIManager.instance.UpdateTimeUI(Hours+":"+Minute);
+        UIManager.instance.UpdateTimeUI($"{Hours / 10}{Hours % 10}:{Minute / 10}{Minute % 10}");
         if(Hours == wantedHours)
         {
             StopAdvancingTime();
