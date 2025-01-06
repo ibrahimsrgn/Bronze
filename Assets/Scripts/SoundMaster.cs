@@ -65,9 +65,8 @@ public class SoundMaster : MonoBehaviour
         {
             soundLists[i].name = names[i];
         }
-#endif
     }
-
+#endif
 
     [Serializable]
     public struct SoundList
