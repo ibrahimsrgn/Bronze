@@ -5,7 +5,7 @@ using UnityEngine;
 namespace InfimaGames.LowPolyShooterPack
 {
     /// <summary>
-    /// Camera Look. Handles the rotation of the camera.
+    /// _Camera Look. Handles the rotation of the camera.
     /// </summary>
     public class CameraLook : MonoBehaviour
     {

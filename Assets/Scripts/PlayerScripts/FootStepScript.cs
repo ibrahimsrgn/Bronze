@@ -22,4 +22,5 @@ public class FootStepScript : MonoBehaviour
             m_AudioSource.PlayOneShot(Clips[Randomizer]);
         }
     }
+
 }

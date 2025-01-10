@@ -56,7 +56,7 @@ public class DayAndNightCircle : MonoBehaviour
         }
     }
 
-    private void OnHoursChange(int hours)
+    public void OnHoursChange(int hours)
     {
         if (hours >= 6 && hours < 18)
         {
