@@ -13,4 +13,10 @@ public class EndOfGameCaller : MonoBehaviour
         EndGameScript endGameScript = FindAnyObjectByType<EndGameScript>();
         endGameScript.LastStand();
     }
+
+    public void FinishTheGame()
+    {
+        EndGameScript endGameScript = FindAnyObjectByType<EndGameScript>();
+        endGameScript.FinishTheGame();
+    }
 }
