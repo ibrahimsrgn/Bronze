@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
         if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 9&&PlayerData.Instance.canChangeWeapon)
+            if (isNumber && number > 0 && number < 9 && PlayerData.Instance.canChangeWeapon)
             {
                 ChangeSelectedSlot(number - 1);
                 UIManager.instance.ShowToolBoxUI();
@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < itemInSlot.item.maxStackableCount && itemInSlot.item.stackable)
             {
                 //itemInSlot.count++;
-                itemInSlot.count =item.maxStackableCount;
+                itemInSlot.count = item.maxStackableCount;
                 itemInSlot.RefreshCount();
                 gameObject = null;
                 return true;
@@ -208,13 +208,13 @@ public class InventoryManager : MonoBehaviour
     }
     public void CountAmmo(int ammoId)
     {
-        Debug.Log("Counting ammo");
         totalAmmoCount = 0;
         ammoItems = new List<InventoryItem>();
         foreach (InventorySlot slot in inventorySlots)
         {
-            if (slot.GetComponentInChildren<InventoryItem>() != null) 
-            {InventoryItem ammoInventoryItem = slot.GetComponentInChildren<InventoryItem>();
+            if (slot.GetComponentInChildren<InventoryItem>() != null)
+            {
+                InventoryItem ammoInventoryItem = slot.GetComponentInChildren<InventoryItem>();
                 if (ammoId == ammoInventoryItem.id)
                 {
                     totalAmmoCount += ammoInventoryItem.count;
@@ -223,7 +223,6 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log(totalAmmoCount);
     }
     public int ReloadMagazine(int magazineCap, int requiredAmmo)
     {
@@ -240,7 +239,7 @@ public class InventoryManager : MonoBehaviour
             totalAmmoCount = 0;
             RefreshMaxAmmoUI();
 
-            return (magazineCap-requiredAmmo)+ ReloadCalculator(returnAmmoCount, magazineCap);
+            return (magazineCap - requiredAmmo) + ReloadCalculator(returnAmmoCount, magazineCap);
         }
         else { return 0; }
     }
@@ -248,7 +247,6 @@ public class InventoryManager : MonoBehaviour
     {
         if (ammoItems == null || ammoItems.Count == 0)
         {
-            Debug.LogWarning("No ammo items available!");
             return 0;
         }
 
@@ -271,15 +269,12 @@ public class InventoryManager : MonoBehaviour
                     Destroy(ammoItem.gameObject);
                 }
                 ammoItem.RefreshCount();
-                Debug.Log("required ammo ="+requiredAmmo+" remaining ammo to load"+remainingAmmoToLoad);
-                Debug.Log(requiredAmmo - remainingAmmoToLoad);
-                return requiredAmmo-remainingAmmoToLoad;
+                return requiredAmmo - remainingAmmoToLoad;
             }
             else
             {
                 // Yetersizse tüm mermiyi kullan ve sonraki öğeye geç
                 remainingAmmoToLoad -= ammoItem.count;
-                Debug.Log("Ammo item removed");
                 ammoItems.RemoveAt(i);
                 Destroy(ammoItem.gameObject);
             }
@@ -290,8 +285,6 @@ public class InventoryManager : MonoBehaviour
         RefreshMaxAmmoUI();
         if (remainingAmmoToLoad > 0)
         {
-            Debug.LogWarning($"Not enough ammo! Still missing {remainingAmmoToLoad} rounds.");
-            Debug.Log(requiredAmmo - remainingAmmoToLoad);
             return requiredAmmo - remainingAmmoToLoad;
         }
         return 0;

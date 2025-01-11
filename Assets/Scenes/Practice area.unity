@@ -17884,9 +17884,9 @@ MonoBehaviour:
     m_CaptureRotation: {x: 0, y: 0, z: 0, w: 0}
     m_FieldOfView: 0
     m_Aspect: 0
-  m_HasValidSHForNormalization: 1
+  m_HasValidSHForNormalization: 0
   m_SHForNormalization:
-    'sh[ 0]': 3.4028235e+38
+    'sh[ 0]': 0
     'sh[ 1]': 0
     'sh[ 2]': 0
     'sh[ 3]': 0
@@ -17895,7 +17895,7 @@ MonoBehaviour:
     'sh[ 6]': 0
     'sh[ 7]': 0
     'sh[ 8]': 0
-    'sh[ 9]': 3.4028235e+38
+    'sh[ 9]': 0
     'sh[10]': 0
     'sh[11]': 0
     'sh[12]': 0
@@ -17904,7 +17904,7 @@ MonoBehaviour:
     'sh[15]': 0
     'sh[16]': 0
     'sh[17]': 0
-    'sh[18]': 3.4028235e+38
+    'sh[18]': 0
     'sh[19]': 0
     'sh[20]': 0
     'sh[21]': 0
@@ -17913,7 +17913,7 @@ MonoBehaviour:
     'sh[24]': 0
     'sh[25]': 0
     'sh[26]': 0
-  m_SHValidForCapturePosition: {x: 334, y: 20.313805, z: -100}
+  m_SHValidForCapturePosition: {x: 274.1, y: 20.313805, z: -93.70001}
   m_SHValidForSourcePosition: {x: 334, y: 20.313805, z: -100}
   m_HDProbeVersion: 9
   m_ObsoleteInfiniteProjection: 1
@@ -18060,13 +18060,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245967196}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.15622428, z: -0, w: 0.9877216}
-  m_LocalPosition: {x: 287.9, y: -88.286194, z: 293.7}
+  m_LocalRotation: {x: -0, y: 0.020589497, z: -0, w: 0.99978805}
+  m_LocalPosition: {x: 228, y: -88.286194, z: 300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2048187340}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.36, z: 0}
 --- !u!224 &1251781540 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4038278511226726515, guid: 627ecae899aea0749bee0e8fef1eafe2,
@@ -32976,8 +32976,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5238980562995144300}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.05291251, z: 0, w: 0.9985992}
-  m_LocalPosition: {x: 823, y: 32.46, z: 414.72}
+  m_LocalRotation: {x: 0, y: 0.80035293, z: 0, w: 0.59952927}
+  m_LocalPosition: {x: 7.474, y: 30.09, z: 134.986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53402,7 +53402,7 @@ Transform:
   m_GameObject: {fileID: 689048547028595139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0069347285, y: 1.5427666, z: 0.4441369}
+  m_LocalPosition: {x: -0.006919086, y: 1.5427647, z: 0.44415516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70322,7 +70322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7691876497995508637}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36527c2ec07c2904c891f0db93b49599, type: 3}
   m_Name: 
@@ -87969,7 +87969,13 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 1
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Scavenger_ R UpperArm'\n\tTransform 'Scavenger_
+    Pelvis'\n\tTransform 'Scavenger_ Head'\n\tTransform 'Scavenger_ Spine'\n\tTransform
+    'Scavenger_ Spine1'\n\tTransform 'Scavenger_ Neck'\n\tTransform 'Scavenger_ R
+    UpperArm'\n\tTransform 'Scavenger_ Pelvis'\n\tTransform 'Scavenger_ Head'\n\tTransform
+    'Scavenger_ Spine'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0

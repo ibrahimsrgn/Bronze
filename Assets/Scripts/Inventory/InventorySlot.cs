@@ -38,7 +38,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public void EquipItem()
     {
         InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
-        Debug.Log(gameObject.name);
         if (inventoryItem != null)
         {
             PlayerData.Instance.ItemOnHand = inventoryItem.itemPrefab.transform;
