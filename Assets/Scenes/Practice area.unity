@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 5440161}
   - component: {fileID: 5440162}
   - component: {fileID: 5440163}
+  - component: {fileID: 5440164}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -945,6 +946,26 @@ MonoBehaviour:
   scrollRect: {fileID: 2058034671}
   selectedTime: {fileID: 0}
   setSelectedTime: {fileID: 0}
+--- !u!114 &5440164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfe959ad5370c94a97ad3b43809a9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieSpawner: {fileID: 5440154}
+  gameObjsThatNeedsToBeClosedWhenEndlessMode:
+  - {fileID: 374611496}
+  gameObjsThatNeedsToBeClosedWhenStoryMode:
+  - {fileID: 1447031644}
+  - {fileID: 1754159576}
+  - {fileID: 1475392572}
+  - {fileID: 234222234}
 --- !u!1 &7796362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4364,6 +4385,12 @@ PrefabInstance:
 --- !u!4 &234222233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 433294766255099367, guid: 513de2aa29138b04798cc644b788531d,
+    type: 3}
+  m_PrefabInstance: {fileID: 234222232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &234222234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1383266110669858418, guid: 513de2aa29138b04798cc644b788531d,
     type: 3}
   m_PrefabInstance: {fileID: 234222232}
   m_PrefabAsset: {fileID: 0}
@@ -21852,6 +21879,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb4402164804ee54fb43c796f723b920, type: 3}
+--- !u!1 &1447031644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2909168733693985638, guid: fb4402164804ee54fb43c796f723b920,
+    type: 3}
+  m_PrefabInstance: {fileID: 1447031643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1447086458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22427,6 +22460,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca11420772905ef4a97ad3252a8f30af, type: 3}
+--- !u!1 &1475392572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4744375309067628679, guid: ca11420772905ef4a97ad3252a8f30af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1475392571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476033172
 GameObject:
   m_ObjectHideFlags: 0
@@ -26014,6 +26053,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c444250848a004c97e1efedc2940c5, type: 3}
+--- !u!1 &1754159576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220686584574653965, guid: c1c444250848a004c97e1efedc2940c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1754159575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1754944612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87969,13 +88014,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 1
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Scavenger_ R UpperArm'\n\tTransform 'Scavenger_
-    Pelvis'\n\tTransform 'Scavenger_ Head'\n\tTransform 'Scavenger_ Spine'\n\tTransform
-    'Scavenger_ Spine1'\n\tTransform 'Scavenger_ Neck'\n\tTransform 'Scavenger_ R
-    UpperArm'\n\tTransform 'Scavenger_ Pelvis'\n\tTransform 'Scavenger_ Head'\n\tTransform
-    'Scavenger_ Spine'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0

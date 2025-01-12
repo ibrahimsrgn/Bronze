@@ -27,4 +27,5 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         color.a = 0.0f;
         image.color = color;
     }
+
 }

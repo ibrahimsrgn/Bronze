@@ -18,4 +18,14 @@ public class SceneLoader : MonoBehaviour
     {
         Application.Quit();
     }
+/// <summary>
+/// 1 For Endless Mode
+/// 0 For Story Mode
+/// </summary>
+/// <param name="gamemode"></param>
+    public void GamePlayPref(int gamemode)
+    {
+        PlayerPrefs.SetInt("GameMode", gamemode);
+        PlayerPrefs.Save();
+    }
 }

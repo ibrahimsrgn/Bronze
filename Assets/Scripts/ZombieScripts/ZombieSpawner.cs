@@ -13,7 +13,7 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float spawnRangeFromPlayer;
     [SerializeField] private float spawnInterval;
-    [SerializeField] private bool canSpawn;
+    [SerializeField] public bool canSpawn;
 
     [SerializeField] private Zombie[] zombies;
 
