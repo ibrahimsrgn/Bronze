@@ -31,6 +31,9 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private Transform MainCamPos;
     [SerializeField] public Transform WeaponPosRot;
     [SerializeField] private float CamPosSmoothSpeed;
+    [SerializeField]private Transform playerSpawnLoc;
+    [SerializeField]private Transform mainPlayer;
+
     private Ray Ray;
     private bool OnAimBool;
     private Vector2 MouseInput;
@@ -79,6 +82,8 @@ public class PlayerData : MonoBehaviour
     #region Update Methods
     private void Awake()
     {
+        mainPlayer.position = playerSpawnLoc.position;
+        mainPlayer.rotation = playerSpawnLoc.rotation;
         _UIManager = FindFirstObjectByType<UIManager>();
         LeftHandLayerBckUp = LeftHandLayer;
         RightHandLayerBckUp = RightHandLayer;

@@ -19,4 +19,8 @@ public class EndOfGameCaller : MonoBehaviour
         EndGameScript endGameScript = FindAnyObjectByType<EndGameScript>();
         endGameScript.FinishTheGame();
     }
+    public void FadeInCredits()
+    {
+        UIManager.instance.FadeInCredits();
+    }
 }

@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float fadeOutTimer;
     [SerializeField] private float fadeDur;
     [SerializeField] private TextMeshProUGUI timeUI;
+    [SerializeField] private CanvasGroup mainCanvasGroup;
+    [SerializeField] private CanvasGroup creditsCanvasGroup;
     private float healthLerpValue = 0;
     private Coroutine hideHealthCoroutine;
     private Coroutine hideToolBoxCoroutine;
@@ -56,7 +58,7 @@ public class UIManager : MonoBehaviour
         {
             UIListManager(Inventory);
         }
-        if (UIList.Count <= 0)
+        if (UIList.Count <= 0&&creditsCanvasGroup.alpha<=0.6f)
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -193,4 +195,37 @@ public class UIManager : MonoBehaviour
     {
         timeUI.text = time;
     }
+    public void FadeAwayUI()
+    {
+        StartCoroutine(FadeAwayCanvas());
+    }
+    public void FadeInCredits()
+    {
+        StartCoroutine(FadeInCreditsCanvas());
+    }
+    private IEnumerator FadeInCreditsCanvas()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < fadeDur)
+        {
+            elapsedTime += Time.deltaTime;
+            creditsCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDur);
+            yield return null;
+        }
+        creditsCanvasGroup.alpha = 1f;
+        Debug.Log("Cursor Unlocked");
+    }
+    private IEnumerator FadeAwayCanvas()
+    {
+
+       float elapsedTime = 0;
+        while (elapsedTime < fadeDur)
+        {
+            elapsedTime += Time.deltaTime;
+            mainCanvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDur);
+            yield return null;
+        }
+        mainCanvasGroup.alpha = 0f;
+       
+    } 
 }

@@ -65,6 +65,7 @@ public class EndGameScript : MonoBehaviour
             Animator.Play("TouchStatue");
             ZombieHorde.SetActive(true);
             Destroy(playerData);
+            UIManager.instance.FadeAwayUI();
         }
     }
 
