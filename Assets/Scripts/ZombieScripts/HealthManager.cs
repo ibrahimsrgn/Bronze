@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     private ZombieAi zombieAi;
     bool isDead = false;
     [SerializeField] private bool isPlayer = false;
+    
 
 
     private void Start()
@@ -61,6 +62,11 @@ public class HealthManager : MonoBehaviour
         if (isPlayer)
         {
             UIManager.instance.UpdateHealth(0);
+            EndGameScript.instance.DisablePlayerControls();
+            UIManager.instance.FadeAwayUI();
+            UIManager.instance.FadeInDeathScreen();
+
+            this.enabled = false;
         }
         /*/Düþman ölme animasyonu veya yok olma
         if (TryGetComponent<ZombieAi>(out ZombieAi zombieAi))

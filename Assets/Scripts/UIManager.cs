@@ -29,13 +29,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeUI;
     [SerializeField] private CanvasGroup mainCanvasGroup;
     [SerializeField] private CanvasGroup creditsCanvasGroup;
+    [SerializeField] private CanvasGroup deathScreenCanvasGroup;
     private float healthLerpValue = 0;
     private Coroutine hideHealthCoroutine;
     private Coroutine hideToolBoxCoroutine;
     private Coroutine hideAmmoCoroutine;
     private bool isTimeStopped = false;
 
-    [Header("UIListManager")]
+   [Header("UIListManager")]
     [SerializeField] public List<GameObject> UIList;
     private void Awake()
     {
@@ -50,15 +51,15 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && UIList.Count > 0)
+        if (Input.GetKeyDown(KeyCode.Escape) && UIList.Count > 0&&mainCanvasGroup.alpha>=0.8f)
         {
             CloseCurrentUI();
         }
-        if (Input.GetKeyUp(KeyCode.Tab))
+        if (Input.GetKeyUp(KeyCode.Tab) && mainCanvasGroup.alpha >= 0.8f)
         {
             UIListManager(Inventory);
         }
-        if (UIList.Count <= 0&&creditsCanvasGroup.alpha<=0.6f)
+        if (UIList.Count <= 0&&creditsCanvasGroup.alpha<=0.6f&&deathScreenCanvasGroup.alpha<=0.6f)
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -213,7 +214,6 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         creditsCanvasGroup.alpha = 1f;
-        Debug.Log("Cursor Unlocked");
     }
     private IEnumerator FadeAwayCanvas()
     {
@@ -227,5 +227,21 @@ public class UIManager : MonoBehaviour
         }
         mainCanvasGroup.alpha = 0f;
        
-    } 
+    }
+    public void FadeInDeathScreen()
+    {
+        StartCoroutine(FadeInDeathScreen2());
+    }
+    private IEnumerator FadeInDeathScreen2()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < fadeDur)
+        {
+            elapsedTime += Time.deltaTime;
+            deathScreenCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDur);
+            yield return null;
+        }
+        deathScreenCanvasGroup.alpha = 1f;
+        Time.timeScale = 0;
+    }
 }

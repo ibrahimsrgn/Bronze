@@ -10,6 +10,7 @@ using UnityEngine.Splines.Interpolators;
 
 public class EndGameScript : MonoBehaviour
 {
+    public static EndGameScript instance;
     [Header("Animaitons")]
     public Animator Animator;
 
@@ -37,6 +38,10 @@ public class EndGameScript : MonoBehaviour
     public GameObject CameraFinalLoc;
     public CinemachineCamera CinemachineCamera;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         if (volume.profile.TryGet<UnityEngine.Rendering.HighDefinition.Vignette>(out _Vignette))
@@ -57,16 +62,21 @@ public class EndGameScript : MonoBehaviour
             EnviromentSound1.volume = 0;
             EnviromentSound2.volume = 0;
             EndGameMusic.Play();
-            playerData.enabled = false;
-            CinemachinePanTilt.PanAxis.Wrap = false;
+            DisablePlayerControls();
             CinemachinePanTilt.PanAxis.Range = new Vector2(-45, 45);
             PlayerLocation.position = PlayerStatueLocation.position;
             PlayerLocation.rotation = PlayerStatueLocation.rotation;
             Animator.Play("TouchStatue");
             ZombieHorde.SetActive(true);
-            Destroy(playerData);
             UIManager.instance.FadeAwayUI();
         }
+    }
+    public void DisablePlayerControls()
+    {
+       
+        PlayerData.Instance.enabled = false;
+        CinemachinePanTilt.PanAxis.Wrap = false;
+        Destroy(PlayerData.Instance);
     }
 
     public void ClosingEyesAndWaking()

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     [Header("UI")]
-    public int id=0;
+    public int id = 0;
     public Image image;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI displayNameTxt;
@@ -27,7 +27,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.sprite = newItem.image;
         itemPrefab = newItem.objPrefab;
         description = newItem.description;
-        displayName=newItem.displayName;
+        displayName = newItem.displayName;
         displayNameTxt.text = displayName;
         if (itemPrefab.TryGetComponent<ItemInteraction>(out ItemInteraction itemInteraction))
         {
@@ -87,6 +87,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             InventoryManager.instance.rightClickMenu.transform.position = Input.mousePosition;
+            UIManager.instance.UIListManager(InventoryManager.instance.rightClickMenu);
             SetButtonsListeners();
         }
     }
@@ -98,7 +99,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         rightClickMenu.inspect.onClick.AddListener(() =>
         {
             InventoryManager.instance.rightClickMenu.SetActive(false);
-            InventoryManager.instance.inspectMenu.SetActive(true);
+            UIManager.instance.UIListManager(InventoryManager.instance.inspectMenu);
             SetInspectMenuVariables();
         });
         if (item.type == ItemType.Weapon)
@@ -126,7 +127,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         InventoryManager.instance.DropSelectedItem(GetComponentInParent<InventorySlot>());
         if (count >= 1)
         {
-            Debug.Log("1");
             GameObject droppedItem = Instantiate(itemPrefab, PlayerData.Instance.ItemOnHand);
             droppedItem.SetActive(true);
             droppedItem.transform.SetParent(null);
@@ -136,7 +136,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
         else if (itemPrefab == PlayerData.Instance.ItemOnHand)
         {
-            Debug.Log("2");
             PlayerData.Instance.LeftHandLayer.data.target = null;
             PlayerData.Instance.RightHandLayer.data.target = null;
             PlayerData.Instance.ItemOnHand.transform.SetParent(null);
@@ -147,7 +146,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
         else
         {
-            Debug.Log("3");
             itemPrefab.SetActive(true);
             itemPrefab.transform.SetParent(null);
             itemPrefab.gameObject.AddComponent<Rigidbody>();
