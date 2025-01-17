@@ -106,7 +106,7 @@ public class EndGameScript : MonoBehaviour
     {
         while (_Vignette.intensity.value > 0.259f)
         {
-            _Vignette.intensity.value = Mathf.Lerp(_Vignette.intensity.value, 0.256f, 0.01f);
+            _Vignette.intensity.value = Mathf.Lerp(_Vignette.intensity.value, 0.256f, 0.06f);
             yield return null;
         }
         _ColorAdjustments.colorFilter.value = Color.white;
