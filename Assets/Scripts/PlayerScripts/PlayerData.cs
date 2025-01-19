@@ -75,6 +75,8 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] private int angle;
     [SerializeField] private int angleZ;
+    public GameObject cursedFireSlot;
+    public GameObject cursedFireSlotFirstPointForAnimation;
 
     #endregion
 

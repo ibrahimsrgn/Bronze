@@ -78,6 +78,15 @@ public class GunFire : MonoBehaviour
         BurstCountData = BurstCount;
         _PlayerData = FindFirstObjectByType<PlayerData>();
     }
+    private void Start()
+    {
+        if(gameObject.GetComponentInParent<PlayerData>() != null) 
+            { 
+                return;
+            }
+        InventoryManager.instance.RefreshMaxAmmoUI();
+        InventoryManager.instance.RefreshCurrentAmmoUI(CurrentAmmoCount);
+    }
 
     private void FixedUpdate()
     {
@@ -304,9 +313,4 @@ public class GunFire : MonoBehaviour
     //Oyuncu bozmadýðý sürece +1 ammodan sonra 10 kare geri sarýlacak animasyon ve mermiyi koyduðu yerde yine +1 ammo olacak 
     //Tamamý dolana kadar animasyon tekrar edecek
     #endregion
-    private void OnEnable()
-    {
-        InventoryManager.instance.RefreshMaxAmmoUI();
-        InventoryManager.instance.RefreshCurrentAmmoUI(CurrentAmmoCount);
-    }
 }

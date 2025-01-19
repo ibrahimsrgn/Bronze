@@ -13,6 +13,7 @@ public class EndGameScript : MonoBehaviour
     public static EndGameScript instance;
     [Header("Animaitons")]
     public Animator Animator;
+    [SerializeField] private GameObject cursedFire;
 
     [Header("Audio")]
     public AudioSource EnviromentSound1;
@@ -37,6 +38,11 @@ public class EndGameScript : MonoBehaviour
     public GameObject _Camera;
     public GameObject CameraFinalLoc;
     public CinemachineCamera CinemachineCamera;
+
+    private float elapsedTime = 0;
+    private float transferDuration = 15;
+    private bool startTransfer = false;
+    private float transferDuration2 = 17;
 
     private void Awake()
     {
@@ -69,6 +75,7 @@ public class EndGameScript : MonoBehaviour
             Animator.Play("TouchStatue");
             ZombieHorde.SetActive(true);
             UIManager.instance.FadeAwayUI();
+            startTransfer = true;
         }
     }
     public void DisablePlayerControls()
@@ -77,6 +84,24 @@ public class EndGameScript : MonoBehaviour
         PlayerData.Instance.enabled = false;
         CinemachinePanTilt.PanAxis.Wrap = false;
         Destroy(PlayerData.Instance);
+    }
+    private void Update()
+    {
+        if(elapsedTime< transferDuration&&startTransfer)
+        {
+            Debug.Log(1);
+            elapsedTime += Time.deltaTime;
+            Debug.Log(cursedFire.transform.position+"  "+PlayerData.Instance.cursedFireSlotFirstPointForAnimation.transform.position);
+            cursedFire.transform.position=Vector3.Lerp(cursedFire.transform.position, PlayerData.Instance.cursedFireSlotFirstPointForAnimation.transform.position, elapsedTime / transferDuration);
+        }
+        else if (elapsedTime <transferDuration2&&startTransfer)
+        {
+            elapsedTime += Time.deltaTime;
+            cursedFire.transform.position = Vector3.Lerp(cursedFire.transform.position, PlayerData.Instance.cursedFireSlot.transform.position, elapsedTime / transferDuration2);
+        }
+
+        
+        
     }
 
     public void ClosingEyesAndWaking()
@@ -135,4 +160,5 @@ public class EndGameScript : MonoBehaviour
     {
         _ColorAdjustments.colorFilter.value = Color.black;
     }
+
 }

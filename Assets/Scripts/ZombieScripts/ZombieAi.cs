@@ -92,6 +92,7 @@ public class ZombieAi : MonoBehaviour
                 }
                 break;
             case State.Dead:
+                GetComponent<HighlightMe>().Highlight();
                 break;
         }
         Animate();
@@ -216,6 +217,7 @@ public class ZombieAi : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 UIManager.instance.UIListManager(loot);
+                GetComponent<HighlightMe>().Unhighlight();
             }
         }
     }

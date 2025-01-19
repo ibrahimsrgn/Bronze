@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3222831254057153987}
   - component: {fileID: 8921437546904006040}
   - component: {fileID: 986154440374452765}
+  - component: {fileID: -6649593124142009427}
   m_Layer: 0
   m_Name: Zombie 4
   m_TagString: Enemy
@@ -537,6 +538,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6649593124142009427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660184903045082040}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104487abca90a994fbe3398d99e74071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererr: {fileID: 40452498253151102}
+  highlightColor: {r: 967.7804, g: 833.1153, b: 0, a: 1}
 --- !u!1001 &3740556459469514121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2214,3 +2229,9 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!137 &40452498253151102 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3703813894911745783, guid: 3fdccd5bceb54644fa6b93bb7c876953,
+    type: 3}
+  m_PrefabInstance: {fileID: 3740556459469514121}
+  m_PrefabAsset: {fileID: 0}
