@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject Inventory;
     [SerializeField] private GameObject EscMenu;
+    [SerializeField] private TMP_Dropdown qualityDropdown;
     [Header("Health")]
     [SerializeField] private Image healthMain;
     [SerializeField] private Image healthFollower;
@@ -36,7 +37,7 @@ public class UIManager : MonoBehaviour
     private Coroutine hideAmmoCoroutine;
     private bool isTimeStopped = false;
 
-   [Header("UIListManager")]
+    [Header("UIListManager")]
     [SerializeField] public List<GameObject> UIList;
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && UIList.Count > 0&&mainCanvasGroup.alpha>=0.8f)
+        if (Input.GetKeyDown(KeyCode.Escape) && UIList.Count > 0 && mainCanvasGroup.alpha >= 0.8f)
         {
             CloseCurrentUI();
         }
@@ -59,7 +60,7 @@ public class UIManager : MonoBehaviour
         {
             UIListManager(Inventory);
         }
-        if (UIList.Count <= 0&&creditsCanvasGroup.alpha<=0.6f&&deathScreenCanvasGroup.alpha<=0.6f)
+        if (UIList.Count <= 0 && creditsCanvasGroup.alpha <= 0.6f && deathScreenCanvasGroup.alpha <= 0.6f)
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -218,7 +219,7 @@ public class UIManager : MonoBehaviour
     private IEnumerator FadeAwayCanvas()
     {
 
-       float elapsedTime = 0;
+        float elapsedTime = 0;
         while (elapsedTime < fadeDur)
         {
             elapsedTime += Time.deltaTime;
@@ -226,7 +227,7 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         mainCanvasGroup.alpha = 0f;
-       
+
     }
     public void FadeInDeathScreen()
     {
@@ -243,5 +244,9 @@ public class UIManager : MonoBehaviour
         }
         deathScreenCanvasGroup.alpha = 1f;
         Time.timeScale = 0;
+    }
+    public void SetGraphicsQuality()
+    { 
+        QualitySettings.SetQualityLevel(qualityDropdown.value);
     }
 }
